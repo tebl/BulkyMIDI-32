@@ -1,0 +1,9 @@
+(sym_lib_table
+  (lib (name I2C_OLED)(type Legacy)(uri ${KIPRJMOD}/../common/library/I2C_OLED.lib)(options "")(descr ""))
+  (lib (name barrel_jack)(type Legacy)(uri ${KIPRJMOD}/../common/library/barrel_jack.lib)(options "")(descr ""))
+  (lib (name mounting)(type Legacy)(uri ${KIPRJMOD}/../common/library/mounting.lib)(options "")(descr ""))
+  (lib (name 7406)(type Legacy)(uri ${KIPRJMOD}/../common/library/7406.lib)(options "")(descr ""))
+  (lib (name C64_IEC)(type Legacy)(uri ${KIPRJMOD}/../common/library/C64_IEC.lib)(options "")(descr ""))
+  (lib (name 4ch_i2c_level_converter)(type Legacy)(uri ${KIPRJMOD}/../common/library/4ch_i2c_level_converter.lib)(options "")(descr ""))
+  (lib (name raspberry_pi)(type Legacy)(uri ${KIPRJMOD}/../common/library/raspberry_pi.lib)(options "")(descr ""))
+)
