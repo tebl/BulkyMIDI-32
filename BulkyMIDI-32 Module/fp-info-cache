@@ -1,4 +1,4 @@
-19026049694377994
+19043595135748618
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -2274,6 +2274,13 @@ speaker CUI
 0
 2
 2
+C64_IEC
+C64_IEC
+
+
+0
+8
+8
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -74388,6 +74395,13 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
+RPI
+Raspberry_Pi_3B_Socketed_THT_FaceDown_MountingHoles
+Raspberry Pi 3B+ using through hole straight pin socket, 2x20, 2.54mm pitch, https://www.raspberrypi.org/documentation/hardware/raspberrypi/mechanical/rpi_MECH_3bplus.pdf
+raspberry pi 3b+ through hole
+0
+40
+40
 Relay_SMD
 Relay_DPDT_AXICOM_IMSeries_JLeg
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Specification+Or+Standard%7F108-98001%7FW5%7Fpdf%7FEnglish%7FENG_SS_108-98001_W5.pdf
@@ -83026,3 +83040,66 @@ varistor SIOV
 0
 2
 2
+i2c_oled
+0.91_I2C_OLED
+
+
+0
+4
+4
+i2c_oled
+0.96_I2C_OLED
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+i2c_oled
+0.96_I2C_OLED2
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+i2c_oled
+0.96_I2C_OLED_NEW
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+i2c_oled
+1.3_I2C_OLED_No_mounting
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+mounting
+M2
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
+mounting
+M3
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+0
+0
+mounting
+M3_pin
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
+wire_pads
+OLED_SEL
+Through hole straight pin header, 1x03, 1.27mm pitch, single row
+Through hole pin header THT 1x03 1.27mm single row
+0
+3
+3
