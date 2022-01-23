@@ -5,4 +5,5 @@
   (lib (name Jumper)(type KiCad)(uri ${KISYSMOD}/Jumper.pretty)(options "")(descr ""))
   (lib (name RPI)(type KiCad)(uri $KIPRJMOD/../common/modules/RPI.pretty)(options "")(descr ""))
   (lib (name wire_pads)(type KiCad)(uri $KIPRJMOD/../common/modules/wire_pads.pretty)(options "")(descr ""))
+  (lib (name BulkyMIDI-32)(type KiCad)(uri D:/ownCloud/Documents/Projects/BulkyMIDI-32/common/modules/BulkyMIDI-32.pretty)(options "")(descr ""))
 )
