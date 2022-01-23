@@ -1,0 +1,10 @@
+(fp_lib_table
+  (lib (name mounting)(type KiCad)(uri $KIPRJMOD/../common/modules/mounting.pretty)(options "")(descr ""))
+  (lib (name i2c_oled)(type KiCad)(uri $KIPRJMOD/../common/modules/i2c_oled.pretty)(options "")(descr ""))
+  (lib (name C64_IEC)(type KiCad)(uri $KIPRJMOD/../common/modules/C64_IEC.pretty)(options "")(descr ""))
+  (lib (name IIC_4CH_Level_Converter)(type KiCad)(uri $KIPRJMOD/../common/modules/IIC_4CH_Level_Converter.pretty)(options "")(descr ""))
+  (lib (name Jumper)(type KiCad)(uri ${KISYSMOD}/Jumper.pretty)(options "")(descr ""))
+  (lib (name RPI)(type KiCad)(uri $KIPRJMOD/../common/modules/RPI.pretty)(options "")(descr ""))
+  (lib (name Symbols)(type KiCad)(uri ${KISYSMOD}/Symbols.pretty)(options "")(descr ""))
+  (lib (name wire_pads)(type KiCad)(uri $KIPRJMOD/../common/modules/wire_pads.pretty)(options "")(descr ""))
+)

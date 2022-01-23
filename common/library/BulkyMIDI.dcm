@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP KY-040
+D Rotary encoder, dual channel, incremental quadrate outputs, with switch
+K rotary switch encoder switch push button
+F ~
+$ENDCMP
+#
+$CMP Serial_Adapter
+D Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+#End Doc Library
