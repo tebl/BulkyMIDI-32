@@ -1,21 +1,18 @@
-update=25.01.2022 00:11:17
+update=25.01.2022 00:10:55
 version=1
 last_client=kicad
-[general]
-version=1
-RootSch=
-BoardNm=
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=
-[eeschema/libraries]
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=BulkyMIDI-32 Module.net
+LastNetListRead=BulkyMIDI-32 Faceplate.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
@@ -57,10 +54,10 @@ OthersTextSizeH=1
 OthersTextSizeThickness=0.15
 OthersTextItalic=0
 OthersTextUpright=1
-SolderMaskClearance=0
+SolderMaskClearance=0.2
 SolderMaskMinWidth=0
 SolderPasteClearance=0
-SolderPasteRatio=-0
+SolderPasteRatio=0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
 Type=0
@@ -241,7 +238,7 @@ dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Power
-Clearance=0.2
+Clearance=0.381
 TrackWidth=0.381
 ViaDiameter=1
 ViaDrill=0.4
@@ -258,5 +255,5 @@ SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Pcbnew
 SpiceAjustPassiveValues=0
-LabSize=50
+LabSize=60
 ERC_TestSimilarLabels=1
