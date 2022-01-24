@@ -1,4 +1,4 @@
-19045238115240977
+19051814068068724
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -305,8 +305,22 @@ DIN5_MIDI
 
 
 0
-7
 5
+5
+BulkyMIDI-32
+GY-PCM5102
+
+
+0
+15
+15
+BulkyMIDI-32
+PWR_Specification
+Barrel connector polarity indicator
+barrel polarity
+0
+0
+0
 Button_Switch_Keyboard
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf
@@ -2281,13 +2295,6 @@ speaker CUI
 0
 2
 2
-C64_IEC
-C64_IEC
-
-
-0
-8
-8
 Calibration_Scale
 Gauge_10mm_Type1_CopperTop
 Gauge, Massstab, 10mm, CopperTop, Type 1,
@@ -83047,6 +83054,27 @@ varistor SIOV
 0
 2
 2
+arduino_pro_micro
+Arduino_Pro_Micro
+
+
+0
+36
+24
+arduino_pro_micro
+Arduino_Pro_Micro_Reverse
+
+
+0
+36
+24
+ft232rl
+FT232RL
+
+
+0
+24
+24
 i2c_oled
 0.91_I2C_OLED
 
