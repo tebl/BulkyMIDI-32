@@ -1,4 +1,4 @@
-19047036597573086
+19048638161123382
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -321,13 +321,6 @@ barrel polarity
 0
 0
 0
-BulkyMIDI-32
-SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
-tactile switch SPST right angle, PTS645VL39-2 LFS
-tactile switch SPST angled PTS645VL39-2 LFS C&K Button
-0
-4
-2
 Button_Switch_Keyboard
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf
@@ -74416,6 +74409,13 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
+RPI
+Raspberry_Pi_3B_Socketed_THT_FaceDown_MountingHoles
+Raspberry Pi 3B+ using through hole straight pin socket, 2x20, 2.54mm pitch, https://www.raspberrypi.org/documentation/hardware/raspberrypi/mechanical/rpi_MECH_3bplus.pdf
+raspberry pi 3b+ through hole
+0
+40
+40
 Relay_SMD
 Relay_DPDT_AXICOM_IMSeries_JLeg
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Specification+Or+Standard%7F108-98001%7FW5%7Fpdf%7FEnglish%7FENG_SS_108-98001_W5.pdf
@@ -83054,6 +83054,13 @@ varistor SIOV
 0
 2
 2
+artwork
+BulkyMIDI-32
+
+
+0
+0
+0
 i2c_oled
 0.91_I2C_OLED
 

@@ -6,6 +6,12 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP Conn_Faceplate_Male
+D Generic connector, single row, 01x10, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 $CMP KY-040
 D Rotary encoder, dual channel, incremental quadrate outputs, with switch
 K rotary switch encoder switch push button

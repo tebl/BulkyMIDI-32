@@ -58,7 +58,7 @@ F 3 "" H 11150 550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L BulkyMIDI:Conn_Faceplate J4
+L BulkyMIDI:Conn_Faceplate_Male J4
 U 1 1 5F3B6F1D
 P 7025 3650
 F 0 "J4" H 6950 4225 50  0000 L CNN
@@ -149,4 +149,19 @@ Wire Wire Line
 	6825 4050 6750 4050
 Wire Wire Line
 	6750 3850 6825 3850
+$Comp
+L power:GND #PWR0101
+U 1 1 6201A43A
+P 6175 3625
+F 0 "#PWR0101" H 6175 3375 50  0001 C CNN
+F 1 "GND" H 6175 3475 50  0000 C CNN
+F 2 "" H 6175 3625 50  0001 C CNN
+F 3 "" H 6175 3625 50  0001 C CNN
+	1    6175 3625
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6825 3550 6175 3550
+Wire Wire Line
+	6175 3550 6175 3625
 $EndSCHEMATC

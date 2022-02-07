@@ -5,4 +5,5 @@
   (lib (name Symbols)(type KiCad)(uri ${KISYSMOD}/Symbols.pretty)(options "")(descr ""))
   (lib (name wire_pads)(type KiCad)(uri $KIPRJMOD/../common/modules/wire_pads.pretty)(options "")(descr ""))
   (lib (name BulkyMIDI-32)(type KiCad)(uri $KIPRJMOD/../common/modules/BulkyMIDI-32.pretty)(options "")(descr ""))
+  (lib (name artwork)(type KiCad)(uri $KIPRJMOD/../common/modules/artwork.pretty)(options "")(descr ""))
 )
