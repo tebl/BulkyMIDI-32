@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Gameport_DB15
+D 15-pin male D-SUB connector (low-density/2 columns)
+K male D-SUB connector
+F  ~
+$ENDCMP
+#
+$CMP Gameport_IDC
+D Generic connector, double row, 02x08, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+#End Doc Library
