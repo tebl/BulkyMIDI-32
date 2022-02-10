@@ -4,14 +4,14 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "BulkyMIDI-32 Gameport"
+Title "BulkyMIDI-32 Gameport (IDC)"
 Date ""
 Rev "A"
 Comp ""
 Comment1 ""
 Comment2 ""
-Comment3 ""
-Comment4 "Gameport adapter as designed by Jeff Glatt."
+Comment3 "instead of DB15, this allows you to use a cable with it."
+Comment4 "Gameport adapter as designed by Jeff Glatt. This board design uses an IDC-connector "
 $EndDescr
 $Comp
 L Device:C_Small C1
@@ -114,28 +114,6 @@ Wire Wire Line
 Text Notes 5125 1250 0    50   ~ 0
 MIDI IN (optional)
 $Comp
-L gameport:Gameport_DB15 J1
-U 1 1 620AD515
-P 3600 3625
-F 0 "J1" H 4088 4617 50  0000 C CNN
-F 1 "Gameport" H 4088 4526 50  0000 C CNN
-F 2 "RND_DSUB:DSUB-15_Male_Vertical_Pitch2.77x2.84mm" H 3600 3625 50  0001 C CNN
-F 3 " ~" H 3600 3625 50  0001 C CNN
-	1    3600 3625
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0102
-U 1 1 620CCE57
-P 4500 3800
-F 0 "#PWR0102" H 4500 3550 50  0001 C CNN
-F 1 "GND" H 4505 3627 50  0000 C CNN
-F 2 "" H 4500 3800 50  0001 C CNN
-F 3 "" H 4500 3800 50  0001 C CNN
-	1    4500 3800
-	1    0    0    -1  
-$EndComp
-$Comp
 L 74xx:74LS00 U3
 U 5 1 620D2C7D
 P 6400 6850
@@ -168,8 +146,6 @@ F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 6575 4775 50  0001 C CNN
 	4    6575 4775
 	1    0    0    -1  
 $EndComp
-Text GLabel 4050 3025 2    50   Input ~ 0
-MIDI_RxD
 Wire Wire Line
 	9200 2500 9275 2500
 Text GLabel 9275 2500 2    50   Output ~ 0
@@ -329,64 +305,6 @@ F 3 "~" H 6700 2400 50  0001 C CNN
 	1    6700 2400
 	0    1    1    0   
 $EndComp
-Text GLabel 4050 3625 2    50   Output ~ 0
-MIDI_TxD
-Wire Wire Line
-	3900 3525 4500 3525
-Wire Wire Line
-	3900 3725 4500 3725
-Wire Wire Line
-	4050 4225 4050 4325
-Wire Wire Line
-	4050 2800 4050 2925
-$Comp
-L power:+5V #PWR0101
-U 1 1 620B2F56
-P 4050 2800
-F 0 "#PWR0101" H 4050 2650 50  0001 C CNN
-F 1 "+5V" H 4050 2940 50  0000 C CNN
-F 2 "" H 4050 2800 50  0000 C CNN
-F 3 "" H 4050 2800 50  0000 C CNN
-	1    4050 2800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4050 4225 4050 4125
-Connection ~ 4050 4225
-$Comp
-L power:+5V #PWR0106
-U 1 1 62248331
-P 4050 4125
-F 0 "#PWR0106" H 4050 3975 50  0001 C CNN
-F 1 "+5V" H 4050 4265 50  0000 C CNN
-F 2 "" H 4050 4125 50  0000 C CNN
-F 3 "" H 4050 4125 50  0000 C CNN
-	1    4050 4125
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3900 4325 4050 4325
-Wire Wire Line
-	3900 4225 4050 4225
-Wire Wire Line
-	3900 2925 4050 2925
-Wire Wire Line
-	4500 3725 4500 3800
-NoConn ~ 3900 3125
-NoConn ~ 3900 3225
-NoConn ~ 3900 3325
-NoConn ~ 3900 3425
-NoConn ~ 3900 3825
-NoConn ~ 3900 3925
-NoConn ~ 3900 4025
-NoConn ~ 3900 4125
-Wire Wire Line
-	4050 3025 3900 3025
-Wire Wire Line
-	4050 3625 3900 3625
-Wire Wire Line
-	4500 3725 4500 3525
-Connection ~ 4500 3725
 $Comp
 L Device:R R3
 U 1 1 622D9678
@@ -457,6 +375,82 @@ Wire Wire Line
 Wire Wire Line
 	5450 2700 6700 2700
 $Comp
+L gameport:Gameport_IDC J4
+U 1 1 6248D33D
+P 3350 3550
+F 0 "J4" H 3400 4067 50  0000 C CNN
+F 1 "Gameport" H 3400 3976 50  0000 C CNN
+F 2 "Gameport:Gameport_IDC" H 3350 3550 50  0001 C CNN
+F 3 "~" H 3350 3550 50  0001 C CNN
+	1    3350 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0107
+U 1 1 624C5A39
+P 2850 2900
+F 0 "#PWR0107" H 2850 2750 50  0001 C CNN
+F 1 "+5V" H 2850 3040 50  0000 C CNN
+F 2 "" H 2850 2900 50  0000 C CNN
+F 3 "" H 2850 2900 50  0000 C CNN
+	1    2850 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 3250 3800 3250
+NoConn ~ 3150 3350
+NoConn ~ 3150 3450
+NoConn ~ 3650 3450
+NoConn ~ 3150 3750
+NoConn ~ 3150 3850
+NoConn ~ 3650 3650
+NoConn ~ 3650 3750
+$Comp
+L power:GND #PWR0108
+U 1 1 62501F32
+P 3000 3725
+F 0 "#PWR0108" H 3000 3475 50  0001 C CNN
+F 1 "GND" H 3005 3552 50  0000 C CNN
+F 2 "" H 3000 3725 50  0001 C CNN
+F 3 "" H 3000 3725 50  0001 C CNN
+	1    3000 3725
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 3725 3000 3650
+Connection ~ 3000 3650
+Wire Wire Line
+	3000 3650 3000 3550
+Wire Wire Line
+	3000 3550 3150 3550
+Wire Wire Line
+	3000 3650 3150 3650
+Wire Wire Line
+	2850 3950 3150 3950
+NoConn ~ 3650 3350
+Text GLabel 3800 3550 2    50   Output ~ 0
+MIDI_TxD
+Wire Wire Line
+	3800 3550 3650 3550
+Text GLabel 3800 3850 2    50   Input ~ 0
+MIDI_RxD
+Wire Wire Line
+	3800 3850 3650 3850
+Wire Wire Line
+	2850 2975 3800 2975
+Wire Wire Line
+	2850 3250 2850 3950
+Wire Wire Line
+	2850 3250 3150 3250
+Wire Wire Line
+	2850 2900 2850 2975
+Wire Wire Line
+	2850 2975 2850 3250
+Connection ~ 2850 2975
+Connection ~ 2850 3250
+Wire Wire Line
+	3800 2975 3800 3250
+$Comp
 L Device:C_Small C3
 U 1 1 6257FB01
 P 5850 6850
@@ -486,6 +480,28 @@ Wire Wire Line
 Connection ~ 5850 6275
 Wire Wire Line
 	5850 6275 6400 6275
+$Comp
+L mounting:Mounting M2
+U 1 1 5E3B604F
+P 11125 550
+F 0 "M2" H 11125 650 50  0001 C CNN
+F 1 "Mounting" H 11125 475 50  0001 C CNN
+F 2 "mounting:M3" H 11125 550 50  0001 C CNN
+F 3 "" H 11125 550 50  0001 C CNN
+	1    11125 550 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting M1
+U 1 1 5E3B603D
+P 11000 550
+F 0 "M1" H 11000 650 50  0001 C CNN
+F 1 "Mounting" H 11000 475 50  0001 C CNN
+F 2 "mounting:M3" H 11000 550 50  0001 C CNN
+F 3 "" H 11000 550 50  0001 C CNN
+	1    11000 550 
+	1    0    0    -1  
+$EndComp
 Text Notes 1925 1250 0    50   ~ 0
 Gameport
 $EndSCHEMATC

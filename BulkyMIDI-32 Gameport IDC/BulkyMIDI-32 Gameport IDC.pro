@@ -1,4 +1,4 @@
-update=10.02.2022 23:29:14
+update=10.02.2022 23:24:25
 version=1
 last_client=kicad
 [general]
@@ -15,7 +15,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=BulkyMIDI-32 Gameport.net
+LastNetListRead=BulkyMIDI-32 Gameport IDC.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0

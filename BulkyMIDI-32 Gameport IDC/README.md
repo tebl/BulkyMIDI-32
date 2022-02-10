@@ -1,0 +1,2 @@
+# BulkyMIDI-32 Gameport (IDC)
+This is an alternative version of [BulkyMIDI-32 Gameport](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Gameport), except that instead of a right-angle DB15 connector we've got an IDC connector instead. This increases the cost of the unit slightly as we'd need to buy the cable, but we've got a way out in case we don't get enough physical space next to the gameport on the computer itself.
