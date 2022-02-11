@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "BulkyMIDI-32 Module"
 Date ""
-Rev "A"
+Rev "B"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -146,7 +146,7 @@ L raspberry_pi:Raspberry_Pi_2_3 A1
 U 1 1 5EE82FB5
 P 2875 3250
 F 0 "A1" H 2250 4600 50  0000 C CNN
-F 1 "Raspberry PI 3B" H 2250 4525 50  0000 C CNN
+F 1 "Raspberry PI" H 2250 4525 50  0000 C CNN
 F 2 "RPI:Raspberry_Pi_3B_Socketed_THT_FaceDown_MountingHoles" H 2875 3250 50  0001 C CNN
 F 3 "https://www.raspberrypi.org/documentation/hardware/raspberrypi/schematics/rpi_SCH_3bplus_1p0_reduced.pdf" H 2875 3250 50  0001 C CNN
 	1    2875 3250
@@ -1319,10 +1319,10 @@ Text Notes 11375 5450 0    50   ~ 0
 OLED display and faceplate connector
 Text Notes 11375 5725 0    50   ~ 0
 OLED displays have unfortunately been produced with varying pinouts, we therefore need to add solder\nbridges to specify what the pins are used for. Faceplate connector includes signals for both screen\nand control scheme pins, just in case a specific faceplate reimplements them in some way.
-Text Notes 8900 5725 0    50   ~ 0
-Volume UP/DOWN is not needed when rotary encoder is\nused, some versions of faceplates may include SYNTH and\nVOL_UP and the duplicated switch should not be installed.
+Text Notes 8875 5800 0    50   ~ 0
+Volume UP/DOWN is not needed when rotary encoder is\nused, some versions of faceplates may include SYNTH and\nVOL_UP and the duplicated switch should not be installed.\nJP3 is used to have the ROM switch replace VOL_UP.
 $Comp
-L I2C_OLED:PowerSelect JP3
+L Jumper:SolderJumper_3_Open JP3
 U 1 1 62208552
 P 10450 7925
 F 0 "JP3" H 10125 7700 50  0000 L CNN
