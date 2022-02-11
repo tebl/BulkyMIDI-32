@@ -1,0 +1,4 @@
+# BulkyMIDI-32 Faceplate (FA2)
+A faceplate designed to be installed onto the main [BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module)-module, it does not have any electrical components and is purely here as a cosmetic option. There is also a version that includes two of the switches, allowing for a vertical stacking of the user interface -  if that is what you were looking for, check check out [Faceplate FA1](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FA1) instead.
+
+![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/BulkyMIDI-32%20FA2.png)
