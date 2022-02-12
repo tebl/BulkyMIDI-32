@@ -9,6 +9,7 @@ The [documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%
     - [1.3.2> Configure DAC](#132-configure-dac)
     - [1.3.3> Control scheme](#133-control-scheme)
     - [1.3.4> Display type](#134-display-type)
+  - [1.4> Plugging it in](#14-plugging-it-in)
 
 ## 1.1> Basic information
 The original Roland MT-32 synth module was released all the way back in 1987, but while the module is certainly an expensive piece of equipment these days there is an even more expensive obstacle you'll encounter right after buying one. You see, the Roland MT-32 actually pre-dates MIDI as the standard we now know and love today, meaning that just because something has a MIDI out on it doesn't actually mean you get to start up a PC game MT32 music just like that.
@@ -72,3 +73,10 @@ type = ssd1306_i2c
 height = 64
 rotation = inverted
 ```
+
+## 1.4> Plugging it in
+With the contents of the SD-card already prepared, insert it into the slot on the Raspberry Pi. Your BulkyMIDI-32 is powered up using any good quality 5V DC center positive PSU with a 2.1mm x 5.5mm barrel connector, but note that you will need one that is powerful enough for the version of the Raspberry Pi you've installed (ideally it should be at least 3A when using a model 4). Note however that before even considering plugging it up to any of your vintage audio equipment, you should try it out without anything else plugged into it. The display should light up as expected with some information, you should also be able to change options using the switches.
+
+If nothing appears to work, your first instinct might be plugging in an HDMI cable to see whether it is generating any video. If you get a rainbow screen then the software isn't starting up at all, meaning you need to take a second to verify that your SD-card is correctly inserted and formatted correctly. Additionally, with an underpowered power supply you might also end up with a low voltage warning shown in the form of a yellow lightning bolt on the screen. Should the software start to boot as expected you will get a blank screen, the reason for this is that the MT32-PI software doesn't generate video and should for that reason be considered normal behavior. A more common fault is simply that the display has not been [configured]((#134-display-type)) correctly.
+
+When everything appears to be functioning, now might be the time to [get started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/get_started.md) on actually using it. The easiest method by far is using a USB MIDI interface with ScummVM.
