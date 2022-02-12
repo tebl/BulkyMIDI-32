@@ -64,7 +64,8 @@ type = sh1106_i2c
 height = 64
 rotation = inverted
 ```
-If you built it with the regular 0.96" inch screen, then you'd specify it as *ssd1306_i2c* as expected with the other options kept the same as above.
+
+If you built your BulkyMIDI-32 with a regular 0.96" inch screen, then specify the LCD type as *ssd1306_i2c* instead. The other options are simply repeated for clarity, but they are the same as with the 1.3" inch screen.
 ```
 [lcd]
 type = ssd1306_i2c
