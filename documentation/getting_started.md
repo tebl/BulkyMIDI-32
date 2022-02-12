@@ -7,7 +7,7 @@ Before starting on this adventure, even with a ready-built unit I suggest at lea
 - [2> ScummVM](#2-scummvm)
 - [2> DOSBox](#3-dosbox)
   - [3.1> Example game](#31-example-game)
-  - [3.2> MT32-PI Control](32-mt32-pi-control)
+  - [3.2> MT32-PI Control](#32-mt32-pi-control)
 
 # 2> ScummVM
 [ScummVM](https://www.scummvm.org/) is by far the easiest way to get started, and while it provides its own form of MT-32 emulation we can reconfigure it to output the MIDI instructions out to external devices instead by the use of a suitable *USB MIDI Interface* (the one I recommend is *Roland UM-ONE Mk2*). I'm not entirely convinced that there's all that much to be gained from swapping out one form of emulation over another, but the exact same instructions can be used to hook up a real MT-32 to ScummVM and for that reason it is an excellent way of testing that the MT32-PI functions as expected.

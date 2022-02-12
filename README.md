@@ -13,6 +13,6 @@ For the technical details as well as information regarding the modules included 
 
 | Module                 | Required    | Documentation                      | Order      |
 | ---------------------- | ----------- | ---------------------------------- | ---------- |
-| [BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module) | Yes | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module) |
+| [BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module) | Yes | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module), [Setting it up](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md), [Getting started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md) |
 | [BulkyMIDI-32 Faceplate (FA1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FA1) | Optional | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FA1) |
 | [BulkyMIDI-32 Faceplate (FA2)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FA2) | Optional | |
