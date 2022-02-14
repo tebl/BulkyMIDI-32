@@ -1,5 +1,0 @@
-# BulkyMIDI-32 Gameport (IDC)
-This is an alternative version of [BulkyMIDI-32 Gameport](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Gameport), the difference is that instead of a right-angle DB15 connector we've got an IDC connector. For more general information about what this adapter is and what it is, check out the documentation for the regular version.
-
-Using a cable increases the cost of the unit slightly, as we'd need to buy the cable including any connectors not already on it (I've seen Uxcell-branded cables that are ready made on AliExpress and Ebay). Having the adapter on a cable means we've got the flexibility of using it mostly everywhere, primarily by not getting in the way of other inputs on the motherboard or sound card. The pinout should also match the same [pinout](https://www.frontx.com/cpx091_2.html) used on motherboard breakout cables (usually with pin 16 missing), so in theory you could use a 2x8 pin ribbon cable and connect it directly to a motherboard with internal gameport connector. 
-

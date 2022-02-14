@@ -1,9 +1,0 @@
-(fp_lib_table
-  (lib (name mounting)(type KiCad)(uri $KIPRJMOD/../common/modules/mounting.pretty)(options "")(descr ""))
-  (lib (name Jumper)(type KiCad)(uri ${KISYSMOD}/Jumper.pretty)(options "")(descr ""))
-  (lib (name wire_pads)(type KiCad)(uri $KIPRJMOD/../common/modules/wire_pads.pretty)(options "")(descr ""))
-  (lib (name BulkyMIDI-32)(type KiCad)(uri $KIPRJMOD/../common/modules/BulkyMIDI-32.pretty)(options "")(descr ""))
-  (lib (name artwork)(type KiCad)(uri $KIPRJMOD/../common/modules/artwork.pretty)(options "")(descr ""))
-  (lib (name RND_DSUB)(type KiCad)(uri $KIPRJMOD/../common/modules/RND_DSUB.pretty)(options "")(descr ""))
-  (lib (name Gameport)(type KiCad)(uri D:/ownCloud/Documents/Projects/BulkyMIDI-32/common/modules/Gameport.pretty)(options "")(descr ""))
-)
