@@ -1312,120 +1312,100 @@ Wire Wire Line
 $Comp
 L BulkyMIDI:Conn_Extras J7
 U 1 1 62376277
-P 4375 9975
-F 0 "J7" H 4425 10600 50  0000 C CNN
-F 1 "Conn_Extras" H 4425 10509 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical" H 4375 9975 50  0001 C CNN
-F 3 "~" H 4375 9975 50  0001 C CNN
-	1    4375 9975
+P 6650 10425
+F 0 "J7" H 6700 11050 50  0000 C CNN
+F 1 "Conn_Extras" H 6700 10959 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical" H 6650 10425 50  0001 C CNN
+F 3 "~" H 6650 10425 50  0001 C CNN
+	1    6650 10425
 	1    0    0    -1  
 $EndComp
-Text GLabel 14700 2050 2    50   Output ~ 0
+Text GLabel 13600 1850 0    50   Output ~ 0
 A_LEFT
-Wire Wire Line
-	14625 2125 14625 2050
-Wire Wire Line
-	14625 2050 14700 2050
-Text GLabel 14700 1950 2    50   Output ~ 0
+Text GLabel 13600 1750 0    50   Output ~ 0
 A_GND
-Wire Wire Line
-	14475 2125 14475 1950
-Wire Wire Line
-	14475 1950 14700 1950
-Wire Wire Line
-	14475 1950 14175 1950
-Wire Wire Line
-	14175 1950 14175 2125
-Connection ~ 14475 1950
-Text GLabel 14700 1850 2    50   Output ~ 0
+Text GLabel 13600 1650 0    50   Output ~ 0
 A_RIGHT
-Wire Wire Line
-	14700 1850 14325 1850
-Wire Wire Line
-	14325 1850 14325 2125
 $Comp
 L power:+5V #PWR0102
 U 1 1 623DF6A7
-P 5075 9500
-F 0 "#PWR0102" H 5075 9350 50  0001 C CNN
-F 1 "+5V" H 5075 9650 50  0000 C CNN
-F 2 "" H 5075 9500 50  0001 C CNN
-F 3 "" H 5075 9500 50  0001 C CNN
-	1    5075 9500
+P 7350 9950
+F 0 "#PWR0102" H 7350 9800 50  0001 C CNN
+F 1 "+5V" H 7350 10100 50  0000 C CNN
+F 2 "" H 7350 9950 50  0001 C CNN
+F 3 "" H 7350 9950 50  0001 C CNN
+	1    7350 9950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3775 9500 3775 9575
+	6050 9950 6050 10025
 Wire Wire Line
-	3775 9575 3850 9575
+	6050 10025 6125 10025
 Wire Wire Line
-	5075 9500 5075 9575
+	7350 9950 7350 10025
 Wire Wire Line
-	5000 9575 5075 9575
+	7275 10025 7350 10025
 $Comp
 L power:+3.3V #PWR0115
 U 1 1 6242ADA1
-P 3775 9500
-F 0 "#PWR0115" H 3775 9350 50  0001 C CNN
-F 1 "+3.3V" H 3790 9673 50  0000 C CNN
-F 2 "" H 3775 9500 50  0001 C CNN
-F 3 "" H 3775 9500 50  0001 C CNN
-	1    3775 9500
+P 6050 9950
+F 0 "#PWR0115" H 6050 9800 50  0001 C CNN
+F 1 "+3.3V" H 6065 10123 50  0000 C CNN
+F 2 "" H 6050 9950 50  0001 C CNN
+F 3 "" H 6050 9950 50  0001 C CNN
+	1    6050 9950
 	-1   0    0    -1  
 $EndComp
-Text GLabel 3775 9875 0    50   Input ~ 0
+Text GLabel 6050 10325 0    50   Input ~ 0
 A_LEFT
-Text GLabel 5075 9775 2    50   Input ~ 0
+Text GLabel 7350 10225 2    50   Input ~ 0
 A_GND
-Text GLabel 5075 9875 2    50   Input ~ 0
+Text GLabel 7350 10325 2    50   Input ~ 0
 A_RIGHT
 Wire Wire Line
-	5075 9875 5000 9875
-Text GLabel 3775 9775 0    50   Input ~ 0
+	7350 10325 7275 10325
+Text GLabel 6050 10225 0    50   Input ~ 0
 A_GND
 Wire Wire Line
-	3775 9775 3850 9775
+	6050 10225 6125 10225
 Wire Wire Line
-	3775 9875 3850 9875
+	6050 10325 6125 10325
 Wire Wire Line
-	3850 9675 3175 9675
+	6125 10125 5450 10125
 Wire Wire Line
-	3175 9675 3175 9775
+	5450 10125 5450 10225
 $Comp
 L power:GND #PWR0116
 U 1 1 62487A35
-P 3175 9775
-F 0 "#PWR0116" H 3175 9525 50  0001 C CNN
-F 1 "GND" H 3180 9602 50  0000 C CNN
-F 2 "" H 3175 9775 50  0001 C CNN
-F 3 "" H 3175 9775 50  0001 C CNN
-	1    3175 9775
+P 5450 10225
+F 0 "#PWR0116" H 5450 9975 50  0001 C CNN
+F 1 "GND" H 5455 10052 50  0000 C CNN
+F 2 "" H 5450 10225 50  0001 C CNN
+F 3 "" H 5450 10225 50  0001 C CNN
+	1    5450 10225
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5000 9675 5675 9675
+	7275 10125 7950 10125
 Wire Wire Line
-	5675 9675 5675 9775
+	7950 10125 7950 10225
 $Comp
 L power:GND #PWR0117
 U 1 1 62492E5B
-P 5675 9775
-F 0 "#PWR0117" H 5675 9525 50  0001 C CNN
-F 1 "GND" H 5680 9602 50  0000 C CNN
-F 2 "" H 5675 9775 50  0001 C CNN
-F 3 "" H 5675 9775 50  0001 C CNN
-	1    5675 9775
+P 7950 10225
+F 0 "#PWR0117" H 7950 9975 50  0001 C CNN
+F 1 "GND" H 7955 10052 50  0000 C CNN
+F 2 "" H 7950 10225 50  0001 C CNN
+F 3 "" H 7950 10225 50  0001 C CNN
+	1    7950 10225
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	5075 9775 5000 9775
-NoConn ~ 3850 9975
-NoConn ~ 3850 10075
-NoConn ~ 3850 10175
+	7350 10225 7275 10225
 Wire Wire Line
-	5000 10075 5075 10075
+	7275 10525 7350 10525
 Wire Wire Line
-	5075 9975 5000 9975
+	7350 10425 7275 10425
 Text GLabel 9400 2150 2    50   Output ~ 0
 MIDI_THRUn
 Wire Wire Line
@@ -1440,31 +1420,29 @@ Wire Wire Line
 	9250 3100 9250 2825
 Wire Wire Line
 	5275 1400 9250 1400
-NoConn ~ 5000 10175
-NoConn ~ 5000 10275
-Text GLabel 5075 10375 2    50   Output ~ 0
+Text GLabel 7350 10825 2    50   Output ~ 0
 RX_TTL
 Wire Wire Line
-	5075 10475 5000 10475
-Text GLabel 5075 10475 2    50   Input ~ 0
+	7350 10925 7275 10925
+Text GLabel 7350 10925 2    50   Input ~ 0
 TX_TTL
 Wire Wire Line
-	5075 10375 5000 10375
-Text GLabel 3775 10475 0    50   Output ~ 0
+	7350 10825 7275 10825
+Text GLabel 6050 10925 0    50   Output ~ 0
 SW_ENC
-Text GLabel 3775 10375 0    50   Output ~ 0
+Text GLabel 6050 10825 0    50   Output ~ 0
 SW_UP
-Text GLabel 3775 10275 0    50   Output ~ 0
+Text GLabel 6050 10725 0    50   Output ~ 0
 SW_DOWN
 Wire Wire Line
-	3775 10275 3850 10275
+	6050 10725 6125 10725
 Wire Wire Line
-	3850 10375 3775 10375
+	6125 10825 6050 10825
 Wire Wire Line
-	3775 10475 3850 10475
+	6050 10925 6125 10925
 Text GLabel 5975 4475 2    50   Output ~ 0
 MIDI_OUTn
-Text GLabel 5075 9975 2    50   Input ~ 0
+Text GLabel 7350 10425 2    50   Input ~ 0
 MIDI_OUTn
 NoConn ~ 9975 9950
 NoConn ~ 10425 9950
@@ -1485,6 +1463,74 @@ Wire Wire Line
 Connection ~ 9250 2150
 Wire Wire Line
 	9250 2150 9250 2225
-Text GLabel 5075 10075 2    50   Input ~ 0
+Text GLabel 7350 10525 2    50   Input ~ 0
 MIDI_THRUn
+Wire Notes Line
+	8700 9025 4700 9025
+Text Notes 4725 9125 0    50   ~ 0
+Connector for optional extras:
+Wire Notes Line
+	8700 9025 8700 11150
+Wire Notes Line
+	8700 11150 4700 11150
+Wire Notes Line
+	4700 11150 4700 9025
+Text Notes 4725 9400 0    50   ~ 0
+Optional support for the extras board, duplicating most of the connectors not included on the\nmain board. Includes RS232 as additional MIDI ports (note that these must be inverted in a \nseparate stage).
+$Comp
+L Jumper:SolderJumper_2_Bridged JP4
+U 1 1 62D4CD43
+P 13925 1650
+F 0 "JP4" H 14125 1700 50  0000 C CNN
+F 1 "R" H 13750 1700 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 13925 1650 50  0001 C CNN
+F 3 "~" H 13925 1650 50  0001 C CNN
+	1    13925 1650
+	-1   0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP5
+U 1 1 62D70E02
+P 13925 1750
+F 0 "JP5" H 14125 1800 50  0000 C CNN
+F 1 "G" H 13750 1800 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 13925 1750 50  0001 C CNN
+F 3 "~" H 13925 1750 50  0001 C CNN
+	1    13925 1750
+	-1   0    0    1   
+$EndComp
+$Comp
+L Jumper:SolderJumper_2_Bridged JP6
+U 1 1 62D7C338
+P 13925 1850
+F 0 "JP6" H 14125 1900 50  0000 C CNN
+F 1 "L" H 13750 1900 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 13925 1850 50  0001 C CNN
+F 3 "~" H 13925 1850 50  0001 C CNN
+	1    13925 1850
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	13600 1650 13775 1650
+Wire Wire Line
+	13600 1750 13775 1750
+Wire Wire Line
+	13600 1850 13775 1850
+Wire Wire Line
+	14175 1750 14075 1750
+Wire Wire Line
+	14175 1750 14475 1750
+Connection ~ 14175 1750
+Wire Wire Line
+	14175 1750 14175 2125
+Wire Wire Line
+	14475 1750 14475 2125
+Wire Wire Line
+	14325 1650 14075 1650
+Wire Wire Line
+	14325 1650 14325 2125
+Wire Wire Line
+	14625 1850 14075 1850
+Wire Wire Line
+	14625 1850 14625 2125
 $EndSCHEMATC
