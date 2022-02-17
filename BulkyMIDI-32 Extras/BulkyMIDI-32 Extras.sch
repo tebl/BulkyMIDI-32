@@ -342,46 +342,33 @@ RS232 Baud rate converter
 Text Notes 4725 5450 0    50   ~ 0
 RS-232 or TTL Serial USB adapter (optional)
 $Comp
-L BulkyMIDI:KY-040 ENC1
+L BulkyMIDI:Vertical_Rotary_Encoder ENC1
 U 1 1 62EDD8FE
-P 10050 7075
-F 0 "ENC1" H 9750 7500 50  0000 L CNN
-F 1 "KY-040" H 9750 7425 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal" H 10200 6965 50  0001 C CNN
-F 3 "~" H 10050 6865 50  0001 C CNN
-	1    10050 7075
+P 10050 6900
+F 0 "ENC1" H 9750 7325 50  0000 L CNN
+F 1 "Rotary Encoder" H 9750 7250 50  0000 L CNN
+F 2 "BulkyMIDI-32:Vertical_Rotary_Encoder" H 10200 6790 50  0001 C CNN
+F 3 "~" H 10050 6690 50  0001 C CNN
+	1    10050 6900
 	1    0    0    -1  
 $EndComp
-Text GLabel 9950 7650 3    50   Output ~ 0
+Text GLabel 9900 7625 3    50   Output ~ 0
 SW_ENC
-$Comp
-L power:+3.3V #PWR02
-U 1 1 62F0DAFE
-P 10300 6675
-F 0 "#PWR02" H 10300 6525 50  0001 C CNN
-F 1 "+3.3V" H 10315 6848 50  0000 C CNN
-F 2 "" H 10300 6675 50  0001 C CNN
-F 3 "" H 10300 6675 50  0001 C CNN
-	1    10300 6675
-	1    0    0    -1  
-$EndComp
-Text GLabel 10050 7650 3    50   Output ~ 0
+Text GLabel 10200 7625 3    50   Output ~ 0
 SW_UP
-Text GLabel 10150 7650 3    50   Output ~ 0
+Text GLabel 10100 7625 3    50   Output ~ 0
 SW_DOWN
 $Comp
 L power:GND #PWR06
 U 1 1 62F29FB2
-P 10425 7450
-F 0 "#PWR06" H 10425 7200 50  0001 C CNN
-F 1 "GND" H 10425 7300 50  0000 C CNN
-F 2 "" H 10425 7450 50  0001 C CNN
-F 3 "" H 10425 7450 50  0001 C CNN
-	1    10425 7450
+P 10000 8075
+F 0 "#PWR06" H 10000 7825 50  0001 C CNN
+F 1 "GND" H 10000 7925 50  0000 C CNN
+F 2 "" H 10000 8075 50  0001 C CNN
+F 3 "" H 10000 8075 50  0001 C CNN
+	1    10000 8075
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	10425 7450 10425 7125
 $Comp
 L Connector:DIN-5_180degree J3
 U 1 1 5F99CA21
@@ -456,8 +443,8 @@ Text Notes 8900 5450 0    50   ~ 0
 Control scheme ("simple_encoder")
 Text Notes 1075 5450 0    50   ~ 0
 Power section
-Text Notes 8900 5800 0    50   ~ 0
-5-pin connector for connecting up a rotary encoder such\nas the KY-040, note that we'll still need the SYNTH/ROM\nbuttons from the "simple_buttons" control scheme as\nwell.
+Text Notes 8900 5875 0    50   ~ 0
+4-pin connector for connecting up a rotary encoder, but\nbecause I couldn't find a pre-made module that would\nfit this is included as a separate PCB. This would have\nbeen easier if the real right-angle encoders weren't so\nexpensive.
 $Comp
 L Device:R_POT_Dual RV1
 U 1 1 621086C8
@@ -1348,4 +1335,12 @@ Wire Notes Line
 	4700 5175 11175 5175
 Wire Notes Line
 	4700 1275 11175 1275
+Wire Wire Line
+	10100 7550 10100 7625
+Wire Wire Line
+	10200 7550 10200 7625
+Wire Wire Line
+	9900 7550 9900 7625
+Wire Wire Line
+	10000 7550 10000 8075
 $EndSCHEMATC
