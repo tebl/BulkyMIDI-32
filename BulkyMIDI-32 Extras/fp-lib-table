@@ -1,0 +1,12 @@
+(fp_lib_table
+  (lib (name mounting)(type KiCad)(uri $KIPRJMOD/../common/modules/mounting.pretty)(options "")(descr ""))
+  (lib (name i2c_oled)(type KiCad)(uri $KIPRJMOD/../common/modules/i2c_oled.pretty)(options "")(descr ""))
+  (lib (name Jumper)(type KiCad)(uri ${KISYSMOD}/Jumper.pretty)(options "")(descr ""))
+  (lib (name RPI)(type KiCad)(uri $KIPRJMOD/../common/modules/RPI.pretty)(options "")(descr ""))
+  (lib (name wire_pads)(type KiCad)(uri $KIPRJMOD/../common/modules/wire_pads.pretty)(options "")(descr ""))
+  (lib (name BulkyMIDI-32)(type KiCad)(uri $KIPRJMOD/../common/modules/BulkyMIDI-32.pretty)(options "")(descr ""))
+  (lib (name artwork)(type KiCad)(uri $KIPRJMOD/../common/modules/artwork.pretty)(options "")(descr ""))
+  (lib (name audio_jack)(type KiCad)(uri $KIPRJMOD/../common/modules/audio_jack.pretty)(options "")(descr ""))
+  (lib (name RS232_Module)(type KiCad)(uri D:/ownCloud/Documents/Projects/BulkyMIDI-32/common/modules/RS232_Module.pretty)(options "")(descr ""))
+  (lib (name RK097G)(type KiCad)(uri D:/ownCloud/Documents/Projects/BulkyMIDI-32/common/modules/RK097G.pretty)(options "")(descr ""))
+)

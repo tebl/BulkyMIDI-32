@@ -1,0 +1,103 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Jumper_3_Bridged12
+#
+DEF Jumper_3_Bridged12 JP 0 0 Y N 1 F N
+F0 "JP" -100 -100 50 H V C CNN
+F1 "Jumper_3_Bridged12" 0 110 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Jumper*
+ TestPoint*3Pads*
+ TestPoint*Bridge*
+$ENDFPLIST
+DRAW
+A -65 -50 89 1282 518 0 1 0 N -120 20 -10 20
+C -130 0 20 0 0 0 N
+C 0 0 20 0 0 0 N
+C 130 0 20 0 0 0 N
+P 2 0 1 0 0 -50 0 -20 N
+X A 1 -250 0 100 R 50 50 1 1 I
+X C 2 0 -150 100 U 50 50 1 1 O
+X B 3 250 0 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# Jumper_4_Swappable
+#
+DEF Jumper_4_Swappable J 0 40 Y N 1 F N
+F0 "J" 50 100 50 H V C CNN
+F1 "Jumper_4_Swappable" 50 -200 50 H V C CNN
+F2 "" -10 0 50 H I C CNN
+F3 "" -10 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+A 50 -140 60 416 1384 0 1 0 N 95 -100 5 -100
+A 50 -40 60 416 1384 1 1 0 N 95 0 5 0
+S -50 50 150 -150 1 1 10 f
+P 2 0 1 0 -10 -100 -60 -100 N
+P 2 0 1 0 110 -100 150 -100 N
+P 2 1 1 0 -10 0 -60 0 N
+P 2 1 1 0 110 0 150 0 N
+X Pin_1a 1a -200 0 150 R 50 50 1 1 P
+X Pin_1b 1b 300 0 150 L 50 50 1 1 P
+X Pin_2a 2a -200 -100 150 R 50 50 1 1 P
+X Pin_2b 2b 300 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Jumper_VCC
+#
+DEF Jumper_VCC JP 0 30 N N 1 F N
+F0 "JP" 0 80 50 H V C CNN
+F1 "Jumper_VCC" 10 -60 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ SolderJumper*Bridged*
+ Jumper*
+ TestPoint*2Pads*
+ TestPoint*Bridge*
+$ENDFPLIST
+DRAW
+A 0 -10 57 450 1350 0 1 0 N 40 30 -40 30
+C -40 0 20 0 1 0 N
+C 40 0 20 0 1 0 N
+X 1 1 -100 0 40 R 50 50 0 1 w
+X 2 2 100 0 40 L 50 50 0 1 W
+ENDDRAW
+ENDDEF
+#
+# SolderJumper_3_Bridged12
+#
+DEF SolderJumper_3_Bridged12 JP 0 0 Y N 1 F N
+F0 "JP" -100 -100 50 H V C CNN
+F1 "SolderJumper_3_Bridged12" 0 110 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ SolderJumper*Bridged12*
+$ENDFPLIST
+DRAW
+A -40 0 40 901 -901 0 1 0 N -40 40 -40 -40
+A -40 0 40 901 -901 0 1 0 F -40 40 -40 -40
+A 40 0 40 -899 899 0 1 0 N 40 -40 40 40
+A 40 0 40 -899 899 0 1 0 F 40 -40 40 40
+S -40 20 -20 -20 0 1 0 F
+S -20 40 20 -40 0 1 0 F
+P 2 0 1 0 -100 0 -80 0 N
+P 2 0 1 0 -40 40 -40 -40 N
+P 2 0 1 0 0 -50 0 -40 N
+P 2 0 1 0 40 40 40 -40 N
+P 2 0 1 0 100 0 80 0 N
+X A 1 -200 0 100 R 50 50 1 1 I
+X C 2 0 -150 100 U 50 50 1 1 O
+X B 3 200 0 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -1,0 +1,27 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Jumper_3_Bridged12
+D Jumper, 3-pole, pins 1+2 closed/bridged
+K Jumper SPDT
+F ~
+$ENDCMP
+#
+$CMP Jumper_4_Swappable
+D Jumper that can be used to link two signals, but in a way that they can easily be swapped.
+K connector
+F ~
+$ENDCMP
+#
+$CMP Jumper_VCC
+D Jumper, normally closed, small symbol
+K jumper link bridge NC
+F ~
+$ENDCMP
+#
+$CMP SolderJumper_3_Bridged12
+D 3-pole Solder Jumper, pins 1+2 closed/bridged
+K Solder Jumper SPDT
+F ~
+$ENDCMP
+#
+#End Doc Library
