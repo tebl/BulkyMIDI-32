@@ -722,7 +722,7 @@ F 3 "" H 7875 4925 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 5100 4950 0    50   Input ~ 0
-TX_TTL
+PI_TX
 Wire Wire Line
 	5100 4950 5225 4950
 $Comp
@@ -757,15 +757,15 @@ NoConn ~ 7875 1825
 NoConn ~ 8475 1825
 NoConn ~ 8175 2125
 Text GLabel 2000 2350 0    50   Output ~ 0
-TX_TTL
+PI_TX
 Wire Wire Line
 	2000 2350 2075 2350
 Text GLabel 2000 2450 0    50   Input ~ 0
-RX_TTL
+PI_RX
 Wire Wire Line
 	2000 2450 2075 2450
 Text GLabel 5075 2425 0    50   Output ~ 0
-RX_TTL
+PI_RX
 Wire Wire Line
 	2000 3250 2075 3250
 Wire Wire Line
@@ -1032,11 +1032,11 @@ F 3 "" H 9925 4675 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 9925 4400 0    50   Output ~ 0
-RX_TTL
+PI_RX
 Wire Wire Line
 	9925 4400 10000 4400
 Text GLabel 9925 4500 0    50   Input ~ 0
-TX_TTL
+PI_TX
 Wire Wire Line
 	9925 4500 10000 4500
 Wire Notes Line
@@ -1421,11 +1421,11 @@ Wire Wire Line
 Wire Wire Line
 	5275 1400 9250 1400
 Text GLabel 7350 10825 2    50   Output ~ 0
-RX_TTL
+PI_RX
 Wire Wire Line
 	7350 10925 7275 10925
 Text GLabel 7350 10925 2    50   Input ~ 0
-TX_TTL
+PI_TX
 Wire Wire Line
 	7350 10825 7275 10825
 Text GLabel 6050 10925 0    50   Output ~ 0
