@@ -1356,20 +1356,20 @@ F 3 "" H 6050 9950 50  0001 C CNN
 	1    6050 9950
 	-1   0    0    -1  
 $EndComp
-Text GLabel 6050 10325 0    50   Input ~ 0
+Text GLabel 6050 10525 0    50   Input ~ 0
 A_LEFT
-Text GLabel 7350 10225 2    50   Input ~ 0
+Text GLabel 7350 10625 2    50   Input ~ 0
 A_GND
-Text GLabel 7350 10325 2    50   Input ~ 0
+Text GLabel 6050 10425 0    50   Input ~ 0
 A_RIGHT
 Wire Wire Line
-	7350 10325 7275 10325
-Text GLabel 6050 10225 0    50   Input ~ 0
+	6050 10425 6125 10425
+Text GLabel 6050 10625 0    50   Input ~ 0
 A_GND
 Wire Wire Line
-	6050 10225 6125 10225
+	6050 10625 6125 10625
 Wire Wire Line
-	6050 10325 6125 10325
+	6050 10525 6125 10525
 Wire Wire Line
 	6125 10125 5450 10125
 Wire Wire Line
@@ -1401,7 +1401,7 @@ F 3 "" H 7950 10225 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7350 10225 7275 10225
+	7350 10625 7275 10625
 Wire Wire Line
 	7275 10525 7350 10525
 Wire Wire Line
