@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name mounting)(type Legacy)(uri ${KIPRJMOD}/../../common/library/mounting.lib)(options "")(descr ""))
+  (lib (name BulkyMIDI)(type Legacy)(uri ${KIPRJMOD}/../../common/library/BulkyMIDI.lib)(options "")(descr ""))
+  (lib (name gameport)(type Legacy)(uri ${KIPRJMOD}/../../common/library/gameport.lib)(options "")(descr ""))
+  (lib (name amiga_serial)(type Legacy)(uri D:/ownCloud/Documents/Projects/BulkyMIDI-32/common/library/amiga_serial.lib)(options "")(descr ""))
+)
