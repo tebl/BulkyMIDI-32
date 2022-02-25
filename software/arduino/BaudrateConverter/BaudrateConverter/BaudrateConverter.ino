@@ -7,8 +7,8 @@
 #include "mode_debugger.h"
 #include "mode_error.h"
 
-MIDI_NAMESPACE::SerialMIDI<HardwareSerial, CustomBaudRateSettings> hardware_serial(Serial);
-MIDI_NAMESPACE::MidiInterface<MIDI_NAMESPACE::SerialMIDI<HardwareSerial, CustomBaudRateSettings>> MIDI_COMPUTER((MIDI_NAMESPACE::SerialMIDI<HardwareSerial, CustomBaudRateSettings>&)hardware_serial);
+MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings> hardware_serial(Serial);
+MIDI_NAMESPACE::MidiInterface<MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>> MIDI_COMPUTER((MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>&)hardware_serial);
 
 SoftwareSerial software_serial = SoftwareSerial(PIN_MIDI_RX, PIN_MIDI_TX);
 MIDI_CREATE_INSTANCE(SoftwareSerial, software_serial,  MIDI_DEVICE);

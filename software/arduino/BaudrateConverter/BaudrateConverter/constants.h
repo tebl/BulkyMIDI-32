@@ -14,7 +14,11 @@
 #define BAUD_RATE_4800 4800
 #define BAUD_RATE_MIDI BAUD_RATE_31250
 
-struct CustomBaudRateSettings : public MIDI_NAMESPACE::DefaultSerialSettings {
+struct ComputerBaudRateSettings : public MIDI_NAMESPACE::DefaultSerialSettings {
+  static const long BaudRate = BAUD_RATE_38400;
+};
+
+struct DeviceBaudRateSettings : public MIDI_NAMESPACE::DefaultSerialSettings {
   static const long BaudRate = BAUD_RATE_38400;
 };
 
