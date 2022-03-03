@@ -6,16 +6,16 @@
 #include "led_control.h"
 #include "functions.h"
 
-extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial, DeviceBaudRateSettings>> MIDI_DEVICE;
+extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial>> MIDI_DEVICE;
 
 namespace mode_debugger {
   void init() {
+    MIDI_DEVICE.begin(MIDI_CHANNEL_OMNI);
+
     Serial.begin(get_baud_rate());
     Serial.print(APP_TITLE);
     Serial.print(' ');
     Serial.println(APP_VERSION);
-
-    MIDI_DEVICE.begin(MIDI_CHANNEL_OMNI);
     // MIDI_DEVICE.turnThruOn();
   }
 
@@ -35,6 +35,13 @@ namespace mode_debugger {
     Serial.print(data, HEX);
   }
 
+  /* MIDI library strips out the channel value from the status byte, so we'll
+   * just recalculate it.
+   */
+  void print_status_byte(const byte type, const byte channel) {
+    print_data(type + (channel - 1));
+  }
+
   /* Prints a byte of data in decimal, pad out to 3 digits.
    */
   void print_byte(const byte data) {
@@ -48,9 +55,9 @@ namespace mode_debugger {
     * this was transcribed from the table at:
     * https://homes.luddy.indiana.edu/donbyrd/Teach/MusicalPitchesTable.htm
     */
-    void print_note_details(const byte pitch, const byte velocity) {
+    void print_note_details(const byte key, const byte velocity) {
       Serial.print('[');
-      switch (pitch) {
+      switch (key) {
         case 12:  Serial.print(F("C0 ")); break;
         case 13:  Serial.print(F("C#0")); break;
         case 14:  Serial.print(F("D0 ")); break;
@@ -171,7 +178,7 @@ namespace mode_debugger {
       }
       Serial.print(' ');
       Serial.print('(');
-      print_byte(pitch);
+      print_byte(key);
       Serial.print(')');
       Serial.print(',');
       Serial.print(' ');
@@ -183,7 +190,7 @@ namespace mode_debugger {
   #ifdef DEBUG_PROGRAM_CHANGE_DETAILS
     void print_program_change_details(const byte data) {
       Serial.print('[');
-      switch (data) {
+      switch (data & 0x7f) {
         case 0:   Serial.print(F("Acoustic Piano 1")); break;
         case 1:   Serial.print(F("Acoustic Piano 2")); break;
         case 2:   Serial.print(F("Acoustic Piano 3")); break;
@@ -337,28 +344,22 @@ namespace mode_debugger {
   void loop() {
     if (MIDI_DEVICE.read()) {
       switch (MIDI_DEVICE.getType()) {
-        case midi::NoteOn:
-          #ifdef DEBUG_NOTE
+        case midi::AfterTouchPoly:
+          #ifdef DEBUG_AFTER_TOUCH_POLY
             print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("NoteOn   "));
-            print_data(MIDI_DEVICE.getType());
+            Serial.print(F("AT. Poly "));
+            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
             Serial.print(' ');
             print_data(MIDI_DEVICE.getData1());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData2());
-            #ifdef DEBUG_NOTE_CONVERT
-              Serial.print(' ');
-              print_note_details(MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2());
-            #endif
             Serial.println();
           #endif
           break;
 
         case midi::NoteOff:
-          #ifdef DEBUG_NOTE
+          #ifdef DEBUG_NOTE_OFF
             print_channel(MIDI_DEVICE.getChannel());
             Serial.print(F("NoteOff  "));
-            print_data(MIDI_DEVICE.getType());
+            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
             Serial.print(' ');
             print_data(MIDI_DEVICE.getData1());
             Serial.print(' ');
@@ -371,16 +372,20 @@ namespace mode_debugger {
           #endif
           break;
 
-        case midi::ProgramChange:
-          #ifdef DEBUG_PROGRAM_CHANGE
+        case midi::NoteOn:
+          #ifdef DEBUG_NOTE_ON
             print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("PC       "));
-            print_data(MIDI_DEVICE.getType());
+            Serial.print(F("NoteOn   "));
+            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
             Serial.print(' ');
             print_data(MIDI_DEVICE.getData1());
-            Serial.println();
-            #ifdef DEBUG_PROGRAM_CHANGE_DETAILS
+            Serial.print(' ');
+            print_data(MIDI_DEVICE.getData2());
+            #ifdef DEBUG_NOTE_DETAILS
+              Serial.print(' ');
+              print_note_details(MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2());
             #endif
+            Serial.println();
           #endif
           break;
 
@@ -388,6 +393,75 @@ namespace mode_debugger {
           #ifdef DEBUG_CONTROL_CHANGE
             print_channel(MIDI_DEVICE.getChannel());
             Serial.print(F("CC       "));
+            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
+            Serial.print(' ');
+            print_data(MIDI_DEVICE.getData1());
+            Serial.print(' ');
+            print_data(MIDI_DEVICE.getData2());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::ProgramChange:
+          #ifdef DEBUG_PROGRAM_CHANGE
+            print_channel(MIDI_DEVICE.getChannel());
+            Serial.print(F("PC       "));
+            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
+            Serial.print(' ');
+            print_data(MIDI_DEVICE.getData1());
+            #ifdef DEBUG_PROGRAM_CHANGE_DETAILS
+              Serial.print(' ');
+              print_program_change_details(MIDI_DEVICE.getData1());
+            #endif
+            Serial.println();
+          #endif
+          break;
+
+        case midi::AfterTouchChannel:
+          #ifdef DEBUG_AFTER_TOUCH_CHANNEL
+            print_channel(MIDI_DEVICE.getChannel());
+            Serial.print(F("AT. Ch.  "));
+            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
+            Serial.print(' ');
+            print_data(MIDI_DEVICE.getData1());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::PitchBend:
+          #ifdef DEBUG_PITCH_BEND
+            print_channel(MIDI_DEVICE.getChannel());
+            Serial.print(F("PB       "));
+            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
+            Serial.print(' ');
+            print_data(MIDI_DEVICE.getData1());
+            #ifdef DEBUG_PITCH_BEND_DETAILS
+              Serial.print(' ');
+              Serial.print(' ');
+              Serial.print(' ');
+              Serial.print(' ');
+              print_pitch_bend_details(MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2());
+            #endif
+            Serial.println();
+          #endif
+          break;
+
+        case midi::SystemExclusive:
+          break;
+
+        case midi::TimeCodeQuarterFrame:
+          #ifdef DEBUG_SYSTEM_COMMON
+            Serial.print(F("     TCQF     "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.print(' ');
+            print_data(MIDI_DEVICE.getData1());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::SongPosition:
+          #ifdef DEBUG_SYSTEM_COMMON
+            Serial.print(F("     SongPos. "));
             print_data(MIDI_DEVICE.getType());
             Serial.print(' ');
             print_data(MIDI_DEVICE.getData1());
@@ -397,29 +471,77 @@ namespace mode_debugger {
           #endif
           break;
 
-        case midi::PitchBend:
-          #ifdef DEBUG_PITCH_BEND
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("PB       "));
+        case midi::SongSelect:
+          #ifdef DEBUG_SYSTEM_COMMON
+            Serial.print(F("     SongSel. "));
             print_data(MIDI_DEVICE.getType());
             Serial.print(' ');
             print_data(MIDI_DEVICE.getData1());
-            #ifdef DEBUG_PITCH_BEND_DETAILS
-              Serial.print(' ');
-              print_pitch_bend_details(MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2());
-            #endif
             Serial.println();
           #endif
           break;
 
+        case midi::TuneRequest:
+          #ifdef DEBUG_SYSTEM_COMMON
+            Serial.print(F("     TuneReq. "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::Clock:
+          #ifdef DEBUG_REALTIME
+            Serial.print(F("     Clock    "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::Tick:
+          #ifdef DEBUG_REALTIME
+            Serial.print(F("     Tick     "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::Start:
+          #ifdef DEBUG_REALTIME
+            Serial.print(F("     Start    "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::Continue:
+          #ifdef DEBUG_REALTIME
+            Serial.print(F("     Continue "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::Stop:
+          #ifdef DEBUG_REALTIME
+            Serial.print(F("     Stop     "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.println();
+          #endif
+          break;
+
+        case midi::ActiveSensing:
+          break;
+
         case midi::SystemReset:
-          Serial.print(F("     Reset    "));
-          print_data(MIDI_DEVICE.getType());
-          Serial.println();
+          #ifdef DEBUG_RESET
+            Serial.print(F("     Reset    "));
+            print_data(MIDI_DEVICE.getType());
+            Serial.println();
+          #endif
           break;
 
       default:
-        // Serial.println(MIDI_DEVICE.getType());
+        Serial.println(MIDI_DEVICE.getType());
         break;
       }
     }

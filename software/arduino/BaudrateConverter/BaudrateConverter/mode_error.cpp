@@ -10,8 +10,7 @@ extern int error_code;
 
 namespace mode_error {
   void init() {
-    led_init();
-    flash_led(ERROR_NO_ERROR);
+    error_code = ERROR_NO_ERROR;
   }
 
   void loop() {

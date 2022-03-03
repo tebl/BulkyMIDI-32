@@ -7,6 +7,7 @@
 #define APP_TITLE "BaudrateConverter"
 #define APP_VERSION "0.1"
 
+#define BAUD_RATE_115200 115200
 #define BAUD_RATE_38400 38400
 #define BAUD_RATE_31250 31250       // MIDI-specific baud rate
 #define BAUD_RATE_19200 19200
@@ -15,10 +16,6 @@
 #define BAUD_RATE_MIDI BAUD_RATE_31250
 
 struct ComputerBaudRateSettings : public MIDI_NAMESPACE::DefaultSerialSettings {
-  static const long BaudRate = BAUD_RATE_38400;
-};
-
-struct DeviceBaudRateSettings : public MIDI_NAMESPACE::DefaultSerialSettings {
   static const long BaudRate = BAUD_RATE_38400;
 };
 

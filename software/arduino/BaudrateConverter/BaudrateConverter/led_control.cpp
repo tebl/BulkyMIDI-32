@@ -2,7 +2,6 @@
 #include "constants.h"
 
 void led_init() {
-  pinMode(PIN_LED, OUTPUT);
   digitalWrite(PIN_LED, LOW);
 }
 

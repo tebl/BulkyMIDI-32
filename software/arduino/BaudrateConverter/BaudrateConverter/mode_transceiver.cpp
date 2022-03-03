@@ -7,7 +7,7 @@
 #include "functions.h"
 
 extern midi::MidiInterface<midi::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>> MIDI_COMPUTER;
-extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial, DeviceBaudRateSettings>> MIDI_DEVICE;
+extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial>> MIDI_DEVICE;
 
 namespace mode_transceiver {
   void init() {
