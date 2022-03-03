@@ -14,6 +14,5 @@
 .dsn
 
 resources/
-C64 Pi1541-II Faceplate/
-C64 Pi1541-II FaceplateB/
-C64 Pi1541-II Module/
+BulkyMIDI-32 Module/export/
+BulkyMIDI-32 Extras/export/
