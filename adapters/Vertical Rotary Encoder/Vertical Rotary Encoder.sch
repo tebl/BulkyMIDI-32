@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "Vertical Rotary Encoder"
 Date ""
-Rev "A"
+Rev "B"
 Comp ""
 Comment1 "Jumpers allow reversing direction."
 Comment2 ""
@@ -50,7 +50,7 @@ F 1 "CLK" H 6800 3675 50  0000 C CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 6725 3550 50  0001 C CNN
 F 3 "~" H 6725 3550 50  0001 C CNN
 	1    6725 3550
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
 Text GLabel 5325 3550 0    50   Output ~ 0
 BTN
@@ -77,7 +77,7 @@ Wire Wire Line
 Connection ~ 5075 3725
 Wire Wire Line
 	5075 3725 6075 3725
-Text GLabel 6725 3700 3    50   Output ~ 0
+Text GLabel 6725 3125 1    50   Output ~ 0
 CLK
 $Comp
 L Jumper:SolderJumper_3_Bridged12 JP2
@@ -88,9 +88,9 @@ F 1 "DAT" H 7500 3475 50  0000 C CNN
 F 2 "Jumper:SolderJumper-3_P1.3mm_Open_Pad1.0x1.5mm" H 7425 3350 50  0001 C CNN
 F 3 "~" H 7425 3350 50  0001 C CNN
 	1    7425 3350
-	1    0    0    -1  
+	-1   0    0    1   
 $EndComp
-Text GLabel 7425 3500 3    50   Output ~ 0
+Text GLabel 7425 3125 1    50   Output ~ 0
 DAT
 Wire Wire Line
 	6000 3350 7000 3350
@@ -118,4 +118,8 @@ Text Label 6100 3550 0    50   ~ 0
 A
 Text Label 6100 3350 0    50   ~ 0
 B
+Wire Wire Line
+	7425 3200 7425 3125
+Wire Wire Line
+	6725 3125 6725 3400
 $EndSCHEMATC
