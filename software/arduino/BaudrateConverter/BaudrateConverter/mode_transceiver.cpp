@@ -2,7 +2,6 @@
 #include <MIDI.h>
 #include <SoftwareSerial.h>
 #include "constants.h"
-#include "settings.h"
 #include "led_control.h"
 #include "functions.h"
 
