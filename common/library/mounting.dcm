@@ -6,4 +6,10 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP Mounting_Pin
+D Generic connector, single row, 01x01
+K connector
+F ~
+$ENDCMP
+#
 #End Doc Library
