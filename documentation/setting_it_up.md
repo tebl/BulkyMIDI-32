@@ -57,6 +57,12 @@ The control scheme depends on the hardware available, for the BulkyMIDI-32 I've 
 scheme = simple_buttons
 ```
 
+If you are using it in combination with the [Extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras)-module, then you may want to control the device using a rotary encoder instead. At the moment this is only used as a replacement for the volume up and down buttons, but other features may be added by the mt32-pi project at a later point in time. To use the encoder, we will instead using the *simple_encoder* control scheme instead.
+```
+[control]
+scheme = simple_encoder
+```
+
 ### 1.3.4> Display type
 The BulkyMIDI-32 can be built with a selection of screens, but in the design I've focused on common 128x64 OLED over I2C. The one I prefer for this is the larger 1.3" inch screen from *diymore*, but note that while they probably sold it to you as having a ssd1306 controller things they are not completely compatible and you'd need to specify this as type *sh1106_i2c* instead. One thing to note is that the displays I bought had indication on the back that it would have I2C address *7a*, but you need to keep it at the default *3c* instead as it is the only seemed to work for me.
 ```
