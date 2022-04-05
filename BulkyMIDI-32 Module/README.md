@@ -1,5 +1,5 @@
 # BulkyMIDI-32 Module
-The complete BulkyMIDI-32 consists of several separate PCB designs, this documentation covers the main module that enables you to use common functionality supported by the [mt32-pi](https://github.com/dwhinham/mt32-pi) firmware. Note that each of the modules will have their own set of documentation such as the one you are now reading.
+The complete BulkyMIDI-32 consists of several separate PCB designs, this documentation covers the main module that enables you to use common functionality supported by the [mt32-pi](https://github.com/dwhinham/mt32-pi) firmware. Any additional modules such as the [BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras), will have their own set of documenentation - so browse around to get the full picture (in particular when ordering parts).
 
 ![Finished unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-02-26%2001.01.24.jpg)
 ![Bare unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_040.jpg)
@@ -103,13 +103,17 @@ Remember when I mentioned earlier about wiring up the display correct? This is w
 With the faceplate installed, bend the display pins slightly so that they go into the holes on the board - adjust their position so that the display sits evenly against the faceplate without looking crooked. Solder one of the display pins on the bottom of the board, readjust as needed before soldering the remaining pins.
 
 ## 1.6> Finishing touches
-If you've made it this far, you should hopefully be ready to start using it. Check out the additional documentation for [setting it up](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md), mainly taking care of setting up your memory with the configuration to match the hardware you've just built. [Getting started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md) goes through some of the low-hanging fruits when it comes to playing music through it.
+If you've made it this far, you should hopefully be ready to start using it. Check out the additional documentation for [setting it up](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md), mainly taking care of setting up your memory with the configuration to match the hardware you've just built. [Getting started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md) goes through some of the low-hanging fruits when it comes to actually playing music through it.
 
 ![Build 042](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_042.jpg)
 
 The device is powered using a 5v DC barrel jack (center positive) with sufficient amperage to support the version of the Raspberry Pi module you are using. These should be easy to obtain from your favourite electronics vendor, just make sure that it's from a somewhat respected brand.
 
 The Raspberry Pi 4 is significantly slower to boot than their previous generation, so give it a few more seconds before panicking - you should get something on your I2C screen after a short while. If you don't, remove the Raspberry Pi and connect it to HDMI and see if it looks the boot screen changes with or without the memory card inserted (MT32-PI doesn't generate a picture, but it'll be different from not being able to boot such as when a memory card is unavailable or unbootable). You should also doublecheck that you set up the [configuration](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md) to match the type of display you are using or its address may have been set differently.
+
+![BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_050)
+
+If you intend to use the BulkyMIDI-32 along with [BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras), now is a good time to get started on following the build instructions for building up one of those as well. Interconnecting them vertically is done using some extra length female pin headers on the extras board and some simple dual row pin-headers on the underside of this board. The board acts as an expansion, adding several of the features and options that I could not easily fit within the main boards dimensions. If you need MIDI THRU ports, passive audio mixing as well as one or two RS232-module or wanted to use a rotary encoder then that's where you'll find these options.
 
 # 2> Schematic
 The supplied KiCad files should be sufficient as both a schematic and as a  starting point for ordering PCBs (basically you could just zip the contents of the export folder and upload that on a fabrication site), the schematic is also available in [PDF-format](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation/schematic) and this is what you'll need to print and work your way through this things don't work as expected after assembly.
@@ -134,6 +138,7 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | J4                    | 10-pin female header                                              |    (1)|
 | J5                    | 5-pin right angle pin header                                      |    (1)|
 | J6                    | 4-pin right angle pin header                                      |    (1)|
+| J7                    | 2x10 pin header (mounted on underside for extras board)           |    (1)|
 | R1,R2,R4,R5,R6        | 220 ohm resistor                                                  |     5 |
 | R3                    | 1k ohm resistor                                                   |     1 |
 | SW1-SW4               | 6x6x5mm right-angle momentary button                              |     4 |
@@ -144,4 +149,4 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | Mounting ****         | Nylon M3x6mm nylon screws                                         |     4 |
 | Mounting ****         | Nylon M3x6mm nylon nuts                                           |     6 |
 
-****) These are used in various places of the project. You can usually find kits for M3 nylon standoffs, that should contain what you need.
+****) These are used in various places of the project, these are available in the form of kits usually advertised *M3 nylon standoff kit* which should contain most of what you'd need.
