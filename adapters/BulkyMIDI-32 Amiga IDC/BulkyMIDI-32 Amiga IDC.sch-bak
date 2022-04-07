@@ -745,10 +745,10 @@ NoConn ~ 3775 2875
 NoConn ~ 3775 2975
 NoConn ~ 3775 3075
 $Comp
-L mounting:Mounting M?
+L mounting:Mounting M4
 U 1 1 622103FA
 P 11125 675
-F 0 "M?" H 11125 775 50  0001 C CNN
+F 0 "M4" H 11125 775 50  0001 C CNN
 F 1 "Mounting" H 11125 600 50  0001 C CNN
 F 2 "mounting:M3" H 11125 675 50  0001 C CNN
 F 3 "" H 11125 675 50  0001 C CNN
@@ -756,10 +756,10 @@ F 3 "" H 11125 675 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L mounting:Mounting M?
+L mounting:Mounting M3
 U 1 1 62210400
 P 11000 675
-F 0 "M?" H 11000 775 50  0001 C CNN
+F 0 "M3" H 11000 775 50  0001 C CNN
 F 1 "Mounting" H 11000 600 50  0001 C CNN
 F 2 "mounting:M3" H 11000 675 50  0001 C CNN
 F 3 "" H 11000 675 50  0001 C CNN

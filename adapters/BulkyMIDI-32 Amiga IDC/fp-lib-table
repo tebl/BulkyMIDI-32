@@ -6,4 +6,5 @@
   (lib (name artwork)(type KiCad)(uri $KIPRJMOD/../../common/modules/artwork.pretty)(options "")(descr ""))
   (lib (name RND_DSUB)(type KiCad)(uri $KIPRJMOD/../../common/modules/RND_DSUB.pretty)(options "")(descr ""))
   (lib (name Gameport)(type KiCad)(uri $KIPRJMOD/../../common/modules/Gameport.pretty)(options "")(descr ""))
+  (lib (name DB25_Serial)(type KiCad)(uri D:/ownCloud/Documents/Projects/BulkyMIDI-32/common/modules/DB25_Serial.pretty)(options "")(descr ""))
 )
