@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "BulkyMIDI-32 Amiga (IDC)"
 Date ""
-Rev "A"
+Rev "B"
 Comp ""
 Comment1 ""
 Comment2 ""
