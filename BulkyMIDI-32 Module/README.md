@@ -123,7 +123,7 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference             | Item                                                              | Count | Order  |
 | --------------------- | ----------------------------------------------------------------- | ----- | ------ |
-| BulkyMIDI-32 Module   | Fabricate using Gerber files                                      |     1 | [PCBWay]()
+| BulkyMIDI-32 Module   | Fabricate using Gerber files                                      |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_35d2ed18.html)
 | A1                    | 2x20 pin female header                                            |     1 |
 |                       | Raspberry Pi version 3 or 4                                       |     1 |
 | A2                    | GY-PCM5102 I2S DAC (the purple kind)                              |     1 |

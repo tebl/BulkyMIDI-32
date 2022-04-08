@@ -18,6 +18,6 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference      | Item                                                  | Count | Order  |
 | ---------------| ----------------------------------------------------- | ----- | ------ |
-| Faceplate PCB  | Fabricate using Gerber files                          |     1 | PCBWay
+| Faceplate PCB  | Fabricate using Gerber files                          |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Faceplate_FA1_22c4404e.html)
 | J1             | 1x10 long male header pins                            |     1 |
 | SW1,SW2        | 6x6x11mm right-angle momentary button                 |     1 |
