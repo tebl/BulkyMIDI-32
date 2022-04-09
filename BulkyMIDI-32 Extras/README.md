@@ -1,16 +1,26 @@
 # BulkyMIDI-32 Extras
-Building the BulkyMIDI-32, there were a few features I wanted to add that didn't really fit within the $5 (100x100mm) dimensions on PCBWay. For that reason, the features that weren't strictly needed were instead moved onto this board instead - which is why it's referred to as the *extras* board in most of the documentation. The additional features provided by this module is as follows:
+Building the BulkyMIDI-32, there were a few features I wanted to add that didn't really fit within the $5 (100x100mm) dimensions on PCBWay. For that reason, the features that weren't strictly needed were instead moved onto this board instead - which is why it's referred to as the *extras* board in most of the documentation. 
 
+![Build 042](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_042.jpg)
+
+The additional features provided by this module are as follows:
 * Providing an option for mounting RS232-modules for level translation
 * An Atmega328 MCU for performing baud rate translation of these signals when connecting a real Roland MT-32 to a PCs serial port. This is due to MIDI using a custom baud rate that the outside of what the serial port can be configured to provide without physically changing the crystal on the card itself.
 * Passive two-channel audio mixer, allowing you to mix the soundeffects coming from the sound card with that of the MIDI module without dealing with configuring a mixer in software on the card.
 * Status LEDs
 * Three extra MIDI ports that can individually be configured to serve as additional OUT or THRU ports.
 
-For the most part you would only install the components for the features that you need or want, follow the links below for additional information on where these components are located as well as whatever information you'd need on constructing the *extras* board.
+For the most part you would only install the components for the features that you need or want, the links below will allow you to jump to a specific point in the build process and to access other details. Do however start at the beginning, but do not be alarmed at the sheer length of the build process - most of it'll take a lot longer to describe than it is to simply implement them.
 
 - [1> Building the device](#1-building-the-device)
   - [1.1> Soldering it together](#11-soldering-it-together)
+  - [1.2> Install LEDs](#12-install-leds)
+  - [1.3> The story continues](#13-the-story-continues)
+  - [1.4> Adding a rotary encoder](#14-adding-a-rotary-encoder)
+  - [1.5> Installing the RS-232 modules](#15-installing-the-rs-232-modules)
+  - [1.6> Connecting the boards](#16-connecting-the-boards)
+  - [1.7> Installing the firmware](#17-installing-the-firmware)
+  - [1.8> Finishing touches](#18-finishing-touches)
 - [2> Schematic](#2-schematic)
 - [3> BOM](#3-bom)
 
@@ -29,7 +39,9 @@ Given the features listed at the start of this document, there are quite possibl
 * **Yellow** components are the RS232-modules, two of which can be installed (as briefly touched upon previously). If only one module is required, JP4-JP6 can be linked so that the module communicates with the *MT32-PI* firmware instead of the optional baud rate conversion feature provided by the MCU.
 * Finally, the **blue** components implement a simple passive audio mixer. It supports two channels when the *extras* board is used a standalone module, when connecting to it to the main module the audio output from that is used a third channel.
 
-That may sound like a lot to take in, but for the most part a good starting point is just to aim for the installation of the purple, blue as well as one of the RS232-modules required by the yellow parts. The build instructions from this point on will aim for the installation of everything, but feel free to leave out what you don't need according to colour chart above. 
+That may sound like a lot to take in, but for the most part a good starting point is just to aim for the installation of the purple, blue as well as one of the RS-232 modules highlighted in yellow. The build instructions from this point on will aim for the installation of everything, but feel free to leave out what you don't need according to colour chart above.
+
+**NB!** Don't worry if the sheer length of the thing looks intimidating, it is for the most part just a running commentary on what is done and updated pictures as we go along. Everything will be explained in due time, quite possibly including a lot that is not needed with a passable familiarity with soldering things together.
 
 ## 1.1> Soldering it together
 The construction of this unit should be fairly straight-forward, just take your time in order to make sure everything goes into place - more or less straight. I usually recommend starting by having a good look at the PCBs, try to figure out where the components should go and in particular the orientation they should be installed - it may be a case of round thing going into another round thing, but this is electronics and the small details matter. As mentioned in the previous section, you may not want every feature so pay attention to the colour coding when deciding what to leave out.
@@ -46,7 +58,7 @@ Sockets should be installed for the two ICs needed for the complete unit - you c
 
 ![Build 004](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_004.jpg)
 
-We've also gone ahead and installed our non-polarized capacitors, for the most part these will simply be 100nF (component marked *104*) decoupling caps added to ensure that the ICs function as intended and no values will be printed for them on the PCB. The two capacitors below the crystal are different however, these are marked on the board as 10nF (component marked *103*).
+We've also gone ahead and installed our non-polarized capacitors, for the most part these will simply be 100nF (component marked *104*) decoupling caps added to ensure that the ICs function as intended and no values will be printed for them on the PCB. The two capacitors below the crystal are different however, these are marked on the board as 10pF (component will be marked either *100* or simply *10*).
 
 ## 1.2> Install LEDs
 Somehow I managed the rather impressive task of coming up with a rather strange way of mounting the LEDs, requiring me to write a separate chapter on the things. Anyway, the idea was to have the LEDs facing forwards (there are three of them in the later designs) and so the leads need to be bent so that the back of the LED sit flush against the PCB.
@@ -139,47 +151,68 @@ From the [Arduino IDE](https://www.arduino.cc/en/software), which you've no doub
 
 At this point the Atmega328p on the board has become an almost complete Arduino Uno by itself. At the moment it'll have been initialized with the standard blink-sketch, but as we'll want to run more interesting things on it we need the [BaudrateConverter](https://github.com/tebl/BulkyMIDI-32/tree/main/software/arduino/BaudrateConverter)-sketch compiled and uploaded to it. For that we need to connect it over USB, but since the we don't actually have any onboard USB UART as found on a real Arduino UNO (which is why I said it was "*almost*" one) we'll need to connect using a *USB TTL Serial Adapter* such as the one that can be shown wired up below. Refer to the two pictures above to see how the two are connected, note that the black cable is ground and is connected to pin 6 on the board (pin 5 not connected).
 
-![Build 054](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_054.jpg)
+![Build 054](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_054.png)
 
 As we've previously changed the programmer to "*USBTinyISP*", we'll need to change that back to "*AVRISP MkII*" instead. Hit compile and if everything looks good, you can try to hit upload and hopefully it'll upload the sketch as expected. If not, ensure that you've selected the correct serial port from the ports menu - usually you can just disconnect the serial adapter to figure out which one disappeared, then reconnect it and select the correct one. If none show up, try another serial TTL adapter and alternatively a different set of dupont wires - both of these seem to have been produced without any attention to quality control.
 
+The firmware itself can for the most part be configured using the jumpers at *J14* and *J15*, one is immediately above the other though for the default operation of the device as expected you won't need to add any jumpers here. Note that there are several modes of operation provided by the device, using the ASCII setting will decode and display MIDI messages on serial as they are received as input - unfortunately it'll easily overrun the serial buffers so this is mostly only be usable when debugging equipment that don't send large bursts of data at a time. 
+
 ## 1.8> Finishing touches
-With all of that done, it's time to enjoy some games. Or at the very least have it loop the title music with all the glory that is the Roland MT-32 (at least as close as it gets).
+With the firmware in place, there isn't much more that is left to do other than connect the two modules together using the standoffs and finally add a faceplate to the top of the thing. If you have any caps that would fit onto the knurled shafts of the potentiometer, those would also go a long way towards finalizing the build process. The rotary encoder comes with a different type of shaft that might be a bit harder to get a hold of, but they're usually described as having a D-type shaft.
 
 ![Build 080](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_080.jpg)
+
+With all of that done, it's time to enjoy some game - or at the very least have it loop the games title music, just to listen to all the glory that is the Roland MT-32 (at least as close as we can get without buying one). 
 
 # 2> Schematic
 The supplied KiCad files should be sufficient as both a schematic and as a  starting point for ordering PCBs (basically you could just zip the contents of the export folder and upload that on a fabrication site), the schematic is also available in [PDF-format](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation/schematic) and this is what you'll need to print and work your way through this things don't work as expected after assembly.
 
 # 3> BOM
-Most parts should be easy to get a hold of from your favourite local electronic component shop, but given that I don't have access to such shops where I live so everything was based on whatever I could get cheapest from eBay/AliExpress (free shipping, but plan on waiting 3-4 weeks for delivery). Components in parenthesis can be considered optional for features beyond the more basic functionality, but where's the fun in that? You deserve the complete package.
+Most parts should be easy to get a hold of from your favourite local electronic component shop, but given that I don't have access to such shops where I live so everything was based on whatever I could get cheapest from eBay/AliExpress. You can often get free shipping, but plan on waiting 3-4 weeks for delivery so plan accordingly.
 
-| Reference             | Item                                                              | Count | Order  |
-| --------------------- | ----------------------------------------------------------------- | ----- | ------ |
-| BulkyMIDI-32 Extras   | Fabricate using Gerber files                                      |     1 | [PCBWay]()
-| A1                    | 2x20 pin female header                                            |     1 |
-|                       | Raspberry Pi version 3 or 4                                       |     1 |
-| A2                    | GY-PCM5102 I2S DAC (the purple kind)                              |     1 |
-| C1,C3,C4              | 100nF ceramic capacitor (5mm)                                     |     3 |
-| C5                    | 100uF electrolytic capacitor (6.3mm x 2.5mm)                      |     1 |
-| C6                    | 470uF electrolytic capacitor (8mm x 3.5mm)                        |     1 |
-| D1                    | 1N4148N small signal diode (DO-35)                                |     1 |
-| ENC1                  | 5-pin right angle pin header                                      |    (1)|
-| IC1                   | 1.3 inch I2C OLED display (can use 0.96 inch display also)        |     1 |
-| J1                    | 2.1mm x 5.5mm barrel plug                                         |    (1)|
-| J2, J3                | Female S-terminal 5pin DIN PCB                                    |    (5)|
-| J4                    | 10-pin female header                                              |    (1)|
-| J5                    | 5-pin right angle pin header                                      |    (1)|
-| J6                    | 4-pin right angle pin header                                      |    (1)|
-| J7                    | 2x10 pin header (mounted on underside for extras board)           |    (1)|
-| R1,R2,R4,R5,R6        | 220 ohm resistor                                                  |     5 |
-| R3                    | 1k ohm resistor                                                   |     1 |
-| SW1-SW4               | 6x6x5mm right-angle momentary button                              |     4 |
-| U1                    | 74HCT14 (DIP-14)                                                  |     1 |
-| U2                    | H11L1M opto-coupler (DIP-6)                                       |     1 |
-| Mounting ****         | Nylon M3 hex standoffs 15mm (M-F)                                 |     4 |
-| Mounting ****         | Nylon M3 hex standoffs 10mm (9mm cut down) (M-F)                  |     2 |
-| Mounting ****         | Nylon M3x6mm nylon screws                                         |     4 |
-| Mounting ****         | Nylon M3x6mm nylon nuts                                           |     6 |
+As detailed elsewhere in the [build](#1-building-the-device) portion of this document, you can simply choose to install the features you want in order to cut down on the construction costs or simply limit yourself to those that you have the parts for. To keep the BOM-portion below somewhat readable, the item counts in parenthesis are optional and consists mainly of parts related to the baud rate conversion feature as well as additional *MIDI OUT* and *MIDI THRU* ports. Note that some of the listings have been repeated as they are listed with different description, so order what you need and check the list twice.
+
+| Reference               | Item                                                              | Count | Order  |
+| ----------------------- | ----------------------------------------------------------------- | ----- | ------ |
+| BulkyMIDI-32 Extras     | Fabricate using Gerber files                                      |     1 | PCBWay
+| C1                      | 100nF ceramic capacitor (5mm)                                     |     1 |
+| C2,C5,C7 *              | 100nF ceramic capacitor (5mm)                                     |    (3)|
+| C3,C4 *                 | 10pF ceramic capacitor (5mm)                                      |    (2)|
+| C6                      | 470uF electrolytic capacitor (8mm x 3.5mm)                        |     1 |
+| D1,D2,D4                | 5mm LEDs, preferably frosted (not the bright clear ones)          |    (3)|
+| D3 *                    | 1N4148N small signal diode (DO-35)                                |    (1)|
+| ENC1                    | [Vertical Rotary Encoder](https://github.com/tebl/BulkyMIDI-32/tree/main/adapters/Vertical%20Rotary%20Encoder) |    (1)|
+| J1                      | 2.1mm x 5.5mm barrel plug                                         |    (1)|
+| J4                      | 10-pin dual row female pin header (extra long, see [documentation](#16-connecting-the-boards)) |     1 |
+| J2,J3,J5,J10,J11        | Female S-terminal 5pin DIN PCB                                    |    (5)|
+| J6                      | RS-232-module                                                     |    (1)|
+| J7-J9                   | PJ-317 (5-pin 3.5mm audio jack), preferably 2x blue and 1x green  |     3 |
+| J12 *                   | 6-pin segment of male pin headers, with pin 5 removed             |    (1)|
+| J14 *                   | 2-pin segment of male pin headers                                 |    (1)|
+| J13 *                   | 2x3 segment of dual row male pin headers                          |    (1)|
+| J14 *                   | 2x2 segment of dual row male pin headers                          |    (1)|
+| J16                     | RS-232-module stacked on top of J6, wired to pads below module    |    (1)|
+| R4                      | 1k ohm resistor                                                   |    (1)|
+| R5                      | 2k2 (2200) ohm resistor                                           |    (1)|
+| R1,R2,R18 *             | 220 ohm resistor                                                  |    (3)|
+| R3,R6,R13,R14,R15,R16 * | 220 ohm resistor                                                  |    (6)|
+| R7-R12                  | 1k ohm resistor                                                   |     6 |
+| R17 *                   | 10k ohm resistor                                                  |    (1)|
+| R19                     | 2k2 (2200) ohm resistor                                           |     1 |
+| R20 *                   | 2k2 (2200) ohm resistor                                           |    (1)|
+| RV1,RV2                 | RV097G 10k (stereo audio potentimeter)                            |     2 |
+| U1                      | 74HCT14 (DIP-14)                                                  |     1 |
+| U2 *                    | ATmega328P (DIP-28, narrow socket)                                |    (1)|
+| U3 *                    | 6N138 opto-coupler (DIP-8)                                        |    (1)|
+| Y1 *                    | 16 Mhz crystal (HC-49S)                                           |    (1)|
+| SW1 *                   | 6x6mm momentary button                                            |    (1)|
+| Mounting ***            | 20mm M2 screws                                                    |    (2)|
+| Mounting ***            | 20mm M2 nuts                                                      |    (6)|
+| Mounting ****           | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
+| Mounting ****           | Nylon M3x6mm nylon nuts                                           |     6 |
+
+*) These components are only needed when installing the MCU for baud rate conversion.
+
+***) These are used to hold the RS-232-modules in place, especially if you plan on installing two of them. With only the one module you can use shorter screws instead.
 
 ****) These are used in various places of the project, these are available in the form of kits usually advertised *M3 nylon standoff kit* which should contain most of what you'd need.
