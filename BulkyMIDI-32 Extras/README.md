@@ -174,7 +174,7 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 
 | Reference               | Item                                                              | Count | Order  |
 | ----------------------- | ----------------------------------------------------------------- | ----- | ------ |
-| BulkyMIDI-32 Extras     | Fabricate using Gerber files                                      |     1 | PCBWay
+| BulkyMIDI-32 Extras     | Fabricate using Gerber files                                      |     1 | https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Extras_9be44f98.html
 | C1                      | 100nF ceramic capacitor (5mm)                                     |     1 |
 | C2,C5,C7 *              | 100nF ceramic capacitor (5mm)                                     |    (3)|
 | C3,C4 *                 | 10pF ceramic capacitor (5mm)                                      |    (2)|

@@ -28,6 +28,6 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference      | Item                                                  | Count | Order  |
 | ---------------| ----------------------------------------------------- | ----- | ------ |
-| Faceplate PCB  | Fabricate using Gerber files                          |     1 | PCBWay |
+| Faceplate PCB  | Fabricate using Gerber files                          |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Vertical_Rotary_Encoder_352faf4d.html)
 | ENC1           | EC11 rotary encoder, 20mm. Preferably plum handle     |     1 |
 | J1             | 4-pin segment of right-angle pin header               |     1 |

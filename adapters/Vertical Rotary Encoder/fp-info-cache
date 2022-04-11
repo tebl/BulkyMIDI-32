@@ -1,43 +1,22 @@
-9862118813749
-BulkyMIDI-32
-DIN5_MIDI
-
-
+4784113787881
+mounting
+M2
+module 1 pin (ou trou mecanique de percage)
+DEV
 0
-5
-5
-BulkyMIDI-32
-GY-PCM5102
-
-
-0
-15
-15
-BulkyMIDI-32
-PWR_Specification
-Barrel connector polarity indicator
-barrel polarity
+1
+1
+mounting
+M3
+module 1 pin (ou trou mecanique de percage)
+DEV
 0
 0
 0
-BulkyMIDI-32
-SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
-tactile switch SPST right angle, PTS645VL39-2 LFS
-tactile switch SPST angled PTS645VL39-2 LFS C&K Button
+mounting
+M3_pin
+module 1 pin (ou trou mecanique de percage)
+DEV
 0
-4
-2
-BulkyMIDI-32
-Vertical_Rotary_Encoder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-4
-4
-BulkyMIDI-32
-Vertical_Rotary_Placeholder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-0
-0
+1
+1
