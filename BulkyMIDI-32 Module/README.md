@@ -1,5 +1,5 @@
 # BulkyMIDI-32 Module
-The complete BulkyMIDI-32 consists of several separate PCB designs, this documentation covers the main module that enables you to use common functionality supported by the [mt32-pi](https://github.com/dwhinham/mt32-pi) firmware. Any additional modules such as the [BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras), will have their own set of documenentation - so browse around to get the full picture (in particular when ordering parts).
+The complete BulkyMIDI-32 consists of several separate PCB designs, this documentation covers the main module that enables you to use common functionality supported by the [mt32-pi](https://github.com/dwhinham/mt32-pi) firmware. Any additional modules such as the [BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras), will have their own set of documenentation - so browse around to get the full picture (especially when you start ordering parts).
 
 ![Finished unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-02-26%2001.01.24.jpg)
 ![Bare unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_040.jpg)
@@ -28,11 +28,11 @@ I will usually try to install components sorted by their physical size, doing it
 
 ![Build 002](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_002.jpg)
 
-Here we've started by soldering all of the resistors, ensuring that we're using the correct values in each position. The single 1n4148 diode has also been installed, pay particular attention so that the black band of the components matches up with the markings on the PCB.
+Here we've started by soldering all of the resistors, ensuring that we're using the correct values in each position. The single 1n4148 diode has also been installed, pay particular attention that the black band of the components matches up with the markings on the PCB.
 
 ![Build 003](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_003.jpg)
 
-Sockets should be installed for the two ICs needed for the complete unit - you could probably manage without them if you know that you're using known good parts. However, they're cheap and you could probably afford to be quite so *cheap*! 
+Sockets should be installed for the two ICs needed for the complete unit - you could probably manage without them if you know that you're using known good parts. However, they're cheap and you could probably afford to be quite so *cheap*!  I recommend tacking opposing corners into place, then reheat and push flush against the board before soldering the remaining pins.
 
 ![Build 004](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_004.jpg)
 
@@ -40,7 +40,7 @@ We've also gone ahead and installed our non-polarized capacitors - they should i
 
 ![Build 005](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_005.jpg)
 
-Next step is adding the female 40-pin header, this is where we'll be plugging in our Raspberry Pi 3 or 4 board at a later point in time.
+Next step is adding the female 40-pin header, this is where we'll be plugging in our Raspberry Pi 3 or 4 - sometime in the future.
 
 ![Build 006](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_006.jpg)
 
@@ -79,7 +79,7 @@ Depending on the faceplate you've chosen, you may need the 10-pin female header 
 
 ![Build 011](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_011.jpg)
 
-Given that the next step will be installing the display, we'll need to adjust its mounting angle to fit with everything in place - for that we need the Raspberry Pi and faceplate in place. The underside of the Raspberry Pi is supported by some 9mm M3 hex standoffs, given the lack of availability for this length I've filed a bit off some of the 10mm ones I had around the workshop. The faceplate will be mounted on 15mm M3 nylon standoffs that we've also gone ahead and installed.
+Given that the next step will be installing the display, we'll need to adjust its mounting angle to fit with everything in place - for that we need the Raspberry Pi and faceplate in place. The underside of the Raspberry Pi is supported by some 9mm M3 hex standoffs, given the lack of availability for this length I've filed a bit off some of the 10mm ones I had around the workshop. The faceplate will be mounted on 15mm M3 nylon standoffs that we've also gone ahead and installed. The picture below should resemble the step we're at now.
 
 ![Build 030](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_030.jpg)
 
@@ -111,7 +111,7 @@ The device is powered using a 5v DC barrel jack (center positive) with sufficien
 
 The Raspberry Pi 4 is significantly slower to boot than their previous generation, so give it a few more seconds before panicking - you should get something on your I2C screen after a short while. If you don't, remove the Raspberry Pi and connect it to HDMI and see if it looks the boot screen changes with or without the memory card inserted (MT32-PI doesn't generate a picture, but it'll be different from not being able to boot such as when a memory card is unavailable or unbootable). You should also doublecheck that you set up the [configuration](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md) to match the type of display you are using or its address may have been set differently.
 
-![BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_050)
+![BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_050.jpg)
 
 If you intend to use the BulkyMIDI-32 along with [BulkyMIDI-32 Extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras), now is a good time to get started on following the build instructions for building up one of those as well. Interconnecting them vertically is done using some extra length female pin headers on the extras board and some simple dual row pin-headers on the underside of this board. The board acts as an expansion, adding several of the features and options that I could not easily fit within the main boards dimensions. If you need MIDI THRU ports, passive audio mixing as well as one or two RS232-module or wanted to use a rotary encoder then that's where you'll find these options.
 
