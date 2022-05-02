@@ -15,7 +15,7 @@ For the most part you would only install the components for the features that yo
 - [1> Building the device](#1-building-the-device)
   - [1.1> Soldering it together](#11-soldering-it-together)
   - [1.2> Install LEDs](#12-install-leds)
-  - [1.3> The story continues](#13-the-story-continues)
+  - [1.3> Crystal and jumpers](#13-crystal-and-jumpers)
   - [1.4> Adding a rotary encoder](#14-adding-a-rotary-encoder)
   - [1.5> Installing the RS-232 modules](#15-installing-the-rs-232-modules)
   - [1.6> Connecting the boards](#16-connecting-the-boards)
