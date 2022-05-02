@@ -1,7 +1,7 @@
 # BulkyMIDI-32 Extras
-Building the BulkyMIDI-32, there were a few features I wanted to add that didn't really fit within the $5 (100x100mm) dimensions on PCBWay. For that reason, the features that weren't strictly needed were instead moved onto this board instead - which is why it's referred to as the *extras* board in most of the documentation. 
+Building the BulkyMIDI-32, I quickly ran into a bit of a problem with the format I had decided upon - there were simply too many features that I had originally wanted, but couldn't fit within the regular $5 board limitations (100x100mm). All of the extra features that weren't strictly required in order for the MT32-PI to function, were moved onto this board instead - which is why it's referred to as the *extras*-board in most of the documentation. 
 
-![Build 042](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_042.jpg)
+![Build 042](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_049.jpg)
 
 The additional features provided by this module are as follows:
 * Providing an option for mounting RS232-modules for level translation
@@ -50,18 +50,20 @@ I will usually try to install components sorted by their physical size, doing it
 
 ![Build 002](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_002.jpg)
 
-Here we've started by soldering all of the resistors, ensuring that we're using the correct values in each position. The single 1n4148 diode has also been installed, pay particular attention so that the black band of the components match up with the markings on the PCB footprint.
+Here we've started by soldering all of the resistors, ensuring that we're using the correct values in each position. The single 1n4148 diode has also been installed, pay particular attention so that the black band - it need to match the markings on the PCB footprint.
 
 ![Build 003](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_003.jpg)
 
-Sockets should be installed for the two ICs needed for the complete unit - you could probably manage without them if you know that you'll only be using known good parts. However, they're cheap and you could probably afford to not be quite so *cheap*! Match the indent on the socket with that on the footprints.
+Sockets should be installed for the two ICs needed for the complete unit - you could probably manage without them if you know that you'll only be using known good parts. However, they're cheap and you could probably afford to not be quite so *cheap*! Match the indent on the socket with that on the footprints. I recommend tacking opposing corners into place, then reheat the pins and push the socket flush against the board.
 
 ![Build 004](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_004.jpg)
 
-We've also gone ahead and installed our non-polarized capacitors, for the most part these will simply be 100nF (component marked *104*) decoupling caps added to ensure that the ICs function as intended and no values will be printed for them on the PCB. The two capacitors below the crystal are different however, these are marked on the board as 10pF (component will be marked either *100* or simply *10*).
+We've also gone ahead and installed our non-polarized capacitors, for the most part these will simply be 100nF (component marked *104*) decoupling caps added to ensure that the ICs function as intended and no values will be printed for them on the PCB. Three of the capacitors are different however, the two directly below the crystal are are marked on the board as 10pF (component itself will be marked either *100* or simply *10*). The last one is the 10nF capacitor on the bottom-right (these should be marked *103*).
+
+Not shown in any of the pictures because I forgot to install it until later, is the single transistor at Q1. If you're lucky you can get transistors with pre-bent legs to match the footprint directly, but as the regular kind costs around a tenth of these we can simply bend the legs slightly outward by ourselves. The entire reason I'm doing it this way is that I prefer soldering with a larger tip so I use a wider footprint to avoid accidentally shorting the legs. Match the flat side of the transistor to that of the footprint.
 
 ## 1.2> Install LEDs
-Somehow I managed the rather impressive task of coming up with a rather strange way of mounting the LEDs, requiring me to write a separate chapter on the things. Anyway, the idea was to have the LEDs facing forwards (there are three of them in the later designs) and so the leads need to be bent so that the back of the LED sit flush against the PCB.
+Somehow I managed the rather impressive task of coming up with a rather strange way of mounting the LEDs, requiring me to write a separate chapter on the things. Anyway, the idea was to have the LEDs facing forwards (there are three of them in the later designs) and the leads will need to be bent so that the rear of the LED sit flush against the edge of the PCB.
 
 ![Build 010](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_010.jpg)
 
@@ -69,12 +71,12 @@ Each of the pins on the LED have their own names, mainly because it's a diode th
 
 ![Build 011](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_011.jpg)
 
-## 1.3> The story continues
-With the LEDs in place, we'll move along to some miscellaneous components, specifically some more components required by the MCU.
+## 1.3> Crystal and jumpers
+With the LEDs in place, we'll move along to some miscellaneous components. Specifically components that will be required by the ATmega 328 MCU, a variant chosen simply because it is so familiar from working with the Arduino Uno.
 
 ![Build 012](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_012.jpg)
 
-The crystal doesn't have a polarity, so just install it as you see fit. The switch marked *reset* is something you would normally not need to deal with, it's just here so that I can reset the MCU while developing the firmware for it - ideally a future version wouldn't randomly crash or experience any sort of buffer overruns. 
+The crystal doesn't have a polarity, so just install it as you see fit. The switch marked *SW1 / reset* is something you would normally not need to deal with, it's just here so that I can reset the MCU while developing the firmware for it - ideally a future version wouldn't randomly crash or experience any sort of buffer overruns. In case you were looking for them in the picture above, they're not there because I forgot to install them.
 
 ![Build 020](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_020.jpg)
 
@@ -86,21 +88,21 @@ The added MIDI ports on the right side of the module, labelled MIDI 1 through 3,
 
 ![Build 021](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_021.jpg)
 
-Male pin headers have been soldered into place, mainly just tack one of the pins into place - reaheat and adjust to find the perfect alignment (hopefully without burning your fingers). I've used some differently coloured ones, but you just use what you have.
+Additionally there's a solder jumper marked *NO_555*, this should be soldered across pins *1-2*. The other position can be used to retain the operation similar to earlier revisions of the boards, it also allows the construction of a slightly cheaper version of the board.
 
 ![Build 022](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_022.jpg)
 
-The three 3.5mm jacks for the passive audio mixer have been soldered into place, the one on the top is the resulting output that would go to your stereo system while the two bottom ones are inputs. Ideally the colour of the output on the top should have been green and the two below them should have been blue, but I didn't have correct colours so this is what I used. At this point you would normally also install the RV097G potentiometers marked *RV1* and *RV2*, but I did not have these at the timing of building these - so just pretend that they're there for now.
+Male pin headers have been soldered into place, mainly just tack one of the pins into place - reaheat and adjust to find the perfect alignment (hopefully without burning your fingers). I've used some differently coloured ones in order to spice things up, but you just use what you have available.
 
 ![Build 023](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_023.jpg)
 
-The *extras* board doesn't actually need a separate DC power jack as power would be provided by the *extras*-connector, marked *J4* on the board - this should only be used when the board is used standalone as a baud rate converter and in most cases you would never need it.
-
-Speaking of power, I've also soldered into place the single electrolytic capacitor at *C6* that ensures that everything on the board is properly powered. It's polarized meaning that we need to put it in the correct way, the stripe indicates the negative side and this goes into on the side of the filled in area. As with the LEDs the pins have names that I'm incapable of remembering, but if you have a longer pin then this goes on the side marked with a little plus sign.
+The three 3.5mm jacks for the passive audio mixer have been soldered into place, the one on the top is the resulting output that would go to your stereo system while the two bottom ones are inputs. Ideally the colour of the output on the top should have be green and the two below them blue, if only to keep it in line with the colour coding on 2000s computer motherboards. At this point you would normally also install the RV097G potentiometers marked *RV1* and *RV2*, but I did not have these at the timing of building these - so just pretend that they're there for now.
 
 ![Build 024](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_024.jpg)
 
-Given that the pictures were taken while building the first prototype, I needed to ensure that everything has enough space when stacked below the main module - for the most part by trimming the parts of component leads that come into contact after adding the 5-pin DIN sockets to the board. For the spacers I'm using 20mm nylon hex standoffs, this should fit without too much attention to the details though you'll need to do some trimming in case something gets in the way.
+The *extras* board doesn't actually need a separate DC power jack as power would be provided by the *extras*-connector, marked *J4* on the board - this should only be used when the board is used standalone as a baud rate converter and in most cases you would never need it.
+
+Speaking of power, I've also soldered into place the single electrolytic capacitor at *C6* that ensures that everything on the board is properly powered. It's polarized meaning that we need to put it in the correct way, the stripe indicates the negative side and this goes into on the side of the filled in area. As with the LEDs the pins have names that I'm incapable of remembering, but if you have a longer pin then this goes on the side marked with a little plus sign. The same goes for *C8*, a smaller capacitor used for the timing on the 555.
 
 ## 1.4> Adding a rotary encoder
 A rotary encoder may be installed as a replacement for the volume up and down buttons, but given the active development of the MT32-PI firmware these may end up doing more interesting things over time so I chose to add it as an option. However, I ran into an issue with the ready-made modules found on different sites (usually referred to as the *KY-040 rotary encoder module*) - mainly that they were significantly larger than they needed to be without much in the order of features.
@@ -110,28 +112,39 @@ Finding one was built to be used at an angle proved to be easier said than done,
 ![Build 030](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_030.jpg)
 ![Build 031](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_031.jpg)
 
-The module is mounted on the *extras* board as expected, but to get the alignment correct it is recommended that you stack the two main modules before soldering into place. This is to ensure that the little tabs sit flush against the top part of the cutout, this should minimize the stress on the solder joints over time though it would probably outlast the rotary encoder itself (as I tend to only buy the cheapest of components).
+The module is mounted on the *extras* board as expected, but to get the alignment correct it is recommended that you stack the two main modules before finally soldering it into place on the bottom. This is to ensure that the little tabs sit flush against the top part of the cutout, minimizing stress on the solder joints over time though it would probably outlast the rotary encoder itself. 
+
+When stacking the modules, you'd use 20mm nylon hex standoffs. When the main module has already been built, you may need trim the bottom of the pins for the 5-pin DIN sockets as these may get in the way of the connectors on the *extras*-board.
 
 ## 1.5> Installing the RS-232 modules
-As previously mentioned, the *extras* board can have two of these modules stacked onto each other as long as you've got the correct one due to the differences and placement of the mounting option - you'll have to browse around for something that looks exactly like the one shown below. Usually you'll find bundles of 3 or 5 of them for the price of a cup of fancy coffee, so there's no reason why you wouldn't want a few extra in the parts-bin
+As previously mentioned, the *extras* board can have two of these modules stacked onto each other as long as you've got the correct one due to the differences and placement of the mounting option - you'll have to browse around for something that looks exactly like the one shown below. Usually you'll find bundles of 3 or 5 of them for the price of a cup of fancy coffee, so there's no reason why you wouldn't want a few extra parts to put in your dedicated parts-bin.
 
 ![Build 040](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_040.jpg)
 ![Build 041](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_041.jpg)
+![Build 042](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_042.jpg)
 
-At first glance there's a lot going on in this picture, but it's easier than it looks. To start things off, the modules are installed upside down and recessed into the *extras* board in order to actually fit two of them. Starting back at the beginning, or rather the underside, I've used a couple of 20mm M2 screws with a couple of nuts added to the topside of the board to hold them in place. The bottom RS-232 module has had its pins straightened using a pair of pliers, then it was threaded onto the screws and fixed into place using another set of nuts.
-
-A third couple of nuts were added onto the screws before adding the second RS-232 module, the position of these were then adjusted to make sure that we can get the fourth and final couple of nuts onto the top. The third set of nuts added earlier and then screwed up so that they sandwich the module firmly into place. As the second RS-232 module needs to be wired into something, we're using the four directly below the modules, since I wanted them removable I've used some dupont cables with one end of the short cable cut off and soldered into the board.
-
-## 1.6> Connecting the boards
-In general the chapter where we do everything that's remaining, but to get started we'll just get those IC sockets populated by the components matching what's marked on the board. Second we'll need to add the connectivity between the two stacked modules.
-
-![Build 042, the meaning of life](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_042.jpg)
-
-The header is labelled *J4* on the board, but viven that there's quite a lot of space between the two modules once stacked on top of eachother (with 20mm spacers in between) we can't use just any female dual row 10-pin header! We need one that looks exactly like the one pictured below, it's the only one I've seen that'll all the way down  (the thing to look for when shopping, is what looks like regular pin header plastic above the female socket part). I had some extra left over from building a stackable Raspberry Pi hat - the pin count doesn't match, but I simply cut off the parts I didn't need with some creative use of my wire clippers.
+As I'll be installing two of the modules, the second adapter will need to be wired using a short cable. Mainly because it'll be a bit of a pain to add later, we'll get that soldered into place before moving on. The ones I'm using here is just some dupont-wires with one end cut off. Some regular male pin headers have also been added.
 
 ![Build 043](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_043.jpg)
 
-Given that this was a prototype, I added some male pin header to the *extras* board and soldered the female header to the bottom of the main module. If I was building one from scratch, I'd do that the other way around so that the main BulkyMIDI-32 module can be used without a long header poking out of the bottom. With everything temporarily connected together, now comes the time for soldering it in place - that way you're sure that the alignment of the two are as good as they can get.
+At first glance there's a lot going on in this picture, but it's easier than it looks. To start things off, the modules are installed upside down and recessed into the *extras* board in order to actually fit two of them. Starting back at the beginning, or rather the underside, I've used a couple of 20mm M2 screws with a couple of nuts per screw added to the topside of the board. Then a second set of nuts are added to finally hold the module in place. Unfortunately that'll require removing the right-angle pin header already on the board first, but that's a relatively easy job as you can heat up one pin at a time and pull it out with a pair of pliers.
+
+![Build 044](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_044.jpg)
+
+Yet another couple of nuts were added onto the screws before adding the second RS-232 module, the position of these were then adjusted to make sure that we can get the fourth and final couple of nuts onto the top. The third set of nuts added earlier and then screwed upwards so that they sandwich the module firmly into place (use threadlock if you have the stuff). Insert the cable and you should be done.
+
+## 1.6> Connecting the boards
+Generally the chapter where we do everything that's remaining, but to get started we'll just get those IC sockets populated by the components matching what's marked on the board. Secondly, we'll need a method of connecting the two stacked modules.
+
+![Build 045](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_045.jpg)
+
+ICs are installed just the way you expect, keeping the indent in the same place as the one on the sockets we added. For connecting the boards, this is done via the header labelled *J4* on the board. Given that there's quite a lot of space between the two modules once stacked on top of eachother (with 20mm spacers in between) we can't use just any female dual row 10-pin header, we'll either need to make a cable - or simply look for one that looks exactly like the one shown below. While shopping for parts, the thing to look for is what would look like regular pin header plastic above the female socket part. I had some extras left over from building a stackable Raspberry Pi hat, the extra pins were simply removed thanks to some rather creative use of wire clippers.
+
+![Build 048](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_048.jpg)
+
+I recommend stacking the modules before attempting to solder the connectors together, this is needed to ensure that the height remains correct between the two. If you're worried about accidentally soldering the boards together, just aim for enough that you get the height correct - remove and then solder remaining pins. Your end result result should look something like the following.
+
+![Build 047](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_047.jpg)
 
 ## 1.7> Installing the firmware
 This section will be a bit truncated because I cheated and nabbed one of the Atmega328p chips out of an Arduino Uno, meaning that it already had the Arduino bootloader already on it so excuse me while I skip over most of the harder stuff. Well, I can't leave it at that so the way I recommend is either following the various guides on the Internet for using another Arduino (such as [this](https://www.brennantymrak.com/articles/programming-avr-with-arduino.html) one) or buying a ready-made module if you're planning on doing it more than this once as it is kind of annoying to build and keep in one piece on a breadboard over time.
@@ -158,7 +171,7 @@ As we've previously changed the programmer to "*USBTinyISP*", we'll need to chan
 The firmware itself can for the most part be configured using the jumpers at *J14* and *J15*, one is immediately above the other though for the default operation of the device as expected you won't need to add any jumpers here. Note that there are several modes of operation provided by the device, using the ASCII setting will decode and display MIDI messages on serial as they are received as input - unfortunately it'll easily overrun the serial buffers so this is mostly only be usable when debugging equipment that don't send large bursts of data at a time. 
 
 ## 1.8> Finishing touches
-With the firmware in place, there isn't much more that is left to do other than connect the two modules together using the standoffs and finally add a faceplate to the top of the thing. If you have any caps that would fit onto the knurled shafts of the potentiometer, those would also go a long way towards finalizing the build process. The rotary encoder comes with a different type of shaft that might be a bit harder to get a hold of, but they're usually described as having a D-type shaft.
+With the firmware in place, there isn't much more that is left to do other than connect the two modules together using the standoffs and finally add a faceplate to the top of the thing. If you have any caps that would fit onto the knurled shafts of the potentiometer, those would also go a long way towards finalizing the build process. Some of the rotary encoders may come with a D-type shaft instead, but it may be worth ordering one with the same shaft as the potentiometers - makes it a lot easier to find matching knobs.
 
 ![Build 080](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_080.jpg)
 
@@ -175,10 +188,12 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | Reference               | Item                                                              | Count | Order  |
 | ----------------------- | ----------------------------------------------------------------- | ----- | ------ |
 | BulkyMIDI-32 Extras     | Fabricate using Gerber files                                      |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Extras_9be44f98.html)
-| C1                      | 100nF ceramic capacitor (5mm)                                     |     1 |
+| C1,C10                  | 100nF ceramic capacitor (5mm)                                     |     2 |
 | C2,C5,C7 *              | 100nF ceramic capacitor (5mm)                                     |    (3)|
 | C3,C4 *                 | 10pF ceramic capacitor (5mm)                                      |    (2)|
 | C6                      | 470uF electrolytic capacitor (8mm x 3.5mm)                        |     1 |
+| C8                      | 1uF electrolytic capacitor (5mm x 2mm)                            |     1 |
+| C9                      | 10nF ceramic capacitor (5mm)                                      |     1 |
 | D1,D2,D4                | 5mm LEDs, preferably frosted (not the bright clear ones)          |    (3)|
 | D3 *                    | 1N4148N small signal diode (DO-35)                                |    (1)|
 | ENC1                    | [Vertical Rotary Encoder](https://github.com/tebl/BulkyMIDI-32/tree/main/adapters/Vertical%20Rotary%20Encoder) |    (1)|
@@ -192,20 +207,25 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | J13 *                   | 2x3 segment of dual row male pin headers                          |    (1)|
 | J14 *                   | 2x2 segment of dual row male pin headers                          |    (1)|
 | J16                     | RS-232-module stacked on top of J6, wired to pads below module    |    (1)|
-| R4                      | 1k ohm resistor                                                   |    (1)|
-| R5                      | 2k2 (2200) ohm resistor                                           |    (1)|
+| JP7                     | 2-pin segment of male pin headers                                 |     1 |
+| Q1                      | 2n3906 transistor (TO-92)                                         |     1 |
 | R1,R2,R18 *             | 220 ohm resistor                                                  |    (3)|
 | R3,R6,R13,R14,R15,R16 * | 220 ohm resistor                                                  |    (6)|
+| R4                      | 1k ohm resistor                                                   |    (1)|
+| R5                      | 2k2 (2200) ohm resistor                                           |    (1)|
 | R7-R12                  | 1k ohm resistor                                                   |     6 |
 | R17 *                   | 10k ohm resistor                                                  |    (1)|
-| R19                     | 2k2 (2200) ohm resistor                                           |     1 |
+| R19                     | 2k2 (2200) ohm resistor                                           |     2 |
 | R20 *                   | 2k2 (2200) ohm resistor                                           |    (1)|
+| R21                     | 100k ohm resistor                                                 |     1 |
+| R22                     | 10k ohm resistor                                                  |     1 |
 | RV1,RV2                 | RV097G 10k (stereo audio potentimeter)                            |     2 |
 | U1                      | 74HCT14 (DIP-14)                                                  |     1 |
 | U2 *                    | ATmega328P (DIP-28, narrow socket)                                |    (1)|
 | U3 *                    | 6N138 opto-coupler (DIP-8)                                        |    (1)|
+| U4                      | NE555P (DIP-8)                                                    |     1 |
 | Y1 *                    | 16 Mhz crystal (HC-49S)                                           |    (1)|
-| SW1 *                   | 6x6mm momentary button                                            |    (1)|
+| SW1 *                   | 6x6x5mm right-angle momentary button                              |    (1)|
 | Mounting ***            | 20mm M2 screws                                                    |    (2)|
 | Mounting ***            | 20mm M2 nuts                                                      |    (6)|
 | Mounting ****           | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
