@@ -4,5 +4,6 @@ The [documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%
 Before starting on this adventure, even with a ready-built unit I suggest at least reading through the [basic information](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md#11-basic-information) section of previously mentioned document - if only so that any weird nomenclature found later on it the document becomes a bit less fuzzy. This is by no meant to be an exhaustive source of information for all things MT-32 or MT32-PI, the purpose is simply to provide some form of a starting point for those of us who've always wanted a Roland MT-32 without really knowing how it is supposed to be used.
 
 - [1> Getting started](#1-getting-started)
-  - [1.1> DOSBox](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_dosbox.md)
-  - [1.2> ScummVM](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_scummvm.md)
+  - [1.1> Commodore Amiga](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_amiga.md)
+  - [1.2> DOSBox](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_dosbox.md)
+  - [1.3> ScummVM](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_scummvm.md)

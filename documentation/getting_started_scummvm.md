@@ -1,7 +1,7 @@
 # 1> Introduction
-This documentation deals with how to get started with a specific system or program related to the use of the *BulkyMIDI-32*, but will in many cases also be relevant for use with a real *Roland MT-32* as well. This document assumes that you have already read the main document on [getting started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md) as some terms may have been defined earlier.
+This documentation deals with how to get started with a specific system or program related to the use of the *BulkyMIDI-32*, but will in many cases also be relevant for use with a real *Roland MT-32* as well. This document assumes that you have already read the main document on [getting started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md) as some relevant terms may have been defined earlier.
 
-- [1> Getting started](#1-getting-started)
+- [1> Introduction](#1-introduction)
 - [2> ScummVM](#2-scummvm)
 
 # 2> ScummVM
