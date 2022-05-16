@@ -1,4 +1,4 @@
-19053622548305880
+19042348551818678
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -300,49 +300,49 @@ battery CR-3032 coin cell vertical
 0
 2
 2
-BulkyMIDI-32
+BulkyMIDI
 Channel_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 21
 21
-BulkyMIDI-32
+BulkyMIDI
 DIN5_MIDI
 
 
 0
 5
 5
-BulkyMIDI-32
+BulkyMIDI
 GY-PCM5102
 
 
 0
 15
 15
-BulkyMIDI-32
+BulkyMIDI
 PWR_Specification
 Barrel connector polarity indicator
 barrel polarity
 0
 0
 0
-BulkyMIDI-32
+BulkyMIDI
 SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
 tactile switch SPST right angle, PTS645VL39-2 LFS
 tactile switch SPST angled PTS645VL39-2 LFS C&K Button
 0
 4
 2
-BulkyMIDI-32
+BulkyMIDI
 Vertical_Rotary_Encoder
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 4
 4
-BulkyMIDI-32
+BulkyMIDI
 Vertical_Rotary_Placeholder
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
@@ -83075,48 +83075,6 @@ varistor SIOV
 0
 2
 2
-artwork
-BulkyMIDI-32
-
-
-0
-0
-0
-i2c_oled
-0.91_I2C_OLED
-
-
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED2
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED_NEW
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-1.3_I2C_OLED_No_mounting
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
 mounting
 M2
 module 1 pin (ou trou mecanique de percage)
@@ -83138,10 +83096,3 @@ DEV
 0
 1
 1
-wire_pads
-OLED_SEL
-Through hole straight pin header, 1x03, 1.27mm pitch, single row
-Through hole pin header THT 1x03 1.27mm single row
-0
-3
-3
