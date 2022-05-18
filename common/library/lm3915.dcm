@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LM3915
+D 10 LED Dot/Bar Display Driver
+K LED driver bar dot
+F https://www.ti.com/lit/ds/symlink/lm3915.pdf
+$ENDCMP
+#
+#End Doc Library
