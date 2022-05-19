@@ -5,4 +5,7 @@
   (lib (name wire_pads)(type KiCad)(uri $KIPRJMOD/../common/modules/wire_pads.pretty)(options "")(descr ""))
   (lib (name BulkyMIDI-32)(type KiCad)(uri $KIPRJMOD/../common/modules/BulkyMIDI-32.pretty)(options "")(descr ""))
   (lib (name artwork)(type KiCad)(uri $KIPRJMOD/../common/modules/artwork.pretty)(options "")(descr ""))
+  (lib (name audio_jack)(type KiCad)(uri $KIPRJMOD/../common/modules/audio_jack.pretty)(options "")(descr ""))
+  (lib (name resistor)(type KiCad)(uri $KIPRJMOD/../common/modules/resistor.pretty)(options "")(descr ""))
+  (lib (name RK097G)(type KiCad)(uri $KIPRJMOD/../common/modules/RK097G.pretty)(options "")(descr ""))
 )

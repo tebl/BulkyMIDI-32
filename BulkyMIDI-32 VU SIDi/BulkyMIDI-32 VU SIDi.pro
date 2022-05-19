@@ -1,4 +1,4 @@
-update=18.05.2022 17:10:22
+update=19.05.2022 15:30:18
 version=1
 last_client=kicad
 [general]
@@ -15,7 +15,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=BulkyMIDI-32 Channel.net
+LastNetListRead=BulkyMIDI-32 VU SIDi.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0

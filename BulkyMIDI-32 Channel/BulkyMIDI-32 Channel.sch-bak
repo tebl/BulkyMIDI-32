@@ -240,8 +240,6 @@ F 3 "" H 1125 9850 50  0001 C CNN
 	1    1250 9750
 	1    0    0    -1  
 $EndComp
-Text Notes 8875 9175 0    50   ~ 0
-Power section
 Wire Wire Line
 	2850 4575 2850 4650
 $Comp
@@ -363,10 +361,6 @@ Wire Wire Line
 Wire Wire Line
 	4950 3475 4800 3475
 Connection ~ 4800 3475
-Wire Notes Line
-	8825 9075 11675 9075
-Wire Notes Line
-	11675 9075 11675 11125
 Wire Notes Line
 	11950 11125 9100 11125
 Wire Wire Line
@@ -940,8 +934,6 @@ Wire Wire Line
 	10475 9750 10475 9675
 Wire Wire Line
 	10675 9675 10675 9750
-Wire Notes Line
-	1000 8900 11125 8900
 Wire Wire Line
 	8050 10425 8050 10500
 Wire Wire Line
@@ -3448,11 +3440,34 @@ F 3 "" H 14575 4350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	14575 4350 14575 4425
+Connection ~ 14575 4425
+$Comp
+L BulkyMIDI:Conn_Power J?
+U 1 1 628A1490
+P 2500 10200
+F 0 "J?" H 2803 10196 50  0000 L CNN
+F 1 "Conn_Power" H 2803 10105 50  0000 L CNN
+F 2 "" H 2500 10200 50  0001 C CNN
+F 3 "~" H 2500 10200 50  0001 C CNN
+	1    2500 10200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2300 10200 2225 10200
+Wire Wire Line
+	2225 10200 2225 9675
+Wire Wire Line
+	2225 9675 1850 9675
+Wire Wire Line
+	2300 10300 2225 10300
+Wire Wire Line
+	2225 10300 2225 10825
+Wire Wire Line
+	2225 10825 1850 10825
 Wire Bus Line
 	14200 4050 14200 6125
 Wire Bus Line
 	14200 1700 14200 3625
 Wire Bus Line
 	1150 6850 15825 6850
-Connection ~ 14575 4425
 $EndSCHEMATC
