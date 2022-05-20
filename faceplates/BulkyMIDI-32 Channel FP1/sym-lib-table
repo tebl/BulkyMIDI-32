@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name BulkyMIDI)(type Legacy)(uri $KIPRJMOD/../../common/library/BulkyMIDI.lib)(options "")(descr ""))
+  (lib (name mounting)(type Legacy)(uri $KIPRJMOD/../../common/library/mounting.lib)(options "")(descr ""))
+)
