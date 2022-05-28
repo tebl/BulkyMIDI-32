@@ -437,10 +437,10 @@ Wire Wire Line
 NoConn ~ 4475 3800
 NoConn ~ 4475 3900
 $Comp
-L mounting:Mounting_Pin M?
+L mounting:Mounting_Pin M5
 U 1 1 6292635F
 P 11100 575
-F 0 "M?" H 11100 675 50  0001 C CNN
+F 0 "M5" H 11100 675 50  0001 C CNN
 F 1 "Mounting_Pin" H 11100 500 50  0001 C CNN
 F 2 "mounting:M3_pin" H 11100 575 50  0001 C CNN
 F 3 "~" H 11100 575 50  0001 C CNN
