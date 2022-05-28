@@ -1,4 +1,4 @@
-update=28.05.2022 16:01:22
+update=28.05.2022 15:59:31
 version=1
 last_client=kicad
 [general]
@@ -15,7 +15,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=BulkyMIDI-32 Play Panel.net
+LastNetListRead=BulkyMIDI-32 Play FP1.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
@@ -57,7 +57,7 @@ OthersTextUpright=1
 SolderMaskClearance=0
 SolderMaskMinWidth=0
 SolderPasteClearance=0
-SolderPasteRatio=-0
+SolderPasteRatio=0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
 Type=0
@@ -250,7 +250,7 @@ dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=../documentation/schematic/
+PlotDirectoryName=../../documentation/schematic/faceplates/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Pcbnew
