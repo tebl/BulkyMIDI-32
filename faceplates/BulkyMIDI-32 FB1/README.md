@@ -1,7 +1,7 @@
-# BulkyMIDI-32 Faceplate (FA3)
-A faceplate designed to be installed onto the secondary modules, in particular when using the Channel or VU SIDi without the main unit. It does not have any electrical components and is purely here as a cosmetic option. 
+# BulkyMIDI-32 Faceplate (FB1)
+A faceplate designed to be installed on the top of my secondary modules, in particular the Channel Monitor or VU SIDi - it has a cutout for the panels designed for them. It does not have any electrical components, and should for the most part be considered a cosmetic option.
 
-![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/BulkyMIDI-32%20FA3.jpg)
+![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/BulkyMIDI-32%20FB1.jpg)
 
 - [1> Schematic](#1-schematic)
 - [2> BOM](#2-bom)

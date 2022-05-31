@@ -4,7 +4,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "BulkyMIDI-32 Faceplate (FA3)"
+Title "BulkyMIDI-32 Faceplate (FB1)"
 Date ""
 Rev "A"
 Comp ""
@@ -57,7 +57,7 @@ F 3 "" H 11150 550 50  0001 C CNN
 	1    11150 550 
 	0    -1   -1   0   
 $EndComp
-Text Notes 7000 6650 0    60   ~ 0
+Text Notes 7000 6750 0    60   ~ 0
 This is a clean version of the faceplate, intended for use with secondary module. It has\nno active components.
 NoConn ~ 6650 100 
 Wire Wire Line
