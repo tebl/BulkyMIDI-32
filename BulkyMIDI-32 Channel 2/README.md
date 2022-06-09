@@ -1,0 +1,3 @@
+# BulkyMIDI-32 Channel 2
+**UNTESTED**
+I know that the main *BulkyMIDI-32* has a fancy display that shows instruments and so on, the original *Roland MT-32* also did something similar back when they were still sold in music shops. However, I wanted an excuse to add a ton of LEDs to the project while having a bit of fun with older logic chips. Because, who doesn't want more blinking lights? Noone, that's who. The other channel monitor board is a bit more interesting in that it does everything with basic logic chips, but I wanted one more variant to play around - this one uses an Arduino instead.
