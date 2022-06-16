@@ -1,4 +1,4 @@
-19056960135836377
+19057974002906794
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -300,76 +300,6 @@ battery CR-3032 coin cell vertical
 0
 2
 2
-BulkyMIDI
-Channel_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-21
-21
-BulkyMIDI
-Conn_Power
-Through hole straight pin header, 1x02, 2.54mm pitch, single row
-Through hole pin header THT 1x02 2.54mm single row
-0
-2
-2
-BulkyMIDI
-DIN5_MIDI
-
-
-0
-5
-5
-BulkyMIDI
-GY-PCM5102
-
-
-0
-15
-15
-BulkyMIDI
-PWR_Specification
-Barrel connector polarity indicator
-barrel polarity
-0
-0
-0
-BulkyMIDI
-Play_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-21
-21
-BulkyMIDI
-SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
-tactile switch SPST right angle, PTS645VL39-2 LFS
-tactile switch SPST angled PTS645VL39-2 LFS C&K Button
-0
-4
-2
-BulkyMIDI
-VU_SIDI_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-25
-25
-BulkyMIDI
-Vertical_Rotary_Encoder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-4
-4
-BulkyMIDI
-Vertical_Rotary_Placeholder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-0
-0
 Button_Switch_Keyboard
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf
@@ -72638,6 +72568,20 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+PlayOnTape
+C64-Cassette-Input
+Through hole straight pin header, 1x06, 2.54mm pitch, single row
+Through hole pin header THT 1x06 2.54mm single row
+0
+6
+6
+PlayOnTape
+C64-Cassette-Port
+
+
+0
+12
+12
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
@@ -83118,19 +83062,82 @@ Through hole pin header THT 1x04 2.54mm single row
 4
 4
 i2c_oled
-0.96_I2C_OLED_NEW
+0.96_I2C_OLED_NoMount
 Through hole straight pin header, 1x04, 2.54mm pitch, single row
 Through hole pin header THT 1x04 2.54mm single row
 0
 4
 4
-i2c_oled
-1.3_I2C_OLED_No_mounting
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
+icons
+c64_play_on_tape
+
+
 0
-4
-4
+0
+0
+icons
+cassette
+
+
+0
+0
+0
+icons
+down
+
+
+0
+0
+0
+icons
+eject
+
+
+0
+0
+0
+icons
+label
+
+
+0
+0
+0
+icons
+logo
+
+
+0
+0
+0
+icons
+play
+
+
+0
+0
+0
+icons
+stop
+
+
+0
+0
+0
+icons
+up
+
+
+0
+0
+0
+icons
+updown
+
+
+0
+0
+0
 mounting
 M2
 module 1 pin (ou trou mecanique de percage)
@@ -83143,19 +83150,19 @@ M3
 module 1 pin (ou trou mecanique de percage)
 DEV
 0
-0
-0
-mounting
-M3_pin
-module 1 pin (ou trou mecanique de percage)
-DEV
-0
 1
 1
-switch_cutout
-SW_PUSH_6mm
-https://www.omron.com/ecb/products/pdf/en-b3f.pdf
-tact sw push 6mm
+pot_vertical
+Potentiometer_Trimmer_Bourns_3296W
+Spindle Trimmer Potentiometer, Bourns 3296W, https://www.bourns.com/pdfs/3296.pdf
+Spindle Trimmer Potentiometer   Bourns 3296W
 0
-4
-2
+3
+3
+sd_card_adapter
+MicroSD_Card_Adapter
+
+
+0
+6
+6

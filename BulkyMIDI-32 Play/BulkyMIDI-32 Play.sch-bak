@@ -1473,6 +1473,6 @@ Wire Bus Line
 	15150 900  15150 7175
 Wire Bus Line
 	15050 7275 15050 8950
-Text Notes 9850 7250 0    50   ~ 0
+Text Notes 9775 7375 0    50   ~ 0
 For a basic device with only MIDI OUT, the remaining\nMIDI components can be omitted. When building only\none MIDI IN circuit, you need to add R7 from the\nalternate circuit as well to avoid floating gate inputs.
 $EndSCHEMATC

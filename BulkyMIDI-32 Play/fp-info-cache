@@ -1,4 +1,4 @@
-19074959537217006
+19057974002906794
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -300,83 +300,6 @@ battery CR-3032 coin cell vertical
 0
 2
 2
-BulkyMIDI-32
-BARREL_JACK
-DC Barrel Jack
-Power Jack
-0
-3
-3
-BulkyMIDI-32
-Channel_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-21
-21
-BulkyMIDI-32
-Conn_Power
-Through hole straight pin header, 1x02, 2.54mm pitch, single row
-Through hole pin header THT 1x02 2.54mm single row
-0
-2
-2
-BulkyMIDI-32
-DIN5_MIDI
-
-
-0
-5
-5
-BulkyMIDI-32
-GY-PCM5102
-
-
-0
-15
-15
-BulkyMIDI-32
-PWR_Specification
-Barrel connector polarity indicator
-barrel polarity
-0
-0
-0
-BulkyMIDI-32
-Play_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-21
-21
-BulkyMIDI-32
-SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
-tactile switch SPST right angle, PTS645VL39-2 LFS
-tactile switch SPST angled PTS645VL39-2 LFS C&K Button
-0
-4
-2
-BulkyMIDI-32
-VU_SIDI_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-25
-25
-BulkyMIDI-32
-Vertical_Rotary_Encoder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-4
-4
-BulkyMIDI-32
-Vertical_Rotary_Placeholder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-0
-0
 Button_Switch_Keyboard
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf
@@ -72645,6 +72568,20 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+PlayOnTape
+C64-Cassette-Input
+Through hole straight pin header, 1x06, 2.54mm pitch, single row
+Through hole pin header THT 1x06 2.54mm single row
+0
+6
+6
+PlayOnTape
+C64-Cassette-Port
+
+
+0
+12
+12
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
@@ -74465,13 +74402,6 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
-RK097G
-RK097G
-
-
-0
-6
-6
 Relay_SMD
 Relay_DPDT_AXICOM_IMSeries_JLeg
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Specification+Or+Standard%7F108-98001%7FW5%7Fpdf%7FEnglish%7FENG_SS_108-98001_W5.pdf
@@ -83110,55 +83040,6 @@ varistor SIOV
 0
 2
 2
-artwork
-BulkyMIDI-32
-
-
-0
-0
-0
-artwork
-BulkyMIDI-32_small
-
-
-0
-0
-0
-artwork
-Channel
-
-
-0
-0
-0
-artwork
-Play
-
-
-0
-0
-0
-artwork
-VU SIDi
-
-
-0
-0
-0
-audio_jack
-2.5mm_audio
-
-
-0
-3
-3
-audio_jack
-Tayda_3.5mm_stereo_TRS_jack_A-853
-
-
-0
-5
-5
 i2c_oled
 0.91_I2C_OLED
 
@@ -83181,19 +83062,82 @@ Through hole pin header THT 1x04 2.54mm single row
 4
 4
 i2c_oled
-0.96_I2C_OLED_NEW
+0.96_I2C_OLED_NoMount
 Through hole straight pin header, 1x04, 2.54mm pitch, single row
 Through hole pin header THT 1x04 2.54mm single row
 0
 4
 4
-i2c_oled
-1.3_I2C_OLED_No_mounting
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
+icons
+c64_play_on_tape
+
+
 0
-4
-4
+0
+0
+icons
+cassette
+
+
+0
+0
+0
+icons
+down
+
+
+0
+0
+0
+icons
+eject
+
+
+0
+0
+0
+icons
+label
+
+
+0
+0
+0
+icons
+logo
+
+
+0
+0
+0
+icons
+play
+
+
+0
+0
+0
+icons
+stop
+
+
+0
+0
+0
+icons
+up
+
+
+0
+0
+0
+icons
+updown
+
+
+0
+0
+0
 mounting
 M2
 module 1 pin (ou trou mecanique de percage)
@@ -83206,33 +83150,19 @@ M3
 module 1 pin (ou trou mecanique de percage)
 DEV
 0
-0
-0
-mounting
-M3_pin
-module 1 pin (ou trou mecanique de percage)
-DEV
-0
 1
 1
-resistor
-R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
-Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
-Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
-0
-2
-2
-resistor
-R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
-Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
-Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
-0
-2
-2
-wire_pads
-OLED_SEL
-Through hole straight pin header, 1x03, 1.27mm pitch, single row
-Through hole pin header THT 1x03 1.27mm single row
+pot_vertical
+Potentiometer_Trimmer_Bourns_3296W
+Spindle Trimmer Potentiometer, Bourns 3296W, https://www.bourns.com/pdfs/3296.pdf
+Spindle Trimmer Potentiometer   Bourns 3296W
 0
 3
 3
+sd_card_adapter
+MicroSD_Card_Adapter
+
+
+0
+6
+6

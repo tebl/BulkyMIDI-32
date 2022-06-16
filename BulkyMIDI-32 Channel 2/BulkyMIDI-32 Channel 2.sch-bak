@@ -11,7 +11,7 @@ Comp ""
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 "It's a MIDI channel monitor, uses an Arduino to blink lights."
+Comment4 "It's a MIDI channel monitor, except it uses an Arduino to blink lights."
 $EndDescr
 $Comp
 L mounting:Mounting M1
@@ -1786,7 +1786,7 @@ U 4 1 62CF7C58
 P 4675 3350
 F 0 "U1" H 4675 3625 50  0000 C CNN
 F 1 "74HCT14" H 4675 3550 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 4675 3350 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 4675 3350 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 4675 3350 50  0001 C CNN
 	4    4675 3350
 	-1   0    0    1   
@@ -1797,7 +1797,7 @@ U 5 1 62CF7C59
 P 4775 2350
 F 0 "U1" H 4775 2175 50  0000 C CNN
 F 1 "74HCT14" H 4775 2100 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 4775 2350 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 4775 2350 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 4775 2350 50  0001 C CNN
 	5    4775 2350
 	1    0    0    -1  
@@ -1808,7 +1808,7 @@ U 6 1 62CF7C5A
 P 5525 2350
 F 0 "U1" H 5525 2175 50  0000 C CNN
 F 1 "74HCT14" H 5525 2100 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 5525 2350 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 5525 2350 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 5525 2350 50  0001 C CNN
 	6    5525 2350
 	1    0    0    -1  
@@ -1819,7 +1819,7 @@ U 7 1 62CF7C5B
 P 11450 10275
 F 0 "U1" V 11083 10275 50  0000 C CNN
 F 1 "74HCT14" V 11174 10275 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 11450 10275 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 11450 10275 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 11450 10275 50  0001 C CNN
 	7    11450 10275
 	1    0    0    -1  
@@ -2036,7 +2036,7 @@ U 1 1 63AF2DAC
 P 5400 4000
 F 0 "U1" H 5400 4275 50  0000 C CNN
 F 1 "74HCT14" H 5400 4200 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 5400 4000 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 5400 4000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 5400 4000 50  0001 C CNN
 	1    5400 4000
 	-1   0    0    1   
@@ -2047,7 +2047,7 @@ U 2 1 63AF4075
 P 4675 4000
 F 0 "U1" H 4675 4275 50  0000 C CNN
 F 1 "74HCT14" H 4675 4200 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 4675 4000 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 4675 4000 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 4675 4000 50  0001 C CNN
 	2    4675 4000
 	-1   0    0    1   
@@ -2058,7 +2058,7 @@ U 3 1 63AF5435
 P 9300 10400
 F 0 "U1" H 9300 10675 50  0000 C CNN
 F 1 "74HCT14" H 9300 10600 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 9300 10400 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 9300 10400 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9300 10400 50  0001 C CNN
 	3    9300 10400
 	0    -1   -1   0   

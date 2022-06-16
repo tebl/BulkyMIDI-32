@@ -118,7 +118,7 @@ U 4 1 5FB8DE88
 P 6025 5500
 F 0 "U1" H 6025 5775 50  0000 C CNN
 F 1 "74HCT14" H 6025 5700 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 6025 5500 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6025 5500 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6025 5500 50  0001 C CNN
 	4    6025 5500
 	1    0    0    -1  
@@ -129,7 +129,7 @@ U 5 1 5FB8F7D6
 P 5275 6050
 F 0 "U1" H 5275 5875 50  0000 C CNN
 F 1 "74HCT14" H 5275 5800 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 5275 6050 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 5275 6050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 5275 6050 50  0001 C CNN
 	5    5275 6050
 	1    0    0    -1  
@@ -140,7 +140,7 @@ U 6 1 5FB904E8
 P 6025 6050
 F 0 "U1" H 6025 5875 50  0000 C CNN
 F 1 "74HCT14" H 6025 5800 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 6025 6050 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6025 6050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6025 6050 50  0001 C CNN
 	6    6025 6050
 	1    0    0    -1  
@@ -151,7 +151,7 @@ U 7 1 5FB9128B
 P 11250 10250
 F 0 "U1" V 10883 10250 50  0000 C CNN
 F 1 "74HCT14" V 10974 10250 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 11250 10250 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 11250 10250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 11250 10250 50  0001 C CNN
 	7    11250 10250
 	1    0    0    -1  
@@ -303,7 +303,7 @@ U 2 1 5FB8CA4F
 P 6025 7475
 F 0 "U1" H 6025 7300 50  0000 C CNN
 F 1 "74HCT14" H 6025 7225 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 6025 7475 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6025 7475 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6025 7475 50  0001 C CNN
 	2    6025 7475
 	1    0    0    -1  
@@ -458,7 +458,7 @@ U 1 1 629D54A4
 P 5275 7475
 F 0 "U1" H 5275 7300 50  0000 C CNN
 F 1 "74HCT14" H 5275 7225 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 5275 7475 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 5275 7475 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 5275 7475 50  0001 C CNN
 	1    5275 7475
 	1    0    0    -1  
@@ -1457,6 +1457,8 @@ Wire Wire Line
 	8050 5850 8125 5850
 Wire Wire Line
 	8050 7475 8125 7475
+Text Notes 9775 7375 0    50   ~ 0
+For a basic device with only MIDI OUT, the remaining\nMIDI components can be omitted. When building only\none MIDI IN circuit, you need to add R7 from the\nalternate circuit as well to avoid floating gate inputs.
 Wire Bus Line
 	15050 1100 15050 1275
 Wire Bus Line
@@ -1473,6 +1475,4 @@ Wire Bus Line
 	15150 900  15150 7175
 Wire Bus Line
 	15050 7275 15050 8950
-Text Notes 9775 7375 0    50   ~ 0
-For a basic device with only MIDI OUT, the remaining\nMIDI components can be omitted. When building only\none MIDI IN circuit, you need to add R7 from the\nalternate circuit as well to avoid floating gate inputs.
 $EndSCHEMATC
