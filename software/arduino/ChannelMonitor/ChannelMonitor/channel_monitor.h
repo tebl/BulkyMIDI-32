@@ -7,7 +7,8 @@ class ChannelMonitor {
         ChannelMonitor(uint8_t pin_data, uint8_t pin_clock, uint8_t pin_latch, uint8_t pin_oe);
         void tick();
         void clear();
-        void set_channel(byte channel, bool state);
+        void boost_channel(byte channel);
+        void clear_channel(byte channel);
     private:
         void write(byte lsb, byte msb);
         byte get_lsb();

@@ -1,6 +1,5 @@
 #include "channel_monitor.h"
-
-#define DEFAULT_TIMER 500
+#include "settings.h"
 
 ChannelMonitor::ChannelMonitor(uint8_t pin_data, uint8_t pin_clock, uint8_t pin_latch, uint8_t pin_oe) {
 	pinMode(pin_data, OUTPUT);
@@ -12,6 +11,7 @@ ChannelMonitor::ChannelMonitor(uint8_t pin_data, uint8_t pin_clock, uint8_t pin_
 	pinMode(pin_latch, OUTPUT);
 	_latch = pin_latch;
 
+    analogWrite(PIN_OE, LED_CHANNEL_MEDIUM);
 	pinMode(pin_oe, OUTPUT);
 	_oe = pin_oe;
 
@@ -58,9 +58,15 @@ void ChannelMonitor::write(byte lsb, byte msb) {
     dirty = false;
 }
 
-void ChannelMonitor::set_channel(byte channel, bool state) {
+void ChannelMonitor::boost_channel(byte channel) {
     _states[channel] = true;
-    _timers[channel] = millis() + DEFAULT_TIMER;
+    _timers[channel] = millis() + CHANNEL_DELAY;
+    dirty = true;
+}
+
+void ChannelMonitor::clear_channel(byte channel) {
+    _states[channel] = false;
+    _timers[channel] = 0;
     dirty = true;
 }
 
