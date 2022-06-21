@@ -1,5 +1,4 @@
-#ifndef Channel_Monitor_H
-#define Channel_Monitor_H
+#pragma once
 #include "Arduino.h" 
 
 class ChannelMonitor {
@@ -23,5 +22,3 @@ class ChannelMonitor {
         unsigned long _timers[16];
         bool _states[16];
 };
-
-#endif

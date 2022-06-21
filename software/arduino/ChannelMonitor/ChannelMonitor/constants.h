@@ -1,5 +1,4 @@
-#ifndef Constants_H
-#define Constants_H
+#pragma once
 
 #define PIN_DATA 2
 #define PIN_CLOCK 3
@@ -22,5 +21,3 @@
 #define LED_CHANNEL_LOW 254
 #define LED_CHANNEL_MEDIUM 240
 #define LED_CHANNEL_HIGH 0
-
-#endif

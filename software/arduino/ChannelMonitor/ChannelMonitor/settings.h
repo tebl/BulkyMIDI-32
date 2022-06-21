@@ -1,5 +1,4 @@
-#ifndef Settings_H
-#define Settings_H
+#pragma once
 #include "constants.h"
 
 /* Defines how long the activity LED will stay on before turning off without
@@ -13,5 +12,3 @@
  * for people who don't like too much flickering this is a good thing.
  */
 #define CHANNEL_DELAY 250
-
-#endif
