@@ -11,11 +11,39 @@ ChannelMonitor::ChannelMonitor(uint8_t pin_data, uint8_t pin_clock, uint8_t pin_
 	pinMode(pin_latch, OUTPUT);
 	_latch = pin_latch;
 
-    analogWrite(PIN_OE, LED_CHANNEL_MEDIUM);
+    set_brightness(Brightness::BRIGHTNESS_MEDIUM);
 	pinMode(pin_oe, OUTPUT);
 	_oe = pin_oe;
 
     clear();
+}
+
+void ChannelMonitor::set_brightness(Brightness value) {
+    switch (value) {
+        case Brightness::BRIGHTNESS_LOW:
+            analogWrite(PIN_OE, LED_CHANNEL_LOW);
+            break;
+
+        case Brightness::BRIGHTNESS_MEDIUM:
+            analogWrite(PIN_OE, LED_CHANNEL_MEDIUM);
+            break;
+
+        case Brightness::BRIGHTNESS_HIGH:
+            analogWrite(PIN_OE, LED_CHANNEL_HIGH);
+            break;
+
+        default:
+            return;
+    }
+
+    _brightness = value;
+}
+
+void ChannelMonitor::toggle_brightness() {
+    uint8_t value = _brightness;
+    if (value == Brightness::BRIGHTNESS_HIGH) value = Brightness::BRIGHTNESS_LOW;
+    else value++;
+    set_brightness((Brightness) value);
 }
 
 byte ChannelMonitor::get_lsb() {

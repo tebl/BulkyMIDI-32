@@ -1,5 +1,6 @@
 #pragma once
 #include "Arduino.h" 
+#include "brightness.h"
 
 class ChannelMonitor {
     public:
@@ -9,6 +10,8 @@ class ChannelMonitor {
         void boost_channel(byte channel);
         void clear_channel(byte channel);
         void write(byte lsb, byte msb);
+        void set_brightness(Brightness value);
+        void toggle_brightness();
     private:
         byte get_lsb();
         byte get_msb();
@@ -21,4 +24,5 @@ class ChannelMonitor {
         bool dirty;
         unsigned long _timers[16];
         bool _states[16];
+        uint8_t _brightness;
 };

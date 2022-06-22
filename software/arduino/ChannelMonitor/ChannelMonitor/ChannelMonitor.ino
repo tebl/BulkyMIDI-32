@@ -7,12 +7,24 @@
 #include "custom_led.h"
 #include "intro_sequence.h"
 
-CustomLED activity(PIN_ACTIVITY, ACTIVITY_BRIGHTNESS);
+CustomLED activity(PIN_ACTIVITY);
 ChannelMonitor channels(PIN_DATA, PIN_CLOCK, PIN_LATCH, PIN_OE);
 ezButton button(PIN_SELECT);
 IntroSequence intro(INTRO_STEP);
 
 MIDI_CREATE_DEFAULT_INSTANCE();
+
+void read_settings() {
+    Brightness level = Brightness::BRIGHTNESS_MEDIUM;
+    if (digitalRead(PIN_MODE_A) == LOW && digitalRead(PIN_MODE_B) == LOW) {
+        level = Brightness::BRIGHTNESS_LOW;
+    } else if (digitalRead(PIN_MODE_A) == LOW || digitalRead(PIN_MODE_B) == LOW) {
+        level = Brightness::BRIGHTNESS_HIGH;
+    }
+
+    activity.set_brightness(level);
+    channels.set_brightness(level);
+}
 
 void setup() {
     activity.boost(50);
@@ -20,6 +32,7 @@ void setup() {
 
     pinMode(PIN_MODE_A, INPUT_PULLUP);
     pinMode(PIN_MODE_B, INPUT_PULLUP);
+    read_settings();
 
     MIDI.begin(MIDI_CHANNEL_OMNI);
 }
@@ -41,6 +54,13 @@ void loop() {
     #else
         channels.tick();
     #endif
+
+    button.loop();
+    if (button.isPressed()) {
+        activity.toggle_brightness();
+        activity.boost(1000);
+        channels.toggle_brightness();
+    }
 
     activity.tick();
     if (MIDI.read()) {
