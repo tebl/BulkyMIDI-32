@@ -62,8 +62,6 @@ void loop() {
 
     activity.tick();
     if (MIDI.read()) {
-        intro.abort();
-
         switch (MIDI.getType()) {
             case midi::NoteOn:              // 0x90
             case midi::NoteOff:             // 0x80
@@ -72,6 +70,9 @@ void loop() {
             case midi::ProgramChange:       // 0xC0
             case midi::AfterTouchChannel:   // 0xD0
             case midi::PitchBend:           // 0xE0
+                #if INTRO_STEP > 0
+                    intro.abort();
+                #endif
                 channels.boost_channel(MIDI.getChannel());
                 activity.boost(ACTIVITY_DELAY);
                 break;
