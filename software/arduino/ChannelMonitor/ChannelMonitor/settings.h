@@ -11,7 +11,7 @@
  * appear mostly solid.
  */
 #define ACTIVITY_DELAY 50
-#define ACTIVITY_BRIGHTNESS LED_ACT_MEDIUM
+#define ACTIVITY_DECAY 5
 
 /* Defines how long a channel will stay lit after a MIDI-message has been
  * received. Not as exact, but for people who don't like too much flickering
@@ -23,3 +23,17 @@
  * least this many milliseconds before we recognize it as a valid press. 
  */
 #define DEBOUNCE_DELAY 50
+
+/* Defines the analog values used with the LEDs, these may need tweaking if
+ * the "LOW" settings fails to light up your LEDs. Note that the channel LED
+ * brightness have their values reversed are they're controlling the output
+ * signal on the shift registers.
+ */
+#define LED_ACT_HIGH 255
+#define LED_ACT_MEDIUM 64
+#define LED_ACT_LOW 16
+#define LED_ACT_OFF 0
+
+#define LED_CHANNEL_LOW 254
+#define LED_CHANNEL_MEDIUM 240
+#define LED_CHANNEL_HIGH 0

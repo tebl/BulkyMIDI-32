@@ -13,6 +13,7 @@ class CustomLED {
     private:
         uint8_t _pin;
         byte value;
+        byte real_value;
 
         unsigned long timer;
         uint8_t _brightness;

@@ -27,7 +27,7 @@ void read_settings() {
 }
 
 void setup() {
-    activity.boost(50);
+    activity.boost(2500);
     button.setDebounceTime(DEBOUNCE_DELAY);
 
     pinMode(PIN_MODE_A, INPUT_PULLUP);
@@ -40,8 +40,6 @@ void setup() {
 void loop() {
     #if INTRO_STEP > 0
         if (!intro.is_done()) {
-            activity.boost(10);
-
             if (intro.is_ready()) {
                 channels.write(intro.get_lsb(), intro.get_msb());
                 intro.next();

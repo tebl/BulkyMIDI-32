@@ -12,12 +12,3 @@
 
 #define PIN_VU_LEFT 18
 #define PIN_VU_RIGHT 19
-
-#define LED_ACT_HIGH 255
-#define LED_ACT_MEDIUM 64
-#define LED_ACT_LOW 16
-#define LED_ACT_OFF 0
-
-#define LED_CHANNEL_LOW 254
-#define LED_CHANNEL_MEDIUM 240
-#define LED_CHANNEL_HIGH 0

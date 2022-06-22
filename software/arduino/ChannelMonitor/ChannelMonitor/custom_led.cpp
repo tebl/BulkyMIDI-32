@@ -10,13 +10,26 @@ CustomLED::CustomLED(uint8_t pin) {
 
 void CustomLED::tick() {
     if (timer > 0 && millis() > timer) {
-        digitalWrite(_pin, LOW);
+        #if ACTIVITY_DECAY > 0
+            if (real_value > 0) {
+                real_value--;
+                timer = millis() + ACTIVITY_DECAY;
+                analogWrite(_pin, real_value);
+            } else {
+                timer = 0;
+                digitalWrite(_pin, LOW);
+            }
+        #else
+            timer = 0;
+            digitalWrite(_pin, LOW);
+        #endif
    }
 }
 
 void CustomLED::boost(int period) {
     timer = millis() + period;
-    analogWrite(_pin, value);
+    real_value = value;
+    analogWrite(_pin, real_value);
 }
 
 void CustomLED::clear(byte channel) {
@@ -41,8 +54,9 @@ void CustomLED::set_brightness(Brightness level) {
         default:
             return;
     }
-    
-    analogWrite(PIN_OE, value);
+    real_value = value;
+
+    analogWrite(PIN_OE, real_value);
     _brightness = level;
 }
 
