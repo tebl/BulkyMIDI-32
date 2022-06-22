@@ -8,8 +8,8 @@ class ChannelMonitor {
         void clear();
         void boost_channel(byte channel);
         void clear_channel(byte channel);
-    private:
         void write(byte lsb, byte msb);
+    private:
         byte get_lsb();
         byte get_msb();
 

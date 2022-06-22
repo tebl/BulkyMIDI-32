@@ -5,16 +5,18 @@
 #include "settings.h"
 #include "channel_monitor.h"
 #include "custom_led.h"
+#include "intro_sequence.h"
 
 CustomLED activity(PIN_ACTIVITY, ACTIVITY_BRIGHTNESS);
 ChannelMonitor channels(PIN_DATA, PIN_CLOCK, PIN_LATCH, PIN_OE);
-ezButton select(PIN_SELECT);
+ezButton button(PIN_SELECT);
+IntroSequence intro(INTRO_STEP);
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
 void setup() {
-    activity.boost(2500);
-    select.setDebounceTime(DEBOUNCE_DELAY);
+    activity.boost(50);
+    button.setDebounceTime(DEBOUNCE_DELAY);
 
     pinMode(PIN_MODE_A, INPUT_PULLUP);
     pinMode(PIN_MODE_B, INPUT_PULLUP);
@@ -23,14 +25,27 @@ void setup() {
 }
 
 void loop() {
-    select.loop();
-    if (select.isPressed()) {
-        activity.boost(50);
-    }
+    #if INTRO_STEP > 0
+        if (!intro.is_done()) {
+            activity.boost(10);
+
+            if (intro.is_ready()) {
+                channels.write(intro.get_lsb(), intro.get_msb());
+                intro.next();
+            } else {
+                delay(10);
+            }
+        } else {
+            channels.tick();
+        }
+    #else
+        channels.tick();
+    #endif
 
     activity.tick();
-    channels.tick();
     if (MIDI.read()) {
+        intro.abort();
+
         switch (MIDI.getType()) {
             case midi::NoteOn:              // 0x90
             case midi::NoteOff:             // 0x80
