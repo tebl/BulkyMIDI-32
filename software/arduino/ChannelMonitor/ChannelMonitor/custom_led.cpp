@@ -56,7 +56,7 @@ void CustomLED::set_brightness(Brightness level) {
     }
     real_value = value;
 
-    analogWrite(PIN_OE, real_value);
+    analogWrite(_pin, real_value);
     _brightness = level;
 }
 
