@@ -73,7 +73,7 @@ void loop() {
                 #if INTRO_STEP > 0
                     intro.abort();
                 #endif
-                channels.boost_channel(MIDI.getChannel());
+                channels.boost_channel(MIDI.getChannel() - 1);
                 activity.boost(ACTIVITY_DELAY);
                 break;
             default:
