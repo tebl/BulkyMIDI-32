@@ -7,7 +7,8 @@ class CustomLED {
         CustomLED(uint8_t pin, byte decay);
         void tick();
         void boost(int period);
-        void clear(byte channel);
+        void enable();
+        void clear();
         void set_brightness(Brightness value);
         void toggle_brightness();
     private:

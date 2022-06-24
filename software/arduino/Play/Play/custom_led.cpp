@@ -33,7 +33,11 @@ void CustomLED::boost(int period) {
     analogWrite(_pin, real_value);
 }
 
-void CustomLED::clear(byte channel) {
+void CustomLED::enable() {
+    analogWrite(_pin, value);
+}
+
+void CustomLED::clear() {
     digitalWrite(_pin, LOW);
     timer = 0;
 }
