@@ -11,7 +11,7 @@ CustomLED::CustomLED(uint8_t pin, byte decay) {
 
 void CustomLED::tick() {
     if (timer > 0 && millis() > timer) {
-        #if ACTIVITY_DECAY > 0
+        #if LED_DECAY > 0
             if (real_value > 0) {
                 real_value--;
                 timer = millis() + _decay;
@@ -41,15 +41,15 @@ void CustomLED::clear(byte channel) {
 void CustomLED::set_brightness(Brightness level) {
     switch (level) {
         case Brightness::BRIGHTNESS_LOW:
-            value = LED_ACT_LOW;
+            value = LED_LOW;
             break;
 
         case Brightness::BRIGHTNESS_MEDIUM:
-            value = LED_ACT_MEDIUM;
+            value = LED_MEDIUM;
             break;
 
         case Brightness::BRIGHTNESS_HIGH:
-            value = LED_ACT_HIGH;
+            value = LED_HIGH;
             break;
 
         default:
