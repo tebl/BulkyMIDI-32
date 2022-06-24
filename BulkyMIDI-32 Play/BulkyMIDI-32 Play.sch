@@ -1459,6 +1459,29 @@ Wire Wire Line
 	8050 7475 8125 7475
 Text Notes 9775 7375 0    50   ~ 0
 For a basic device with only MIDI OUT, the remaining\nMIDI components can be omitted. When building only\none MIDI IN circuit, you need to add R7 from the\nalternate circuit as well to avoid floating gate inputs.
+$Comp
+L 74xx:74HC14 U1
+U 3 1 62B9B026
+P 6825 10600
+F 0 "U1" H 6825 10425 50  0000 C CNN
+F 1 "74HCT14" H 6825 10350 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6825 10600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6825 10600 50  0001 C CNN
+	3    6825 10600
+	0    -1   -1   0   
+$EndComp
+NoConn ~ 6825 10300
+$Comp
+L power:GND #PWR0121
+U 1 1 62BAE7B4
+P 6825 10900
+F 0 "#PWR0121" H 6825 10650 50  0001 C CNN
+F 1 "GND" H 6830 10727 50  0000 C CNN
+F 2 "" H 6825 10900 50  0001 C CNN
+F 3 "" H 6825 10900 50  0001 C CNN
+	1    6825 10900
+	1    0    0    -1  
+$EndComp
 Wire Bus Line
 	15050 1100 15050 1275
 Wire Bus Line
