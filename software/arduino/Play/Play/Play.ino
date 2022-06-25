@@ -1,17 +1,27 @@
 #include <Arduino.h>
-#include <U8g2lib.h>
 #include <RotaryEncoder.h>
 #include <ezButton.h>
 #include <SPI.h>
 #include <SdFat.h>
+#include <Wire.h>
+#include <SSD1306Ascii.h>
+#include <SSD1306AsciiWire.h>
 #include <MD_MIDIFile.h>
 #include "constants.h"
 #include "settings.h"
 #include "custom_led.h"
+#include "custom_font.h"
 
 #define SERIAL_RATE 31250
 
-U8G2_SSD1306_128X32_UNIVISION_F_HW_I2C oled(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
+enum PlayerState: uint8_t {
+    INACTIVE = 0,
+    PLAYING = 1,
+    PAUSED = 2,
+    ERROR = 3
+};
+
+SSD1306AsciiWire oled;
 RotaryEncoder encoder(PIN_PREV, PIN_NEXT, RotaryEncoder::LatchMode::FOUR3);
 CustomLED activity_led(PIN_ACTIVITY, LED_DECAY);
 CustomLED system_led(PIN_SYSTEM, LED_DECAY);
@@ -19,6 +29,9 @@ ezButton button(PIN_RE_BTN);
 
 SDFAT SD;
 MD_MIDIFile SMF;
+
+PlayerState state = PlayerState::INACTIVE;
+unsigned long timer_start;
 
 const uint8_t FNAME_SIZE = 13;
 const char* MIDI_EXT = ".MID";
@@ -75,7 +88,11 @@ void setup() {
       system_led.enable();
     }
   }
-  oled.begin();
+  system_led.clear();
+
+  Wire.begin();
+  Wire.setClock(400000L);
+  oled.begin(&Adafruit128x32, I2C_ADDRESS);
 
   // Initialize MIDIFile
   SMF.begin(&SD);
@@ -83,29 +100,21 @@ void setup() {
   SMF.setSysexHandler(sysex_callback);
 }
 
-void drawIcon(u8g2_uint_t x, u8g2_uint_t y, const uint8_t  *font, uint16_t glyph) {
-  oled.setFont(font);
-  oled.drawGlyph(x, y, glyph);
-}
-
 /* Flash an LED to the beat.
  */
-void tickMetronome(void) {
+void tick_metronome(void) {
   static uint32_t lastBeatTime = 0;
   static boolean  inBeat = false;
   uint16_t  beatTime;
 
-  beatTime = 60000/SMF.getTempo();    // msec/beat = ((60sec/min)*(1000 ms/sec))/(beats/min)
+  beatTime = 60000 / SMF.getTempo();    // msec/beat = ((60sec/min)*(1000 ms/sec))/(beats/min)
   if (!inBeat) {
-    if ((millis() - lastBeatTime) >= beatTime)
-    {
+    if ((millis() - lastBeatTime) >= beatTime) {
       lastBeatTime = millis();
-      activity_led.enable();
+      activity_led.boost(100);
       inBeat = true;
     }
-  }
-  else
-  {
+  } else {
     // keep the flash on for 100ms only
     if ((millis() - lastBeatTime) >= 100) {
       activity_led.clear();
@@ -114,28 +123,57 @@ void tickMetronome(void) {
   }
 }
 
-int x = 4;
+void show_state() {
+  switch (state) {
+    case PlayerState::INACTIVE:
+      oled.println(F("Select file:"));
+      break;
+
+    case PlayerState::PLAYING:
+      oled.println(F("I>"));
+      break;
+
+    case PlayerState::PAUSED:
+      oled.println(F("II"));
+      break;
+
+    default:
+      oled.println(F("!"));
+      break;
+  }
+}
+
+void play_file(const char *s) {
+  int err = SMF.load(s);
+  if (err != MD_MIDIFile::E_OK) {
+    state = PlayerState::ERROR;
+    system_led.enable();
+    timer_start = millis();
+  } else {
+    system_led.clear();
+    state = PlayerState::PLAYING;
+  }
+}
+
+const char *filename = "POPCORN.MID";
 int pos = 0;
-bool pressed = false;
 bool update = true;
 void loop() {
   button.loop();
-  pressed = false;
 
   activity_led.tick();
   system_led.tick();
   encoder.tick();
 
+  /* Encoder input */
   int newPos = encoder.getPosition();
   if (pos != newPos) {
     switch (encoder.getDirection()) {
       case RotaryEncoder::Direction::CLOCKWISE:
-        x++;
         update = true;
         break;
         
       case RotaryEncoder::Direction::COUNTERCLOCKWISE:
-        x--;
         update = true;
         break;
 
@@ -146,23 +184,46 @@ void loop() {
     pos = newPos;
   }
 
+  /* Button input */
   if (button.isPressed()) {
-    pressed = true;
+    if (state == PlayerState::PLAYING) state = PlayerState::PAUSED;
+    else {
+      play_file(filename);
+      state = PlayerState::PLAYING;
+    }
     update = true;
   } else if (button.isReleased()) update = true;
 
+  /* Handle player states */
+  switch (state) {
+    case PlayerState::INACTIVE:
+      break;
+
+    case PlayerState::PLAYING:
+      if (!SMF.isEOF()) {
+        if (SMF.getNextEvent())
+          tick_metronome();
+      } else {
+        SMF.close();
+        midi_silence();
+        timer_start = millis();
+        state = PlayerState::INACTIVE;
+        update = true;
+      }
+      break;
+
+    default:
+      break;
+  }
+
+  /* Update the screen */
   if (update) {
-    oled.clearBuffer();
-    drawIcon(4, 19, u8g2_font_open_iconic_all_2x_t, ICON_NOTE);
-    oled.setFont(u8g2_font_amstrad_cpc_extended_8f);
-    // if (pressed) {
-    //   oled.drawStr(x,30,"Click!");
-    // } else oled.drawStr(x,30,"Hello World!");
-    oled.drawLine(0, 0, 127, 0);
-    oled.drawLine(0, 31, 127, 31);
-    oled.drawLine(0, 0, 0, 31);
-    oled.drawLine(127, 0, 127, 31);
-    oled.sendBuffer();
+    oled.clear();
+    oled.setFont(custom_font);
+    show_state();
+
+    oled.print("{|}~");
+    oled.println(filename);
     update = false;
   }
 }

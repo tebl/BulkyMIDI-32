@@ -22,3 +22,5 @@
 #define LED_MEDIUM 128
 #define LED_LOW 32
 #define LED_OFF 0
+
+#define I2C_ADDRESS 0x3C
