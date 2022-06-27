@@ -1,11 +1,12 @@
 #pragma once
 #include "constants.h"
 
+// #define ENABLE_METRONOME
+
 /* Defines how long the LEDs will stay on before turning off without any
- * activity. Increasing this value from around 100ms to 250ms will make it
- * appear mostly solid.
+ * additional activity.
  */
-#define LED_DELAY 50
+#define LED_DELAY 250
 #define LED_DECAY 5
 
 /* Button debounce delay, meaning that a switch needs to be stable for at

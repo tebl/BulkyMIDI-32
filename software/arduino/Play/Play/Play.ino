@@ -12,7 +12,19 @@
 #include "custom_led.h"
 #include "custom_font.h"
 
-#define SERIAL_RATE 31250
+#define USE_MIDI  1   // set to 1 to enable MIDI output, otherwise debug output
+
+#ifdef USE_MIDI // set up for direct MIDI serial output
+  #define DEBUG(s, x)
+  #define DEBUGX(s, x)
+  #define DEBUGS(s)
+  #define SERIAL_RATE 31250
+#else // don't use MIDI to allow printing debug statements
+  #define DEBUG(s, x)  do { Serial.print(F(s)); Serial.print(x); } while(false)
+  #define DEBUGX(s, x) do { Serial.print(F(s)); Serial.print(F("0x")); Serial.print(x, HEX); } while(false)
+  #define DEBUGS(s)    do { Serial.print(F(s)); } while (false)
+  #define SERIAL_RATE 57600
+#endif // USE_MIDI
 
 enum PlayerState: uint8_t {
     INACTIVE = 0,
@@ -31,10 +43,8 @@ SDFAT SD;
 MD_MIDIFile SMF;
 
 PlayerState state = PlayerState::INACTIVE;
-unsigned long timer_start;
+bool update_oled = true;
 
-const uint8_t FNAME_SIZE = 13;
-const char* MIDI_EXT = ".MID";
 
 /* Called by the MIDIFile library when a file event needs to be processed thru
  * the midi communications interface.
@@ -42,12 +52,20 @@ const char* MIDI_EXT = ".MID";
  * This callback is set up in the setup() function.
  */
 void midi_callback(midi_event *pev) {
-  if ((pev->data[0] >= 0x80) && (pev->data[0] <= 0xe0)) {
-    Serial.write(pev->data[0] | pev->channel);
-    Serial.write(&pev->data[1], pev->size-1);
-  } else {
-    Serial.write(pev->data, pev->size);
-  }
+  #ifdef USE_MIDI
+    if ((pev->data[0] >= 0x80) && (pev->data[0] <= 0xe0)) {
+      Serial.write(pev->data[0] | pev->channel);
+      Serial.write(&pev->data[1], pev->size-1);
+    } else Serial.write(pev->data, pev->size);
+  #endif
+
+  DEBUG("\n", millis());
+  DEBUG("\tM T", pev->track);
+  DEBUG(":  Ch ", pev->channel+1);
+  DEBUGS(" Data");
+  for (uint8_t i=0; i<pev->size; i++) {
+    DEBUGX(" ", pev->data[i]);
+  } 
 }
 
 /* Called by the MIDIFile library when a system Exclusive (sysex) file event
@@ -57,6 +75,11 @@ void midi_callback(midi_event *pev) {
  * This callback is set up in the setup() function.
  */
 void sysex_callback(sysex_event *pev) {
+  DEBUG("\nS T", pev->track);
+  DEBUGS(": Data");
+  for (uint8_t i=0; i<pev->size; i++) {
+    DEBUGX(" ", pev->data[i]);
+  }
 }
 
 /* Turn everything off on every channel. Some midi files are badly behaved and
@@ -85,6 +108,7 @@ void setup() {
   // Initialize SD
   if (!SD.begin(PIN_SD_SELECT, SPI_FULL_SPEED)) {
     while (true) {
+      DEBUGS("\nSD init fail!");
       system_led.enable();
     }
   }
@@ -125,42 +149,57 @@ void tick_metronome(void) {
 
 void show_state() {
   switch (state) {
-    case PlayerState::INACTIVE:
-      oled.println(F("Select file:"));
-      break;
-
     case PlayerState::PLAYING:
-      oled.println(F("I>"));
+      oled.println(F("      {"));
       break;
 
     case PlayerState::PAUSED:
-      oled.println(F("II"));
+      oled.println(F("      |"));
+      break;
+
+    case PlayerState::ERROR:
+      oled.println(F("      @"));
       break;
 
     default:
-      oled.println(F("!"));
+      oled.println(F("      }"));
       break;
   }
+}
+
+void set_state(PlayerState new_state) {
+  state = new_state;
+  switch (state) {
+
+  case PlayerState::INACTIVE:
+    system_led.boost(LED_DELAY);
+
+  case PlayerState::ERROR:
+    system_led.enable();
+    break;
+  
+  default:
+    activity_led.boost(LED_DELAY);
+    break;
+  }
+  update_oled = true;
 }
 
 void play_file(const char *s) {
   int err = SMF.load(s);
   if (err != MD_MIDIFile::E_OK) {
-    state = PlayerState::ERROR;
-    system_led.enable();
-    timer_start = millis();
+    DEBUG(" - SMF load Error ", err);
+    set_state(PlayerState::ERROR);
   } else {
     system_led.clear();
-    state = PlayerState::PLAYING;
+    set_state(PlayerState::PLAYING);
   }
 }
 
-const char *filename = "POPCORN.MID";
+const char *filename = "LOOPDEMO.MID";
 int pos = 0;
-bool update = true;
 void loop() {
   button.loop();
-
   activity_led.tick();
   system_led.tick();
   encoder.tick();
@@ -170,11 +209,11 @@ void loop() {
   if (pos != newPos) {
     switch (encoder.getDirection()) {
       case RotaryEncoder::Direction::CLOCKWISE:
-        update = true;
+        update_oled = true;
         break;
         
       case RotaryEncoder::Direction::COUNTERCLOCKWISE:
-        update = true;
+        update_oled = true;
         break;
 
       default:
@@ -184,31 +223,39 @@ void loop() {
     pos = newPos;
   }
 
-  /* Button input */
-  if (button.isPressed()) {
-    if (state == PlayerState::PLAYING) state = PlayerState::PAUSED;
-    else {
-      play_file(filename);
-      state = PlayerState::PLAYING;
-    }
-    update = true;
-  } else if (button.isReleased()) update = true;
-
   /* Handle player states */
   switch (state) {
     case PlayerState::INACTIVE:
+      if (button.isPressed()) {
+        play_file(filename);
+      }
       break;
 
     case PlayerState::PLAYING:
-      if (!SMF.isEOF()) {
-        if (SMF.getNextEvent())
-          tick_metronome();
+      DEBUGS("\nS_PLAYING");
+      if (button.isPressed()) {
+        set_state(PlayerState::PAUSED);
+        SMF.pause(true);
       } else {
-        SMF.close();
-        midi_silence();
-        timer_start = millis();
-        state = PlayerState::INACTIVE;
-        update = true;
+        if (!SMF.isEOF()) {
+          if (SMF.getNextEvent()) {
+            #ifdef ENABLE_METRONOME
+              tick_metronome();
+            #endif
+            system_led.boost(10);
+          }
+        } else {
+          SMF.close();
+          midi_silence();
+          set_state(PlayerState::INACTIVE);
+        }
+      }
+      break;
+
+    case PlayerState::PAUSED:
+      if (button.isPressed()) {
+        set_state(PlayerState::PLAYING);
+        SMF.pause(false);
       }
       break;
 
@@ -217,13 +264,14 @@ void loop() {
   }
 
   /* Update the screen */
-  if (update) {
+  if (update_oled) {
     oled.clear();
     oled.setFont(custom_font);
+    oled.println();
     show_state();
 
-    oled.print("{|}~");
+    oled.println();
     oled.println(filename);
-    update = false;
+    update_oled = false;
   }
 }
