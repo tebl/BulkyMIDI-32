@@ -12,19 +12,7 @@
 #include "custom_led.h"
 #include "custom_font.h"
 
-#define USE_MIDI  1   // set to 1 to enable MIDI output, otherwise debug output
-
-#ifdef USE_MIDI // set up for direct MIDI serial output
-  #define DEBUG(s, x)
-  #define DEBUGX(s, x)
-  #define DEBUGS(s)
-  #define SERIAL_RATE 31250
-#else // don't use MIDI to allow printing debug statements
-  #define DEBUG(s, x)  do { Serial.print(F(s)); Serial.print(x); } while(false)
-  #define DEBUGX(s, x) do { Serial.print(F(s)); Serial.print(F("0x")); Serial.print(x, HEX); } while(false)
-  #define DEBUGS(s)    do { Serial.print(F(s)); } while (false)
-  #define SERIAL_RATE 57600
-#endif // USE_MIDI
+#define SERIAL_RATE 31250
 
 enum PlayerState: uint8_t {
     INACTIVE = 0,
@@ -52,20 +40,10 @@ bool update_oled = true;
  * This callback is set up in the setup() function.
  */
 void midi_callback(midi_event *pev) {
-  #ifdef USE_MIDI
-    if ((pev->data[0] >= 0x80) && (pev->data[0] <= 0xe0)) {
-      Serial.write(pev->data[0] | pev->channel);
-      Serial.write(&pev->data[1], pev->size-1);
-    } else Serial.write(pev->data, pev->size);
-  #endif
-
-  DEBUG("\n", millis());
-  DEBUG("\tM T", pev->track);
-  DEBUG(":  Ch ", pev->channel+1);
-  DEBUGS(" Data");
-  for (uint8_t i=0; i<pev->size; i++) {
-    DEBUGX(" ", pev->data[i]);
-  } 
+  if ((pev->data[0] >= 0x80) && (pev->data[0] <= 0xe0)) {
+    Serial1.write(pev->data[0] | pev->channel);
+    Serial1.write(&pev->data[1], pev->size-1);
+  } else Serial1.write(pev->data, pev->size);\
 }
 
 /* Called by the MIDIFile library when a system Exclusive (sysex) file event
@@ -75,11 +53,6 @@ void midi_callback(midi_event *pev) {
  * This callback is set up in the setup() function.
  */
 void sysex_callback(sysex_event *pev) {
-  DEBUG("\nS T", pev->track);
-  DEBUGS(": Data");
-  for (uint8_t i=0; i<pev->size; i++) {
-    DEBUGX(" ", pev->data[i]);
-  }
 }
 
 /* Turn everything off on every channel. Some midi files are badly behaved and
@@ -101,14 +74,13 @@ void midi_silence(void) {
 }
 
 void setup() {
-  Serial.begin(SERIAL_RATE);
+  Serial1.begin(SERIAL_RATE);
   activity_led.boost(2500);
   button.setDebounceTime(DEBOUNCE_DELAY);
 
   // Initialize SD
   if (!SD.begin(PIN_SD_SELECT, SPI_FULL_SPEED)) {
     while (true) {
-      DEBUGS("\nSD init fail!");
       system_led.enable();
     }
   }
@@ -188,7 +160,6 @@ void set_state(PlayerState new_state) {
 void play_file(const char *s) {
   int err = SMF.load(s);
   if (err != MD_MIDIFile::E_OK) {
-    DEBUG(" - SMF load Error ", err);
     set_state(PlayerState::ERROR);
   } else {
     system_led.clear();
@@ -196,7 +167,7 @@ void play_file(const char *s) {
   }
 }
 
-const char *filename = "LOOPDEMO.MID";
+const char *filename = "POPCORN.MID";
 int pos = 0;
 void loop() {
   button.loop();
@@ -232,7 +203,6 @@ void loop() {
       break;
 
     case PlayerState::PLAYING:
-      DEBUGS("\nS_PLAYING");
       if (button.isPressed()) {
         set_state(PlayerState::PAUSED);
         SMF.pause(true);
@@ -242,7 +212,6 @@ void loop() {
             #ifdef ENABLE_METRONOME
               tick_metronome();
             #endif
-            system_led.boost(10);
           }
         } else {
           SMF.close();
