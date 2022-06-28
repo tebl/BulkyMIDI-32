@@ -13,6 +13,7 @@
  * least this many milliseconds before we recognize it as a valid press. 
  */
 #define DEBOUNCE_DELAY 50
+#define BUTTON_LONGPRESS 250
 
 /* Defines the analog values used with the LEDs, these may need tweaking if
  * the "LOW" settings fails to light up your LEDs. Note that the channel LED

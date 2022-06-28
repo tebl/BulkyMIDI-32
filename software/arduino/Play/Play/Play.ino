@@ -12,7 +12,6 @@
 #include "custom_led.h"
 #include "custom_font.h"
 
-#define SERIAL_RATE 31250
 
 enum PlayerState: uint8_t {
     INACTIVE = 0,
@@ -32,7 +31,8 @@ MD_MIDIFile SMF;
 
 PlayerState state = PlayerState::INACTIVE;
 bool update_oled = true;
-
+unsigned long button_count = 0;
+unsigned long button_timer = 0;
 
 /* Called by the MIDIFile library when a file event needs to be processed thru
  * the midi communications interface.
@@ -142,22 +142,34 @@ void show_state() {
 void set_state(PlayerState new_state) {
   state = new_state;
   switch (state) {
+    case PlayerState::INACTIVE:
+      system_led.boost(LED_DELAY);
+      break;
 
-  case PlayerState::INACTIVE:
-    system_led.boost(LED_DELAY);
-
-  case PlayerState::ERROR:
-    system_led.enable();
-    break;
-  
-  default:
-    activity_led.boost(LED_DELAY);
-    break;
+    case PlayerState::ERROR:
+      system_led.enable();
+      break;
+    
+    default:
+      activity_led.boost(LED_DELAY);
+      break;
   }
   update_oled = true;
 }
 
-void play_file(const char *s) {
+void show_error(const __FlashStringHelper *error) {
+  set_state(PlayerState::ERROR);
+  oled.clear();
+  oled.setFont(custom_font);
+  oled.println();
+  show_state();
+
+  oled.println();
+  oled.println(error);
+  while (true);
+}
+
+void do_play(const char *s) {
   int err = SMF.load(s);
   if (err != MD_MIDIFile::E_OK) {
     set_state(PlayerState::ERROR);
@@ -165,6 +177,23 @@ void play_file(const char *s) {
     system_led.clear();
     set_state(PlayerState::PLAYING);
   }
+}
+
+void do_pause() {
+  set_state(PlayerState::PAUSED);
+  SMF.pause(true);
+  midi_silence();
+}
+
+void do_unpause() {
+  set_state(PlayerState::PLAYING);
+  SMF.pause(false);
+}
+
+void do_stop() {
+  SMF.close();
+  midi_silence();
+  set_state(PlayerState::INACTIVE);
 }
 
 const char *filename = "POPCORN.MID";
@@ -197,15 +226,25 @@ void loop() {
   /* Handle player states */
   switch (state) {
     case PlayerState::INACTIVE:
-      if (button.isPressed()) {
-        play_file(filename);
+      if (button.isReleased()) {
+        do_play(filename);
       }
       break;
 
     case PlayerState::PLAYING:
       if (button.isPressed()) {
-        set_state(PlayerState::PAUSED);
-        SMF.pause(true);
+        button_count = button.getCount();
+        button_timer = millis() + BUTTON_LONGPRESS;
+      }
+
+      if (button.isReleased()) {
+        if (button_count == button.getCount()) {
+          if (millis() < button_timer) {
+            do_pause();   // on short press.
+          } else {
+            do_stop();    // on long press.
+          }
+        }
       } else {
         if (!SMF.isEOF()) {
           if (SMF.getNextEvent()) {
@@ -214,17 +253,25 @@ void loop() {
             #endif
           }
         } else {
-          SMF.close();
-          midi_silence();
-          set_state(PlayerState::INACTIVE);
+          do_stop();
         }
       }
       break;
 
     case PlayerState::PAUSED:
       if (button.isPressed()) {
-        set_state(PlayerState::PLAYING);
-        SMF.pause(false);
+        button_count = button.getCount();
+        button_timer = millis() + BUTTON_LONGPRESS;
+      }
+      
+      if (button.isReleased()) {
+        if (button_count == button.getCount()) {
+          if (millis() < button_timer) {
+            do_unpause(); // on short press
+          } else {
+            do_stop();    // on long press
+          }
+        }
       }
       break;
 
