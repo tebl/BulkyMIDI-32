@@ -33,6 +33,33 @@ PlayerState state = PlayerState::INACTIVE;
 bool update_oled = true;
 unsigned long button_count = 0;
 unsigned long button_timer = 0;
+int encoder_pos = 0;
+
+SDDIR dir;
+SDFILE file;
+int file_id = -1;
+char filename[FILENAME_MAX_LENGTH];
+
+void show_warning(const __FlashStringHelper *message) {
+  oled.clear();
+  oled.setFont(custom_font);
+  oled.println();
+  oled.println(F("      @"));
+  oled.println();
+  oled.println(message);
+  delay(2500);
+  update_oled = true;
+}
+
+void show_error(const __FlashStringHelper *error) {
+  oled.clear();
+  oled.setFont(custom_font);
+  oled.println();
+  oled.println(F("      @"));
+  oled.println();
+  oled.println(error);
+  while(true);
+}
 
 /* Called by the MIDIFile library when a file event needs to be processed thru
  * the midi communications interface.
@@ -73,27 +100,56 @@ void midi_silence(void) {
     midi_callback(&ev);
 }
 
+void find_file_id(int wanted_id) {
+  if (!dir.open("/", O_RDONLY)) {
+    show_warning(F("SD read fail!"));
+    return;
+  }
+
+  file_id = -1;
+  while (file.openNext(&dir, O_RDONLY)) {
+    if (!file.isSubDir() && !file.isHidden()) {
+      memset(filename, 0, FILENAME_MAX_LENGTH);
+      if (file.getName(filename, FILENAME_MAX_LENGTH)) {
+        if (is_supported(filename)) {
+          // First file found always counts as 0
+          if (file_id == -1) file_id = 0;
+          else file_id++;
+        }
+      }
+    }
+    file.close();
+
+    // Check to see if we've seen the ID we wanted
+    if (file_id == wanted_id) break;
+  }
+
+  dir.close();
+  update_oled = true;
+}
+
 void setup() {
   Serial1.begin(SERIAL_RATE);
   activity_led.boost(2500);
   button.setDebounceTime(DEBOUNCE_DELAY);
+  oled.begin(&Adafruit128x32, I2C_ADDRESS);
 
-  // Initialize SD
+  // Initialize SD, this will block on error
   if (!SD.begin(PIN_SD_SELECT, SPI_FULL_SPEED)) {
-    while (true) {
-      system_led.enable();
-    }
+    system_led.enable();
+    show_error(F("Init failed"));
   }
   system_led.clear();
 
   Wire.begin();
   Wire.setClock(400000L);
-  oled.begin(&Adafruit128x32, I2C_ADDRESS);
 
   // Initialize MIDIFile
   SMF.begin(&SD);
   SMF.setMidiHandler(midi_callback);
   SMF.setSysexHandler(sysex_callback);
+
+  find_file_id(0);
 }
 
 /* Flash an LED to the beat.
@@ -157,26 +213,52 @@ void set_state(PlayerState new_state) {
   update_oled = true;
 }
 
-void show_error(const __FlashStringHelper *error) {
-  set_state(PlayerState::ERROR);
-  oled.clear();
-  oled.setFont(custom_font);
-  oled.println();
-  show_state();
+void do_play() {
+  if (file_id == NO_FILE) {
+    show_warning(F("Not a file!"));
+  } else {
+    int err = SMF.load(filename);
+    if (err != MD_MIDIFile::E_OK) {
+      switch (err) {
+        case MD_MIDIFile::E_NOT_MIDI:
+          show_warning(F("Invalid format!"));
+          break;
 
-  oled.println();
-  oled.println(error);
-  while (true);
+        case MD_MIDIFile::E_TRACKS:
+          show_warning(F("Track number"));
+          show_warning(F("too high!"));
+          break;
+
+        default:
+          show_warning(F("Load failed!"));
+          break;
+      }
+    } else {
+      system_led.clear();
+      set_state(PlayerState::PLAYING);
+    }
+  }
 }
 
-void do_play(const char *s) {
-  int err = SMF.load(s);
-  if (err != MD_MIDIFile::E_OK) {
-    set_state(PlayerState::ERROR);
-  } else {
-    system_led.clear();
-    set_state(PlayerState::PLAYING);
-  }
+bool is_supported(const char * filename) {
+  const size_t length = strlen(filename);
+  if (length < 5) return false;
+  if (!(filename[length - 4] == '.')) return false;
+  if (!(filename[length - 3] == 'm' || filename[length - 3] == 'M')) return false;
+  if (!(filename[length - 2] == 'i' || filename[length - 2] == 'I')) return false;
+  if (!(filename[length - 1] == 'd' || filename[length - 1] == 'D')) return false;
+  return true;
+}
+
+void do_find_next() {
+  if (state != PlayerState::INACTIVE) return;
+  find_file_id(file_id + 1);
+}
+
+void do_find_previous() {
+  if (state != PlayerState::INACTIVE) return;
+  if (file_id > 0) find_file_id(file_id - 1);
+  else find_file_id(0);
 }
 
 void do_pause() {
@@ -196,8 +278,6 @@ void do_stop() {
   set_state(PlayerState::INACTIVE);
 }
 
-const char *filename = "POPCORN.MID";
-int pos = 0;
 void loop() {
   button.loop();
   activity_led.tick();
@@ -206,13 +286,15 @@ void loop() {
 
   /* Encoder input */
   int newPos = encoder.getPosition();
-  if (pos != newPos) {
+  if (encoder_pos != newPos) {
     switch (encoder.getDirection()) {
       case RotaryEncoder::Direction::CLOCKWISE:
+        do_find_next();
         update_oled = true;
         break;
         
       case RotaryEncoder::Direction::COUNTERCLOCKWISE:
+        do_find_previous();
         update_oled = true;
         break;
 
@@ -220,14 +302,14 @@ void loop() {
         break;
     }
 
-    pos = newPos;
+    encoder_pos = newPos;
   }
 
   /* Handle player states */
   switch (state) {
     case PlayerState::INACTIVE:
       if (button.isReleased()) {
-        do_play(filename);
+        do_play();
       }
       break;
 

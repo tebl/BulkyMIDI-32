@@ -11,3 +11,5 @@
 #define PIN_SD_SELECT 18
 
 #define SERIAL_RATE 31250
+#define NO_FILE -1
+#define FILENAME_MAX_LENGTH 64
