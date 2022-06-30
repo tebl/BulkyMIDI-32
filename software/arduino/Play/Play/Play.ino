@@ -40,6 +40,9 @@ SDFILE file;
 int file_id = -1;
 char filename[FILENAME_MAX_LENGTH];
 
+/* Show a warning message on the screen. This will block the execution of
+ * everything for a set amount of time before returning.
+ */
 void show_warning(const __FlashStringHelper *message) {
   oled.clear();
   oled.setFont(custom_font);
@@ -51,6 +54,9 @@ void show_warning(const __FlashStringHelper *message) {
   update_oled = true;
 }
 
+/* Blocking error message, this will just print the message to the screen and
+ * then hang there forever. Intended for use with permanent errors.
+ */
 void show_error(const __FlashStringHelper *error) {
   oled.clear();
   oled.setFont(custom_font);
@@ -294,7 +300,6 @@ void do_stop() {
  * directions as needed.
  */
 void check_encoder(void (*clockwise)(), void (*counter_clockwise)()) {
-  /* Encoder input */
   int newPos = encoder.getPosition();
   if (encoder_pos != newPos) {
     switch (encoder.getDirection()) {
