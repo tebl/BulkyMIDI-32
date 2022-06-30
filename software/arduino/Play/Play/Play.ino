@@ -178,7 +178,8 @@ void tick_metronome(void) {
 void show_state() {
   switch (state) {
     case PlayerState::PLAYING:
-      oled.println(F("      {"));
+      if (SMF.isLooping()) oled.println(F("      $"));
+      else oled.println(F("      {"));
       break;
 
     case PlayerState::PAUSED:
@@ -213,11 +214,12 @@ void set_state(PlayerState new_state) {
   update_oled = true;
 }
 
-void do_play() {
+void do_play_file(bool looping) {
   if (file_id == NO_FILE) {
     show_warning(F("Not a file!"));
   } else {
     int err = SMF.load(filename);
+    SMF.looping(looping);
     if (err != MD_MIDIFile::E_OK) {
       switch (err) {
         case MD_MIDIFile::E_NOT_MIDI:
@@ -240,6 +242,18 @@ void do_play() {
   }
 }
 
+void do_play() {
+  do_play_file(false);
+}
+
+void do_play_loop() {
+  do_play_file(true);
+}
+
+/* Attempt to verify that a file can be used with the device, this is only done
+ * by checking that the extension is ".mid" and nothing else. The purpose is
+ * simply to ignore various other files found on the memory card.
+ */
 bool is_supported(const char * filename) {
   const size_t length = strlen(filename);
   if (length < 5) return false;
@@ -251,12 +265,10 @@ bool is_supported(const char * filename) {
 }
 
 void do_find_next() {
-  if (state != PlayerState::INACTIVE) return;
   find_file_id(file_id + 1);
 }
 
 void do_find_previous() {
-  if (state != PlayerState::INACTIVE) return;
   if (file_id > 0) find_file_id(file_id - 1);
   else find_file_id(0);
 }
@@ -278,56 +290,74 @@ void do_stop() {
   set_state(PlayerState::INACTIVE);
 }
 
-void loop() {
-  button.loop();
-  activity_led.tick();
-  system_led.tick();
-  encoder.tick();
-
+/* Check the state of the rotary encoder, calling functions for the relevant
+ * directions as needed.
+ */
+void check_encoder(void (*clockwise)(), void (*counter_clockwise)()) {
   /* Encoder input */
   int newPos = encoder.getPosition();
   if (encoder_pos != newPos) {
     switch (encoder.getDirection()) {
       case RotaryEncoder::Direction::CLOCKWISE:
-        do_find_next();
+        (*clockwise)();
         update_oled = true;
         break;
         
       case RotaryEncoder::Direction::COUNTERCLOCKWISE:
-        do_find_previous();
+        (*counter_clockwise)();
         update_oled = true;
         break;
 
+      case RotaryEncoder::Direction::NOROTATION:
       default:
         break;
     }
 
     encoder_pos = newPos;
   }
+}
+
+/* Checks the state of the button, if it has been pressed then we need to
+ * see if we held it long enough to count as a long press. Depending on which
+ * duration was seen we call one of the two functions passed to us.
+ * 
+ * The return type can be used when we want to perform some other task
+ * depending on this, such as processing data instead of button tasks.
+ */
+bool check_button(void (*short_press)(), void (*long_press)()) {
+  if (button.isPressed()) {
+    button_count = button.getCount();
+    button_timer = millis() + BUTTON_LONGPRESS;
+  }
+  
+  if (button.isReleased()) {
+    if (button_count == button.getCount()) {
+      if (millis() < button_timer) {
+        (*short_press)();
+      } else {
+        (*long_press)();
+      }
+    }
+    return true;
+  }
+  return false;
+}
+
+void loop() {
+  button.loop();
+  activity_led.tick();
+  system_led.tick();
+  encoder.tick();
 
   /* Handle player states */
   switch (state) {
     case PlayerState::INACTIVE:
-      if (button.isReleased()) {
-        do_play();
-      }
+      check_encoder(do_find_next, do_find_previous);
+      check_button(do_play, do_play_loop);
       break;
 
     case PlayerState::PLAYING:
-      if (button.isPressed()) {
-        button_count = button.getCount();
-        button_timer = millis() + BUTTON_LONGPRESS;
-      }
-
-      if (button.isReleased()) {
-        if (button_count == button.getCount()) {
-          if (millis() < button_timer) {
-            do_pause();   // on short press.
-          } else {
-            do_stop();    // on long press.
-          }
-        }
-      } else {
+      if ( !check_button(do_pause, do_stop) ) {
         if (!SMF.isEOF()) {
           if (SMF.getNextEvent()) {
             #ifdef ENABLE_METRONOME
@@ -335,26 +365,14 @@ void loop() {
             #endif
           }
         } else {
+          // We'll never reach this point when looping is enabled.
           do_stop();
         }
       }
       break;
 
     case PlayerState::PAUSED:
-      if (button.isPressed()) {
-        button_count = button.getCount();
-        button_timer = millis() + BUTTON_LONGPRESS;
-      }
-      
-      if (button.isReleased()) {
-        if (button_count == button.getCount()) {
-          if (millis() < button_timer) {
-            do_unpause(); // on short press
-          } else {
-            do_stop();    // on long press
-          }
-        }
-      }
+      check_button(do_unpause, do_stop);
       break;
 
     default:
