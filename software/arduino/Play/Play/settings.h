@@ -1,6 +1,7 @@
 #pragma once
 #include "constants.h"
 
+#define BOOT_SCREEN 3000
 // #define ENABLE_METRONOME
 
 /* Defines how long the LEDs will stay on before turning off without any

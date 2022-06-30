@@ -9,15 +9,10 @@
 #include <MD_MIDIFile.h>
 #include "constants.h"
 #include "settings.h"
+#include "player_state.h"
 #include "custom_led.h"
 #include "custom_font.h"
-
-enum PlayerState: uint8_t {
-    INACTIVE = 0,
-    PLAYING = 1,
-    PAUSED = 2,
-    ERROR = 3
-};
+#include "logo.h"
 
 SSD1306AsciiWire oled;
 RotaryEncoder encoder(PIN_PREV, PIN_NEXT, RotaryEncoder::LatchMode::FOUR3);
@@ -133,11 +128,29 @@ void find_file_id(int wanted_id) {
   update_oled = true;
 }
 
+void show_logo() {
+  #ifdef BOOT_SCREEN
+    byte row = 0; // Start row
+    byte col = 0 ; // Start col
+    int a = 0;
+    for (byte b = 0; b < 4; b++) {
+      oled.setCursor(col, (row+b)); 
+      for (byte i = 0; i < 128; i++) {
+        oled.ssd1306WriteRam(pgm_read_byte(&logo[a]));
+        a++;
+      }  
+    }
+
+    delay(BOOT_SCREEN);
+  #endif
+}
+
 void setup() {
   Serial1.begin(SERIAL_RATE);
   activity_led.boost(2500);
   button.setDebounceTime(DEBOUNCE_DELAY);
   oled.begin(&Adafruit128x32, I2C_ADDRESS);
+  show_logo();
 
   // Initialize SD, this will block on error
   if (!SD.begin(PIN_SD_SELECT, SPI_FULL_SPEED)) {
@@ -177,34 +190,6 @@ void tick_metronome(void) {
       activity_led.clear();
       inBeat = false;
     }
-  }
-}
-
-void show_state() {
-  switch (state) {
-    case PlayerState::PLAYING:
-      oled.print(F("      {     "));
-
-      // Tempo indication
-      if (SMF.getTempoAdjust() > 0) oled.print(F(">"));
-      else if (SMF.getTempoAdjust() < 0) oled.print(F("<"));
-      else oled.print(F(" "));
-
-      if (SMF.isLooping()) oled.print(F("$"));
-      oled.println();
-      break;
-
-    case PlayerState::PAUSED:
-      oled.println(F("      |"));
-      break;
-
-    case PlayerState::ERROR:
-      oled.println(F("      @"));
-      break;
-
-    default:
-      oled.println(F("      }"));
-      break;
   }
 }
 
@@ -317,6 +302,10 @@ void do_reset_tempo() {
   update_oled = true;
 }
 
+/* Long press while a track is being played, we'll reset the tempo in case
+ * we've adjusted it earlier. When playing it at regular speed we'll stop
+ * the track instead.
+ */
 void do_playing_longpress() {
   if (SMF.getTempoAdjust() == 0) {
     do_stop();
@@ -377,13 +366,48 @@ bool check_button(void (*short_press)(), void (*long_press)()) {
   return false;
 }
 
-void loop() {
-  button.loop();
-  activity_led.tick();
-  system_led.tick();
-  encoder.tick();
+void show_state() {
+  switch (state) {
+    case PlayerState::PLAYING:
+      oled.print(F("      {     "));
 
-  /* Handle player states */
+      // Tempo indication
+      if (SMF.getTempoAdjust() > 0) oled.print(F(">"));
+      else if (SMF.getTempoAdjust() < 0) oled.print(F("<"));
+      else oled.print(F(" "));
+
+      if (SMF.isLooping()) oled.print(F("$"));
+      oled.println();
+      break;
+
+    case PlayerState::PAUSED:
+      oled.println(F("      |"));
+      break;
+
+    case PlayerState::ERROR:
+      oled.println(F("      @"));
+      break;
+
+    default:
+      oled.println(F("      }"));
+      break;
+  }
+}
+
+void handle_screen() {
+  if (update_oled) {
+    oled.clear();
+    oled.setFont(custom_font);
+    oled.println();
+    show_state();
+
+    oled.println();
+    oled.println(filename);
+    update_oled = false;
+  }
+}
+
+void handle_state() {
   switch (state) {
     case PlayerState::INACTIVE:
       check_encoder(do_find_next, do_find_previous);
@@ -413,16 +437,17 @@ void loop() {
     default:
       break;
   }
+}
+
+void loop() {
+  button.loop();
+  activity_led.tick();
+  system_led.tick();
+  encoder.tick();
+
+  /* Handle player states */
+  handle_state();
 
   /* Update the screen */
-  if (update_oled) {
-    oled.clear();
-    oled.setFont(custom_font);
-    oled.println();
-    show_state();
-
-    oled.println();
-    oled.println(filename);
-    update_oled = false;
-  }
+  handle_screen();
 }
