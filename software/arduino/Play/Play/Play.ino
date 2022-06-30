@@ -12,7 +12,6 @@
 #include "custom_led.h"
 #include "custom_font.h"
 
-
 enum PlayerState: uint8_t {
     INACTIVE = 0,
     PLAYING = 1,
@@ -184,8 +183,15 @@ void tick_metronome(void) {
 void show_state() {
   switch (state) {
     case PlayerState::PLAYING:
-      if (SMF.isLooping()) oled.println(F("      $"));
-      else oled.println(F("      {"));
+      oled.print(F("      {     "));
+
+      // Tempo indication
+      if (SMF.getTempoAdjust() > 0) oled.print(F(">"));
+      else if (SMF.getTempoAdjust() < 0) oled.print(F("<"));
+      else oled.print(F(" "));
+
+      if (SMF.isLooping()) oled.print(F("$"));
+      oled.println();
       break;
 
     case PlayerState::PAUSED:
@@ -218,6 +224,20 @@ void set_state(PlayerState new_state) {
       break;
   }
   update_oled = true;
+}
+
+/* Attempt to verify that a file can be used with the device, this is only done
+ * by checking that the extension is ".mid" and nothing else. The purpose is
+ * simply to ignore various other files found on the memory card.
+ */
+bool is_supported(const char * filename) {
+  const size_t length = strlen(filename);
+  if (length < 5) return false;
+  if (!(filename[length - 4] == '.')) return false;
+  if (!(filename[length - 3] == 'm' || filename[length - 3] == 'M')) return false;
+  if (!(filename[length - 2] == 'i' || filename[length - 2] == 'I')) return false;
+  if (!(filename[length - 1] == 'd' || filename[length - 1] == 'D')) return false;
+  return true;
 }
 
 void do_play_file(bool looping) {
@@ -256,20 +276,6 @@ void do_play_loop() {
   do_play_file(true);
 }
 
-/* Attempt to verify that a file can be used with the device, this is only done
- * by checking that the extension is ".mid" and nothing else. The purpose is
- * simply to ignore various other files found on the memory card.
- */
-bool is_supported(const char * filename) {
-  const size_t length = strlen(filename);
-  if (length < 5) return false;
-  if (!(filename[length - 4] == '.')) return false;
-  if (!(filename[length - 3] == 'm' || filename[length - 3] == 'M')) return false;
-  if (!(filename[length - 2] == 'i' || filename[length - 2] == 'I')) return false;
-  if (!(filename[length - 1] == 'd' || filename[length - 1] == 'D')) return false;
-  return true;
-}
-
 void do_find_next() {
   find_file_id(file_id + 1);
 }
@@ -294,6 +300,29 @@ void do_stop() {
   SMF.close();
   midi_silence();
   set_state(PlayerState::INACTIVE);
+}
+
+void do_increase_tempo() {
+  SMF.setTempoAdjust(SMF.getTempoAdjust() + 10);
+  update_oled = true;
+}
+
+void do_decrease_tempo() {
+  SMF.setTempoAdjust(SMF.getTempoAdjust() - 10);
+  update_oled = true;
+}
+
+void do_reset_tempo() {
+  SMF.setTempoAdjust(0);
+  update_oled = true;
+}
+
+void do_playing_longpress() {
+  if (SMF.getTempoAdjust() == 0) {
+    do_stop();
+  } else {
+    do_reset_tempo();
+  }
 }
 
 /* Check the state of the rotary encoder, calling functions for the relevant
@@ -362,7 +391,8 @@ void loop() {
       break;
 
     case PlayerState::PLAYING:
-      if ( !check_button(do_pause, do_stop) ) {
+      check_encoder(do_increase_tempo, do_decrease_tempo);
+      if ( !check_button(do_pause, do_playing_longpress) ) {
         if (!SMF.isEOF()) {
           if (SMF.getNextEvent()) {
             #ifdef ENABLE_METRONOME
