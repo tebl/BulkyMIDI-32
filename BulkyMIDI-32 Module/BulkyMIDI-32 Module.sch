@@ -60,23 +60,23 @@ $EndComp
 $Comp
 L power:GND #PWR01
 U 1 1 5E3B6768
-P 9575 7775
-F 0 "#PWR01" H 9575 7525 50  0001 C CNN
-F 1 "GND" H 9575 7625 50  0000 C CNN
-F 2 "" H 9575 7775 50  0001 C CNN
-F 3 "" H 9575 7775 50  0001 C CNN
-	1    9575 7775
+P 7875 7775
+F 0 "#PWR01" H 7875 7525 50  0001 C CNN
+F 1 "GND" H 7875 7625 50  0000 C CNN
+F 2 "" H 7875 7775 50  0001 C CNN
+F 3 "" H 7875 7775 50  0001 C CNN
+	1    7875 7775
 	-1   0    0    -1  
 $EndComp
 $Comp
 L I2C_OLED:0.96_I2C_OLED IC1
 U 1 1 5E3B718A
-P 12975 8275
-F 0 "IC1" H 12975 8100 60  0000 C CNN
-F 1 "OLED" H 12950 8225 43  0000 C CNN
-F 2 "i2c_oled:1.3_I2C_OLED_No_mounting" H 12975 8900 60  0001 C CNN
-F 3 "" H 12975 8900 60  0001 C CNN
-	1    12975 8275
+P 12975 8350
+F 0 "IC1" H 12975 8175 60  0000 C CNN
+F 1 "OLED" H 12950 8300 43  0000 C CNN
+F 2 "i2c_oled:1.3_I2C_OLED_No_mounting" H 12975 8975 60  0001 C CNN
+F 3 "" H 12975 8975 60  0001 C CNN
+	1    12975 8350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -115,32 +115,32 @@ $EndComp
 $Comp
 L Switch:SW_Push SW2
 U 1 1 5EE67BD2
-P 9850 6900
-F 0 "SW2" H 9775 7100 50  0000 C CNN
-F 1 "ROM" H 9900 7100 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 9850 7100 50  0001 C CNN
-F 3 "~" H 9850 7100 50  0001 C CNN
-	1    9850 6900
+P 8150 6900
+F 0 "SW2" H 8075 7100 50  0000 C CNN
+F 1 "ROM" H 8200 7100 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 8150 7100 50  0001 C CNN
+F 3 "~" H 8150 7100 50  0001 C CNN
+	1    8150 6900
 	1    0    0    -1  
 $EndComp
 $Comp
 L Switch:SW_Push SW3
 U 1 1 5EE6919F
-P 9850 7300
-F 0 "SW3" H 9775 7475 50  0000 C CNN
-F 1 "VOL_DOWN" H 9900 7475 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 9850 7500 50  0001 C CNN
-F 3 "~" H 9850 7500 50  0001 C CNN
-	1    9850 7300
+P 8150 7300
+F 0 "SW3" H 8075 7475 50  0000 C CNN
+F 1 "VOL_DOWN" H 8200 7475 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 8150 7500 50  0001 C CNN
+F 3 "~" H 8150 7500 50  0001 C CNN
+	1    8150 7300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9575 7300 9650 7300
+	7875 7300 7950 7300
 Wire Wire Line
-	9575 7300 9575 6900
+	7875 7300 7875 6900
 Wire Wire Line
-	9575 6900 9650 6900
-Connection ~ 9575 7300
+	7875 6900 7950 6900
+Connection ~ 7875 7300
 $Comp
 L raspberry_pi:Raspberry_Pi_2_3 A1
 U 1 1 5EE82FB5
@@ -229,9 +229,9 @@ $EndComp
 Wire Wire Line
 	2975 1875 2975 1950
 Wire Wire Line
-	10125 6900 10050 6900
+	8425 6900 8350 6900
 Wire Wire Line
-	10050 7300 10125 7300
+	8350 7300 8425 7300
 Wire Wire Line
 	2000 2850 2075 2850
 Wire Wire Line
@@ -253,124 +253,124 @@ F 3 "~" H 10700 10250 50  0001 C CNN
 	1    10700 10250
 	1    0    0    -1  
 $EndComp
-Text GLabel 13475 7250 2    60   Input ~ 0
+Text GLabel 13475 7325 2    60   Input ~ 0
 I2C_SDA
-Text GLabel 13475 7150 2    60   Input ~ 0
+Text GLabel 13475 7225 2    60   Input ~ 0
 I2C_SCL
 $Comp
 L I2C_OLED:PowerSelect JP2
 U 1 1 5F12F8C1
-P 13125 6450
-F 0 "JP2" V 13079 6518 50  0000 L CNN
-F 1 "P2_VCC" V 13170 6518 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 13125 6450 50  0001 C CNN
-F 3 "~" H 13125 6450 50  0001 C CNN
-	1    13125 6450
+P 13125 6525
+F 0 "JP2" V 13079 6593 50  0000 L CNN
+F 1 "P2_VCC" V 13170 6593 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 13125 6525 50  0001 C CNN
+F 3 "~" H 13125 6525 50  0001 C CNN
+	1    13125 6525
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	13125 6250 13125 6175
+	13125 6325 13125 6250
 Wire Wire Line
-	13125 6650 13125 6725
+	13125 6725 13125 6800
 $Comp
 L power:GND #PWR0111
 U 1 1 5F14A813
-P 13125 6725
-F 0 "#PWR0111" H 13125 6475 50  0001 C CNN
-F 1 "GND" H 13130 6552 50  0000 C CNN
-F 2 "" H 13125 6725 50  0001 C CNN
-F 3 "" H 13125 6725 50  0001 C CNN
-	1    13125 6725
+P 13125 6800
+F 0 "#PWR0111" H 13125 6550 50  0001 C CNN
+F 1 "GND" H 13130 6627 50  0000 C CNN
+F 2 "" H 13125 6800 50  0001 C CNN
+F 3 "" H 13125 6800 50  0001 C CNN
+	1    13125 6800
 	1    0    0    -1  
 $EndComp
 $Comp
 L I2C_OLED:PowerSelect JP1
 U 1 1 5F14C67F
-P 12525 6450
-F 0 "JP1" V 12571 6518 50  0000 L CNN
-F 1 "P1_GND" V 12480 6518 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 12525 6450 50  0001 C CNN
-F 3 "~" H 12525 6450 50  0001 C CNN
-	1    12525 6450
+P 12525 6525
+F 0 "JP1" V 12571 6593 50  0000 L CNN
+F 1 "P1_GND" V 12480 6593 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 12525 6525 50  0001 C CNN
+F 3 "~" H 12525 6525 50  0001 C CNN
+	1    12525 6525
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	12525 6250 12525 6175
+	12525 6325 12525 6250
 $Comp
 L power:+3.3V #PWR0112
 U 1 1 5F14C686
-P 12525 6100
-F 0 "#PWR0112" H 12525 5950 50  0001 C CNN
-F 1 "+3.3V" H 12540 6273 50  0000 C CNN
-F 2 "" H 12525 6100 50  0001 C CNN
-F 3 "" H 12525 6100 50  0001 C CNN
-	1    12525 6100
+P 12525 6175
+F 0 "#PWR0112" H 12525 6025 50  0001 C CNN
+F 1 "+3.3V" H 12540 6348 50  0000 C CNN
+F 2 "" H 12525 6175 50  0001 C CNN
+F 3 "" H 12525 6175 50  0001 C CNN
+	1    12525 6175
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	12525 6650 12525 6725
+	12525 6725 12525 6800
 $Comp
 L power:GND #PWR0113
 U 1 1 5F14C68D
-P 12525 6725
-F 0 "#PWR0113" H 12525 6475 50  0001 C CNN
-F 1 "GND" H 12530 6552 50  0000 C CNN
-F 2 "" H 12525 6725 50  0001 C CNN
-F 3 "" H 12525 6725 50  0001 C CNN
-	1    12525 6725
+P 12525 6800
+F 0 "#PWR0113" H 12525 6550 50  0001 C CNN
+F 1 "GND" H 12530 6627 50  0000 C CNN
+F 2 "" H 12525 6800 50  0001 C CNN
+F 3 "" H 12525 6800 50  0001 C CNN
+	1    12525 6800
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	12900 6450 12975 6450
+	12900 6525 12975 6525
 Wire Wire Line
-	12675 6450 12750 6450
+	12675 6525 12750 6525
 Wire Wire Line
-	12525 6175 13125 6175
+	12525 6250 13125 6250
 Wire Wire Line
-	12525 6100 12525 6175
-Connection ~ 12525 6175
+	12525 6175 12525 6250
+Connection ~ 12525 6250
 Wire Wire Line
-	13475 7150 13050 7150
+	13475 7225 13050 7225
 Wire Wire Line
-	13200 7250 13475 7250
+	13200 7325 13475 7325
 Wire Wire Line
-	13050 7650 13050 7825
+	13050 7725 13050 7900
 Wire Wire Line
-	13200 7750 13200 7825
+	13200 7825 13200 7900
 Wire Wire Line
-	13050 7150 13050 7650
-Connection ~ 13050 7650
+	13050 7225 13050 7725
+Connection ~ 13050 7725
 Wire Wire Line
-	13200 7250 13200 7750
-Connection ~ 13200 7750
+	13200 7325 13200 7825
+Connection ~ 13200 7825
 Wire Wire Line
-	12750 6450 12750 7825
+	12750 6525 12750 7900
 Wire Wire Line
-	12900 6450 12900 7825
+	12900 6525 12900 7900
 Wire Wire Line
-	13050 7650 14225 7650
+	13050 7725 14225 7725
 Wire Wire Line
-	13200 7750 14225 7750
+	13200 7825 14225 7825
 $Comp
 L power:GND #PWR0110
 U 1 1 5F4491DA
-P 13675 7925
-F 0 "#PWR0110" H 13675 7675 50  0001 C CNN
-F 1 "GND" H 13680 7752 50  0000 C CNN
-F 2 "" H 13675 7925 50  0001 C CNN
-F 3 "" H 13675 7925 50  0001 C CNN
-	1    13675 7925
+P 13675 8000
+F 0 "#PWR0110" H 13675 7750 50  0001 C CNN
+F 1 "GND" H 13680 7827 50  0000 C CNN
+F 2 "" H 13675 8000 50  0001 C CNN
+F 3 "" H 13675 8000 50  0001 C CNN
+	1    13675 8000
 	-1   0    0    -1  
 $EndComp
 $Comp
 L power:+3.3V #PWR0114
 U 1 1 5F44F08B
-P 14150 7475
-F 0 "#PWR0114" H 14150 7325 50  0001 C CNN
-F 1 "+3.3V" H 14165 7648 50  0000 C CNN
-F 2 "" H 14150 7475 50  0001 C CNN
-F 3 "" H 14150 7475 50  0001 C CNN
-	1    14150 7475
+P 14150 7550
+F 0 "#PWR0114" H 14150 7400 50  0001 C CNN
+F 1 "+3.3V" H 14165 7723 50  0000 C CNN
+F 2 "" H 14150 7550 50  0001 C CNN
+F 3 "" H 14150 7550 50  0001 C CNN
+	1    14150 7550
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
@@ -962,9 +962,9 @@ Wire Wire Line
 	10875 3025 10875 3100
 Wire Wire Line
 	10875 2650 10875 2725
-Text GLabel 10125 6900 2    50   Output ~ 0
+Text GLabel 8425 6900 2    50   Output ~ 0
 SW_ROM
-Text GLabel 10125 7300 2    50   Output ~ 0
+Text GLabel 8425 7300 2    50   Output ~ 0
 SW_DOWN
 Text GLabel 2000 2750 0    50   Input ~ 0
 SW_SYNTH
@@ -1049,75 +1049,34 @@ Wire Notes Line
 	8875 5175 8875 3650
 Text Notes 8900 3750 0    50   ~ 0
 RS-232 or TTL Serial USB adapter (optional)
-$Comp
-L BulkyMIDI:KY-040 ENC1
-U 1 1 62EDD8FE
-P 6725 6900
-F 0 "ENC1" H 6425 7325 50  0000 L CNN
-F 1 "KY-040" H 6425 7250 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal" H 6875 6790 50  0001 C CNN
-F 3 "~" H 6725 6690 50  0001 C CNN
-	1    6725 6900
-	1    0    0    -1  
-$EndComp
-Text GLabel 6625 7475 3    50   Output ~ 0
-SW_ENC
-$Comp
-L power:+3.3V #PWR02
-U 1 1 62F0DAFE
-P 6975 6500
-F 0 "#PWR02" H 6975 6350 50  0001 C CNN
-F 1 "+3.3V" H 6990 6673 50  0000 C CNN
-F 2 "" H 6975 6500 50  0001 C CNN
-F 3 "" H 6975 6500 50  0001 C CNN
-	1    6975 6500
-	1    0    0    -1  
-$EndComp
-Text GLabel 6725 7475 3    50   Output ~ 0
-SW_UP
-Text GLabel 6825 7475 3    50   Output ~ 0
-SW_DOWN
-$Comp
-L power:GND #PWR06
-U 1 1 62F29FB2
-P 7100 7275
-F 0 "#PWR06" H 7100 7025 50  0001 C CNN
-F 1 "GND" H 7100 7125 50  0000 C CNN
-F 2 "" H 7100 7275 50  0001 C CNN
-F 3 "" H 7100 7275 50  0001 C CNN
-	1    7100 7275
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
-	7100 7275 7100 6950
+	13675 7925 13675 8000
 Wire Wire Line
-	13675 7850 13675 7925
+	14225 7625 14150 7625
 Wire Wire Line
-	14225 7550 14150 7550
-Wire Wire Line
-	14150 7550 14150 7475
-Text GLabel 14225 8150 0    50   Input ~ 0
+	14150 7625 14150 7550
+Text GLabel 14225 8225 0    50   Input ~ 0
 SW_SYNTH
-Text GLabel 14225 8350 0    50   Input ~ 0
+Text GLabel 14225 8425 0    50   Input ~ 0
 SW_UP
 Wire Wire Line
-	13675 7850 14225 7850
+	13675 7925 14225 7925
 $Comp
 L BulkyMIDI:Conn_Faceplate J4
 U 1 1 5F3B6F1D
-P 14425 7950
-F 0 "J4" H 14375 8600 50  0000 L CNN
-F 1 "Faceplate" H 14375 8525 50  0000 L CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_1x10_P2.54mm_Vertical" H 14425 7950 50  0001 C CNN
-F 3 "~" H 14425 7950 50  0001 C CNN
-	1    14425 7950
+P 14425 8025
+F 0 "J4" H 14375 8675 50  0000 L CNN
+F 1 "Faceplate" H 14375 8600 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x10_P2.54mm_Vertical" H 14425 8025 50  0001 C CNN
+F 3 "~" H 14425 8025 50  0001 C CNN
+	1    14425 8025
 	1    0    0    -1  
 $EndComp
-Text GLabel 14225 8250 0    50   Input ~ 0
+Text GLabel 14225 8325 0    50   Input ~ 0
 SW_ROM
-Text GLabel 14225 8450 0    50   Input ~ 0
+Text GLabel 14225 8525 0    50   Input ~ 0
 SW_DOWN
-Text GLabel 14225 8050 0    50   Input ~ 0
+Text GLabel 14225 8125 0    50   Input ~ 0
 SW_ENC
 $Comp
 L Connector:DIN-5_180degree J3
@@ -1140,44 +1099,44 @@ Wire Wire Line
 	8550 1925 8550 2525
 Wire Wire Line
 	5275 1400 5275 2425
-Text GLabel 10725 7925 2    50   Output ~ 0
+Text GLabel 9025 7925 2    50   Output ~ 0
 SW_UP
 Wire Wire Line
-	9575 7700 9575 7300
+	7875 7700 7875 7300
 Wire Wire Line
-	9575 7700 9575 7775
-Connection ~ 9575 7700
+	7875 7700 7875 7775
+Connection ~ 7875 7700
 Wire Wire Line
-	9575 7700 9650 7700
+	7875 7700 7950 7700
 $Comp
 L Switch:SW_Push SW4
 U 1 1 5EE6A509
-P 9850 7700
-F 0 "SW4" H 9775 7875 50  0000 C CNN
-F 1 "VOL_UP" H 9900 7875 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 9850 7900 50  0001 C CNN
-F 3 "~" H 9850 7900 50  0001 C CNN
-	1    9850 7700
+P 8150 7700
+F 0 "SW4" H 8075 7875 50  0000 C CNN
+F 1 "VOL_UP" H 8200 7875 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 8150 7900 50  0001 C CNN
+F 3 "~" H 8150 7900 50  0001 C CNN
+	1    8150 7700
 	1    0    0    -1  
 $EndComp
-Connection ~ 9575 6900
+Connection ~ 7875 6900
 Wire Wire Line
-	9575 6900 9575 6500
+	7875 6900 7875 6500
 Wire Wire Line
-	9575 6500 9650 6500
+	7875 6500 7950 6500
 Wire Wire Line
-	10125 6500 10050 6500
-Text GLabel 10125 6500 2    50   Output ~ 0
+	8425 6500 8350 6500
+Text GLabel 8425 6500 2    50   Output ~ 0
 SW_SYNTH
 $Comp
 L Switch:SW_Push SW1
 U 1 1 5EE65CEA
-P 9850 6500
-F 0 "SW1" H 9775 6675 50  0000 C CNN
-F 1 "SYNTH" H 9900 6675 50  0000 L CNN
-F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 9850 6700 50  0001 C CNN
-F 3 "~" H 9850 6700 50  0001 C CNN
-	1    9850 6500
+P 8150 6500
+F 0 "SW1" H 8075 6675 50  0000 C CNN
+F 1 "SYNTH" H 8200 6675 50  0000 L CNN
+F 2 "Button_Switch_THT:SW_Tactile_SPST_Angled_PTS645Vx39-2LFS" H 8150 6700 50  0001 C CNN
+F 3 "~" H 8150 6700 50  0001 C CNN
+	1    8150 6500
 	1    0    0    -1  
 $EndComp
 Wire Notes Line
@@ -1216,68 +1175,54 @@ Wire Notes Line
 Wire Notes Line
 	4700 5350 4700 8850
 Wire Notes Line
-	8875 5350 8875 8850
+	7175 5350 7175 8850
 Wire Notes Line
-	8700 5350 8700 8850
+	9475 5350 9475 8850
 Wire Notes Line
-	11175 5350 11175 8850
+	9650 5350 9650 8850
 Wire Notes Line
-	11350 5350 11350 8850
+	7175 8850 9475 8850
 Wire Notes Line
-	8875 8850 11175 8850
-Wire Notes Line
-	11350 8850 15375 8850
-Wire Notes Line
-	15375 5350 11350 5350
-Wire Notes Line
-	11175 5350 8875 5350
-Wire Notes Line
-	8700 5350 4700 5350
+	9475 5350 7175 5350
 Wire Notes Line
 	4525 5350 1050 5350
 Wire Notes Line
 	1050 8850 4525 8850
-Wire Notes Line
-	4700 8850 8700 8850
-Text Notes 8900 5450 0    50   ~ 0
+Text Notes 7200 5450 0    50   ~ 0
 Control scheme ("simple_buttons")
-Text Notes 4725 5450 0    50   ~ 0
-Control scheme ("simple_encoder")
 Text Notes 1075 5450 0    50   ~ 0
 Power section
-Text Notes 4725 5800 0    50   ~ 0
-5-pin connector for connecting up a rotary encoder such as the KY-040, note that we'll still need\nthe SYNTH/ROM buttons from the "simple_buttons" control scheme as well. Currently the board\ndoes not have any proper methods for mounting it, unless you're mounting the whole thing in a\nseparate case.
-Text Notes 11375 5450 0    50   ~ 0
+Text Notes 9675 5450 0    50   ~ 0
 OLED display and faceplate connector
-Text Notes 11375 5725 0    50   ~ 0
+Text Notes 9675 5725 0    50   ~ 0
 OLED displays have unfortunately been produced with varying pinouts, we therefore need to add solder\nbridges to specify what the pins are used for. Faceplate connector includes signals for both screen\nand control scheme pins, just in case a specific faceplate reimplements them in some way.
-Text Notes 8875 5800 0    50   ~ 0
+Text Notes 7175 5800 0    50   ~ 0
 Volume UP/DOWN is not needed when rotary encoder is\nused, some versions of faceplates may include SYNTH and\nVOL_UP and the duplicated switch should not be installed.\nJP3 is used to have the ROM switch replace VOL_UP.
 $Comp
 L Jumper:SolderJumper_3_Open JP3
 U 1 1 62208552
-P 10450 7925
-F 0 "JP3" H 10125 7700 50  0000 L CNN
-F 1 "SW4_SEL" H 10025 7775 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 10450 7925 50  0001 C CNN
-F 3 "~" H 10450 7925 50  0001 C CNN
-	1    10450 7925
+P 8750 7925
+F 0 "JP3" H 8425 7700 50  0000 L CNN
+F 1 "SW4_SEL" H 8325 7775 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8750 7925 50  0001 C CNN
+F 3 "~" H 8750 7925 50  0001 C CNN
+	1    8750 7925
 	-1   0    0    1   
 $EndComp
-Text GLabel 10725 8075 2    50   Output ~ 0
+Text GLabel 9025 8075 2    50   Output ~ 0
 SW_ROM
 Wire Wire Line
-	10250 7925 10175 7925
+	8550 7925 8475 7925
 Wire Wire Line
-	10175 7925 10175 8075
+	8475 7925 8475 8075
 Wire Wire Line
-	10650 7925 10725 7925
+	8950 7925 9025 7925
 Wire Wire Line
-	10175 8075 10725 8075
+	8475 8075 9025 8075
 Wire Wire Line
-	10450 7700 10450 7775
+	8750 7700 8750 7775
 Wire Wire Line
-	10050 7700 10450 7700
+	8350 7700 8750 7700
 $Comp
 L 74xx:74HC14 U1
 U 5 1 5FB8F7D6
@@ -1533,4 +1478,138 @@ Wire Wire Line
 	14625 1850 14075 1850
 Wire Wire Line
 	14625 1850 14625 2125
+$Comp
+L BulkyMIDI:Module_Panel J8
+U 1 1 62DF1416
+P 10825 7525
+F 0 "J8" H 10925 8725 50  0000 C CNN
+F 1 "Module_Panel" H 10925 8650 50  0000 C CNN
+F 2 "BulkyMIDI-32:Module_Panel" H 10825 7525 50  0001 C CNN
+F 3 "~" H 10825 7525 50  0001 C CNN
+	1    10825 7525
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6225 7950 6225 7625
+$Comp
+L power:GND #PWR06
+U 1 1 62F29FB2
+P 6225 7950
+F 0 "#PWR06" H 6225 7700 50  0001 C CNN
+F 1 "GND" H 6225 7800 50  0000 C CNN
+F 2 "" H 6225 7950 50  0001 C CNN
+F 3 "" H 6225 7950 50  0001 C CNN
+	1    6225 7950
+	-1   0    0    -1  
+$EndComp
+Text GLabel 5950 8150 3    50   Output ~ 0
+SW_DOWN
+Text GLabel 5850 8150 3    50   Output ~ 0
+SW_UP
+$Comp
+L power:+3.3V #PWR02
+U 1 1 62F0DAFE
+P 6100 7175
+F 0 "#PWR02" H 6100 7025 50  0001 C CNN
+F 1 "+3.3V" H 6115 7348 50  0000 C CNN
+F 2 "" H 6100 7175 50  0001 C CNN
+F 3 "" H 6100 7175 50  0001 C CNN
+	1    6100 7175
+	1    0    0    -1  
+$EndComp
+Text GLabel 5750 8150 3    50   Output ~ 0
+SW_ENC
+$Comp
+L BulkyMIDI:KY-040 ENC1
+U 1 1 62EDD8FE
+P 5850 7575
+F 0 "ENC1" H 5550 8000 50  0000 L CNN
+F 1 "KY-040" H 5550 7925 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal" H 6000 7465 50  0001 C CNN
+F 3 "~" H 5850 7365 50  0001 C CNN
+	1    5850 7575
+	1    0    0    -1  
+$EndComp
+Text Notes 4725 5450 0    50   ~ 0
+Control scheme ("simple_encoder")
+Text Notes 4725 5975 0    50   ~ 0
+5-pin connector for connecting up a rotary encoder such\nas the KY-040, note that we'll still need the SYNTH/ROM\nbuttons from the "simple_buttons" control scheme as\nwell. Currently the board does not have any proper\nmethods for mounting it, unless you're mounting the\nwhole thing in a separate case.
+Wire Notes Line
+	7000 5350 4700 5350
+Wire Notes Line
+	7000 8850 4700 8850
+Wire Notes Line
+	7000 5350 7000 8850
+Wire Wire Line
+	11175 6525 11175 6450
+Connection ~ 11175 6525
+$Comp
+L power:+3.3V #PWR0118
+U 1 1 62F4338D
+P 11175 6450
+F 0 "#PWR0118" H 11175 6300 50  0001 C CNN
+F 1 "+3.3V" H 11190 6623 50  0000 C CNN
+F 2 "" H 11175 6450 50  0001 C CNN
+F 3 "" H 11175 6450 50  0001 C CNN
+	1    11175 6450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11100 6625 11025 6625
+Wire Wire Line
+	11025 6525 11175 6525
+Text GLabel 11250 7125 2    50   Input ~ 0
+SW_SYNTH
+Text GLabel 11250 7325 2    50   Input ~ 0
+SW_UP
+Text GLabel 11250 7225 2    50   Input ~ 0
+SW_ROM
+Text GLabel 11250 7425 2    50   Input ~ 0
+SW_DOWN
+Text GLabel 11250 7025 2    50   Input ~ 0
+SW_ENC
+Wire Wire Line
+	11250 7025 11025 7025
+Wire Wire Line
+	11025 7125 11250 7125
+Wire Wire Line
+	11025 7225 11250 7225
+Wire Wire Line
+	11025 7325 11250 7325
+Wire Wire Line
+	11025 7425 11250 7425
+Text GLabel 11250 6825 2    60   Input ~ 0
+I2C_SDA
+Text GLabel 11250 6725 2    60   Input ~ 0
+I2C_SCL
+Wire Wire Line
+	11250 6725 11025 6725
+Wire Wire Line
+	11025 6825 11250 6825
+Wire Wire Line
+	11025 7525 11100 7525
+Wire Wire Line
+	11100 7525 11100 6625
+Wire Wire Line
+	11025 7625 11175 7625
+Wire Wire Line
+	11175 7625 11175 6525
+$Comp
+L power:GND #PWR?
+U 1 1 630E6531
+P 11100 7725
+F 0 "#PWR?" H 11100 7475 50  0001 C CNN
+F 1 "GND" H 11105 7552 50  0000 C CNN
+F 2 "" H 11100 7725 50  0001 C CNN
+F 3 "" H 11100 7725 50  0001 C CNN
+	1    11100 7725
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	11100 7725 11100 7525
+Connection ~ 11100 7525
+Wire Notes Line
+	9650 5350 15375 5350
+Wire Notes Line
+	9650 8850 15375 8850
 $EndSCHEMATC
