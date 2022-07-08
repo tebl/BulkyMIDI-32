@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 33)
+    (drawings 34)
     (tracks 596)
     (zones 0)
     (modules 46)
@@ -622,7 +622,7 @@
   )
 
   (module Symbols:KiCad-Logo2_6mm_SilkScreen locked (layer B.Cu) (tedit 0) (tstamp 61EF7A75)
-    (at 141.859 131.699 180)
+    (at 139.446 130.302 180)
     (descr "KiCad Logo")
     (tags "Logo KiCad")
     (attr virtual)
@@ -3737,6 +3737,9 @@
     )
   )
 
+  (gr_text "Link to route analog\naudio to extras connector." (at 96.266 79.502) (layer B.SilkS)
+    (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
+  )
   (gr_line (start 70.18 154.61) (end 102.4705 154.61) (angle 90) (layer Edge.Cuts) (width 0.15) (tstamp 62C67596))
   (gr_line (start 137.8895 151.41) (end 137.8895 154.61) (layer Edge.Cuts) (width 0.15) (tstamp 62C67592))
   (gr_line (start 102.4705 151.41) (end 102.4705 154.61) (layer Edge.Cuts) (width 0.15))
