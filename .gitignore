@@ -19,6 +19,7 @@ BulkyMIDI-32 Channel Panel/export/
 BulkyMIDI-32 Channel 2/export/
 BulkyMIDI-32 Extras/export/
 BulkyMIDI-32 Module/export/
+BulkyMIDI-32 Module Panel/export/
 BulkyMIDI-32 Play/export/
 BulkyMIDI-32 Play Panel/export/
 BulkyMIDI-32 VU SIDi/export/
@@ -32,7 +33,8 @@ faceplates/BulkyMIDI-32 BA1/export/
 faceplates/BulkyMIDI-32 FA1/export/
 faceplates/BulkyMIDI-32 FA2/export/
 faceplates/BulkyMIDI-32 FB1/export/
+faceplates/BulkyMIDI-32 Channel FP1/export/
+faceplates/BulkyMIDI-32 Module FP1/export/
 faceplates/BulkyMIDI-32 Play FP1/export/
 faceplates/BulkyMIDI-32 VU SIDi FP1/export/
-faceplates/BulkyMIDI-32 Channel FP1/export/
 software/arduino/SIDI/

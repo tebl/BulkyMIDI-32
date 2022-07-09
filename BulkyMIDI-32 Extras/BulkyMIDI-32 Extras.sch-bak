@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "BulkyMIDI-32 Extras"
 Date ""
-Rev "B"
+Rev "D"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -322,34 +322,6 @@ Wire Wire Line
 Text Notes 4675 675  0    50   ~ 0
 RS-232 Baud rate converter
 $Comp
-L BulkyMIDI:Vertical_Rotary_Encoder ENC1
-U 1 1 62EDD8FE
-P 7325 10200
-F 0 "ENC1" H 7025 10625 50  0000 L CNN
-F 1 "Rotary Encoder" H 7025 10550 50  0000 L CNN
-F 2 "BulkyMIDI-32:Vertical_Rotary_Encoder" H 7475 10090 50  0001 C CNN
-F 3 "~" H 7325 9990 50  0001 C CNN
-	1    7325 10200
-	0    -1   -1   0   
-$EndComp
-Text GLabel 8125 10350 2    50   Output ~ 0
-SW_ENC
-Text GLabel 8125 10050 2    50   Output ~ 0
-SW_UP
-Text GLabel 8125 10150 2    50   Output ~ 0
-SW_DOWN
-$Comp
-L power:GND #PWR06
-U 1 1 62F29FB2
-P 8500 10475
-F 0 "#PWR06" H 8500 10225 50  0001 C CNN
-F 1 "GND" H 8500 10325 50  0000 C CNN
-F 2 "" H 8500 10475 50  0001 C CNN
-F 3 "" H 8500 10475 50  0001 C CNN
-	1    8500 10475
-	-1   0    0    -1  
-$EndComp
-$Comp
 L Connector:DIN-5_180degree J3
 U 1 1 5F99CA21
 P 6300 6250
@@ -387,12 +359,8 @@ Wire Notes Line
 	11300 8900 15325 8900
 Wire Notes Line
 	15325 5400 11300 5400
-Text Notes 6850 9200 0    50   ~ 0
-Control scheme ("simple_encoder")
 Text Notes 8875 9175 0    50   ~ 0
 Power section
-Text Notes 6850 9400 0    50   ~ 0
-4-pin connector for connecting up vertical\nrotary encoder module, found in "adapters".
 $Comp
 L Device:R_POT_Dual RV1
 U 1 1 621086C8
@@ -852,18 +820,6 @@ Text GLabel 3625 2500 2    50   Output ~ 0
 PI_TX
 Wire Wire Line
 	3625 2500 3275 2500
-Text GLabel 1775 2500 0    50   Input ~ 0
-SW_ENC
-Text GLabel 1775 2400 0    50   Input ~ 0
-SW_UP
-Text GLabel 1775 2300 0    50   Input ~ 0
-SW_DOWN
-Wire Wire Line
-	1775 2300 2125 2300
-Wire Wire Line
-	2125 2400 1775 2400
-Wire Wire Line
-	1775 2500 2125 2500
 $Comp
 L Device:LED D2
 U 1 1 6260552F
@@ -943,17 +899,6 @@ Wire Wire Line
 Wire Wire Line
 	13475 7175 13550 7175
 $Comp
-L Device:LED D1
-U 1 1 62716DB3
-P 6175 9400
-F 0 "D1" H 6168 9145 50  0000 C CNN
-F 1 "POWER" H 6168 9236 50  0000 C CNN
-F 2 "LED_THT:LED_D5.0mm_Horizontal_O1.27mm_Z3.0mm" H 6175 9400 50  0001 C CNN
-F 3 "~" H 6175 9400 50  0001 C CNN
-	1    6175 9400
-	-1   0    0    1   
-$EndComp
-$Comp
 L Device:R R5
 U 1 1 62729C3C
 P 5800 10200
@@ -966,32 +911,6 @@ F 3 "~" H 5800 10200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5950 10200 6025 10200
-Wire Wire Line
-	6025 9400 5950 9400
-$Comp
-L Device:R R4
-U 1 1 6276F7E0
-P 5800 9400
-F 0 "R4" V 5593 9400 50  0000 C CNN
-F 1 "1k" V 5684 9400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5730 9400 50  0001 C CNN
-F 3 "~" H 5800 9400 50  0001 C CNN
-	1    5800 9400
-	0    1    1    0   
-$EndComp
-$Comp
-L power:+5V #PWR09
-U 1 1 62779CD7
-P 5500 9325
-F 0 "#PWR09" H 5500 9175 50  0001 C CNN
-F 1 "+5V" H 5500 9475 50  0000 C CNN
-F 2 "" H 5500 9325 50  0001 C CNN
-F 3 "" H 5500 9325 50  0001 C CNN
-	1    5500 9325
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5500 9325 5500 9400
 Text Notes 1025 9200 0    50   ~ 0
 Status LEDs
 $Comp
@@ -1558,18 +1477,6 @@ Wire Wire Line
 	6150 2650 6150 2950
 Connection ~ 6150 2950
 Wire Notes Line
-	8650 9075 8650 11125
-Wire Notes Line
-	6800 11125 6800 9075
-Wire Wire Line
-	8500 10250 8500 10475
-Wire Wire Line
-	8125 10350 7975 10350
-Wire Wire Line
-	7975 10150 8125 10150
-Wire Wire Line
-	7975 10050 8125 10050
-Wire Notes Line
 	11125 8900 11125 575 
 $Comp
 L Connector_Generic:Conn_02x02_Odd_Even J15
@@ -2039,8 +1946,6 @@ Text GLabel 5575 9800 0    50   Input ~ 0
 MCU_LED
 Wire Wire Line
 	5650 9800 5575 9800
-Wire Wire Line
-	7975 10250 8500 10250
 $Comp
 L Timer:NE555P U4
 U 1 1 62615F79
@@ -2079,12 +1984,12 @@ Wire Wire Line
 $Comp
 L Device:C_Small C9
 U 1 1 626C62F0
-P 3575 10775
-F 0 "C9" V 3750 10725 50  0000 L CNN
-F 1 "10nF" V 3675 10650 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 3575 10775 50  0001 C CNN
-F 3 "" H 3575 10775 50  0001 C CNN
-	1    3575 10775
+P 3700 10775
+F 0 "C9" V 3875 10725 50  0000 L CNN
+F 1 "10nF" V 3800 10650 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 3700 10775 50  0001 C CNN
+F 3 "" H 3700 10775 50  0001 C CNN
+	1    3700 10775
 	-1   0    0    1   
 $EndComp
 $Comp
@@ -2147,9 +2052,7 @@ $EndComp
 Wire Wire Line
 	3800 10600 3875 10600
 Wire Wire Line
-	3575 10675 3575 10400
-Wire Wire Line
-	3575 10400 3875 10400
+	3700 10675 3700 10400
 $Comp
 L Device:CP_Small C8
 U 1 1 62D92460
@@ -2191,12 +2094,12 @@ $EndComp
 $Comp
 L power:GND #PWR026
 U 1 1 62F7E57F
-P 3575 10875
-F 0 "#PWR026" H 3575 10625 50  0001 C CNN
-F 1 "GND" H 3580 10702 50  0000 C CNN
-F 2 "" H 3575 10875 50  0001 C CNN
-F 3 "" H 3575 10875 50  0001 C CNN
-	1    3575 10875
+P 3700 10875
+F 0 "#PWR026" H 3700 10625 50  0001 C CNN
+F 1 "GND" H 3705 10702 50  0000 C CNN
+F 2 "" H 3700 10875 50  0001 C CNN
+F 3 "" H 3700 10875 50  0001 C CNN
+	1    3700 10875
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2218,12 +2121,6 @@ Wire Wire Line
 Wire Wire Line
 	6325 10200 6475 10200
 Connection ~ 6475 10200
-Wire Wire Line
-	6325 9400 6475 9400
-Wire Notes Line
-	6800 11125 8650 11125
-Wire Notes Line
-	6800 9075 8650 9075
 Wire Notes Line
 	1000 9075 6625 9075
 Wire Notes Line
@@ -2236,14 +2133,9 @@ Wire Wire Line
 Wire Wire Line
 	4875 10400 5125 10400
 Wire Wire Line
-	5500 9400 5650 9400
-Wire Wire Line
 	6475 9800 6475 10200
 Wire Wire Line
 	6475 10200 6475 10275
-Wire Wire Line
-	6475 9400 6475 9800
-Connection ~ 6475 9800
 Wire Wire Line
 	6475 10750 6475 10675
 $Comp
@@ -2341,4 +2233,9 @@ Wire Wire Line
 	3500 10200 3800 10200
 Wire Wire Line
 	3400 10200 3500 10200
+Wire Wire Line
+	3700 10400 3875 10400
+NoConn ~ 2125 2300
+NoConn ~ 2125 2400
+NoConn ~ 2125 2500
 $EndSCHEMATC
