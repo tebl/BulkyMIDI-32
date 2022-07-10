@@ -488,4 +488,6 @@ Wire Wire Line
 	5850 6275 6400 6275
 Text Notes 1925 1250 0    50   ~ 0
 Gameport
+Text Notes 5125 1450 0    50   ~ 0
+Mk7-keyboard does not actually have MIDI IN, so this is just in case\nI ever find one that would require it.
 $EndSCHEMATC
