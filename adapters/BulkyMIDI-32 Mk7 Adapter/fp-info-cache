@@ -1,0 +1,50 @@
+11144402072137
+RND_DSUB
+DSUB-9_Female_Edge
+Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+9
+9
+RND_DSUB
+DSUB-9_Male_Edge
+Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+9
+9
+RND_DSUB
+DSUB-9_Male_Vertical_Pitch2.77x2.84mm
+9-pin D-Sub connector, straight/vertical, THT-mount, male, pitch 2.77x2.84mm, distance of mounting holes 25mm, see https://disti-assets.s3.amazonaws.com/tonar/files/datasheets/16730.pdf
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+9
+9
+RND_DSUB
+DSUB-15_Female_Vertical_Pitch2.77x2.84mm
+15-pin D-Sub connector, straight/vertical, THT-mount, male, pitch 2.77x2.84mm, distance of mounting holes 33.3mm, see https://disti-assets.s3.amazonaws.com/tonar/files/datasheets/16730.pdf
+15-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 33.3mm
+0
+15
+15
+RND_DSUB
+DSUB-15_Male_Horizontal_Pitch2.77x2.54mm_EdgePinOffset9.40mm
+15-pin D-Sub connector, horizontal/angled (90 deg), THT-mount, male, pitch 2.77x2.54mm, pin-PCB-offset 9.4mm, see http://docs-europe.electrocomponents.com/webdocs/1585/0900766b81585df2.pdf
+15-pin D-Sub connector horizontal angled 90deg THT male pitch 2.77x2.54mm pin-PCB-offset 9.4mm
+0
+15
+15
+RND_DSUB
+DSUB-15_Male_Vertical_Pitch2.77x2.84mm
+15-pin D-Sub connector, straight/vertical, THT-mount, male, pitch 2.77x2.84mm, distance of mounting holes 33.3mm, see https://disti-assets.s3.amazonaws.com/tonar/files/datasheets/16730.pdf
+15-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 33.3mm
+0
+15
+15
+RND_DSUB
+DSUB-25_Female_Vertical_P2.77x2.84mm_MountingHoles
+25-pin D-Sub connector, straight/vertical, THT-mount, female, pitch 2.77x2.84mm, distance of mounting holes 47.1mm, see https://disti-assets.s3.amazonaws.com/tonar/files/datasheets/16730.pdf
+25-pin D-Sub connector straight vertical THT female pitch 2.77x2.84mm mounting holes distance 47.1mm
+0
+25
+25

@@ -1,0 +1,2 @@
+# BulkyMIDI-32 Mk7 Adapter
+I picked up a fun little keyboard that only comes with a cable that plugs directly into the gameport on a PC soundcard, meaning that in many ways it is the opposite of what the BulkyMIDI-32 Gameport adapter does. While the keyboard itself is only able to send MIDI data out, I left the input section in case someone comes across something similar later that happens to also support MIDI input.
