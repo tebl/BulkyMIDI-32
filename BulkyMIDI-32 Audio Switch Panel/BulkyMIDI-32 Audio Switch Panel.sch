@@ -1,0 +1,567 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "Audio Switch (Panel)"
+Date ""
+Rev "A"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "Front panel for the audio switch, designed for slotting into the module."
+$EndDescr
+$Comp
+L BulkyMIDI:Switch_Panel J1
+U 1 1 62825997
+P 3750 3475
+F 0 "J1" H 4030 3525 50  0000 L CNN
+F 1 "Switch Panel" H 4030 3434 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x21_P2.54mm_Horizontal" H 3750 3475 50  0001 C CNN
+F 3 "~" H 3750 3475 50  0001 C CNN
+	1    3750 3475
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4050 2575 4050 4375
+$Comp
+L power:GND #PWR0101
+U 1 1 6282785A
+P 4050 4650
+F 0 "#PWR0101" H 4050 4400 50  0001 C CNN
+F 1 "GND" H 4055 4477 50  0000 C CNN
+F 2 "" H 4050 4650 50  0001 C CNN
+F 3 "" H 4050 4650 50  0001 C CNN
+	1    4050 4650
+	-1   0    0    -1  
+$EndComp
+Connection ~ 4050 4375
+Wire Wire Line
+	4125 4475 4125 2475
+Wire Wire Line
+	4125 2475 4025 2475
+Wire Wire Line
+	4125 2475 4125 2400
+Connection ~ 4125 2475
+$Comp
+L power:VCC #PWR0102
+U 1 1 62828DC5
+P 4125 2400
+F 0 "#PWR0102" H 4125 2250 50  0001 C CNN
+F 1 "VCC" H 4140 2573 50  0000 C CNN
+F 2 "" H 4125 2400 50  0001 C CNN
+F 3 "" H 4125 2400 50  0001 C CNN
+	1    4125 2400
+	-1   0    0    -1  
+$EndComp
+Entry Wire Line
+	4450 2975 4550 3075
+Entry Wire Line
+	4450 3075 4550 3175
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 628346CB
+P 4025 2475
+F 0 "#FLG0101" H 4025 2550 50  0001 C CNN
+F 1 "PWR_FLAG" H 4025 2648 50  0001 C CNN
+F 2 "" H 4025 2475 50  0001 C CNN
+F 3 "~" H 4025 2475 50  0001 C CNN
+	1    4025 2475
+	-1   0    0    -1  
+$EndComp
+Connection ~ 4025 2475
+Wire Wire Line
+	4025 2475 3950 2475
+Wire Wire Line
+	4050 2575 3950 2575
+Wire Wire Line
+	4450 2975 3950 2975
+Wire Wire Line
+	4450 3075 3950 3075
+Wire Wire Line
+	4050 4375 3950 4375
+Wire Wire Line
+	4125 4475 3950 4475
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 628CF525
+P 4050 4575
+F 0 "#FLG0102" H 4050 4650 50  0001 C CNN
+F 1 "PWR_FLAG" V 4050 4702 50  0001 L CNN
+F 2 "" H 4050 4575 50  0001 C CNN
+F 3 "~" H 4050 4575 50  0001 C CNN
+	1    4050 4575
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4050 4375 4050 4575
+$Comp
+L mounting:Mounting_Pin M1
+U 1 1 6282631C
+P 10600 575
+F 0 "M1" H 10600 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10600 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10600 575 50  0001 C CNN
+F 3 "~" H 10600 575 50  0001 C CNN
+	1    10600 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pin M2
+U 1 1 62826824
+P 10725 575
+F 0 "M2" H 10725 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10725 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10725 575 50  0001 C CNN
+F 3 "~" H 10725 575 50  0001 C CNN
+	1    10725 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pin M3
+U 1 1 62826D8F
+P 10850 575
+F 0 "M3" H 10850 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10850 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10850 575 50  0001 C CNN
+F 3 "~" H 10850 575 50  0001 C CNN
+	1    10850 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pin M4
+U 1 1 62827110
+P 10975 575
+F 0 "M4" H 10975 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10975 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10975 575 50  0001 C CNN
+F 3 "~" H 10975 575 50  0001 C CNN
+	1    10975 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 6282AADA
+P 10975 875
+F 0 "#PWR0111" H 10975 625 50  0001 C CNN
+F 1 "GND" H 10980 702 50  0000 C CNN
+F 2 "" H 10975 875 50  0001 C CNN
+F 3 "" H 10975 875 50  0001 C CNN
+	1    10975 875 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 725  10600 800 
+Wire Wire Line
+	10600 800  10725 800 
+Wire Wire Line
+	10975 800  10975 725 
+Wire Wire Line
+	10725 725  10725 800 
+Connection ~ 10725 800 
+Wire Wire Line
+	10725 800  10850 800 
+Wire Wire Line
+	10850 725  10850 800 
+Connection ~ 10850 800 
+Wire Wire Line
+	10850 800  10975 800 
+Wire Wire Line
+	10975 800  10975 875 
+Wire Wire Line
+	4450 2675 3950 2675
+Wire Wire Line
+	3950 2775 4450 2775
+Wire Wire Line
+	4450 2875 3950 2875
+Text Label 4425 2675 2    50   ~ 0
+PWR
+Entry Wire Line
+	4450 2775 4550 2875
+Entry Wire Line
+	4450 2875 4550 2975
+Entry Wire Line
+	4450 2675 4550 2775
+Entry Bus Bus
+	6250 4950 6350 5050
+Wire Wire Line
+	4050 4575 4050 4650
+Connection ~ 4050 4575
+Connection ~ 10975 800 
+$Comp
+L Switch:SW_Push SW1
+U 1 1 62CDB5FB
+P 5450 2675
+F 0 "SW1" H 5450 2960 50  0000 C CNN
+F 1 "CH1" H 5450 2869 50  0000 C CNN
+F 2 "switch_cutout:SW_PUSH_6mm" H 5450 2875 50  0001 C CNN
+F 3 "~" H 5450 2875 50  0001 C CNN
+	1    5450 2675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR04
+U 1 1 62CDC310
+P 5175 2600
+F 0 "#PWR04" H 5175 2450 50  0001 C CNN
+F 1 "VCC" H 5190 2773 50  0000 C CNN
+F 2 "" H 5175 2600 50  0001 C CNN
+F 3 "" H 5175 2600 50  0001 C CNN
+	1    5175 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5175 2600 5175 2675
+Wire Wire Line
+	5175 2675 5250 2675
+$Comp
+L Switch:SW_Push SW2
+U 1 1 62CDF85A
+P 5450 3075
+F 0 "SW2" H 5450 3360 50  0000 C CNN
+F 1 "CH2" H 5450 3269 50  0000 C CNN
+F 2 "switch_cutout:SW_PUSH_6mm" H 5450 3275 50  0001 C CNN
+F 3 "~" H 5450 3275 50  0001 C CNN
+	1    5450 3075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5175 3075 5250 3075
+$Comp
+L Switch:SW_Push SW3
+U 1 1 62CE1A42
+P 5450 3475
+F 0 "SW3" H 5450 3760 50  0000 C CNN
+F 1 "CH3" H 5450 3669 50  0000 C CNN
+F 2 "switch_cutout:SW_PUSH_6mm" H 5450 3675 50  0001 C CNN
+F 3 "~" H 5450 3675 50  0001 C CNN
+	1    5450 3475
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW4
+U 1 1 62CE1A48
+P 5450 3875
+F 0 "SW4" H 5450 4160 50  0000 C CNN
+F 1 "CH4" H 5450 4069 50  0000 C CNN
+F 2 "switch_cutout:SW_PUSH_6mm" H 5450 4075 50  0001 C CNN
+F 3 "~" H 5450 4075 50  0001 C CNN
+	1    5450 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW5
+U 1 1 62CE4BA8
+P 5450 4275
+F 0 "SW5" H 5450 4560 50  0000 C CNN
+F 1 "CH5" H 5450 4469 50  0000 C CNN
+F 2 "switch_cutout:SW_PUSH_6mm" H 5450 4475 50  0001 C CNN
+F 3 "~" H 5450 4475 50  0001 C CNN
+	1    5450 4275
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5175 2675 5175 3075
+Connection ~ 5175 2675
+Wire Wire Line
+	5175 3075 5175 3475
+Wire Wire Line
+	5175 3475 5250 3475
+Connection ~ 5175 3075
+Wire Wire Line
+	5175 3475 5175 3875
+Wire Wire Line
+	5175 4675 5250 4675
+Connection ~ 5175 3475
+Wire Wire Line
+	5250 4275 5175 4275
+Connection ~ 5175 4275
+Wire Wire Line
+	5175 4275 5175 4675
+Wire Wire Line
+	5175 3875 5250 3875
+Connection ~ 5175 3875
+Wire Wire Line
+	5175 3875 5175 4275
+$Comp
+L Switch:SW_Push SW6
+U 1 1 62CE4BAE
+P 5450 4675
+F 0 "SW6" H 5450 4960 50  0000 C CNN
+F 1 "CH6" H 5450 4869 50  0000 C CNN
+F 2 "switch_cutout:SW_PUSH_6mm" H 5450 4875 50  0001 C CNN
+F 3 "~" H 5450 4875 50  0001 C CNN
+	1    5450 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR05
+U 1 1 62CF65C7
+P 6775 2200
+F 0 "#PWR05" H 6775 2050 50  0001 C CNN
+F 1 "VCC" H 6790 2373 50  0000 C CNN
+F 2 "" H 6775 2200 50  0001 C CNN
+F 3 "" H 6775 2200 50  0001 C CNN
+	1    6775 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6775 2200 6775 2275
+Wire Wire Line
+	6775 2675 6850 2675
+Wire Wire Line
+	6775 3075 6850 3075
+Wire Wire Line
+	6775 2675 6775 3075
+Wire Wire Line
+	6775 3075 6775 3475
+Wire Wire Line
+	6775 3475 6850 3475
+Connection ~ 6775 3075
+Wire Wire Line
+	6775 3475 6775 3875
+Wire Wire Line
+	6775 4675 6850 4675
+Connection ~ 6775 3475
+Wire Wire Line
+	6850 4275 6775 4275
+Connection ~ 6775 4275
+Wire Wire Line
+	6775 4275 6775 4675
+Wire Wire Line
+	6775 3875 6850 3875
+Connection ~ 6775 3875
+Wire Wire Line
+	6775 3875 6775 4275
+$Comp
+L Device:LED D2
+U 1 1 62CF97D1
+P 7000 3075
+F 0 "D2" H 6993 2820 50  0000 C CNN
+F 1 "CH2" H 6993 2911 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 7000 3075 50  0001 C CNN
+F 3 "~" H 7000 3075 50  0001 C CNN
+	1    7000 3075
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 62CFB8CE
+P 7000 3475
+F 0 "D3" H 6993 3220 50  0000 C CNN
+F 1 "CH3" H 6993 3311 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 7000 3475 50  0001 C CNN
+F 3 "~" H 7000 3475 50  0001 C CNN
+	1    7000 3475
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D4
+U 1 1 62CFDD71
+P 7000 3875
+F 0 "D4" H 6993 3620 50  0000 C CNN
+F 1 "CH4" H 6993 3711 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 7000 3875 50  0001 C CNN
+F 3 "~" H 7000 3875 50  0001 C CNN
+	1    7000 3875
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D5
+U 1 1 62CFFF8E
+P 7000 4275
+F 0 "D5" H 6993 4020 50  0000 C CNN
+F 1 "CH5" H 6993 4111 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 7000 4275 50  0001 C CNN
+F 3 "~" H 7000 4275 50  0001 C CNN
+	1    7000 4275
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D6
+U 1 1 62D0229F
+P 7000 4675
+F 0 "D6" H 6993 4420 50  0000 C CNN
+F 1 "CH6" H 6993 4511 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 7000 4675 50  0001 C CNN
+F 3 "~" H 7000 4675 50  0001 C CNN
+	1    7000 4675
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 62CF2B88
+P 7000 2675
+F 0 "D1" H 6993 2420 50  0000 C CNN
+F 1 "CH1" H 6993 2511 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 7000 2675 50  0001 C CNN
+F 3 "~" H 7000 2675 50  0001 C CNN
+	1    7000 2675
+	-1   0    0    1   
+$EndComp
+Entry Wire Line
+	4450 3175 4550 3275
+Entry Wire Line
+	4450 3275 4550 3375
+Wire Wire Line
+	4450 3175 3950 3175
+Wire Wire Line
+	4450 3275 3950 3275
+Entry Wire Line
+	4450 3375 4550 3475
+Entry Wire Line
+	4450 3475 4550 3575
+Wire Wire Line
+	4450 3375 3950 3375
+Wire Wire Line
+	4450 3475 3950 3475
+Entry Wire Line
+	4450 3575 4550 3675
+Entry Wire Line
+	4450 3675 4550 3775
+Wire Wire Line
+	4450 3575 3950 3575
+Wire Wire Line
+	4450 3675 3950 3675
+Entry Wire Line
+	4450 3775 4550 3875
+Entry Wire Line
+	4450 3875 4550 3975
+Wire Wire Line
+	4450 3775 3950 3775
+Wire Wire Line
+	4450 3875 3950 3875
+Text Label 4425 2775 2    50   ~ 0
+SW1
+Text Label 4425 2975 2    50   ~ 0
+SW2
+Text Label 4425 3175 2    50   ~ 0
+SW3
+Text Label 4425 3375 2    50   ~ 0
+SW4
+Text Label 4425 3575 2    50   ~ 0
+SW5
+Text Label 4425 3775 2    50   ~ 0
+SW6
+Text Label 4425 2875 2    50   ~ 0
+LED1
+Text Label 4425 3075 2    50   ~ 0
+LED2
+Text Label 4425 3275 2    50   ~ 0
+LED3
+Text Label 4425 3475 2    50   ~ 0
+LED4
+Text Label 4425 3675 2    50   ~ 0
+LED5
+Text Label 4425 3875 2    50   ~ 0
+LED6
+Wire Wire Line
+	6150 2675 5650 2675
+Entry Wire Line
+	6150 2675 6250 2775
+Wire Wire Line
+	6150 3075 5650 3075
+Entry Wire Line
+	6150 3075 6250 3175
+Wire Wire Line
+	6150 3475 5650 3475
+Entry Wire Line
+	6150 3475 6250 3575
+Wire Wire Line
+	6150 3875 5650 3875
+Entry Wire Line
+	6150 3875 6250 3975
+Wire Wire Line
+	6150 4275 5650 4275
+Entry Wire Line
+	6150 4275 6250 4375
+Wire Wire Line
+	6150 4675 5650 4675
+Entry Wire Line
+	6150 4675 6250 4775
+Wire Wire Line
+	7650 2675 7150 2675
+Entry Wire Line
+	7650 2675 7750 2775
+Wire Wire Line
+	7650 3075 7150 3075
+Entry Wire Line
+	7650 3075 7750 3175
+Wire Wire Line
+	7650 3475 7150 3475
+Entry Wire Line
+	7650 3475 7750 3575
+Wire Wire Line
+	7650 3875 7150 3875
+Entry Wire Line
+	7650 3875 7750 3975
+Wire Wire Line
+	7650 4275 7150 4275
+Entry Wire Line
+	7650 4275 7750 4375
+Wire Wire Line
+	7650 4675 7150 4675
+Entry Wire Line
+	7650 4675 7750 4775
+Text Label 6125 2675 2    50   ~ 0
+SW1
+Text Label 6125 3075 2    50   ~ 0
+SW2
+Text Label 6125 3475 2    50   ~ 0
+SW3
+Text Label 6125 3875 2    50   ~ 0
+SW4
+Text Label 6125 4275 2    50   ~ 0
+SW5
+Text Label 6125 4675 2    50   ~ 0
+SW6
+Text Label 7625 2675 2    50   ~ 0
+LED1
+Text Label 7625 3075 2    50   ~ 0
+LED2
+Text Label 7625 3475 2    50   ~ 0
+LED3
+Text Label 7625 3875 2    50   ~ 0
+LED4
+Text Label 7625 4275 2    50   ~ 0
+LED5
+Text Label 7625 4675 2    50   ~ 0
+LED6
+Entry Bus Bus
+	7750 4950 7850 5050
+Entry Bus Bus
+	4550 4950 4650 5050
+$Comp
+L Device:LED D7
+U 1 1 62E202D3
+P 7000 2275
+F 0 "D7" H 6993 2020 50  0000 C CNN
+F 1 "PWR" H 6993 2111 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 7000 2275 50  0001 C CNN
+F 3 "~" H 7000 2275 50  0001 C CNN
+	1    7000 2275
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7650 2275 7150 2275
+Entry Wire Line
+	7650 2275 7750 2375
+Text Label 7625 2275 2    50   ~ 0
+PWR
+Wire Wire Line
+	6850 2275 6775 2275
+Wire Wire Line
+	6775 2275 6775 2675
+Connection ~ 6775 2275
+Connection ~ 6775 2675
+Wire Bus Line
+	4650 5050 7850 5050
+Wire Bus Line
+	6250 2775 6250 4950
+Wire Bus Line
+	7750 2375 7750 4950
+Wire Bus Line
+	4550 2775 4550 4950
+$EndSCHEMATC
