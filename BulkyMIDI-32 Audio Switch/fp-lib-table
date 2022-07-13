@@ -1,0 +1,10 @@
+(fp_lib_table
+  (lib (name mounting)(type KiCad)(uri $KIPRJMOD/../common/modules/mounting.pretty)(options "")(descr ""))
+  (lib (name Jumper)(type KiCad)(uri ${KISYSMOD}/Jumper.pretty)(options "")(descr ""))
+  (lib (name wire_pads)(type KiCad)(uri $KIPRJMOD/../common/modules/wire_pads.pretty)(options "")(descr ""))
+  (lib (name BulkyMIDI-32)(type KiCad)(uri $KIPRJMOD/../common/modules/BulkyMIDI-32.pretty)(options "")(descr ""))
+  (lib (name artwork)(type KiCad)(uri $KIPRJMOD/../common/modules/artwork.pretty)(options "")(descr ""))
+  (lib (name resistor)(type KiCad)(uri $KIPRJMOD/../common/modules/resistor.pretty)(options "")(descr ""))
+  (lib (name audio_jack)(type KiCad)(uri $KIPRJMOD/../common/modules/audio_jack.pretty)(options "")(descr ""))
+  (lib (name HK19F-DC)(type KiCad)(uri $KIPRJMOD/../common/modules/HK19F-DC.pretty)(options "")(descr ""))
+)
