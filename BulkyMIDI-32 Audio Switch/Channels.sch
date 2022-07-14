@@ -31,9 +31,6 @@ Wire Wire Line
 Wire Wire Line
 	1950 1825 1950 1900
 Wire Wire Line
-	1950 1450 1950 1375
-Connection ~ 1950 1450
-Wire Wire Line
 	2800 925  2800 1000
 Wire Wire Line
 	2800 1000 2550 1000
@@ -94,7 +91,7 @@ AR Path="/635EE3B0" Ref="R?"  Part="1"
 AR Path="/635D4EBA/635EE3B0" Ref="R11"  Part="1" 
 F 0 "R11" V 1443 2175 50  0000 C CNN
 F 1 "1k" V 1534 2175 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 2175 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 2175 50  0001 C CNN
 F 3 "~" H 1650 2175 50  0001 C CNN
 	1    1650 2175
 	0    1    1    0   
@@ -107,7 +104,7 @@ AR Path="/635EE3B6" Ref="Q?"  Part="1"
 AR Path="/635D4EBA/635EE3B6" Ref="Q2"  Part="1" 
 F 0 "Q2" H 2340 2221 50  0000 L CNN
 F 1 "2N3904" H 2340 2130 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2350 2100 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 2350 2100 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 2150 2175 50  0001 L CNN
 	1    2150 2175
 	1    0    0    -1  
@@ -120,7 +117,7 @@ AR Path="/635EE3C0" Ref="R?"  Part="1"
 AR Path="/635D4EBA/635EE3C0" Ref="R14"  Part="1" 
 F 0 "R14" H 1805 2354 50  0000 R CNN
 F 1 "10k" H 1805 2445 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 2400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 2400 50  0001 C CNN
 F 3 "~" H 1875 2400 50  0001 C CNN
 	1    1875 2400
 	-1   0    0    1   
@@ -140,32 +137,6 @@ F 3 "" H 2250 2375 50  0001 C CNN
 $EndComp
 Text Label 1175 2175 0    50   ~ 0
 CH1
-$Comp
-L Device:LED D?
-U 1 1 635EE3D5
-P 1950 1225
-AR Path="/635EE3D5" Ref="D?"  Part="1" 
-AR Path="/635D4EBA/635EE3D5" Ref="D8"  Part="1" 
-F 0 "D8" V 1989 1107 50  0000 R CNN
-F 1 "CH1" V 1898 1107 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 1950 1225 50  0001 C CNN
-F 3 "~" H 1950 1225 50  0001 C CNN
-	1    1950 1225
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 635EE3DB
-P 1950 1075
-AR Path="/635EE3DB" Ref="#PWR?"  Part="1" 
-AR Path="/635D4EBA/635EE3DB" Ref="#PWR0181"  Part="1" 
-F 0 "#PWR0181" H 1950 925 50  0001 C CNN
-F 1 "+5V" H 1950 1225 50  0000 C CNN
-F 2 "" H 1950 1075 50  0001 C CNN
-F 3 "" H 1950 1075 50  0001 C CNN
-	1    1950 1075
-	1    0    0    -1  
-$EndComp
 Text Label 1175 1450 0    50   ~ 0
 LED1
 $Comp
@@ -176,7 +147,7 @@ AR Path="/635EE3E4" Ref="R?"  Part="1"
 AR Path="/635D4EBA/635EE3E4" Ref="R17"  Part="1" 
 F 0 "R17" H 1880 1629 50  0000 R CNN
 F 1 "470" H 1880 1720 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 1675 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 1675 50  0001 C CNN
 F 3 "~" H 1950 1675 50  0001 C CNN
 	1    1950 1675
 	-1   0    0    1   
@@ -186,8 +157,8 @@ L hk19f-dc:HK19F-DC K?
 U 1 1 635EE3EE
 P 2800 1450
 AR Path="/635EE3EE" Ref="K?"  Part="1" 
-AR Path="/635D4EBA/635EE3EE" Ref="K2"  Part="1" 
-F 0 "K2" H 3653 1496 50  0000 L CNN
+AR Path="/635D4EBA/635EE3EE" Ref="K1"  Part="1" 
+F 0 "K1" H 3653 1496 50  0000 L CNN
 F 1 "HK19F-DC" H 3653 1405 50  0000 L CNN
 F 2 "HK19F-DC:HK19F-DC" H 3650 1575 50  0001 C CNN
 F 3 "" H 3650 1575 50  0001 C CNN
@@ -281,9 +252,6 @@ Wire Wire Line
 Wire Wire Line
 	6525 1825 6525 1900
 Wire Wire Line
-	6525 1450 6525 1375
-Connection ~ 6525 1450
-Wire Wire Line
 	7375 925  7375 1000
 Wire Wire Line
 	7375 1000 7125 1000
@@ -344,7 +312,7 @@ AR Path="/63BE34E7" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63BE34E7" Ref="R19"  Part="1" 
 F 0 "R19" V 6018 2175 50  0000 C CNN
 F 1 "1k" V 6109 2175 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 2175 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 2175 50  0001 C CNN
 F 3 "~" H 6225 2175 50  0001 C CNN
 	1    6225 2175
 	0    1    1    0   
@@ -357,7 +325,7 @@ AR Path="/63BE34ED" Ref="Q?"  Part="1"
 AR Path="/635D4EBA/63BE34ED" Ref="Q4"  Part="1" 
 F 0 "Q4" H 6915 2221 50  0000 L CNN
 F 1 "2N3904" H 6915 2130 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6925 2100 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 6925 2100 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 6725 2175 50  0001 L CNN
 	1    6725 2175
 	1    0    0    -1  
@@ -370,7 +338,7 @@ AR Path="/63BE34F3" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63BE34F3" Ref="R22"  Part="1" 
 F 0 "R22" H 6380 2354 50  0000 R CNN
 F 1 "10k" H 6380 2445 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 2400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 2400 50  0001 C CNN
 F 3 "~" H 6450 2400 50  0001 C CNN
 	1    6450 2400
 	-1   0    0    1   
@@ -390,32 +358,6 @@ F 3 "" H 6825 2375 50  0001 C CNN
 $EndComp
 Text Label 5750 2175 0    50   ~ 0
 CH4
-$Comp
-L Device:LED D?
-U 1 1 63BE3500
-P 6525 1225
-AR Path="/63BE3500" Ref="D?"  Part="1" 
-AR Path="/635D4EBA/63BE3500" Ref="D13"  Part="1" 
-F 0 "D13" V 6564 1107 50  0000 R CNN
-F 1 "CH4" V 6473 1107 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 6525 1225 50  0001 C CNN
-F 3 "~" H 6525 1225 50  0001 C CNN
-	1    6525 1225
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 63BE3506
-P 6525 1075
-AR Path="/63BE3506" Ref="#PWR?"  Part="1" 
-AR Path="/635D4EBA/63BE3506" Ref="#PWR0119"  Part="1" 
-F 0 "#PWR0119" H 6525 925 50  0001 C CNN
-F 1 "+5V" H 6525 1225 50  0000 C CNN
-F 2 "" H 6525 1075 50  0001 C CNN
-F 3 "" H 6525 1075 50  0001 C CNN
-	1    6525 1075
-	1    0    0    -1  
-$EndComp
 Text Label 5750 1450 0    50   ~ 0
 LED4
 $Comp
@@ -426,7 +368,7 @@ AR Path="/63BE350D" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63BE350D" Ref="R25"  Part="1" 
 F 0 "R25" H 6455 1629 50  0000 R CNN
 F 1 "470" H 6455 1720 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 1675 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 1675 50  0001 C CNN
 F 3 "~" H 6525 1675 50  0001 C CNN
 	1    6525 1675
 	-1   0    0    1   
@@ -531,9 +473,6 @@ Wire Wire Line
 Wire Wire Line
 	1950 3950 1950 4025
 Wire Wire Line
-	1950 3575 1950 3500
-Connection ~ 1950 3575
-Wire Wire Line
 	2800 3050 2800 3125
 Wire Wire Line
 	2800 3125 2550 3125
@@ -594,7 +533,7 @@ AR Path="/63C22623" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C22623" Ref="R10"  Part="1" 
 F 0 "R10" V 1443 4300 50  0000 C CNN
 F 1 "1k" V 1534 4300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 4300 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 4300 50  0001 C CNN
 F 3 "~" H 1650 4300 50  0001 C CNN
 	1    1650 4300
 	0    1    1    0   
@@ -607,7 +546,7 @@ AR Path="/63C22629" Ref="Q?"  Part="1"
 AR Path="/635D4EBA/63C22629" Ref="Q1"  Part="1" 
 F 0 "Q1" H 2340 4346 50  0000 L CNN
 F 1 "2N3904" H 2340 4255 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2350 4225 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 2350 4225 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 2150 4300 50  0001 L CNN
 	1    2150 4300
 	1    0    0    -1  
@@ -620,7 +559,7 @@ AR Path="/63C2262F" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C2262F" Ref="R13"  Part="1" 
 F 0 "R13" H 1805 4479 50  0000 R CNN
 F 1 "10k" H 1805 4570 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 4525 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 4525 50  0001 C CNN
 F 3 "~" H 1875 4525 50  0001 C CNN
 	1    1875 4525
 	-1   0    0    1   
@@ -640,32 +579,6 @@ F 3 "" H 2250 4500 50  0001 C CNN
 $EndComp
 Text Label 1175 4300 0    50   ~ 0
 CH2
-$Comp
-L Device:LED D?
-U 1 1 63C2263C
-P 1950 3350
-AR Path="/63C2263C" Ref="D?"  Part="1" 
-AR Path="/635D4EBA/63C2263C" Ref="D7"  Part="1" 
-F 0 "D7" V 1989 3232 50  0000 R CNN
-F 1 "CH2" V 1898 3232 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 1950 3350 50  0001 C CNN
-F 3 "~" H 1950 3350 50  0001 C CNN
-	1    1950 3350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 63C22642
-P 1950 3200
-AR Path="/63C22642" Ref="#PWR?"  Part="1" 
-AR Path="/635D4EBA/63C22642" Ref="#PWR0125"  Part="1" 
-F 0 "#PWR0125" H 1950 3050 50  0001 C CNN
-F 1 "+5V" H 1950 3350 50  0000 C CNN
-F 2 "" H 1950 3200 50  0001 C CNN
-F 3 "" H 1950 3200 50  0001 C CNN
-	1    1950 3200
-	1    0    0    -1  
-$EndComp
 Text Label 1175 3575 0    50   ~ 0
 LED2
 $Comp
@@ -676,7 +589,7 @@ AR Path="/63C22649" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C22649" Ref="R16"  Part="1" 
 F 0 "R16" H 1880 3754 50  0000 R CNN
 F 1 "470" H 1880 3845 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 3800 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 3800 50  0001 C CNN
 F 3 "~" H 1950 3800 50  0001 C CNN
 	1    1950 3800
 	-1   0    0    1   
@@ -686,8 +599,8 @@ L hk19f-dc:HK19F-DC K?
 U 1 1 63C2264F
 P 2800 3575
 AR Path="/63C2264F" Ref="K?"  Part="1" 
-AR Path="/635D4EBA/63C2264F" Ref="K1"  Part="1" 
-F 0 "K1" H 3653 3621 50  0000 L CNN
+AR Path="/635D4EBA/63C2264F" Ref="K2"  Part="1" 
+F 0 "K2" H 3653 3621 50  0000 L CNN
 F 1 "HK19F-DC" H 3653 3530 50  0000 L CNN
 F 2 "HK19F-DC:HK19F-DC" H 3650 3700 50  0001 C CNN
 F 3 "" H 3650 3700 50  0001 C CNN
@@ -781,9 +694,6 @@ Wire Wire Line
 Wire Wire Line
 	6525 3950 6525 4025
 Wire Wire Line
-	6525 3575 6525 3500
-Connection ~ 6525 3575
-Wire Wire Line
 	7375 3050 7375 3125
 Wire Wire Line
 	7375 3125 7125 3125
@@ -844,7 +754,7 @@ AR Path="/63C226A2" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C226A2" Ref="R20"  Part="1" 
 F 0 "R20" V 6018 4300 50  0000 C CNN
 F 1 "1k" V 6109 4300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 4300 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 4300 50  0001 C CNN
 F 3 "~" H 6225 4300 50  0001 C CNN
 	1    6225 4300
 	0    1    1    0   
@@ -857,7 +767,7 @@ AR Path="/63C226A8" Ref="Q?"  Part="1"
 AR Path="/635D4EBA/63C226A8" Ref="Q5"  Part="1" 
 F 0 "Q5" H 6915 4346 50  0000 L CNN
 F 1 "2N3904" H 6915 4255 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6925 4225 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 6925 4225 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 6725 4300 50  0001 L CNN
 	1    6725 4300
 	1    0    0    -1  
@@ -870,7 +780,7 @@ AR Path="/63C226AE" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C226AE" Ref="R23"  Part="1" 
 F 0 "R23" H 6380 4479 50  0000 R CNN
 F 1 "10k" H 6380 4570 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 4525 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 4525 50  0001 C CNN
 F 3 "~" H 6450 4525 50  0001 C CNN
 	1    6450 4525
 	-1   0    0    1   
@@ -890,32 +800,6 @@ F 3 "" H 6825 4500 50  0001 C CNN
 $EndComp
 Text Label 5750 4300 0    50   ~ 0
 CH5
-$Comp
-L Device:LED D?
-U 1 1 63C226BB
-P 6525 3350
-AR Path="/63C226BB" Ref="D?"  Part="1" 
-AR Path="/635D4EBA/63C226BB" Ref="D14"  Part="1" 
-F 0 "D14" V 6564 3232 50  0000 R CNN
-F 1 "CH5" V 6473 3232 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 6525 3350 50  0001 C CNN
-F 3 "~" H 6525 3350 50  0001 C CNN
-	1    6525 3350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 63C226C1
-P 6525 3200
-AR Path="/63C226C1" Ref="#PWR?"  Part="1" 
-AR Path="/635D4EBA/63C226C1" Ref="#PWR0130"  Part="1" 
-F 0 "#PWR0130" H 6525 3050 50  0001 C CNN
-F 1 "+5V" H 6525 3350 50  0000 C CNN
-F 2 "" H 6525 3200 50  0001 C CNN
-F 3 "" H 6525 3200 50  0001 C CNN
-	1    6525 3200
-	1    0    0    -1  
-$EndComp
 Text Label 5750 3575 0    50   ~ 0
 LED5
 $Comp
@@ -926,7 +810,7 @@ AR Path="/63C226C8" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C226C8" Ref="R26"  Part="1" 
 F 0 "R26" H 6455 3754 50  0000 R CNN
 F 1 "470" H 6455 3845 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 3800 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 3800 50  0001 C CNN
 F 3 "~" H 6525 3800 50  0001 C CNN
 	1    6525 3800
 	-1   0    0    1   
@@ -1031,9 +915,6 @@ Wire Wire Line
 Wire Wire Line
 	1950 6050 1950 6125
 Wire Wire Line
-	1950 5675 1950 5600
-Connection ~ 1950 5675
-Wire Wire Line
 	2800 5150 2800 5225
 Wire Wire Line
 	2800 5225 2550 5225
@@ -1094,7 +975,7 @@ AR Path="/63C3FFE9" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C3FFE9" Ref="R12"  Part="1" 
 F 0 "R12" V 1443 6400 50  0000 C CNN
 F 1 "1k" V 1534 6400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 6400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 6400 50  0001 C CNN
 F 3 "~" H 1650 6400 50  0001 C CNN
 	1    1650 6400
 	0    1    1    0   
@@ -1107,7 +988,7 @@ AR Path="/63C3FFEF" Ref="Q?"  Part="1"
 AR Path="/635D4EBA/63C3FFEF" Ref="Q3"  Part="1" 
 F 0 "Q3" H 2340 6446 50  0000 L CNN
 F 1 "2N3904" H 2340 6355 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 2350 6325 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 2350 6325 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 2150 6400 50  0001 L CNN
 	1    2150 6400
 	1    0    0    -1  
@@ -1120,7 +1001,7 @@ AR Path="/63C3FFF5" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C3FFF5" Ref="R15"  Part="1" 
 F 0 "R15" H 1805 6579 50  0000 R CNN
 F 1 "10k" H 1805 6670 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 6625 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 6625 50  0001 C CNN
 F 3 "~" H 1875 6625 50  0001 C CNN
 	1    1875 6625
 	-1   0    0    1   
@@ -1140,32 +1021,6 @@ F 3 "" H 2250 6600 50  0001 C CNN
 $EndComp
 Text Label 1175 6400 0    50   ~ 0
 CH3
-$Comp
-L Device:LED D?
-U 1 1 63C40002
-P 1950 5450
-AR Path="/63C40002" Ref="D?"  Part="1" 
-AR Path="/635D4EBA/63C40002" Ref="D9"  Part="1" 
-F 0 "D9" V 1989 5332 50  0000 R CNN
-F 1 "CH3" V 1898 5332 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 1950 5450 50  0001 C CNN
-F 3 "~" H 1950 5450 50  0001 C CNN
-	1    1950 5450
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 63C40008
-P 1950 5300
-AR Path="/63C40008" Ref="#PWR?"  Part="1" 
-AR Path="/635D4EBA/63C40008" Ref="#PWR0135"  Part="1" 
-F 0 "#PWR0135" H 1950 5150 50  0001 C CNN
-F 1 "+5V" H 1950 5450 50  0000 C CNN
-F 2 "" H 1950 5300 50  0001 C CNN
-F 3 "" H 1950 5300 50  0001 C CNN
-	1    1950 5300
-	1    0    0    -1  
-$EndComp
 Text Label 1175 5675 0    50   ~ 0
 LED3
 $Comp
@@ -1176,7 +1031,7 @@ AR Path="/63C4000F" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C4000F" Ref="R18"  Part="1" 
 F 0 "R18" H 1880 5854 50  0000 R CNN
 F 1 "470" H 1880 5945 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 5900 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 5900 50  0001 C CNN
 F 3 "~" H 1950 5900 50  0001 C CNN
 	1    1950 5900
 	-1   0    0    1   
@@ -1281,9 +1136,6 @@ Wire Wire Line
 Wire Wire Line
 	6525 6050 6525 6125
 Wire Wire Line
-	6525 5675 6525 5600
-Connection ~ 6525 5675
-Wire Wire Line
 	7375 5150 7375 5225
 Wire Wire Line
 	7375 5225 7125 5225
@@ -1344,7 +1196,7 @@ AR Path="/63C40068" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C40068" Ref="R21"  Part="1" 
 F 0 "R21" V 6018 6400 50  0000 C CNN
 F 1 "1k" V 6109 6400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 6400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 6400 50  0001 C CNN
 F 3 "~" H 6225 6400 50  0001 C CNN
 	1    6225 6400
 	0    1    1    0   
@@ -1357,7 +1209,7 @@ AR Path="/63C4006E" Ref="Q?"  Part="1"
 AR Path="/635D4EBA/63C4006E" Ref="Q6"  Part="1" 
 F 0 "Q6" H 6915 6446 50  0000 L CNN
 F 1 "2N3904" H 6915 6355 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 6925 6325 50  0001 L CIN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 6925 6325 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 6725 6400 50  0001 L CNN
 	1    6725 6400
 	1    0    0    -1  
@@ -1370,7 +1222,7 @@ AR Path="/63C40074" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C40074" Ref="R24"  Part="1" 
 F 0 "R24" H 6380 6579 50  0000 R CNN
 F 1 "10k" H 6380 6670 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 6625 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 6625 50  0001 C CNN
 F 3 "~" H 6450 6625 50  0001 C CNN
 	1    6450 6625
 	-1   0    0    1   
@@ -1390,32 +1242,6 @@ F 3 "" H 6825 6600 50  0001 C CNN
 $EndComp
 Text Label 5750 6400 0    50   ~ 0
 CH6
-$Comp
-L Device:LED D?
-U 1 1 63C40081
-P 6525 5450
-AR Path="/63C40081" Ref="D?"  Part="1" 
-AR Path="/635D4EBA/63C40081" Ref="D15"  Part="1" 
-F 0 "D15" V 6564 5332 50  0000 R CNN
-F 1 "CH6" V 6473 5332 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm" H 6525 5450 50  0001 C CNN
-F 3 "~" H 6525 5450 50  0001 C CNN
-	1    6525 5450
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR?
-U 1 1 63C40087
-P 6525 5300
-AR Path="/63C40087" Ref="#PWR?"  Part="1" 
-AR Path="/635D4EBA/63C40087" Ref="#PWR0140"  Part="1" 
-F 0 "#PWR0140" H 6525 5150 50  0001 C CNN
-F 1 "+5V" H 6525 5450 50  0000 C CNN
-F 2 "" H 6525 5300 50  0001 C CNN
-F 3 "" H 6525 5300 50  0001 C CNN
-	1    6525 5300
-	1    0    0    -1  
-$EndComp
 Text Label 5750 5675 0    50   ~ 0
 LED6
 $Comp
@@ -1426,7 +1252,7 @@ AR Path="/63C4008E" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C4008E" Ref="R27"  Part="1" 
 F 0 "R27" H 6455 5854 50  0000 R CNN
 F 1 "470" H 6455 5945 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 5900 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 5900 50  0001 C CNN
 F 3 "~" H 6525 5900 50  0001 C CNN
 	1    6525 5900
 	-1   0    0    1   

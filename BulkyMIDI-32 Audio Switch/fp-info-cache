@@ -1,4 +1,4 @@
-19079955575272409
+19071858148417460
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -51666,6 +51666,13 @@ Fuse Fuseholder TR5 Littelfuse/Wickmann No. 460 No560
 0
 2
 2
+HK19F-DC
+HK19F-DC
+
+
+0
+8
+8
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
@@ -83117,20 +83124,6 @@ varistor SIOV
 0
 2
 2
-arduino_pro_micro
-Arduino_Pro_Micro
-
-
-0
-36
-24
-arduino_pro_micro
-Arduino_Pro_Micro_Reverse
-
-
-0
-36
-24
 artwork
 BulkyMIDI-32
 
@@ -83173,41 +83166,20 @@ VU SIDi
 0
 0
 0
-i2c_oled
-0.91_I2C_OLED
+audio_jack
+2.5mm_audio
 
 
 0
-4
-4
-i2c_oled
-0.96_I2C_OLED
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
+3
+3
+audio_jack
+Tayda_3.5mm_stereo_TRS_jack_A-853
+
+
 0
-4
-4
-i2c_oled
-0.96_I2C_OLED2
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED_NEW
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-1.3_I2C_OLED_No_mounting
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
+5
+5
 mounting
 M2
 module 1 pin (ou trou mecanique de percage)
@@ -83243,13 +83215,6 @@ Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W le
 0
 2
 2
-sd_card_adapter
-MicroSD_Card_Adapter
-
-
-0
-6
-6
 wire_pads
 OLED_SEL
 Through hole straight pin header, 1x03, 1.27mm pitch, single row

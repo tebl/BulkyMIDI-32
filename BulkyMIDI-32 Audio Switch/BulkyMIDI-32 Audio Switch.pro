@@ -1,4 +1,4 @@
-update=13.07.2022 20:15:42
+update=14.07.2022 04:00:42
 version=1
 last_client=kicad
 [general]
@@ -15,7 +15,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=BulkyMIDI-32 Play.net
+LastNetListRead=BulkyMIDI-32 Audio Switch.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
@@ -241,6 +241,17 @@ dPairGap=0.25
 dPairViaGap=0.25
 [pcbnew/Netclasses/1]
 Name=Power
+Clearance=0.2
+TrackWidth=0.381
+ViaDiameter=1
+ViaDrill=0.4
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
+[pcbnew/Netclasses/2]
+Name=Sound
 Clearance=0.2
 TrackWidth=0.381
 ViaDiameter=1
