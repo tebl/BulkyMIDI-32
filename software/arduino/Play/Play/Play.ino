@@ -196,6 +196,8 @@ void tick_metronome(void) {
 void set_state(PlayerState new_state) {
   state = new_state;
   switch (state) {
+    case PlayerState::PAUSED:
+    case PlayerState::PLAYING:
     case PlayerState::INACTIVE:
       system_led.boost(LED_DELAY);
       break;
