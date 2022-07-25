@@ -1,0 +1,5 @@
+(sym_lib_table
+  (lib (name I2C_OLED)(type Legacy)(uri ${KIPRJMOD}/../../common/library/I2C_OLED.lib)(options "")(descr ""))
+  (lib (name mounting)(type Legacy)(uri ${KIPRJMOD}/../../common/library/mounting.lib)(options "")(descr ""))
+  (lib (name BulkyMIDI)(type Legacy)(uri ${KIPRJMOD}/../../common/library/BulkyMIDI.lib)(options "")(descr ""))
+)

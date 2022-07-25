@@ -1,9 +1,9 @@
-# BulkyMIDI-32 Faceplate (FB1)
+# BulkyMIDI-32 Faceplate (FB2)
 A faceplate designed to be installed on the top of my secondary modules as well as the later revisions of the BulkyMIDI-32 itself - it has a cutout for the panel that slot into them (not to be with front plates/FP faceplates as these are just cosmetics to mount on the front). It does not have any electrical components, and should for the most part be considered a cosmetic option though there is probably an argument for the mechanical viability of the panels.
 
-FB1 features the earlier version of the logo used.
+FB2 features the later 8bit version of the logo.
 
-![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/BulkyMIDI-32%20FB1.jpg)
+![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/BulkyMIDI-32%20FB2.jpg)
 
 - [1> Schematic](#1-schematic)
 - [2> BOM](#2-bom)
