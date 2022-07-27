@@ -217,9 +217,7 @@ F 3 "" H 4600 1700 50  0001 C CNN
 	1    4600 1700
 	-1   0    0    -1  
 $EndComp
-Text HLabel 1150 2175 0    50   Input ~ 0
-CH1
-Text HLabel 1150 1450 0    50   Input ~ 0
+Text HLabel 1150 1450 0    50   Output ~ 0
 LED1
 $Comp
 L power:GND #PWR?
@@ -440,7 +438,7 @@ F 3 "" H 9175 1700 50  0001 C CNN
 $EndComp
 Text HLabel 5725 2175 0    50   Input ~ 0
 CH4
-Text HLabel 5725 1450 0    50   Input ~ 0
+Text HLabel 5725 1450 0    50   Output ~ 0
 LED4
 $Comp
 L power:GND #PWR?
@@ -661,7 +659,7 @@ F 3 "" H 4600 3825 50  0001 C CNN
 $EndComp
 Text HLabel 1150 4300 0    50   Input ~ 0
 CH2
-Text HLabel 1150 3575 0    50   Input ~ 0
+Text HLabel 1150 3575 0    50   Output ~ 0
 LED2
 $Comp
 L power:GND #PWR?
@@ -882,7 +880,7 @@ F 3 "" H 9175 3825 50  0001 C CNN
 $EndComp
 Text HLabel 5725 4300 0    50   Input ~ 0
 CH5
-Text HLabel 5725 3575 0    50   Input ~ 0
+Text HLabel 5725 3575 0    50   Output ~ 0
 LED5
 $Comp
 L power:GND #PWR?
@@ -1103,7 +1101,7 @@ F 3 "" H 4600 5925 50  0001 C CNN
 $EndComp
 Text HLabel 1150 6400 0    50   Input ~ 0
 CH3
-Text HLabel 1150 5675 0    50   Input ~ 0
+Text HLabel 1150 5675 0    50   Output ~ 0
 LED3
 $Comp
 L power:GND #PWR?
@@ -1324,7 +1322,7 @@ F 3 "" H 9175 5925 50  0001 C CNN
 $EndComp
 Text HLabel 5725 6400 0    50   Input ~ 0
 CH6
-Text HLabel 5725 5675 0    50   Input ~ 0
+Text HLabel 5725 5675 0    50   Output ~ 0
 LED6
 $Comp
 L power:GND #PWR?
@@ -1387,4 +1385,6 @@ Wire Wire Line
 	9500 1400 9575 1400
 Wire Wire Line
 	9575 1500 9500 1500
+Text HLabel 1150 2175 0    50   Input ~ 0
+CH1
 $EndSCHEMATC

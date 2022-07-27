@@ -91,7 +91,7 @@ AR Path="/635EE3B0" Ref="R?"  Part="1"
 AR Path="/635D4EBA/635EE3B0" Ref="R11"  Part="1" 
 F 0 "R11" V 1443 2175 50  0000 C CNN
 F 1 "1k" V 1534 2175 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 2175 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 2175 50  0001 C CNN
 F 3 "~" H 1650 2175 50  0001 C CNN
 	1    1650 2175
 	0    1    1    0   
@@ -117,7 +117,7 @@ AR Path="/635EE3C0" Ref="R?"  Part="1"
 AR Path="/635D4EBA/635EE3C0" Ref="R14"  Part="1" 
 F 0 "R14" H 1805 2354 50  0000 R CNN
 F 1 "10k" H 1805 2445 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 2400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 2400 50  0001 C CNN
 F 3 "~" H 1875 2400 50  0001 C CNN
 	1    1875 2400
 	-1   0    0    1   
@@ -147,7 +147,7 @@ AR Path="/635EE3E4" Ref="R?"  Part="1"
 AR Path="/635D4EBA/635EE3E4" Ref="R17"  Part="1" 
 F 0 "R17" H 1880 1629 50  0000 R CNN
 F 1 "470" H 1880 1720 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 1675 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 1675 50  0001 C CNN
 F 3 "~" H 1950 1675 50  0001 C CNN
 	1    1950 1675
 	-1   0    0    1   
@@ -217,9 +217,7 @@ F 3 "" H 4600 1700 50  0001 C CNN
 	1    4600 1700
 	-1   0    0    -1  
 $EndComp
-Text HLabel 1150 2175 0    50   Input ~ 0
-CH1
-Text HLabel 1150 1450 0    50   Input ~ 0
+Text HLabel 1150 1450 0    50   Output ~ 0
 LED1
 $Comp
 L power:GND #PWR?
@@ -312,7 +310,7 @@ AR Path="/63BE34E7" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63BE34E7" Ref="R19"  Part="1" 
 F 0 "R19" V 6018 2175 50  0000 C CNN
 F 1 "1k" V 6109 2175 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 2175 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 2175 50  0001 C CNN
 F 3 "~" H 6225 2175 50  0001 C CNN
 	1    6225 2175
 	0    1    1    0   
@@ -338,7 +336,7 @@ AR Path="/63BE34F3" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63BE34F3" Ref="R22"  Part="1" 
 F 0 "R22" H 6380 2354 50  0000 R CNN
 F 1 "10k" H 6380 2445 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 2400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 2400 50  0001 C CNN
 F 3 "~" H 6450 2400 50  0001 C CNN
 	1    6450 2400
 	-1   0    0    1   
@@ -368,7 +366,7 @@ AR Path="/63BE350D" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63BE350D" Ref="R25"  Part="1" 
 F 0 "R25" H 6455 1629 50  0000 R CNN
 F 1 "470" H 6455 1720 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 1675 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 1675 50  0001 C CNN
 F 3 "~" H 6525 1675 50  0001 C CNN
 	1    6525 1675
 	-1   0    0    1   
@@ -440,7 +438,7 @@ F 3 "" H 9175 1700 50  0001 C CNN
 $EndComp
 Text HLabel 5725 2175 0    50   Input ~ 0
 CH4
-Text HLabel 5725 1450 0    50   Input ~ 0
+Text HLabel 5725 1450 0    50   Output ~ 0
 LED4
 $Comp
 L power:GND #PWR?
@@ -533,7 +531,7 @@ AR Path="/63C22623" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C22623" Ref="R10"  Part="1" 
 F 0 "R10" V 1443 4300 50  0000 C CNN
 F 1 "1k" V 1534 4300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 4300 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 4300 50  0001 C CNN
 F 3 "~" H 1650 4300 50  0001 C CNN
 	1    1650 4300
 	0    1    1    0   
@@ -559,7 +557,7 @@ AR Path="/63C2262F" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C2262F" Ref="R13"  Part="1" 
 F 0 "R13" H 1805 4479 50  0000 R CNN
 F 1 "10k" H 1805 4570 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 4525 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 4525 50  0001 C CNN
 F 3 "~" H 1875 4525 50  0001 C CNN
 	1    1875 4525
 	-1   0    0    1   
@@ -589,7 +587,7 @@ AR Path="/63C22649" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C22649" Ref="R16"  Part="1" 
 F 0 "R16" H 1880 3754 50  0000 R CNN
 F 1 "470" H 1880 3845 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 3800 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 3800 50  0001 C CNN
 F 3 "~" H 1950 3800 50  0001 C CNN
 	1    1950 3800
 	-1   0    0    1   
@@ -661,7 +659,7 @@ F 3 "" H 4600 3825 50  0001 C CNN
 $EndComp
 Text HLabel 1150 4300 0    50   Input ~ 0
 CH2
-Text HLabel 1150 3575 0    50   Input ~ 0
+Text HLabel 1150 3575 0    50   Output ~ 0
 LED2
 $Comp
 L power:GND #PWR?
@@ -754,7 +752,7 @@ AR Path="/63C226A2" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C226A2" Ref="R20"  Part="1" 
 F 0 "R20" V 6018 4300 50  0000 C CNN
 F 1 "1k" V 6109 4300 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 4300 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 4300 50  0001 C CNN
 F 3 "~" H 6225 4300 50  0001 C CNN
 	1    6225 4300
 	0    1    1    0   
@@ -780,7 +778,7 @@ AR Path="/63C226AE" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C226AE" Ref="R23"  Part="1" 
 F 0 "R23" H 6380 4479 50  0000 R CNN
 F 1 "10k" H 6380 4570 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 4525 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 4525 50  0001 C CNN
 F 3 "~" H 6450 4525 50  0001 C CNN
 	1    6450 4525
 	-1   0    0    1   
@@ -810,7 +808,7 @@ AR Path="/63C226C8" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C226C8" Ref="R26"  Part="1" 
 F 0 "R26" H 6455 3754 50  0000 R CNN
 F 1 "470" H 6455 3845 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 3800 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 3800 50  0001 C CNN
 F 3 "~" H 6525 3800 50  0001 C CNN
 	1    6525 3800
 	-1   0    0    1   
@@ -882,7 +880,7 @@ F 3 "" H 9175 3825 50  0001 C CNN
 $EndComp
 Text HLabel 5725 4300 0    50   Input ~ 0
 CH5
-Text HLabel 5725 3575 0    50   Input ~ 0
+Text HLabel 5725 3575 0    50   Output ~ 0
 LED5
 $Comp
 L power:GND #PWR?
@@ -975,7 +973,7 @@ AR Path="/63C3FFE9" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C3FFE9" Ref="R12"  Part="1" 
 F 0 "R12" V 1443 6400 50  0000 C CNN
 F 1 "1k" V 1534 6400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 6400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1580 6400 50  0001 C CNN
 F 3 "~" H 1650 6400 50  0001 C CNN
 	1    1650 6400
 	0    1    1    0   
@@ -1001,7 +999,7 @@ AR Path="/63C3FFF5" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C3FFF5" Ref="R15"  Part="1" 
 F 0 "R15" H 1805 6579 50  0000 R CNN
 F 1 "10k" H 1805 6670 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 6625 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1805 6625 50  0001 C CNN
 F 3 "~" H 1875 6625 50  0001 C CNN
 	1    1875 6625
 	-1   0    0    1   
@@ -1031,7 +1029,7 @@ AR Path="/63C4000F" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C4000F" Ref="R18"  Part="1" 
 F 0 "R18" H 1880 5854 50  0000 R CNN
 F 1 "470" H 1880 5945 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 5900 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1880 5900 50  0001 C CNN
 F 3 "~" H 1950 5900 50  0001 C CNN
 	1    1950 5900
 	-1   0    0    1   
@@ -1103,7 +1101,7 @@ F 3 "" H 4600 5925 50  0001 C CNN
 $EndComp
 Text HLabel 1150 6400 0    50   Input ~ 0
 CH3
-Text HLabel 1150 5675 0    50   Input ~ 0
+Text HLabel 1150 5675 0    50   Output ~ 0
 LED3
 $Comp
 L power:GND #PWR?
@@ -1196,7 +1194,7 @@ AR Path="/63C40068" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C40068" Ref="R21"  Part="1" 
 F 0 "R21" V 6018 6400 50  0000 C CNN
 F 1 "1k" V 6109 6400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 6400 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6155 6400 50  0001 C CNN
 F 3 "~" H 6225 6400 50  0001 C CNN
 	1    6225 6400
 	0    1    1    0   
@@ -1222,7 +1220,7 @@ AR Path="/63C40074" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C40074" Ref="R24"  Part="1" 
 F 0 "R24" H 6380 6579 50  0000 R CNN
 F 1 "10k" H 6380 6670 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 6625 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6380 6625 50  0001 C CNN
 F 3 "~" H 6450 6625 50  0001 C CNN
 	1    6450 6625
 	-1   0    0    1   
@@ -1252,7 +1250,7 @@ AR Path="/63C4008E" Ref="R?"  Part="1"
 AR Path="/635D4EBA/63C4008E" Ref="R27"  Part="1" 
 F 0 "R27" H 6455 5854 50  0000 R CNN
 F 1 "470" H 6455 5945 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 5900 50  0001 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6455 5900 50  0001 C CNN
 F 3 "~" H 6525 5900 50  0001 C CNN
 	1    6525 5900
 	-1   0    0    1   
@@ -1324,7 +1322,7 @@ F 3 "" H 9175 5925 50  0001 C CNN
 $EndComp
 Text HLabel 5725 6400 0    50   Input ~ 0
 CH6
-Text HLabel 5725 5675 0    50   Input ~ 0
+Text HLabel 5725 5675 0    50   Output ~ 0
 LED6
 $Comp
 L power:GND #PWR?
@@ -1387,4 +1385,6 @@ Wire Wire Line
 	9500 1400 9575 1400
 Wire Wire Line
 	9575 1500 9500 1500
+Text HLabel 1150 2175 0    50   Input ~ 0
+CH1
 $EndSCHEMATC
