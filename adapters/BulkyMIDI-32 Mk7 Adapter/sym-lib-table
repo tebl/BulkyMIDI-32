@@ -2,4 +2,5 @@
   (lib (name mounting)(type Legacy)(uri ${KIPRJMOD}/../../common/library/mounting.lib)(options "")(descr ""))
   (lib (name BulkyMIDI)(type Legacy)(uri ${KIPRJMOD}/../../common/library/BulkyMIDI.lib)(options "")(descr ""))
   (lib (name gameport)(type Legacy)(uri ${KIPRJMOD}/../../common/library/gameport.lib)(options "")(descr ""))
+  (lib (name barrel_jack)(type Legacy)(uri ${KIPRJMOD}/../../common/library/barrel_jack.lib)(options "")(descr ""))
 )
