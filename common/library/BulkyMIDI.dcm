@@ -42,6 +42,12 @@ K rotary switch encoder switch push button
 F ~
 $ENDCMP
 #
+$CMP MIDI_Breakout
+D Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 $CMP Module_Panel
 D Generic connector, single row, 01x21, script generated (kicad-library-utils/schlib/autogen/connector/)
 K connector

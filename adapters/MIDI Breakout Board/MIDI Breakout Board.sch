@@ -1,0 +1,500 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "MIDI Breakout Board"
+Date ""
+Rev "A"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "General breakout board that can be used to prototype or build MIDI devices."
+$EndDescr
+$Comp
+L Device:C_Small C1
+U 1 1 62E57D8A
+P 5325 6500
+F 0 "C1" H 5417 6546 50  0000 L CNN
+F 1 "100nF" H 5417 6455 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 5325 6500 50  0001 C CNN
+F 3 "~" H 5325 6500 50  0001 C CNN
+	1    5325 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR020
+U 1 1 5FBA783C
+P 5325 5875
+F 0 "#PWR020" H 5325 5725 50  0001 C CNN
+F 1 "+5V" H 5325 6015 50  0000 C CNN
+F 2 "" H 5325 5875 50  0000 C CNN
+F 3 "" H 5325 5875 50  0000 C CNN
+	1    5325 5875
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 7100 6300 7025
+$Comp
+L Connector:DIN-5_180degree J2
+U 1 1 62E57D8F
+P 8450 4325
+F 0 "J2" H 8450 3958 50  0000 C CNN
+F 1 "MIDI OUT" H 8450 4049 50  0000 C CNN
+F 2 "BulkyMIDI-32:DIN5_MIDI" H 8450 4325 50  0001 C CNN
+F 3 "" H 8450 4325 50  0001 C CNN
+	1    8450 4325
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR0119
+U 1 1 62E57D90
+P 9100 4000
+F 0 "#PWR0119" H 9100 3850 50  0001 C CNN
+F 1 "+5V" H 9100 4140 50  0000 C CNN
+F 2 "" H 9100 4000 50  0000 C CNN
+F 3 "" H 9100 4000 50  0000 C CNN
+	1    9100 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 62E57D91
+P 9100 4200
+F 0 "R2" H 9025 4250 50  0000 R CNN
+F 1 "220" H 9050 4175 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9030 4200 50  0001 C CNN
+F 3 "~" H 9100 4200 50  0001 C CNN
+	1    9100 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9100 4000 9100 4050
+$Comp
+L power:GND #PWR012
+U 1 1 62E57D92
+P 8450 4800
+F 0 "#PWR012" H 8450 4550 50  0001 C CNN
+F 1 "GND" H 8455 4627 50  0000 C CNN
+F 2 "" H 8450 4800 50  0001 C CNN
+F 3 "" H 8450 4800 50  0001 C CNN
+	1    8450 4800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 8750 4325
+NoConn ~ 8150 4325
+Wire Wire Line
+	8450 4625 8450 4800
+$Comp
+L power:GND #PWR0103
+U 1 1 62E57D93
+P 6300 7175
+F 0 "#PWR0103" H 6300 6925 50  0001 C CNN
+F 1 "GND" H 6305 7002 50  0000 C CNN
+F 2 "" H 6300 7175 50  0001 C CNN
+F 3 "" H 6300 7175 50  0001 C CNN
+	1    6300 7175
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 5950 6300 6025
+Wire Wire Line
+	5325 5875 5325 5950
+Connection ~ 6300 7100
+Wire Wire Line
+	6300 7100 6300 7175
+Wire Notes Line
+	9925 800  9925 3075
+Wire Notes Line
+	5175 3075 5175 800 
+Wire Wire Line
+	9100 4425 9100 4350
+Text Notes 5200 900  0    50   ~ 0
+MIDI IN (optional)
+$Comp
+L 74xx:74LS00 U3
+U 5 1 620D2C7D
+P 6300 6525
+F 0 "U3" H 6530 6571 50  0000 L CNN
+F 1 "74LS00" H 6530 6480 50  0000 L CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6300 6525 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 6300 6525 50  0001 C CNN
+	5    6300 6525
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS00 U3
+U 3 1 620D6901
+P 7400 4425
+F 0 "U3" H 7400 4750 50  0000 C CNN
+F 1 "74LS00" H 7400 4659 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 7400 4425 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 7400 4425 50  0001 C CNN
+	3    7400 4425
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS00 U3
+U 4 1 620D7ACB
+P 6650 4425
+F 0 "U3" H 6650 4750 50  0000 C CNN
+F 1 "74LS00" H 6650 4659 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6650 4425 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 6650 4425 50  0001 C CNN
+	4    6650 4425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9275 2150 9350 2150
+Text GLabel 9350 2150 2    50   Output ~ 0
+MIDI_RxD
+Wire Wire Line
+	7525 1525 7525 1600
+Connection ~ 7525 1600
+Wire Wire Line
+	7850 1600 7525 1600
+Wire Wire Line
+	7850 1675 7850 1600
+Wire Wire Line
+	7525 1600 7525 1850
+Connection ~ 7850 2050
+Wire Wire Line
+	7850 1975 7850 2050
+$Comp
+L Device:R R1
+U 1 1 6219F0FD
+P 7850 1825
+F 0 "R1" H 7775 1875 50  0000 R CNN
+F 1 "2k2" H 7800 1800 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7780 1825 50  0001 C CNN
+F 3 "~" H 7850 1825 50  0001 C CNN
+	1    7850 1825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 2150 7850 2050
+Connection ~ 7850 2150
+Wire Wire Line
+	7450 2150 7850 2150
+Wire Wire Line
+	6775 1950 6850 1950
+Connection ~ 6775 1950
+Wire Wire Line
+	6775 1950 6650 1950
+Connection ~ 6775 2150
+Wire Wire Line
+	6775 2350 6775 2150
+Wire Wire Line
+	5600 1950 5525 1950
+NoConn ~ 7450 1950
+$Comp
+L power:+5V #PWR0104
+U 1 1 62130EBF
+P 7525 1525
+F 0 "#PWR0104" H 7525 1375 50  0001 C CNN
+F 1 "+5V" H 7525 1665 50  0000 C CNN
+F 2 "" H 7525 1525 50  0000 C CNN
+F 3 "" H 7525 1525 50  0000 C CNN
+	1    7525 1525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 1850 7525 1850
+$Comp
+L power:GND #PWR0105
+U 1 1 6212BC17
+P 7525 2350
+F 0 "#PWR0105" H 7525 2100 50  0001 C CNN
+F 1 "GND" H 7530 2177 50  0000 C CNN
+F 2 "" H 7525 2350 50  0001 C CNN
+F 3 "" H 7525 2350 50  0001 C CNN
+	1    7525 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7525 2250 7525 2350
+Wire Wire Line
+	7450 2250 7525 2250
+Wire Wire Line
+	6850 2150 6775 2150
+$Comp
+L Isolator:6N138 U1
+U 1 1 62109585
+P 7150 2050
+F 0 "U1" H 7150 1583 50  0000 C CNN
+F 1 "6N138" H 7150 1674 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm_Socket_LongPads" H 7440 1750 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 7440 1750 50  0001 C CNN
+	1    7150 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 2050 7925 2050
+Wire Wire Line
+	7850 2250 7850 2150
+Wire Wire Line
+	7925 2250 7850 2250
+Wire Wire Line
+	8600 2150 8600 2050
+Connection ~ 8600 2150
+Wire Wire Line
+	8600 2150 8525 2150
+Wire Wire Line
+	8600 2050 8675 2050
+Wire Wire Line
+	8600 2250 8600 2150
+Wire Wire Line
+	8675 2250 8600 2250
+$Comp
+L 74xx:74LS00 U3
+U 2 1 620D5C38
+P 8975 2150
+F 0 "U3" H 8975 1833 50  0000 C CNN
+F 1 "74LS00" H 8975 1924 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 8975 2150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 8975 2150 50  0001 C CNN
+	2    8975 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS00 U3
+U 1 1 620D4FC2
+P 8225 2150
+F 0 "U3" H 8225 1833 50  0000 C CNN
+F 1 "74LS00" H 8225 1924 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 8225 2150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74ls00" H 8225 2150 50  0001 C CNN
+	1    8225 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:DIN-5_180degree J3
+U 1 1 62E57D8B
+P 5900 1850
+F 0 "J3" H 5900 1483 50  0000 C CNN
+F 1 "MIDI IN" H 5900 1574 50  0000 C CNN
+F 2 "BulkyMIDI-32:DIN5_MIDI" H 5900 1850 50  0001 C CNN
+F 3 "" H 5900 1850 50  0001 C CNN
+	1    5900 1850
+	-1   0    0    1   
+$EndComp
+NoConn ~ 5900 2150
+NoConn ~ 6200 1850
+NoConn ~ 5600 1850
+$Comp
+L Device:R R4
+U 1 1 62E57D8D
+P 6500 1950
+F 0 "R4" V 6293 1950 50  0000 C CNN
+F 1 "220" V 6384 1950 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6430 1950 50  0001 C CNN
+F 3 "~" H 6500 1950 50  0001 C CNN
+	1    6500 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_Small D1
+U 1 1 62E57D8C
+P 6775 2050
+F 0 "D1" V 6875 1975 50  0000 R CNN
+F 1 "1N4148" V 6800 1975 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 6775 2050 50  0001 C CNN
+F 3 "~" H 6775 2050 50  0001 C CNN
+	1    6775 2050
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 622D9678
+P 7925 4425
+F 0 "R3" V 7718 4425 50  0000 C CNN
+F 1 "220" V 7809 4425 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7855 4425 50  0001 C CNN
+F 3 "~" H 7925 4425 50  0001 C CNN
+	1    7925 4425
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7775 4425 7700 4425
+Wire Wire Line
+	8150 4425 8075 4425
+Wire Wire Line
+	7100 4325 7025 4325
+Wire Wire Line
+	7025 4325 7025 4425
+Wire Wire Line
+	7025 4525 7100 4525
+Wire Wire Line
+	7025 4425 6950 4425
+Connection ~ 7025 4425
+Wire Wire Line
+	7025 4425 7025 4525
+Wire Wire Line
+	6350 4325 6275 4325
+Wire Wire Line
+	6275 4325 6275 4425
+Wire Wire Line
+	6275 4525 6350 4525
+Wire Wire Line
+	6275 4425 6200 4425
+Connection ~ 6275 4425
+Wire Wire Line
+	6275 4425 6275 4525
+Wire Wire Line
+	8750 4425 9100 4425
+Text GLabel 6200 4425 0    50   Input ~ 0
+MIDI_TxD
+Wire Notes Line
+	5175 800  9925 800 
+Wire Notes Line
+	9925 3075 5175 3075
+Wire Notes Line
+	9925 3175 9925 5450
+Wire Notes Line
+	5175 5450 5175 3175
+Wire Notes Line
+	5175 3175 9925 3175
+Wire Notes Line
+	9925 5450 5175 5450
+Text Notes 5200 3275 0    50   ~ 0
+MIDI OUT
+Wire Notes Line
+	5075 800  5075 5450
+Wire Notes Line
+	5075 5450 1975 5450
+Wire Notes Line
+	1975 5450 1975 800 
+Wire Notes Line
+	1975 800  5075 800 
+Wire Wire Line
+	6200 1950 6350 1950
+Wire Wire Line
+	5525 1950 5525 2350
+Wire Wire Line
+	5525 2350 6775 2350
+$Comp
+L Device:C_Small C3
+U 1 1 6257FB01
+P 5750 6525
+F 0 "C3" H 5842 6571 50  0000 L CNN
+F 1 "100nF" H 5842 6480 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 5750 6525 50  0001 C CNN
+F 3 "~" H 5750 6525 50  0001 C CNN
+	1    5750 6525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5325 6600 5325 7100
+Wire Wire Line
+	5325 7100 5750 7100
+Wire Wire Line
+	5325 6400 5325 5950
+Connection ~ 5325 5950
+Wire Wire Line
+	5325 5950 5750 5950
+Wire Wire Line
+	5750 6625 5750 7100
+Connection ~ 5750 7100
+Wire Wire Line
+	5750 7100 6300 7100
+Wire Wire Line
+	5750 6425 5750 5950
+Connection ~ 5750 5950
+Wire Wire Line
+	5750 5950 6300 5950
+Text Notes 2000 900  0    50   ~ 0
+Breakout
+$Comp
+L BulkyMIDI:MIDI_Breakout J1
+U 1 1 62E73E66
+P 3425 3175
+F 0 "J1" H 3532 2760 50  0000 C CNN
+F 1 "MIDI" H 3532 2851 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 3425 3175 50  0001 C CNN
+F 3 "~" H 3425 3175 50  0001 C CNN
+	1    3425 3175
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3625 3275 3700 3275
+Wire Wire Line
+	3700 3275 3700 3350
+$Comp
+L power:GND #PWR0101
+U 1 1 62E857EF
+P 3700 3350
+F 0 "#PWR0101" H 3700 3100 50  0001 C CNN
+F 1 "GND" H 3705 3177 50  0000 C CNN
+F 2 "" H 3700 3350 50  0001 C CNN
+F 3 "" H 3700 3350 50  0001 C CNN
+	1    3700 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0102
+U 1 1 62E88263
+P 3700 2900
+F 0 "#PWR0102" H 3700 2750 50  0001 C CNN
+F 1 "+5V" H 3700 3050 50  0000 C CNN
+F 2 "" H 3700 2900 50  0001 C CNN
+F 3 "" H 3700 2900 50  0001 C CNN
+	1    3700 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3625 2975 3700 2975
+Wire Wire Line
+	3700 2975 3700 2900
+Text GLabel 3775 3075 2    50   Output ~ 0
+MIDI_TxD
+Wire Wire Line
+	3775 3075 3625 3075
+Text GLabel 3775 3175 2    50   Input ~ 0
+MIDI_RxD
+Wire Wire Line
+	3775 3175 3625 3175
+$Comp
+L mounting:Mounting_Pin M1
+U 1 1 62ED3BAC
+P 11000 550
+F 0 "M1" H 11000 650 50  0001 C CNN
+F 1 "Mounting_Pin" H 11000 475 50  0001 C CNN
+F 2 "mounting:M3_pin" H 11000 550 50  0001 C CNN
+F 3 "~" H 11000 550 50  0001 C CNN
+	1    11000 550 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pin M2
+U 1 1 62ED413F
+P 11125 550
+F 0 "M2" H 11125 650 50  0001 C CNN
+F 1 "Mounting_Pin" H 11125 475 50  0001 C CNN
+F 2 "mounting:M3_pin" H 11125 550 50  0001 C CNN
+F 3 "~" H 11125 550 50  0001 C CNN
+	1    11125 550 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11000 700  11000 775 
+Wire Wire Line
+	11000 775  11125 775 
+Wire Wire Line
+	11125 775  11125 700 
+$Comp
+L power:GND #PWR0106
+U 1 1 62ED7F91
+P 11125 850
+F 0 "#PWR0106" H 11125 600 50  0001 C CNN
+F 1 "GND" H 11130 677 50  0000 C CNN
+F 2 "" H 11125 850 50  0001 C CNN
+F 3 "" H 11125 850 50  0001 C CNN
+	1    11125 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11125 775  11125 850 
+Connection ~ 11125 775 
+$EndSCHEMATC
