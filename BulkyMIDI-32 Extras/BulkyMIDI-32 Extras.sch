@@ -1091,7 +1091,7 @@ Wire Wire Line
 Text Notes 11325 5500 0    50   ~ 0
 Extra MIDI ports
 Text Notes 1025 10375 0    50   ~ 0
-Board status, shows that the boards are\npowered as well as separate LED for the\nMCU functionality.\n\nDATA received on MIDI input for main\nboard is also shown, but as I didn't like\nthe flickering we'll light it up solid as\nlong as there is activity (pulses extend\nperiod). A simpler version can be built\nwithout these components, linking\nNO_555 pins 2-3 instead.\n\nThis is calculated as\nT = 1.1 * R21 * C8 = 0.11s
+Board status, shows that the boards are\npowered as well as separate LED for the\nMCU functionality.\n\nDATA received on MIDI input for main\nboard is also shown, but as I didn't like\nthe flickering we'll light it up as mostly\nsolid - as long as there is activity. A\nsimpler version can be built without\nthese components, linking NO_555\npins 2-3 instead.\n\nThis is calculated as\nT = 1.1 * R21 * C8 = 0.11s
 Text Notes 8875 9375 0    50   ~ 0
 The power section has been duplicated for the main MT32-PI module,\nyou only need the barrel jack when extras is used without MT32-PI.
 Text Notes 4675 1125 0    50   ~ 0
