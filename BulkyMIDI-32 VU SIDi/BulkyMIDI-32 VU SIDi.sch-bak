@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "BulkyMIDI-32 VU SIDi"
 Date ""
-Rev "A"
+Rev "B"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -3499,4 +3499,6 @@ Wire Bus Line
 	10400 7925 10400 10325
 Wire Bus Line
 	2150 7925 10400 7925
+Text Notes 9375 4025 0    50   ~ 0
+CLK on wrong pin?
 $EndSCHEMATC
