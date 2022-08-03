@@ -82,12 +82,12 @@ $EndComp
 $Comp
 L power:+5V #PWR0106
 U 1 1 5E6B750D
-P 8650 9600
-F 0 "#PWR0106" H 8650 9450 50  0001 C CNN
-F 1 "+5V" H 8650 9750 50  0000 C CNN
-F 2 "" H 8650 9600 50  0001 C CNN
-F 3 "" H 8650 9600 50  0001 C CNN
-	1    8650 9600
+P 8650 9675
+F 0 "#PWR0106" H 8650 9525 50  0001 C CNN
+F 1 "+5V" H 8650 9825 50  0000 C CNN
+F 2 "" H 8650 9675 50  0001 C CNN
+F 3 "" H 8650 9675 50  0001 C CNN
+	1    8650 9675
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -285,12 +285,12 @@ $EndComp
 $Comp
 L BulkyMIDI:DC_5V SYM1
 U 1 1 623726BF
-P 8050 9750
-F 0 "SYM1" H 8050 9971 50  0001 C CNN
-F 1 "DC_5V" H 8050 9879 50  0000 C CNN
-F 2 "BulkyMIDI-32:PWR_Specification" H 7925 9850 50  0001 C CNN
-F 3 "" H 7925 9850 50  0001 C CNN
-	1    8050 9750
+P 8050 9775
+F 0 "SYM1" H 8050 9996 50  0001 C CNN
+F 1 "DC_5V" H 8050 9904 50  0000 C CNN
+F 2 "BulkyMIDI-32:PWR_Specification" H 7925 9875 50  0001 C CNN
+F 3 "" H 7925 9875 50  0001 C CNN
+	1    8050 9775
 	1    0    0    -1  
 $EndComp
 Text Notes 7725 9175 0    50   ~ 0
@@ -496,7 +496,6 @@ F 3 "" H 7975 2450 50  0000 C CNN
 	1    7975 2450
 	1    0    0    -1  
 $EndComp
-NoConn ~ 8450 2700
 NoConn ~ 8450 2900
 Text Label 7025 3100 0    50   ~ 0
 SDA
@@ -912,14 +911,7 @@ Wire Wire Line
 	8350 10250 8350 10350
 Connection ~ 8350 10350
 Wire Wire Line
-	8650 9600 8650 9675
-Wire Wire Line
-	8650 9675 8350 9675
-Connection ~ 8650 9675
-Wire Wire Line
-	8350 9675 8350 10150
-Wire Wire Line
-	8650 9675 8650 10100
+	8650 9675 8650 9775
 Wire Wire Line
 	8650 10825 8350 10825
 Connection ~ 8650 10825
@@ -1133,9 +1125,7 @@ Wire Wire Line
 Wire Wire Line
 	9150 10200 9075 10200
 Wire Wire Line
-	9075 10200 9075 9675
-Wire Wire Line
-	9075 9675 8650 9675
+	9075 10200 9075 9775
 Wire Wire Line
 	9150 10300 9075 10300
 Wire Wire Line
@@ -1462,15 +1452,61 @@ For a basic device with only MIDI OUT, the remaining\nMIDI components can be omi
 $Comp
 L 74xx:74HC14 U1
 U 3 1 62B9B026
-P 6850 10225
-F 0 "U1" H 6850 10050 50  0000 C CNN
-F 1 "74HCT14" H 6850 9975 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6850 10225 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6850 10225 50  0001 C CNN
-	3    6850 10225
+P 6825 10600
+F 0 "U1" H 6825 10425 50  0000 C CNN
+F 1 "74HCT14" H 6825 10350 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 6825 10600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 6825 10600 50  0001 C CNN
+	3    6825 10600
 	0    -1   -1   0   
 $EndComp
-NoConn ~ 6850 9925
+NoConn ~ 6825 10300
+$Comp
+L power:GND #PWR0121
+U 1 1 62BAE7B4
+P 6825 10900
+F 0 "#PWR0121" H 6825 10650 50  0001 C CNN
+F 1 "GND" H 6830 10727 50  0000 C CNN
+F 2 "" H 6825 10900 50  0001 C CNN
+F 3 "" H 6825 10900 50  0001 C CNN
+	1    6825 10900
+	1    0    0    -1  
+$EndComp
+$Comp
+L barrel_jack:VIN #PWR0124
+U 1 1 62FF26B2
+P 8350 9700
+F 0 "#PWR0124" H 8350 9550 50  0001 C CNN
+F 1 "VIN" H 8367 9873 50  0000 C CNN
+F 2 "" H 8350 9700 50  0001 C CNN
+F 3 "" H 8350 9700 50  0001 C CNN
+	1    8350 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L barrel_jack:VIN #PWR0125
+U 1 1 63007C95
+P 8525 2625
+F 0 "#PWR0125" H 8525 2475 50  0001 C CNN
+F 1 "VIN" H 8542 2798 50  0000 C CNN
+F 2 "" H 8525 2625 50  0001 C CNN
+F 3 "" H 8525 2625 50  0001 C CNN
+	1    8525 2625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 2700 8525 2700
+Wire Wire Line
+	8525 2700 8525 2625
+Text Notes 7725 9425 0    50   ~ 0
+I had some issues getting the modules to work reliably with the \npower supply that I use with the Raspberry Pi, so it is left to the\nArduino board to do the power regulation.
+Wire Wire Line
+	8350 9700 8350 10150
+Wire Wire Line
+	8650 9775 9075 9775
+Connection ~ 8650 9775
+Wire Wire Line
+	8650 9775 8650 10100
 Wire Bus Line
 	15050 1100 15050 1275
 Wire Bus Line
@@ -1487,15 +1523,4 @@ Wire Bus Line
 	15150 900  15150 7175
 Wire Bus Line
 	15050 7275 15050 8950
-$Comp
-L power:GND #PWR?
-U 1 1 62BAE7B4
-P 6850 10525
-F 0 "#PWR?" H 6850 10275 50  0001 C CNN
-F 1 "GND" H 6855 10352 50  0000 C CNN
-F 2 "" H 6850 10525 50  0001 C CNN
-F 3 "" H 6850 10525 50  0001 C CNN
-	1    6850 10525
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC

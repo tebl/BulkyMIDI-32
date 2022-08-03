@@ -80,17 +80,6 @@ F 3 "" H 8650 10900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+5V #PWR0106
-U 1 1 5E6B750D
-P 8650 9600
-F 0 "#PWR0106" H 8650 9450 50  0001 C CNN
-F 1 "+5V" H 8650 9750 50  0000 C CNN
-F 2 "" H 8650 9600 50  0001 C CNN
-F 3 "" H 8650 9600 50  0001 C CNN
-	1    8650 9600
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C_Small C1
 U 1 1 5F0DF157
 P 10475 10250
@@ -104,12 +93,12 @@ $EndComp
 $Comp
 L Device:CP1 C6
 U 1 1 5F9F946B
-P 8650 10250
-F 0 "C6" H 8765 10296 50  0000 L CNN
-F 1 "470uF" H 8765 10205 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 8650 10250 50  0001 C CNN
-F 3 "~" H 8650 10250 50  0001 C CNN
-	1    8650 10250
+P 10025 10200
+F 0 "C6" H 10140 10246 50  0000 L CNN
+F 1 "470uF" H 10140 10155 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 10025 10200 50  0001 C CNN
+F 3 "~" H 10025 10200 50  0001 C CNN
+	1    10025 10200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -285,12 +274,12 @@ $EndComp
 $Comp
 L BulkyMIDI:DC_5V SYM1
 U 1 1 623726BF
-P 8050 9750
-F 0 "SYM1" H 8050 9971 50  0001 C CNN
-F 1 "DC_5V" H 8050 9879 50  0000 C CNN
-F 2 "BulkyMIDI-32:PWR_Specification" H 7925 9850 50  0001 C CNN
-F 3 "" H 7925 9850 50  0001 C CNN
-	1    8050 9750
+P 8050 9775
+F 0 "SYM1" H 8050 9996 50  0001 C CNN
+F 1 "DC_5V" H 8050 9904 50  0000 C CNN
+F 2 "BulkyMIDI-32:PWR_Specification" H 7925 9875 50  0001 C CNN
+F 3 "" H 7925 9875 50  0001 C CNN
+	1    8050 9775
 	1    0    0    -1  
 $EndComp
 Text Notes 7725 9175 0    50   ~ 0
@@ -496,7 +485,6 @@ F 3 "" H 7975 2450 50  0000 C CNN
 	1    7975 2450
 	1    0    0    -1  
 $EndComp
-NoConn ~ 8450 2700
 NoConn ~ 8450 2900
 Text Label 7025 3100 0    50   ~ 0
 SDA
@@ -849,12 +837,12 @@ MIDI_OUT2
 $Comp
 L BulkyMIDI:Conn_Power J4
 U 1 1 62FD7887
-P 9350 10200
-F 0 "J4" H 9653 10196 50  0000 L CNN
-F 1 "Conn_Power" H 9653 10105 50  0000 L CNN
-F 2 "BulkyMIDI-32:Conn_Power" H 9350 10200 50  0001 C CNN
-F 3 "~" H 9350 10200 50  0001 C CNN
-	1    9350 10200
+P 8925 10200
+F 0 "J4" H 9228 10196 50  0000 L CNN
+F 1 "Conn_Power" H 9228 10105 50  0000 L CNN
+F 2 "BulkyMIDI-32:Conn_Power" H 8925 10200 50  0001 C CNN
+F 3 "~" H 8925 10200 50  0001 C CNN
+	1    8925 10200
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -912,23 +900,12 @@ Wire Wire Line
 	8350 10250 8350 10350
 Connection ~ 8350 10350
 Wire Wire Line
-	8650 9600 8650 9675
-Wire Wire Line
-	8650 9675 8350 9675
-Connection ~ 8650 9675
-Wire Wire Line
-	8350 9675 8350 10150
-Wire Wire Line
-	8650 9675 8650 10100
-Wire Wire Line
 	8650 10825 8350 10825
 Connection ~ 8650 10825
 Wire Wire Line
 	8650 10825 8650 10900
 Wire Wire Line
 	8350 10350 8350 10825
-Wire Wire Line
-	8650 10400 8650 10825
 Wire Wire Line
 	11250 10825 11250 10900
 Wire Wire Line
@@ -1131,17 +1108,13 @@ Wire Wire Line
 Wire Wire Line
 	8425 7475 8500 7475
 Wire Wire Line
-	9150 10200 9075 10200
+	8725 10200 8650 10200
 Wire Wire Line
-	9075 10200 9075 9675
+	8650 10200 8650 9775
 Wire Wire Line
-	9075 9675 8650 9675
+	8725 10300 8650 10300
 Wire Wire Line
-	9150 10300 9075 10300
-Wire Wire Line
-	9075 10300 9075 10825
-Wire Wire Line
-	9075 10825 8650 10825
+	8650 10300 8650 10825
 Wire Notes Line
 	11675 9075 7700 9075
 Wire Notes Line
@@ -1482,6 +1455,47 @@ F 3 "" H 6825 10900 50  0001 C CNN
 	1    6825 10900
 	1    0    0    -1  
 $EndComp
+$Comp
+L barrel_jack:VIN #PWR0124
+U 1 1 62FF26B2
+P 8350 9700
+F 0 "#PWR0124" H 8350 9550 50  0001 C CNN
+F 1 "VIN" H 8367 9873 50  0000 C CNN
+F 2 "" H 8350 9700 50  0001 C CNN
+F 3 "" H 8350 9700 50  0001 C CNN
+	1    8350 9700
+	1    0    0    -1  
+$EndComp
+$Comp
+L barrel_jack:VIN #PWR0125
+U 1 1 63007C95
+P 8525 2625
+F 0 "#PWR0125" H 8525 2475 50  0001 C CNN
+F 1 "VIN" H 8542 2798 50  0000 C CNN
+F 2 "" H 8525 2625 50  0001 C CNN
+F 3 "" H 8525 2625 50  0001 C CNN
+	1    8525 2625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8450 2700 8525 2700
+Wire Wire Line
+	8525 2700 8525 2625
+Text Notes 7725 9425 0    50   ~ 0
+I had some issues getting the modules to work reliably with the \npower supply that I use with the Raspberry Pi, so it is left to the\nArduino board to do the power regulation.
+Wire Wire Line
+	8350 9700 8350 9775
+Wire Wire Line
+	10025 9675 10475 9675
+Wire Wire Line
+	10025 9675 10025 10050
+Wire Wire Line
+	10475 10825 10025 10825
+Wire Wire Line
+	10025 10350 10025 10825
+Connection ~ 10475 10825
+Wire Wire Line
+	8650 9775 8350 9775
 Wire Bus Line
 	15050 1100 15050 1275
 Wire Bus Line
@@ -1498,4 +1512,7 @@ Wire Bus Line
 	15150 900  15150 7175
 Wire Bus Line
 	15050 7275 15050 8950
+Connection ~ 8350 9775
+Wire Wire Line
+	8350 9775 8350 10150
 $EndSCHEMATC
