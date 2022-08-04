@@ -1,7 +1,7 @@
 # BulkyMIDI-32
 When I was young I'd heard rumours about a fantastical sound card for the computer known as the Roland MT-32 - imagining that if it was good enough to be the default sound device for games such as Monkey Island, then it had to be good! Of course I was a kid at the time, the kind that didn't even have enough money to even be allowed inside the kind of stores that would sell this stuff. Fast forward to adulthood and I learned that it wasn't a sound card at all - it was a standalone MIDI-module! The second thing I learned was that they were, and still are incredibly expensive items for people born without a sense of rhythm.
 
-![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-05-02%2001.37.11.jpg)
+![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-08-03%2017.17.09.jpg)
 
 Cue the other incredibly talented people on the Internet, in particular for creating the [mt32-pi](https://github.com/dwhinham/mt32-pi) project - allowing you to build a device capable of emulating one of these fantastical devices on a somewhat cheap and somewhat available Raspberry Pi. The next step that happened is that I used their documentation to build a version of the device for myself, but better people have already done that - I based my project files directly on [clymsyMIDI](https://github.com/gmcn42/clumsyMIDI). I can't say I added much to the basic design, I just made it into something that matches my own particular style.
 
