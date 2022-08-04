@@ -163,7 +163,7 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | C6                    | 470uF electrolytic capacitor (8mm x 3.5mm)                        |     1 |
 | D1                    | 1N4148N small signal diode (DO-35)                                |     1 |
 | ENC1                  | 5-pin right angle pin header                                      |    (1)|
-| IC1                   | 1.3 inch I2C OLED display (can use 0.96 inch display also)        |     1 |
+| IC1                   | 1.3 inch I2C OLED display (can use 0.96 inch display as well)     |     1 |
 | J1                    | 2.1mm x 5.5mm barrel plug                                         |     1 |
 | J2, J3                | Female S-terminal 5pin DIN PCB                                    |     2 |
 | J4                    | 10-pin female header                                              |    (1)|
@@ -176,9 +176,9 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | SW1-SW4               | 6x6x5mm right-angle momentary button                              |     4 |
 | U1                    | 74HCT14 (DIP-14)                                                  |     1 |
 | U2                    | H11L1M opto-coupler (DIP-6)                                       |     1 |
-| Mounting ****         | Nylon M3 hex standoffs 15mm (M-F)                                 |     4 |
-| Mounting ****         | Nylon M3 hex standoffs 10mm (9mm cut down) (M-F)                  |     2 |
+| Mounting ****         | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
+| Mounting ****         | Nylon M3 hex standoffs 8mm (M-F)                                  |     2 |
 | Mounting ****         | Nylon M3x6mm nylon screws                                         |     4 |
-| Mounting ****         | Nylon M3x6mm nylon nuts                                           |     6 |
+| Mounting ****         | Nylon M3x6mm nylon nuts                                           |     8 |
 
 ****) These are used in various places of the project, these are available in the form of kits usually advertised *M3 nylon standoff kit* which should contain most of what you'd need.
