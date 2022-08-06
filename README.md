@@ -11,9 +11,10 @@ I had a lot of fun building the original *BulkyMIDI-32*, the process can best be
 
 - [1> Modules](#1-modules)
   - [1.1> BulkyMIDI-32](#11-bulkymidi-32)
-  - [1.2> BulkyMIDI-32 Play](#12-bulkymidi-32-play)
+  - [1.2> BulkyMIDI-32 Audio Switch](#12-bulkymidi-32-audio-switch)
   - [1.3> BulkyMIDI-32 Channel Monitor](#13-bulkymidi-32-channel-monitor)
   - [1.4> BulkyMIDI-32 Channel Monitor 2](#14-bulkymidi-32-channel-monitor-2)
+  - [1.5> BulkyMIDI-32 Play](#15-bulkymidi-32-play)
 - [2> Adapters](#2-adapters)
 - [3> Acknowledgements](#3-acknowledgements)
 
@@ -25,9 +26,10 @@ As previously mentioned several modules has been designed as part of the same pr
 | Module                            | Description                                      |
 | --------------------------------- | ------------------------------------------------ | 
 | [BulkyMIDI-32](#11-bulkymidi-32)  | Main *BulkyMIDI-32*-module (running *mt32-pi*).
-| [BulkyMIDI-32 Play](#12-bulkymidi-32-play) | Used for playing MIDI-files (*.MID*) from an SD-card using an *Arduino Pro Micro*. The hardware can also be uses as a basis for building a custom MIDI-merger, MIDI-message filtering or simply as a *USB to MIDI*-adapter.
+| [BulkyMIDI-32 Audio Switch](#12-bulkymidi-32-audio-switch) | Module for switching between various audio sources, similar to the source selection switch on a stereo system.
 | [BulkyMIDI-32 Channel Monitor](#13-bulkymidi-32-channel-monitor) | MIDI-channel activity monitor, lights up an LED corresponding to the channel on activity. Implemented using basic CMOS logic chips.
 | [BulkyMIDI-32 Channel Monitor 2](#14-bulkymidi-32-channel-monitor-2) | Mainly the same as above, except that the hardware is implemented using an *Arduino Pro Micro* and is therefore a lot easier to obtain the parts for.
+| [BulkyMIDI-32 Play](#15-bulkymidi-32-play) | Used for playing MIDI-files (*.MID*) from an SD-card using an *Arduino Pro Micro*. The hardware can also be uses as a basis for building a custom MIDI-merger, MIDI-message filtering or simply as a *USB to MIDI*-adapter.
 
 ## 1.1> BulkyMIDI-32
 ![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-08-03%2017.17.09.jpg)
@@ -43,18 +45,16 @@ This is the main module of the project, if you came here looking to build an mt3
 | [BulkyMIDI-32 Faceplate (FB1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | Optional | Faceplate that goes on top of the device, with simple logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | PCBWay
 | [BulkyMIDI-32 Faceplate (FB2)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | Optional | Alternate faceplate that goes on top of the device, with different logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | PCBWay
 
-## 1.2> BulkyMIDI-32 Play
-![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-08-03%2018.22.50.jpg)
+## 1.2> BulkyMIDI-32 Audio Switch
+![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_audio_switch_041.jpg)
 
-In many ways the missing module when it comes to playing around with a Roland MT-32, both the vintage kind as well as the emulated version that is the main *BulkyMIDI-32* module (running *mt32-pi*) - simply playing back a *.MID*-file without a computer attached to it. Implemented with an Arduino Pro Micro at its heart, you can put your files on an SD-card and play them back - use a long press when starting playback to loop the file, another long press to stop playback. During playback the rotary encoder encoder can be used to speed up or slow down the tempo.
-
-Given that the designs have provisions for more than the expected number of MIDI-ports, a change in firmware can allow the hardware design to be used for entirely different purposes such as MIDI-message filtering, merging inputs and similar functionality.  
+One of the drawbacks to using a vintage boombox as my stereo speaker system, is that it doesn't have any more than one audio input meaning that I would normally have to switch around the cables all the time. Well I can't really complain as not everyone is lucky enough to even have an input, at all! However, since I have one I wanted something that would let me switch between at the touch of a button. So, I built a simple audio switch and now you can build one as well! 
 
 | Module                 | Required    | Description                        | Documentation                      | Order      |
 | ---------------------- | ----------- | ---------------------------------- | ---------------------------------- | ---------- |
-| [Play](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play) | Yes | Main module | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play), [BOM](https://github.com/tebl/BulkyMIDI-32/blob/main/BulkyMIDI-32%20Play/README.md#3-bom) | PCBWay
-| [Play Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel) | Optional | Adds a vertical surface for oled-display and rotary encoder. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel), [BOM](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel/README.md#3-bom) | PCBWay
-| [Play Front Panel (FP1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Play%20FP1) | Optional | Decorative front panel, mounts on [Play Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel). | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Play%20FP1) | PCBWay
+| [Audio Switch](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Audio%20Switch) | Yes | Main module | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Audio%20Switch), [BOM](https://github.com/tebl/BulkyMIDI-32/blob/main/BulkyMIDI-32%20Audio%20Switch/README.md#3-bom) | PCBWay
+| [Audio Switch Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Audio%20Switch%20Panel) | Optional | Adds a vertical surface installing switches as well as adding channel indicator LEDs. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Audio%20Switch%20Panel), [BOM](https://github.com/tebl/BulkyMIDI-32/blob/main/BulkyMIDI-32%20Audio%20Switch%20Panel/README.md#3-bom#3-bom) | PCBWay
+| [Audio Switch Front Panel (FP1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Audio%20Switch%20FP1) | Optional | Decorative front panel, mounts on [Audio Switch Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Audio%20Switch%20Panel). | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Audio%20Switch%20FP1) | PCBWay
 | [BulkyMIDI-32 Faceplate (FB1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | Optional | Faceplate that goes on top of the device, with simple logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | PCBWay
 | [BulkyMIDI-32 Faceplate (FB2)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | Optional | Alternate faceplate that goes on top of the device, with different logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | PCBWay
 
@@ -83,6 +83,21 @@ This module displays MIDI-channel activity in realtime, with an LED for each of 
 | [Channel Monitor 2](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Channel%202) | Yes | Main module | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Channel%202), [BOM](https://github.com/tebl/BulkyMIDI-32/blob/main/BulkyMIDI-32%20Channel%202/README.md#3-bom) | PCBWay
 | [Channel Monitor Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Channel%20Panel) | Optional | Adds a vertical surface for mounting the 16 channel LEDs. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Channel%20Panel), [BOM](https://github.com/tebl/BulkyMIDI-32/blob/main/BulkyMIDI-32%20Channel20Panel/README.md#3-bom) | PCBWay
 | [Channel Monitor Front Panel (FP1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Channel%20FP1) | Optional | Decorative front panel, mounts on [Channel Monitor Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Channel%20Panel). | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Channel%20FP1) | PCBWay
+| [BulkyMIDI-32 Faceplate (FB1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | Optional | Faceplate that goes on top of the device, with simple logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | PCBWay
+| [BulkyMIDI-32 Faceplate (FB2)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | Optional | Alternate faceplate that goes on top of the device, with different logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | PCBWay
+
+## 1.5> BulkyMIDI-32 Play
+![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-08-03%2018.22.50.jpg)
+
+In many ways the missing module when it comes to playing around with a Roland MT-32, both the vintage kind as well as the emulated version that is the main *BulkyMIDI-32* module (running *mt32-pi*) - simply playing back a *.MID*-file without a computer attached to it. Implemented with an Arduino Pro Micro at its heart, you can put your files on an SD-card and play them back - use a long press when starting playback to loop the file, another long press to stop playback. During playback the rotary encoder encoder can be used to speed up or slow down the tempo.
+
+Given that the designs have provisions for more than the expected number of MIDI-ports, a change in firmware can allow the hardware design to be used for entirely different purposes such as MIDI-message filtering, merging inputs and similar functionality.  
+
+| Module                 | Required    | Description                        | Documentation                      | Order      |
+| ---------------------- | ----------- | ---------------------------------- | ---------------------------------- | ---------- |
+| [Play](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play) | Yes | Main module | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play), [BOM](https://github.com/tebl/BulkyMIDI-32/blob/main/BulkyMIDI-32%20Play/README.md#3-bom) | PCBWay
+| [Play Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel) | Optional | Adds a vertical surface for oled-display and rotary encoder. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel), [BOM](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel/README.md#3-bom) | PCBWay
+| [Play Front Panel (FP1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Play%20FP1) | Optional | Decorative front panel, mounts on [Play Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Play%20Panel). | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Play%20FP1) | PCBWay
 | [BulkyMIDI-32 Faceplate (FB1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | Optional | Faceplate that goes on top of the device, with simple logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | PCBWay
 | [BulkyMIDI-32 Faceplate (FB2)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | Optional | Alternate faceplate that goes on top of the device, with different logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | PCBWay
 
