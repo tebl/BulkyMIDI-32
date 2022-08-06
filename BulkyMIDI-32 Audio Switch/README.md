@@ -9,6 +9,9 @@ I didn't want to use yet another MCU for what would account to an extremely triv
 
 - [1> Building the device](#1-building-the-device)
   - [1.1> Soldering it together](#11-soldering-it-together)
+  - [1.2> Without front panel](#12-without-front-panel)
+  - [1.3> Including front panel](#13-including-front-panel)
+  - [1.4> Finishing touches](#14-finishing-touches)
 - [2> Schematic](#2-schematic)
 - [3> BOM](#3-bom)
 
