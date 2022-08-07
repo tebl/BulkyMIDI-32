@@ -12,11 +12,11 @@ The [documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%
   - [1.4> Plugging it in](#14-plugging-it-in)
 
 ## 1.1> Basic information
-The original Roland MT-32 synth module was released all the way back in 1987, but while the module is certainly an expensive piece of equipment these days there is an even more expensive obstacle you'll encounter right after buying one. You see, the Roland MT-32 actually pre-dates MIDI as the standard we now know and love today, meaning that just because something has a MIDI out on it doesn't actually mean you get to start up a PC game MT32 music just like that.
+The original Roland MT-32 synth module was released all the way back in 1987, but while the module is certainly an expensive piece of equipment these days there is an even more expensive obstacle you'll encounter right after buying one. You see, the Roland MT-32 actually pre-dates MIDI as the standard we now know and love. What that it means is that just because something has a port labelled MIDI OUT on the back of it - doesn't actually mean you get to start up a PC game to play MT32-based music just like that.
 
 ![Roland MT32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/roland_mt32.jpg)
 
-The reason is that some games not only expect MIDI, they expect an intelligent form of MIDI - requiring a suitable interface card as well as a module that goes in between the two called an *MPU-401*-module (those alone will set you back 2-3 times what you already paid for the MT32 itself). Sound cards may have been advertising MPU-401 compatibility, but it still isn't intelligent MIDI - it's what is called UART MIDI. There's a piece of software called [SoftMPU](http://bjt42.github.io/softmpu/) that may increase the amount of games that'd work without intelligent mode, but considering this [compatibility list](http://dosdays.co.uk/topics/mt32_game_compat.php) you should know that these limitation would also extend to the [MT-32](https://github.com/dwhinham/mt32-pi).
+One of the reasons is that some games not only expect MIDI, they expect an intelligent form of MIDI - requiring a suitable interface card as well as a module that goes in between the two called an *MPU-401*-module (those alone will set you back 2-3 times what you already paid for the MT32 itself). Sound cards may have been advertising MPU-401 compatibility, but it still isn't intelligent MIDI - it's what is called UART MIDI. There's a piece of software called [SoftMPU](http://bjt42.github.io/softmpu/) that may increase the amount of games that'd work without intelligent mode, but considering this [compatibility list](http://dosdays.co.uk/topics/mt32_game_compat.php) you should know that these limitation would also extend to the [MT-32](https://github.com/dwhinham/mt32-pi).
 
 This mainly just extends to using the MT-32 with what we used to call IBM PC compatible machines, other machines where you wouldn't have the ability to plug in dedicated interface usually wouldn't have this distinction. Meaning that, if you just want to jump right into things that Atari ST computers, as well as some Commodore Amiga variants, might be a bit easier to get started with. Using either the original MT-32 or the MT32-PI with emulation in the form of ScummVM or Dosbox is also an option to consider, preferably used with a quality USB to MIDI adapter such as the Roland UM-ONE shown below (don't be tempted by the significantly cheaper options, they might not be safe to use with your equipment).
 
@@ -31,7 +31,7 @@ Start by downloading the last release of the MT32-PI, the file will be listed un
 
 The first of these is the firmware from the original Roland MT-32 models, but if you were to [google](https://www.google.com/search?q=mt32-pi+roms) you'll find that there are versions of these files that have been archived for posterity. The files themselves need to put in the **roms**-directory of your memory card, though MT32-PI will happily let you switch between various versions of the firmware by pushing the synth-button you'll want the older version for most games.
 
-The second that you'd need to locate are *soundfonts*, these need to be put into the **soundfonts**-directory. The [MT32-PI Wiki](https://github.com/dwhinham/mt32-pi/wiki) has a list of [Recommended Soundfonts](https://github.com/dwhinham/mt32-pi/wiki/Recommended-SoundFonts), depending on your background you may have different preferences though I'd recommend that you start with those that came with the Creative Soundblaster then experiment from there.
+The second that you'd need to locate are *soundfonts*, these need to be put into the **soundfonts**-directory. The [MT32-PI Wiki](https://github.com/dwhinham/mt32-pi/wiki) has a list of [Recommended Soundfonts](https://github.com/dwhinham/mt32-pi/wiki/Recommended-SoundFonts), depending on your background you may have different preferences though I'd recommend that you start with those that came with the Creative Soundblaster Audigy driver-cd then start experimenting until you find the combination that sound just right for you. Personally I had a Soundblaster 16 for most of those years, so I used the [opl3-soundfont](https://github.com/Mindwerks/opl3-soundfont) soundfont by Mindwerks though that might sound pretty awful for those used to the later Creative cards.
 
 ## 1.3> Configuring MT32-PI
 The MT32-PI software behavior is by editing the file *mt32-pi.cfg* in your favourite text-editor, it follows a common format similar to classic INI-files that've haunted us since the early days of MS Windows. The files are organized in sections with the section being named in a pair of brackets, which I've mainly included so that you now where to find something in the default configuration - meaning that the configuration included here will just be the required changes and not the entire file.
@@ -57,7 +57,7 @@ The control scheme depends on the hardware available, for the BulkyMIDI-32 I've 
 scheme = simple_buttons
 ```
 
-If you are using it in combination with the [Extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras)-module, then you may want to control the device using a rotary encoder instead. At the moment this is only used as a replacement for the volume up and down buttons, but other features may be added by the mt32-pi project at a later point in time. To use the encoder, we will instead using the *simple_encoder* control scheme instead.
+If you are using it together with the [panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module%20Panel) designed for the newer versions of it, then you may want to control the device using a rotary encoder instead. At the moment this is only used as a replacement for the volume up and down buttons, but other features may be added by the mt32-pi project at a later point in time. To use the encoder, we will instead using the *simple_encoder* control scheme instead.
 ```
 [control]
 scheme = simple_encoder
@@ -69,7 +69,6 @@ The BulkyMIDI-32 can be built with a selection of screens, but in the design I'v
 [lcd]
 type = sh1106_i2c
 height = 64
-rotation = inverted
 ```
 
 If you built your BulkyMIDI-32 with a regular 0.96" inch screen, then specify the LCD type as *ssd1306_i2c* instead. The other options are simply repeated for clarity, but they are the same as with the 1.3" inch screen.
@@ -77,6 +76,10 @@ If you built your BulkyMIDI-32 with a regular 0.96" inch screen, then specify th
 [lcd]
 type = ssd1306_i2c
 height = 64
+```
+
+When used without the front panel the OLED-screen will be mounted upside-down, for that reason the simpler hardware builds will need this additional line added to the *lcd*-section:
+```
 rotation = inverted
 ```
 
