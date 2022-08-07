@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "MIDI Breakout Board"
 Date ""
-Rev "A"
+Rev "B"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -188,7 +188,6 @@ Wire Wire Line
 	6775 2350 6775 2150
 Wire Wire Line
 	5600 1950 5525 1950
-NoConn ~ 7450 1950
 $Comp
 L power:+5V #PWR0104
 U 1 1 62130EBF
@@ -205,16 +204,14 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0105
 U 1 1 6212BC17
-P 7525 2350
-F 0 "#PWR0105" H 7525 2100 50  0001 C CNN
-F 1 "GND" H 7530 2177 50  0000 C CNN
-F 2 "" H 7525 2350 50  0001 C CNN
-F 3 "" H 7525 2350 50  0001 C CNN
-	1    7525 2350
+P 7525 2775
+F 0 "#PWR0105" H 7525 2525 50  0001 C CNN
+F 1 "GND" H 7530 2602 50  0000 C CNN
+F 2 "" H 7525 2775 50  0001 C CNN
+F 3 "" H 7525 2775 50  0001 C CNN
+	1    7525 2775
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7525 2250 7525 2350
 Wire Wire Line
 	7450 2250 7525 2250
 Wire Wire Line
@@ -497,4 +494,28 @@ $EndComp
 Wire Wire Line
 	11125 775  11125 850 
 Connection ~ 11125 775 
+$Comp
+L Device:R R5
+U 1 1 62F00614
+P 7600 2475
+F 0 "R5" H 7525 2525 50  0000 R CNN
+F 1 "4k7" H 7550 2450 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7530 2475 50  0001 C CNN
+F 3 "~" H 7600 2475 50  0001 C CNN
+	1    7600 2475
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7525 2250 7525 2700
+Wire Wire Line
+	7600 2625 7600 2700
+Wire Wire Line
+	7600 2700 7525 2700
+Connection ~ 7525 2700
+Wire Wire Line
+	7525 2700 7525 2775
+Wire Wire Line
+	7600 2325 7600 1950
+Wire Wire Line
+	7600 1950 7450 1950
 $EndSCHEMATC
