@@ -18,8 +18,11 @@ I had a lot of fun building the original *BulkyMIDI-32*, the process can best be
 - [2> Adapters](#2-adapters)
 - [3> Acknowledgements](#3-acknowledgements)
 
+
 # 1> Modules
 For the technical details as well as information regarding the modules included by this specific github project, consult the table below. Follow the [documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation) links for build instructions, BOM and anything else you'd need for that specific module. Faceplates and any backplates listed are for the most most part only decorative, allowing you to put together something similar to a case without actually requiring a 3d-printer. Also, check out the [schematics](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation) for more information about the electronic side of things.
+
+![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-08-07%2020.40.31.jpg)
 
 As previously mentioned several modules has been designed as part of the same project, these add different functionality and due to their identical form factor - they can all be stacked to build your very own MIDI-mountain! Though they bear the *BulkyMIDI-32* name, they can all be used independently of the main [BulkyMIDI-32](#11-bulkymidi-32)-module - they will communicate using standard MIDI. Should you want to, they should be able to live happily alongside your vintage MIDI-devices.
 
@@ -102,6 +105,7 @@ Given that the designs have provisions for more than the expected number of MIDI
 | [BulkyMIDI-32 Faceplate (FB1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | Optional | Faceplate that goes on top of the device, with simple logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB1) | PCBWay
 | [BulkyMIDI-32 Faceplate (FB2)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | Optional | Alternate faceplate that goes on top of the device, with different logo. | [Documentation](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | PCBWay
 
+
 # 2> Adapters
 Separate from the main modules are several adapters, designed for use with the *BulkyMIDI-32* in particular though most of them simply speak standard MIDI - so they should work with original equipment such as the original *Roland MT-32*. Follow the included in the table below for details such as build instructions, BOM and anything else you'd need for that specific module. The repository also includes a folder for [schematics](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation/schematic/adapters) in PDF-format, these will be needed in order to track down any faults you encounter when building up and testing the adapters.
 
@@ -114,7 +118,8 @@ Separate from the main modules are several adapters, designed for use with the *
 
 **NB!** The repository may contain pieces of modules and adapters designed for use with these, if they're not listed in one of these tables then they're a work in progress. They might be functional, they might blow up or I simply haven't remembered to update the documentation for them yet. PCBWay order links will always point you towards the last know good revision that I've tested, meaning they worked at least once with the equipment I have available.
 
-# 2> Acknowledgements
+
+# 3> Acknowledgements
 Everything comes from something, in particular when it comes to most of my electronics projects. I mainly build things I would like to own, often doing a respin to fit my own particular style and preferences with most of the hardest parts of the designs already provided by people more knowledgable than I.
 
 The software running on the Raspberry Pi is provided by the [mt32-pi](https://github.com/dwhinham/mt32-pi) while the hardware itself can be considered to be based on the information provided by the associated wiki. As already mentioned I started out with the design files for [clymsyMIDI](https://github.com/gmcn42/clumsyMIDI) as a starting point for the design.
