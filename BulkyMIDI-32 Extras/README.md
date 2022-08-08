@@ -44,7 +44,11 @@ That may sound like a lot to take in, but for the most part a good starting poin
 **NB!** Don't worry if the sheer length of the thing looks intimidating, it is for the most part just a running commentary on what is done and updated pictures as we go along. Everything will be explained in due time, quite possibly including a lot that is not needed with a passable familiarity with soldering things together.
 
 ## 1.1> Soldering it together
-The construction of this unit should be fairly straight-forward, just take your time in order to make sure everything goes into place - more or less straight. I usually recommend starting by having a good look at the PCBs, try to figure out where the components should go and in particular the orientation they should be installed - it may be a case of round thing going into another round thing, but this is electronics and the small details matter. As mentioned in the previous section, you may not want every feature so pay attention to the colour coding when deciding what to leave out.
+The construction of this unit should be fairly straight-forward, just take your time in order to make sure everything goes into place - more or less straight. I usually recommend starting by having a good look at the PCBs, then try to figure out where the components should go and in particular the orientation they should be installed - it may be a case of round thing going into another round thing, but this is electronics and the small details matter. As mentioned in the previous section, you may not want every feature so pay attention to the colour coding when deciding what to leave out.
+
+![Build 001](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_001.jpg)
+
+**NB!** This is revision D of the board, the subsequent images are from an earlier revision of the board. The differences between the two are that the power LED as well as its voltage dropping resistor was moved onto the main module, the position of the potentiometers was also moved due to the rotary encoder also having been moved there. 
 
 I will usually try to install components sorted by their physical size, doing it this way means you'll have an easier time keeping everything from looking somewhat crooked. This is your board, your build and you want it perfect - don't you? If you said no, then go sit in the corner because I worked hard on creating this for myself and whoever wants to build one.
 
@@ -195,7 +199,7 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | C6                      | 470uF electrolytic capacitor (8mm x 3.5mm)                        |     1 |
 | C8                      | 1uF electrolytic capacitor (5mm x 2mm)                            |     1 |
 | C9                      | 10nF ceramic capacitor (5mm)                                      |     1 |
-| D1,D2,D4                | 5mm LEDs, preferably frosted (not the bright clear ones)          |    (3)|
+| D2,D4                | 5mm LEDs, preferably frosted (not the bright clear ones)          |    (3)|
 | D3 *                    | 1N4148N small signal diode (DO-35)                                |    (1)|
 | ENC1                    | [Vertical Rotary Encoder](https://github.com/tebl/BulkyMIDI-32/tree/main/adapters/Vertical%20Rotary%20Encoder) |    (1)|
 | J1                      | 2.1mm x 5.5mm barrel plug                                         |    (1)|
@@ -212,7 +216,6 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | Q1                      | 2n3906 transistor (TO-92)                                         |     1 |
 | R1,R2,R18 *             | 220 ohm resistor                                                  |    (3)|
 | R3,R6,R13,R14,R15,R16 * | 220 ohm resistor                                                  |    (6)|
-| R4                      | 1k ohm resistor                                                   |    (1)|
 | R5                      | 2k2 (2200) ohm resistor                                           |    (1)|
 | R7-R12                  | 1k ohm resistor                                                   |     6 |
 | R17 *                   | 10k ohm resistor                                                  |    (1)|
