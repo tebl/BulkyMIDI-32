@@ -1,13 +1,10 @@
 # BulkyMIDI-32 Play
 In many ways the missing module when it comes to playing around with a Roland MT-32, both the vintage kind as well as the emulated version that is the main BulkyMIDI-32 module (running mt32-pi) - simply playing back a .MID-file without a computer attached to it. Implemented with an Arduino Pro Micro at its heart, you can put your files on an SD-card and play them back - use a long press when starting playback to loop the file, another long press to stop playback. During playback the rotary encoder encoder can be used to speed up or slow down the tempo.
 
-Given that the designs have provisions for more than the expected number of MIDI-ports, a change in firmware can allow the hardware design to be used for entirely different purposes such as MIDI-message filtering, merging inputs and similar functionality.
+![Finished unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_play_041.jpg)
+![Bare unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_play_040.jpg)
 
-![Finished unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-08-03%2018.22.50.jpg)
-
-I didn't want to use yet another MCU for what would account to an extremely trivial task such as this, neither did I want to switch the audio through a chip - so I instead went for simple flip-flops and somewhat exciting relays for each of the six channels.
-
-![Bare unit](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_audio_switch_040.jpg)
+Given that the design includes provisions for more than the expected number of MIDI-ports, a change in firmware can allow the hardware design to be used for entirely different purposes such as MIDI-message filtering, merging inputs and similar functionality.
 
 - [1> Building the device](#1-building-the-device)
   - [1.1> Soldering it together](#11-soldering-it-together)
@@ -85,7 +82,9 @@ If you've made it this far, you're almost ready to simply start using it. What's
 
 ![Build 041](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_play_041.jpg)
 
-The only step that's remaining is to just screw the faceplates back on the top of the device, once that's in place we can also add the front panel as well. With those in place we're ready to start planning the next project.
+The only step that's remaining to do when it comes to the hardware is just to screw the faceplates back on the top of the device, once that's in place we can also add the front panel as well.
+
+The [firmware](https://github.com/tebl/BulkyMIDI-32/tree/main/software/arduino/Play) that was developed for the device have been included in the software-portion of this repository. The code itself was written using PlatformIO environment though it should be compilable using the standard *Arduino IDE*, if you should prefer to do so. 
 
 # 2> Schematic
 The supplied KiCad files should be sufficient as both a schematic and as a  starting point for ordering PCBs (basically you could just zip the contents of the export folder and upload that on a fabrication site), the schematic is also available in [PDF-format](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation/schematic) and this is what you'll need to print and work your way through this things don't work as expected after assembly.
