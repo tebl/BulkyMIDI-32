@@ -6,4 +6,5 @@ Before starting on this adventure, even with a ready-built unit I suggest at lea
 - [1> Getting started](#1-getting-started)
   - [1.1> Commodore Amiga](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_amiga.md)
   - [1.2> DOSBox](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_dosbox.md)
-  - [1.3> ScummVM](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_scummvm.md)
+  - [1.3> MS-DOS](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_msdos.md)
+  - [1.4> ScummVM](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started_scummvm.md)
