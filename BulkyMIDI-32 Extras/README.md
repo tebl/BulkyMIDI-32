@@ -1,6 +1,8 @@
 # BulkyMIDI-32 Extras
 Building the BulkyMIDI-32, I quickly ran into a bit of a problem with the format I had decided upon - there were simply too many features that I had originally wanted, but couldn't fit within the regular $5 board limitations (100x100mm). All of the extra features that weren't strictly required in order for the MT32-PI to function, were moved onto this board instead - which is why it's referred to as the *extras*-board in most of the documentation. 
 
+**NB!** The RS232 features need work and may not function at this time!
+
 ![Build 042](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_extras_049.jpg)
 
 The additional features provided by this module are as follows:

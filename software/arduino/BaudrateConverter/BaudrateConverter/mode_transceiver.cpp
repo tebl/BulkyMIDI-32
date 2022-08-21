@@ -12,10 +12,19 @@ namespace mode_transceiver {
   void init() {
     MIDI_COMPUTER.begin(MIDI_CHANNEL_OMNI);
     MIDI_DEVICE.begin(MIDI_CHANNEL_OMNI);
+
+    flash_led(2);
+  }
+
+  bool led_state = false; 
+  void toggle_led() {
+    led_state = !led_state;
+    set_led(led_state);
   }
 
   void loop() {
     if (MIDI_COMPUTER.read()) {
+      toggle_led();
       MIDI_DEVICE.send(
         MIDI_COMPUTER.getType(),
         MIDI_COMPUTER.getData1(),
@@ -25,6 +34,7 @@ namespace mode_transceiver {
     }
 
     if (MIDI_DEVICE.read()) {
+      toggle_led();
       MIDI_COMPUTER.send(
         MIDI_DEVICE.getType(),
         MIDI_DEVICE.getData1(),
