@@ -7,6 +7,8 @@ namespace mode_debugger {
   extern bool ansi_enabled;
 
   extern unsigned long status_read;
+  extern unsigned long status_read_device;
+  extern unsigned long status_read_computer;
   extern unsigned int status_read_unknown;
   extern unsigned int status_read_at_poly;
   extern unsigned int status_read_note_off;
@@ -217,6 +219,11 @@ namespace mode_debugger {
   }
 
   void print_status() {
+    Serial.println(F("Messages by source:"));
+    print_status_line(F("Computer      "), status_read_computer);
+    print_status_line(F("MIDI          "), status_read_device);
+    Serial.println();
+
     Serial.println(F("Messages processed:"));
     print_status_line(F("NoteOn        "), status_read_note_on);
     print_status_line(F("NoteOff       "), status_read_note_off);
@@ -232,6 +239,25 @@ namespace mode_debugger {
     print_status_line(F("Unknown type  "), status_read_unknown);
     ansi_default();
     print_status_line(F("Processed     "), status_read);
+  }
+
+  void clear_status() {
+    status_read = 0;
+    status_read_device = 0;
+    status_read_computer = 0;
+    status_read_unknown = 0;
+    status_read_at_poly = 0;
+    status_read_note_off = 0;
+    status_read_note_on = 0;
+    status_read_cc = 0;
+    status_read_pc = 0;
+    status_read_at_ch = 0;
+    status_read_pb = 0;
+    status_read_se = 0;
+    status_read_common = 0;
+    status_read_realtime = 0;
+    status_read_as = 0;
+    status_read_reset = 0;    
   }
 
   /*
@@ -272,6 +298,7 @@ namespace mode_debugger {
     else if (handle_command(command, F("toggle reset"), toggle_reset));
     else if (handle_command(command, F("help"), print_help));
     else if (handle_command(command, F("status"), print_status));
+    else if (handle_command(command, F("status clear"), clear_status));
     else if (handle_command(command, F("version"), print_version));
     else {
       echo_unknown(command);

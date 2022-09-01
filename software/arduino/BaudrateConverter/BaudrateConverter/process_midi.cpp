@@ -4,13 +4,17 @@
 #include "commands.h"
 #include "settings.h"
 
+extern midi::MidiInterface<midi::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>> MIDI_COMPUTER;
 extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial>> MIDI_DEVICE;
 
 namespace mode_debugger {
   extern bool ansi_enabled;
 
   extern unsigned long status_read;
+  extern unsigned long status_read_device;
+  extern unsigned long status_read_computer;
   extern unsigned int status_read_unknown;
+
   extern unsigned int status_read_at_poly;
   extern unsigned int status_read_note_off;
   extern unsigned int status_read_note_on;
@@ -81,6 +85,7 @@ namespace mode_debugger {
     #endif
 
     MIDI_DEVICE.begin(MIDI_CHANNEL_OMNI);
+    MIDI_COMPUTER.begin(MIDI_CHANNEL_OMNI);
   }
 
   void print_channel(const int channel) {
@@ -399,248 +404,258 @@ namespace mode_debugger {
     Serial.print(']');
   }
 
-  void process_midi() {
-    if (MIDI_DEVICE.read()) {
-      switch (MIDI_DEVICE.getType()) {
-        case midi::AfterTouchPoly:
-          status_read += 1;
-          status_read_at_poly += 1;
-          if (en_debug && en_after_touch_poly) {
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("AT. Poly "));
-            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.println();
-          }
-          break;
-
-        case midi::NoteOff:
-          status_read += 1;
-          status_read_note_off += 1;
-          if (en_debug && en_note_off) {
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("NoteOff  "));
-            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData2());
-            if (en_note_details) {
-              Serial.print(' ');
-              print_note_details(MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2());
-            }
-            Serial.println();
-          }
-          break;
-
-        case midi::NoteOn:
-          status_read += 1;
-          status_read_note_on += 1;
-          if (en_debug && en_note_on) {
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("NoteOn   "));
-            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData2());
-            if (en_note_details) {
-              Serial.print(' ');
-              print_note_details(MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2());
-            }
-            Serial.println();
-          }
-          break;
-
-        case midi::ControlChange:
-          status_read += 1;
-          status_read_cc += 1;
-          if (en_debug && en_control_change) {
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("CC       "));
-            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData2());
-            Serial.println();
-          }
-          break;
-
-        case midi::ProgramChange:
-          status_read += 1;
-          status_read_pc += 1;
-          if (en_debug && en_program_change) {
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("PC       "));
-            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            if (en_program_change_details) {
-              Serial.print(' ');
-              print_program_change_details(MIDI_DEVICE.getData1());
-            }
-            Serial.println();
-          }
-          break;
-
-        case midi::AfterTouchChannel:
-          status_read += 1;
-          status_read_at_ch += 1;
-          if (en_debug && en_after_touch_channel) {
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("AT. Ch.  "));
-            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.println();
-          }
-          break;
-
-        case midi::PitchBend:
-          status_read += 1;
-          status_read_pb += 1;
-          if (en_debug && en_pitch_bend) {
-            print_channel(MIDI_DEVICE.getChannel());
-            Serial.print(F("PB       "));
-            print_status_byte(MIDI_DEVICE.getType(), MIDI_DEVICE.getChannel());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            if (en_pitch_bend_details) {
-              Serial.print(' ');
-              Serial.print(' ');
-              Serial.print(' ');
-              Serial.print(' ');
-              print_pitch_bend_details(MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2());
-            }
-            Serial.println();
-          }
-          break;
-
-        case midi::SystemExclusive:
-          status_read += 1;
-          status_read_se += 1;
-          break;
-
-        case midi::TimeCodeQuarterFrame:
-          status_read += 1;
-          status_read_common += 1;
-          if (en_debug && en_system_common) {
-            Serial.print(F("     TCQF     "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.println();
-          }
-          break;
-
-        case midi::SongPosition:
-          status_read += 1;
-          status_read_common += 1;
-          if (en_debug && en_system_common) {
-            Serial.print(F("     SongPos. "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData2());
-            Serial.println();
-          }
-          break;
-
-        case midi::SongSelect:
-          status_read += 1;
-          status_read_common += 1;
-          if (en_debug && en_system_common) {
-            Serial.print(F("     SongSel. "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.print(' ');
-            print_data(MIDI_DEVICE.getData1());
-            Serial.println();
-          }
-          break;
-
-        case midi::TuneRequest:
-          status_read += 1;
-          status_read_common += 1;
-          if (en_debug && en_system_common) {
-            Serial.print(F("     TuneReq. "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.println();
-          }
-          break;
-
-        case midi::Clock:
-          status_read += 1;
-          status_read_realtime += 1;
-          if (en_debug && en_realtime) {
-            Serial.print(F("     Clock    "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.println();
-          }
-          break;
-
-        case midi::Tick:
-          status_read += 1;
-          status_read_realtime += 1;
-          if (en_debug && en_realtime) {
-            Serial.print(F("     Tick     "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.println();
-          }
-          break;
-
-        case midi::Start:
-          status_read += 1;
-          status_read_realtime += 1;
-          if (en_debug && en_realtime) {
-            Serial.print(F("     Start    "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.println();
-          }
-          break;
-
-        case midi::Continue:
-          status_read += 1;
-          status_read_realtime += 1;
-          if (en_debug && en_realtime) {
-            Serial.print(F("     Continue "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.println();
-          }
-          break;
-
-        case midi::Stop:
-          status_read += 1;
-          status_read_realtime += 1;
-          if (en_debug && en_realtime) {
-            Serial.print(F("     Stop     "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.println();
-          }
-          break;
-
-        case midi::ActiveSensing:
-          // status_read += 1;
-          status_read_as += 1;
-          break;
-
-        case midi::SystemReset:
-          status_read += 1;
-          status_read_reset += 1;
-          if (en_debug && en_reset) {
-            Serial.print(F("     Reset    "));
-            print_data(MIDI_DEVICE.getType());
-            Serial.println();
-          }
-          break;
-
-      default:
-        status_read_unknown += 1;
-        Serial.println(MIDI_DEVICE.getType());
+  void process_message(const midi::MidiType msg_type, const midi::DataByte msg_data1, const midi::DataByte msg_data2, const midi::Channel msg_channel) {
+    switch (msg_type) {
+      case midi::AfterTouchPoly:
+        status_read += 1;
+        status_read_at_poly += 1;
+        if (en_debug && en_after_touch_poly) {
+          print_channel(msg_channel);
+          Serial.print(F("AT. Poly "));
+          print_status_byte(msg_type, msg_channel);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.println();
+        }
         break;
-      }
+
+      case midi::NoteOff:
+        status_read += 1;
+        status_read_note_off += 1;
+        if (en_debug && en_note_off) {
+          print_channel(msg_channel);
+          Serial.print(F("NoteOff  "));
+          print_status_byte(msg_type, msg_channel);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.print(' ');
+          print_data(msg_data2);
+          if (en_note_details) {
+            Serial.print(' ');
+            print_note_details(msg_data1, msg_data2);
+          }
+          Serial.println();
+        }
+        break;
+
+      case midi::NoteOn:
+        status_read += 1;
+        status_read_note_on += 1;
+        if (en_debug && en_note_on) {
+          print_channel(msg_channel);
+          Serial.print(F("NoteOn   "));
+          print_status_byte(msg_type, msg_channel);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.print(' ');
+          print_data(msg_data2);
+          if (en_note_details) {
+            Serial.print(' ');
+            print_note_details(msg_data1, msg_data2);
+          }
+          Serial.println();
+        }
+        break;
+
+      case midi::ControlChange:
+        status_read += 1;
+        status_read_cc += 1;
+        if (en_debug && en_control_change) {
+          print_channel(msg_channel);
+          Serial.print(F("CC       "));
+          print_status_byte(msg_type, msg_channel);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.print(' ');
+          print_data(msg_data2);
+          Serial.println();
+        }
+        break;
+
+      case midi::ProgramChange:
+        status_read += 1;
+        status_read_pc += 1;
+        if (en_debug && en_program_change) {
+          print_channel(msg_channel);
+          Serial.print(F("PC       "));
+          print_status_byte(msg_type, msg_channel);
+          Serial.print(' ');
+          print_data(msg_data1);
+          if (en_program_change_details) {
+            Serial.print(' ');
+            print_program_change_details(msg_data1);
+          }
+          Serial.println();
+        }
+        break;
+
+      case midi::AfterTouchChannel:
+        status_read += 1;
+        status_read_at_ch += 1;
+        if (en_debug && en_after_touch_channel) {
+          print_channel(msg_channel);
+          Serial.print(F("AT. Ch.  "));
+          print_status_byte(msg_type, msg_channel);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.println();
+        }
+        break;
+
+      case midi::PitchBend:
+        status_read += 1;
+        status_read_pb += 1;
+        if (en_debug && en_pitch_bend) {
+          print_channel(msg_channel);
+          Serial.print(F("PB       "));
+          print_status_byte(msg_type, msg_channel);
+          Serial.print(' ');
+          print_data(msg_data1);
+          if (en_pitch_bend_details) {
+            Serial.print(' ');
+            Serial.print(' ');
+            Serial.print(' ');
+            Serial.print(' ');
+            print_pitch_bend_details(msg_data1, msg_data2);
+          }
+          Serial.println();
+        }
+        break;
+
+      case midi::SystemExclusive:
+        status_read += 1;
+        status_read_se += 1;
+        break;
+
+      case midi::TimeCodeQuarterFrame:
+        status_read += 1;
+        status_read_common += 1;
+        if (en_debug && en_system_common) {
+          Serial.print(F("     TCQF     "));
+          print_data(msg_type);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.println();
+        }
+        break;
+
+      case midi::SongPosition:
+        status_read += 1;
+        status_read_common += 1;
+        if (en_debug && en_system_common) {
+          Serial.print(F("     SongPos. "));
+          print_data(msg_type);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.print(' ');
+          print_data(msg_data2);
+          Serial.println();
+        }
+        break;
+
+      case midi::SongSelect:
+        status_read += 1;
+        status_read_common += 1;
+        if (en_debug && en_system_common) {
+          Serial.print(F("     SongSel. "));
+          print_data(msg_type);
+          Serial.print(' ');
+          print_data(msg_data1);
+          Serial.println();
+        }
+        break;
+
+      case midi::TuneRequest:
+        status_read += 1;
+        status_read_common += 1;
+        if (en_debug && en_system_common) {
+          Serial.print(F("     TuneReq. "));
+          print_data(msg_type);
+          Serial.println();
+        }
+        break;
+
+      case midi::Clock:
+        status_read += 1;
+        status_read_realtime += 1;
+        if (en_debug && en_realtime) {
+          Serial.print(F("     Clock    "));
+          print_data(msg_type);
+          Serial.println();
+        }
+        break;
+
+      case midi::Tick:
+        status_read += 1;
+        status_read_realtime += 1;
+        if (en_debug && en_realtime) {
+          Serial.print(F("     Tick     "));
+          print_data(msg_type);
+          Serial.println();
+        }
+        break;
+
+      case midi::Start:
+        status_read += 1;
+        status_read_realtime += 1;
+        if (en_debug && en_realtime) {
+          Serial.print(F("     Start    "));
+          print_data(msg_type);
+          Serial.println();
+        }
+        break;
+
+      case midi::Continue:
+        status_read += 1;
+        status_read_realtime += 1;
+        if (en_debug && en_realtime) {
+          Serial.print(F("     Continue "));
+          print_data(msg_type);
+          Serial.println();
+        }
+        break;
+
+      case midi::Stop:
+        status_read += 1;
+        status_read_realtime += 1;
+        if (en_debug && en_realtime) {
+          Serial.print(F("     Stop     "));
+          print_data(msg_type);
+          Serial.println();
+        }
+        break;
+
+      case midi::ActiveSensing:
+        // status_read += 1;
+        status_read_as += 1;
+        break;
+
+      case midi::SystemReset:
+        status_read += 1;
+        status_read_reset += 1;
+        if (en_debug && en_reset) {
+          Serial.print(F("     Reset    "));
+          print_data(msg_type);
+          Serial.println();
+        }
+        break;
+
+    default:
+      status_read_unknown += 1;
+      Serial.println(msg_type);
+      break;
+    }
+  }
+
+  void process_midi() {
+    if (MIDI_COMPUTER.read()) {
+      status_read_computer += 1;
+      process_message(MIDI_COMPUTER.getType(), MIDI_COMPUTER.getData1(), MIDI_COMPUTER.getData2(), MIDI_COMPUTER.getChannel());
+    }
+
+    if (MIDI_DEVICE.read()) {
+      status_read_device += 1;
+      process_message(MIDI_DEVICE.getType(), MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2(), MIDI_DEVICE.getChannel());
     }
   }
 }

@@ -9,6 +9,8 @@ namespace mode_debugger {
   bool ansi_enabled = false;
 
   unsigned long status_read = 0;
+  unsigned long status_read_device = 0;
+  unsigned long status_read_computer = 0;
   unsigned int status_read_unknown = 0;
   unsigned int status_read_at_poly = 0;
   unsigned int status_read_note_off = 0;

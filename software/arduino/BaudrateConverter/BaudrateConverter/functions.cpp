@@ -7,7 +7,8 @@ const unsigned long get_baud_rate() {
     case 0b00000011:
       /* Check if the baud rate pins are shorted vertically, if it is done this
        * way we'll try the highest baud rate. What we're trying to detect is
-       * whether one of the previously high values can be pulled low.
+       * whether one of the previously high values can be pulled low using the
+       * other pin (also known as stuff you shouldn't do on an Arduino).
        */
       digitalWrite(PIN_BAUD_RATE_1, LOW);
       pinMode(PIN_BAUD_RATE_1, OUTPUT);
