@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 1
 Title "BulkyMIDI-32 Extras"
 Date ""
-Rev "F"
+Rev "G"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -109,9 +109,9 @@ $Comp
 L 74xx:74HC14 U1
 U 3 1 5FB8D580
 P 13175 8300
-F 0 "U1" V 13221 8120 50  0000 R CNN
-F 1 "74HCT14" V 13130 8120 50  0000 R CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 13175 8300 50  0001 C CNN
+F 0 "U1" H 13250 8600 50  0000 R CNN
+F 1 "74HCT14" H 13325 8525 50  0000 R CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 13175 8300 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 13175 8300 50  0001 C CNN
 	3    13175 8300
 	1    0    0    -1  
@@ -122,7 +122,7 @@ U 4 1 5FB8DE88
 P 13175 6050
 F 0 "U1" H 13175 6325 50  0000 C CNN
 F 1 "74HCT14" H 13300 6225 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 13175 6050 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 13175 6050 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 13175 6050 50  0001 C CNN
 	4    13175 6050
 	1    0    0    -1  
@@ -133,7 +133,7 @@ U 5 1 5FB8F7D6
 P 8700 6550
 F 0 "U1" V 8746 6370 50  0000 R CNN
 F 1 "74HCT14" V 8655 6370 50  0000 R CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 8700 6550 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 8700 6550 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 8700 6550 50  0001 C CNN
 	5    8700 6550
 	1    0    0    -1  
@@ -144,7 +144,7 @@ U 6 1 5FB904E8
 P 9300 6550
 F 0 "U1" V 9346 6370 50  0000 R CNN
 F 1 "74HCT14" V 9255 6370 50  0000 R CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 9300 6550 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 9300 6550 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 9300 6550 50  0001 C CNN
 	6    9300 6550
 	1    0    0    -1  
@@ -155,7 +155,7 @@ U 7 1 5FB9128B
 P 11250 10250
 F 0 "U1" V 10883 10250 50  0000 C CNN
 F 1 "74HCT14" V 10974 10250 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 11250 10250 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 11250 10250 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 11250 10250 50  0001 C CNN
 	7    11250 10250
 	1    0    0    -1  
@@ -656,8 +656,6 @@ Wire Wire Line
 	2125 1700 1850 1700
 Wire Wire Line
 	1850 1700 1850 2575
-Wire Wire Line
-	3350 1600 3275 1600
 $Comp
 L power:+3.3V #PWR03
 U 1 1 6214247D
@@ -675,8 +673,8 @@ Wire Wire Line
 	2050 1600 2125 1600
 Text Notes 1025 675  0    50   ~ 0
 Extras connector
-Text Notes 1025 1025 0    50   ~ 0
-When the extras board is used along with the BulkyMIDI-32, this connector takes care\nof all signals to and from the main module. The board is powered from this connector\nas well, for that reason the barrel connection should not be installed unless you intend\nto use it this way.
+Text Notes 1025 1100 0    50   ~ 0
+When the extras board is used along with the BulkyMIDI-32, this connector takes care\nof all signals to and from the main module. The board can also be powered via this\nconnector as well, so you do not need to install the barrel connector unless it will be\nused by itself. The diode keeps the Arduino Pro Micro from attempting to power the\nRaspberry Pi.
 Text GLabel 1775 2000 0    50   Output ~ 0
 A_RIGHT
 Wire Wire Line
@@ -756,7 +754,7 @@ U 2 1 5FB8CA4F
 P 13175 7175
 F 0 "U1" H 13175 7492 50  0000 C CNN
 F 1 "74HCT14" H 13175 7401 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 13175 7175 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 13175 7175 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 13175 7175 50  0001 C CNN
 	2    13175 7175
 	1    0    0    -1  
@@ -767,7 +765,7 @@ U 1 1 5FB8715B
 P 1875 10725
 F 0 "U1" H 2075 10525 50  0000 C CNN
 F 1 "74HCT14" H 2075 10600 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 1875 10725 50  0001 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 1875 10725 50  0001 C CNN
 F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 1875 10725 50  0001 C CNN
 	1    1875 10725
 	1    0    0    -1  
@@ -1722,16 +1720,16 @@ Wire Wire Line
 $Comp
 L barrel_jack:VIN #PWR0113
 U 1 1 635E81FA
-P 3350 1525
-F 0 "#PWR0113" H 3350 1375 50  0001 C CNN
-F 1 "VIN" H 3367 1698 50  0000 C CNN
-F 2 "" H 3350 1525 50  0001 C CNN
-F 3 "" H 3350 1525 50  0001 C CNN
-	1    3350 1525
+P 4000 1525
+F 0 "#PWR0113" H 4000 1375 50  0001 C CNN
+F 1 "VIN" H 4017 1698 50  0000 C CNN
+F 2 "" H 4000 1525 50  0001 C CNN
+F 3 "" H 4000 1525 50  0001 C CNN
+	1    4000 1525
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3350 1525 3350 1600
+	4000 1525 4000 1600
 $Comp
 L Interface_UART:MAX232 U2
 U 1 1 621F53D6
@@ -1960,4 +1958,19 @@ Wire Notes Line
 	8325 11125 11675 11125
 NoConn ~ 3275 2400
 NoConn ~ 3275 2500
+$Comp
+L Device:D D1
+U 1 1 63193C14
+P 3775 1600
+F 0 "D1" H 3775 1383 50  0000 C CNN
+F 1 "1n4001" H 3775 1474 50  0000 C CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 3775 1600 50  0001 C CNN
+F 3 "~" H 3775 1600 50  0001 C CNN
+	1    3775 1600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3925 1600 4000 1600
+Wire Wire Line
+	3275 1600 3625 1600
 $EndSCHEMATC
