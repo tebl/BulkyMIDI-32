@@ -67,7 +67,10 @@ namespace mode_debugger {
     help_command(F("debug"),              F("Debugger settings"));
     help_command(F("debug on|off"),       F("Enable/disable output"));
     help_command(F("debug notes"),        F("Enable NoteOn and details"));
-    help_command(F("toggle <setting>"),   F("Toggles setting as described below."));
+    help_command(F("help"),               F("Prints this screen"));
+    help_command(F("status"),             F("Show message counters"));
+    help_command(F("status clear"),       F("Clear message counters"));
+    help_command(F("toggle <setting>"),   F("Toggles debug setting as described below."));
     help_command(F("toggle note_on"),     F(" - NoteOn"));
     help_command(F("toggle note_off"),    F(" - NoteOff"));
     help_command(F("toggle note_detail"), F(" - Note (details)"));
@@ -81,9 +84,6 @@ namespace mode_debugger {
     help_command(F("toggle sys"),         F(" - System Common"));
     help_command(F("toggle real"),        F(" - RealTime"));
     help_command(F("toggle reset"),       F(" - Reset"));
-    help_command(F("help"),               F("Prints this screen"));
-    help_command(F("status"),             F("Show message counters"));
-    help_command(F("status clear"),       F("Clear message counters"));
     help_command(F("version"),            F("Prints firmware version"));
   }
 }

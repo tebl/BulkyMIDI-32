@@ -10,6 +10,8 @@ extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial>> MIDI_DEVICE;
 
 namespace mode_transceiver {
   void init() {
+    Serial.begin(get_baud_rate());
+
     MIDI_COMPUTER.begin(MIDI_CHANNEL_OMNI);
     MIDI_DEVICE.begin(MIDI_CHANNEL_OMNI);
 
