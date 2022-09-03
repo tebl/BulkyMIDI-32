@@ -2,10 +2,12 @@
 #include <SoftwareSerial.h>
 #include "constants.h"
 #include "commands.h"
+#include "custom_led.h"
 #include "settings.h"
 
 extern midi::MidiInterface<midi::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>> MIDI_COMPUTER;
 extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial>> MIDI_DEVICE;
+extern CustomLED activity;
 
 namespace mode_debugger {
   extern bool ansi_enabled;
@@ -648,12 +650,15 @@ namespace mode_debugger {
   }
 
   void process_midi() {
+    activity.tick();
     if (MIDI_COMPUTER.read()) {
+      activity.boost(LED_BOOST);
       status_read_computer += 1;
       process_message(MIDI_COMPUTER.getType(), MIDI_COMPUTER.getData1(), MIDI_COMPUTER.getData2(), MIDI_COMPUTER.getChannel());
     }
 
     if (MIDI_DEVICE.read()) {
+      activity.boost(LED_BOOST);
       status_read_device += 1;
       process_message(MIDI_DEVICE.getType(), MIDI_DEVICE.getData1(), MIDI_DEVICE.getData2(), MIDI_DEVICE.getChannel());
     }

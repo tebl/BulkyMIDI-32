@@ -33,7 +33,10 @@ const unsigned long get_baud_rate() {
   return BAUD_RATE_4800;
 }
 
+const bool get_ascii_enabled() {
+  return digitalRead(PIN_BIN_ASCII) == LOW;
+}
+
 const int get_mode() {
-  if (digitalRead(PIN_BIN_ASCII) == LOW) return MODE_TRANSCEIVER;
-  else return MODE_COMPATIBILITY;
+  return MODE_DEBUGGER;
 }

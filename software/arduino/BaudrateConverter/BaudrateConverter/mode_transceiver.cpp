@@ -2,31 +2,29 @@
 #include <MIDI.h>
 #include <SoftwareSerial.h>
 #include "constants.h"
-#include "led_control.h"
+#include "settings.h"
 #include "functions.h"
+#include "custom_led.h"
 
 extern midi::MidiInterface<midi::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>> MIDI_COMPUTER;
 extern midi::MidiInterface<midi::SerialMIDI<SoftwareSerial>> MIDI_DEVICE;
+extern CustomLED activity;
 
 namespace mode_transceiver {
   void init() {
-    Serial.begin(get_baud_rate());
+    Serial.begin(USB_BAUD_RATE);
 
     MIDI_COMPUTER.begin(MIDI_CHANNEL_OMNI);
     MIDI_DEVICE.begin(MIDI_CHANNEL_OMNI);
 
-    flash_led(2);
-  }
-
-  bool led_state = false; 
-  void toggle_led() {
-    led_state = !led_state;
-    set_led(led_state);
+    activity.flash(2);
   }
 
   void loop() {
+    activity.tick();
+
     if (MIDI_COMPUTER.read()) {
-      toggle_led();
+      activity.boost(50);
       MIDI_DEVICE.send(
         MIDI_COMPUTER.getType(),
         MIDI_COMPUTER.getData1(),
@@ -36,7 +34,7 @@ namespace mode_transceiver {
     }
 
     if (MIDI_DEVICE.read()) {
-      toggle_led();
+      activity.boost(50);
       MIDI_COMPUTER.send(
         MIDI_DEVICE.getType(),
         MIDI_DEVICE.getData1(),

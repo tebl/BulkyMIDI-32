@@ -5,9 +5,8 @@
 #include "settings.h"
 #include "custom_led.h"
 #include "functions.h"
+#include "mode_debugger.h"
 #include "mode_error.h"
-#include "mode_transceiver.h"
-#include "mode_transceiver_compat.h"
 
 MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings> hardware_serial(Serial1);
 MIDI_NAMESPACE::MidiInterface<MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>> MIDI_COMPUTER((MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>&)hardware_serial);
@@ -30,12 +29,8 @@ void setup() {
   program_mode = get_mode();
 
   switch (program_mode) {
-    case MODE_TRANSCEIVER:
-      mode_transceiver::init();
-      break;
-
-    case MODE_COMPATIBILITY:
-      mode_transceiver_compatibility::init();
+    case MODE_DEBUGGER:
+      mode_debugger::init();
       break;
 
     default:
@@ -47,12 +42,8 @@ void setup() {
 
 void loop() {
   switch (program_mode) {
-  case MODE_TRANSCEIVER:
-    mode_transceiver::loop();
-    break;
-
-  case MODE_COMPATIBILITY:
-    mode_transceiver_compatibility::loop();
+  case MODE_DEBUGGER:
+    mode_debugger::loop();
     break;
 
   case MODE_ERROR:

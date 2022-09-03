@@ -2,8 +2,8 @@
 #include <MIDI.h>
 
 /* Magic numbers */
-#define APP_TITLE "BaudrateConverter"
-#define APP_VERSION "0.3"
+#define APP_TITLE "DebugMidi"
+#define APP_VERSION "0.1"
 
 #define BAUD_RATE_115200 115200
 #define BAUD_RATE_38400 38400       // Computer-specific baud rate
@@ -16,7 +16,7 @@
 #define TERMINAL_COLS 80
 
 #define MODE_TRANSCEIVER 0
-#define MODE_COMPATIBILITY 1
+#define MODE_DEBUGGER 1
 #define MODE_ERROR 2
 
 #define ERROR_NO_ERROR 1
