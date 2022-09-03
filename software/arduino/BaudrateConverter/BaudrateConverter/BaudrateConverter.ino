@@ -7,6 +7,7 @@
 #include "mode_debugger.h"
 #include "mode_error.h"
 #include "mode_transceiver.h"
+#include "mode_transceiver_compat.h"
 
 MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings> hardware_serial(Serial1);
 MIDI_NAMESPACE::MidiInterface<MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>> MIDI_COMPUTER((MIDI_NAMESPACE::SerialMIDI<HardwareSerial, ComputerBaudRateSettings>&)hardware_serial);
@@ -34,7 +35,11 @@ void setup() {
       break;
     
     case MODE_TRANSCEIVER:
-      mode_transceiver::init();
+      #ifdef TRANSCEIVER_COMPATIBILITY
+        mode_transceiver_compatibility::init();
+      #else
+        mode_transceiver::init();
+      #endif
       break;
 
     default:
@@ -51,7 +56,11 @@ void loop() {
     break;
 
   case MODE_TRANSCEIVER:
-    mode_transceiver::loop();
+    #ifdef TRANSCEIVER_COMPATIBILITY
+      mode_transceiver_compatibility::loop();
+    #else
+      mode_transceiver::loop();
+    #endif
     break;
 
   case MODE_ERROR:

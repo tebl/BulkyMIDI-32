@@ -3,6 +3,9 @@
 #ifndef _CONSTANTS_H
 #define _CONSTANTS_H
 
+  /* Settings */
+  #define TRANSCEIVER_COMPATIBILITY
+
   /* Magic numbers */
   #define APP_TITLE "BaudrateConverter"
   #define APP_VERSION "0.3"
@@ -27,7 +30,7 @@
   /* Pin definitions */
   #define PIN_MIDI_RX 3
   #define PIN_MIDI_TX 2
-
+  
   #define PIN_BIN_ASCII 14
   #define PIN_BAUD_RATE_0 16
   #define PIN_BAUD_RATE_1 10
