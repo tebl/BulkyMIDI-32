@@ -21,12 +21,12 @@ namespace mode_transceiver_compatibility {
     activity.tick();
 
     if (Serial1.available() > 0) {
-      activity.boost(50);
+      activity.boost(LED_BOOST);
       software_serial.write(Serial1.read());
     }
 
     if (software_serial.available() > 0) {
-      activity.boost(50);
+      activity.boost(LED_BOOST);
       Serial1.write(software_serial.read());
     }
   }

@@ -24,7 +24,7 @@ namespace mode_transceiver {
     activity.tick();
 
     if (MIDI_COMPUTER.read()) {
-      activity.boost(50);
+      activity.boost(LED_BOOST);
       MIDI_DEVICE.send(
         MIDI_COMPUTER.getType(),
         MIDI_COMPUTER.getData1(),
@@ -34,7 +34,7 @@ namespace mode_transceiver {
     }
 
     if (MIDI_DEVICE.read()) {
-      activity.boost(50);
+      activity.boost(LED_BOOST);
       MIDI_COMPUTER.send(
         MIDI_DEVICE.getType(),
         MIDI_DEVICE.getData1(),
