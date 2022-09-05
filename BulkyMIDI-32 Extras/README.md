@@ -175,7 +175,7 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | D1,D5                   | 1N4001 diode DO-41                                                |     2 |
 | D3 *                    | 1N4148N small signal diode (DO-35)                                |    (1)|
 | J1                      | 2.1mm x 5.5mm barrel plug                                         |    (1)|
-| J4                      | 10-pin dual row female pin header (extra long, see [documentation](#16-connecting-the-boards)) |     1 |
+| J4                      | 10-pin dual row female pin header (extra long, see [documentation](#14-connectors)) |     1 |
 | J2,J3,J5,J10,J11        | Female S-terminal 5pin DIN PCB                                    |    (5)|
 | J6 *                    | Right-angle female DB9 connector (PCB mount)                      |    (1)|
 | J7-J9                   | PJ-317 (5-pin 3.5mm audio jack), preferably 2x blue and 1x green  |     3 |
@@ -197,7 +197,7 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | R22                     | 10k ohm resistor                                                  |     1 |
 | RV1,RV2                 | RV097G 10k (stereo audio potentimeter)                            |     2 |
 | U1                      | 74HCT14 (DIP-14)                                                  |     1 |
-| U2                      | MAX232A (DIP-16)                                                  |    (1)|
+| U2 **                   | MAX232A (DIP-16)                                                  |    (1)|
 | U3 *                    | 6N138 opto-coupler (DIP-8)                                        |    (1)|
 | U4                      | NE555P (DIP-8)                                                    |     1 |
 | Mounting ***            | 20mm M2 screws                                                    |    (2)|
@@ -206,6 +206,8 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | Mounting ****           | Nylon M3x6mm nylon nuts                                           |     6 |
 
 *) These components are only needed when installing the MCU for baud rate conversion.
+
+**) Note the specification of a MAX232**A**, the older MAX232 without the *A* won't function without changes to the circuit. The same goes for Chinese clones, often sold as MAX232CPE. When in doubt, pick these up from a reputable electronics vendor.
 
 ***) These are used to hold the RS-232-modules in place, especially if you plan on installing two of them. With only the one module you can use shorter screws instead.
 
