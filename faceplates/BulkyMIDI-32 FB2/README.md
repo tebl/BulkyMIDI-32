@@ -16,4 +16,4 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference      | Item                                                  | Count | Order  |
 | ---------------| ----------------------------------------------------- | ----- | ------ |
-| Faceplate PCB  | Fabricate using Gerber files                          |     1 | PCBWay
+| Faceplate PCB  | Fabricate using Gerber files                          |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Faceplate_FB2_c07272e8.html)

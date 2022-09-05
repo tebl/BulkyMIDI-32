@@ -49,7 +49,7 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference             | Item                                                              | Count | Order  |
 | --------------------- | ----------------------------------------------------------------- | ----- | ------ |
-| Panel PCB             | Fabricate using Gerber files                                      |     1 | PCBWay
+| Panel PCB             | Fabricate using Gerber files                                      |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Module_Panel_17b7fa7c.html)
 | D1                    | 5mm LEDs, preferably frosted (not the bright clear ones)          |     1 |
 | ENC1                  | EC11 rotary encoder, 20mm. Preferably plum handle                 |     1 |
 | IC1                   | 1.3 inch I2C OLED display (can use 0.96 inch display as well)     |     1 |
