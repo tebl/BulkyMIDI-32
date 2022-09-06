@@ -7,7 +7,8 @@ Given that this document specifically deals with running primarily games on MS-D
 - [2> MS-DOS](#2-ms-dos)
   - [2.1> Gameport MIDI](#21-gameport-midi)
   - [2.2> MIDI over RS-232](#22-midi-over-rs-232)
-  - [2.3> MT32-PI Control](#22-mt32-pi-control)
+  - [2.3> MT32-PI Control](#23-mt32-pi-control)
+  - [2.4> Playing MIDI-files](#24-playing-midi-files)
 
 # 2> MS-DOS
 MS-DOS doesn't really need an introduction as it was undoubtedly the norm for quite a few years. While there have been several different versions released of it, but for the sake of the verbosity I'll limit the guide to the more popular option - MS-DOS 6.22.
@@ -63,3 +64,18 @@ MT32-PI.EXE -v -t "This is an example"
 ```
 
 This is a very simple example, but the main purpose is of it is that by using the utility you can have the MT32-PI switch to the correct mode and relevant settings before the application is started. All of this can be put into a simple batch file, so that you can have the computer select the relevant settings for you before starting up the game.
+
+## 2.4> Playing MIDI-files
+So you've got MS-DOS up and running and now you want to play actual MIDI-files, those *\*.MID* thingies you've had on your hard-drive from the 90s. Perhaps you've even tried playing them on your modern MS Windows 10, wondering aloud to yourself, and a less than understanding cat - at how tinny and weak the tune had sounded. Well, that probably why you looked into building an MT32-PI in the first place - because MIDI actually used to be better.
+
+![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/dosbox_dosmid_002.png)
+
+Doing it from MS-DOS, I've not seen all that many alternatives - not that I've had to look for very long, because [DOSMID](http://dosmid.sourceforge.net/) will play your tunes for you. As long as you've got a 286 or better, the program will let you play your song - just remember to specify that you want to send the MIDI information out to your device. Either playing MIDI through the gameport:
+```
+DOSMID.EXE /MPU=330 <file>.MID
+```
+Or directly out through the serial port, with a suitable system for baud rate conversion such as the one offered by the extras-board (substitute COM-port as needed):
+```
+DOSMID.EXE /COM1 <file>.MID
+```
+
