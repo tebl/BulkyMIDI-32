@@ -6,7 +6,7 @@ encoding utf-8
 Sheet 1 2
 Title "BulkyMIDI-32 Audio Switch"
 Date ""
-Rev "A"
+Rev "B"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -1109,9 +1109,9 @@ F 3 "" H 8950 3025 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7100 3325 7575 3325
+	7100 3325 7475 3325
 Wire Wire Line
-	7100 3425 7575 3425
+	7100 3425 7375 3425
 Text Label 7125 3325 0    50   ~ 0
 RIGHT
 Text Label 7125 3425 0    50   ~ 0
@@ -1297,8 +1297,52 @@ F 3 "" H 5275 6425 50  0001 C CNN
 	1    5275 6425
 	1    0    0    -1  
 $EndComp
+NoConn ~ 7600 4025
+NoConn ~ 7600 4325
+$Comp
+L audio_jack:TRS_3.5mm J11
+U 1 1 633D58B5
+P 7800 4225
+AR Path="/633D58B5" Ref="J11"  Part="1" 
+AR Path="/635D4EBA/633D58B5" Ref="J?"  Part="1" 
+F 0 "J11" H 7512 4293 50  0000 R CNN
+F 1 "OUT_ALT" H 7512 4202 50  0000 R CNN
+F 2 "audio_jack:Tayda_3.5mm_stereo_TRS_jack_A-853" H 8050 4325 50  0001 C CNN
+F 3 "~" H 8050 4325 50  0001 C CNN
+	1    7800 4225
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0119
+U 1 1 633D58BB
+P 8000 4425
+AR Path="/633D58BB" Ref="#PWR0119"  Part="1" 
+AR Path="/635D4EBA/633D58BB" Ref="#PWR?"  Part="1" 
+F 0 "#PWR0119" H 8000 4175 50  0001 C CNN
+F 1 "GND" H 8005 4252 50  0000 C CNN
+F 2 "" H 8000 4425 50  0001 C CNN
+F 3 "" H 8000 4425 50  0001 C CNN
+	1    8000 4425
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7375 3425 7375 4225
+Wire Wire Line
+	7375 4225 7600 4225
+Connection ~ 7375 3425
+Wire Wire Line
+	7375 3425 7575 3425
+Wire Wire Line
+	7475 3325 7475 4125
+Wire Wire Line
+	7475 4125 7600 4125
 Wire Bus Line
 	7975 2400 7975 2900
 Wire Bus Line
 	9950 2400 9950 3675
+Connection ~ 7475 3325
+Wire Wire Line
+	7475 3325 7575 3325
+Text Notes 8125 4000 0    50   ~ 0
+One output socket is\nnormally installed, the\ndifference is just in \nits placement on the\nPCB.
 $EndSCHEMATC
