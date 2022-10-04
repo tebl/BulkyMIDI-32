@@ -1,0 +1,8 @@
+(sym_lib_table
+  (lib (name barrel_jack)(type Legacy)(uri ${KIPRJMOD}/../common/library/barrel_jack.lib)(options "")(descr ""))
+  (lib (name mounting)(type Legacy)(uri ${KIPRJMOD}/../common/library/mounting.lib)(options "")(descr ""))
+  (lib (name BulkyMIDI)(type Legacy)(uri ${KIPRJMOD}/../common/library/BulkyMIDI.lib)(options "")(descr ""))
+  (lib (name solder_select)(type Legacy)(uri ${KIPRJMOD}/../common/library/solder_select.lib)(options "")(descr ""))
+  (lib (name cd40174)(type Legacy)(uri ${KIPRJMOD}/../common/library/cd40174.lib)(options "")(descr ""))
+  (lib (name hk19f-dc)(type Legacy)(uri ${KIPRJMOD}/../common/library/hk19f-dc.lib)(options "")(descr ""))
+)
