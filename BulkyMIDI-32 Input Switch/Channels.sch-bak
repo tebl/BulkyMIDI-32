@@ -10,8 +10,8 @@ Rev "A"
 Comp ""
 Comment1 ""
 Comment2 ""
-Comment3 ""
-Comment4 "The circuitry for MIDI input compliance, relay switching and the duplication of the selected channel."
+Comment3 "channel (THRU ports)."
+Comment4 "The circuitry for MIDI input compliance, relay switching and the duplication of the selected"
 $EndDescr
 Wire Wire Line
 	1750 2000 1825 2000
@@ -632,19 +632,6 @@ $EndComp
 Wire Wire Line
 	9275 1400 9350 1400
 $Comp
-L Isolator:6N138 U?
-U 1 1 63599E50
-P 6700 1300
-AR Path="/63599E50" Ref="U?"  Part="1" 
-AR Path="/635D4EBA/63599E50" Ref="U2"  Part="1" 
-F 0 "U2" H 6700 833 50  0000 C CNN
-F 1 "6N138" H 6700 924 50  0000 C CNN
-F 2 "Package_DIP:DIP-8_W7.62mm_Socket_LongPads" H 6990 1000 50  0001 C CNN
-F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 6990 1000 50  0001 C CNN
-	1    6700 1300
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R?
 U 1 1 63599E56
 P 6050 1125
@@ -774,7 +761,6 @@ F 3 "" H 10850 6300 50  0001 C CNN
 	1    10850 6300
 	1    0    0    -1  
 $EndComp
-NoConn ~ 7000 1200
 $Comp
 L power:+5V #PWR?
 U 1 1 63599E99
@@ -791,14 +777,14 @@ $EndComp
 $Comp
 L power:GND #PWR?
 U 1 1 63599E9F
-P 7075 1600
+P 7175 1950
 AR Path="/63599E9F" Ref="#PWR?"  Part="1" 
 AR Path="/635D4EBA/63599E9F" Ref="#PWR04"  Part="1" 
-F 0 "#PWR04" H 7075 1350 50  0001 C CNN
-F 1 "GND" H 7080 1427 50  0000 C CNN
-F 2 "" H 7075 1600 50  0001 C CNN
-F 3 "" H 7075 1600 50  0001 C CNN
-	1    7075 1600
+F 0 "#PWR04" H 7175 1700 50  0001 C CNN
+F 1 "GND" H 7180 1777 50  0000 C CNN
+F 2 "" H 7175 1950 50  0001 C CNN
+F 3 "" H 7175 1950 50  0001 C CNN
+	1    7175 1950
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -827,8 +813,6 @@ Wire Wire Line
 	7000 1400 7400 1400
 Wire Wire Line
 	7000 1100 7075 1100
-Wire Wire Line
-	7075 1500 7075 1600
 Wire Wire Line
 	7000 1500 7075 1500
 Wire Wire Line
@@ -1458,4 +1442,43 @@ Wire Wire Line
 Wire Wire Line
 	10850 6225 10850 6300
 Connection ~ 10850 6225
+$Comp
+L Device:R R?
+U 1 1 63D9F837
+P 7175 1650
+AR Path="/63D9F837" Ref="R?"  Part="1" 
+AR Path="/635D4EBA/63D9F837" Ref="R?"  Part="1" 
+F 0 "R?" H 7100 1700 50  0000 R CNN
+F 1 "4k7" H 7125 1625 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7105 1650 50  0001 C CNN
+F 3 "~" H 7175 1650 50  0001 C CNN
+	1    7175 1650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Isolator:6N138 U?
+U 1 1 63599E50
+P 6700 1300
+AR Path="/63599E50" Ref="U?"  Part="1" 
+AR Path="/635D4EBA/63599E50" Ref="U2"  Part="1" 
+F 0 "U2" H 6700 833 50  0000 C CNN
+F 1 "6N138" H 6700 924 50  0000 C CNN
+F 2 "Package_DIP:DIP-8_W7.62mm_Socket_LongPads" H 6990 1000 50  0001 C CNN
+F 3 "http://www.onsemi.com/pub/Collateral/HCPL2731-D.pdf" H 6990 1000 50  0001 C CNN
+	1    6700 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7000 1200 7175 1200
+Wire Wire Line
+	7175 1200 7175 1500
+Wire Wire Line
+	7175 1800 7175 1875
+Wire Wire Line
+	7175 1875 7075 1875
+Wire Wire Line
+	7075 1500 7075 1875
+Wire Wire Line
+	7175 1875 7175 1950
+Connection ~ 7175 1875
 $EndSCHEMATC

@@ -1,0 +1,6 @@
+(fp_lib_table
+  (lib (name BulkyMIDI)(type KiCad)(uri ${KIPRJMOD}/../common/modules/BulkyMIDI-32.pretty)(options "")(descr ""))
+  (lib (name mounting)(type KiCad)(uri ${KIPRJMOD}/../common/modules/mounting.pretty)(options "")(descr ""))
+  (lib (name switch_cutout)(type KiCad)(uri ${KIPRJMOD}/../common/modules/switch_cutout.pretty)(options "")(descr ""))
+  (lib (name i2c_oled)(type KiCad)(uri ${KIPRJMOD}/../common/modules/i2c_oled.pretty)(options "")(descr ""))
+)
