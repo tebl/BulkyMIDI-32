@@ -104,8 +104,8 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference             | Item                                                              | Count | Order  |
 | --------------------- | ----------------------------------------------------------------- | ----- | ------ |
-| PCB                   | Fabricate using Gerber files                                      |     1 | PCBWay
-| [Panel PCB](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Audio%20Switch%20Panel) | Fabricate using Gerber files                                      |    (1)| PCBWay
+| PCB                   | Fabricate using Gerber files                                      |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Audio_Switch_118316c8.html)
+| [Panel PCB](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Audio%20Switch%20Panel) | Fabricate using Gerber files                                      |    (1)| [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Audio_Switch_Panel_a10b5ecb.html)
 | C1,C3-C6,C7-C9        | 100nF ceramic capacitor (5mm)                                     |     7 |
 | C2,C11                | 10uF electrolytic capacitor (4mm x 2mm)                           |     2 |
 | C6                    | 470uF electrolytic capacitor (8mm x 3.5mm)                        |     1 |
