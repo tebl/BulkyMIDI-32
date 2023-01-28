@@ -1,4 +1,4 @@
-19095823545630624
+19083120402496103
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -332,6 +332,13 @@ BulkyMIDI-32
 GY-PCM5102
 
 
+0
+15
+15
+BulkyMIDI-32
+Input_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
 0
 15
 15
@@ -51666,6 +51673,13 @@ Fuse Fuseholder TR5 Littelfuse/Wickmann No. 460 No560
 0
 2
 2
+Gameport
+Gameport_IDC
+Through hole IDC box header, 2x08, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
+Through hole vertical IDC box header THT 2x08 2.54mm double row
+0
+16
+16
 Heatsink
 Heatsink_35x26mm_1xFixation3mm_Fischer-SK486-35
 Heatsink, 35mm x 26mm, 1x Fixation 3mm, Fischer SK486-35
@@ -74479,13 +74493,6 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
-RK097G
-RK097G
-
-
-0
-6
-6
 RND_DSUB
 DSUB-9_Female_Edge
 Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
@@ -74542,13 +74549,6 @@ DSUB-25_Female_Vertical_P2.77x2.84mm_MountingHoles
 0
 25
 25
-RPI
-Raspberry_Pi_3B_Socketed_THT_FaceDown_MountingHoles
-Raspberry Pi 3B+ using through hole straight pin socket, 2x20, 2.54mm pitch, https://www.raspberrypi.org/documentation/hardware/raspberrypi/mechanical/rpi_MECH_3bplus.pdf
-raspberry pi 3b+ through hole
-0
-40
-40
 Relay_SMD
 Relay_DPDT_AXICOM_IMSeries_JLeg
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Specification+Or+Standard%7F108-98001%7FW5%7Fpdf%7FEnglish%7FENG_SS_108-98001_W5.pdf
@@ -83187,20 +83187,6 @@ varistor SIOV
 0
 2
 2
-arduino_pro_micro
-Arduino_Pro_Micro
-
-
-0
-36
-24
-arduino_pro_micro
-Arduino_Pro_Micro_Reverse
-
-
-0
-36
-24
 artwork
 Audio Switch
 
@@ -83237,6 +83223,13 @@ Channel
 0
 0
 artwork
+Input Switch
+
+
+0
+0
+0
+artwork
 Play
 
 
@@ -83250,55 +83243,6 @@ VU SIDi
 0
 0
 0
-audio_jack
-2.5mm_audio
-
-
-0
-3
-3
-audio_jack
-Tayda_3.5mm_stereo_TRS_jack_A-853
-
-
-0
-5
-5
-i2c_oled
-0.91_I2C_OLED
-
-
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED2
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED_NEW
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-1.3_I2C_OLED_No_mounting
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
 mounting
 M2
 module 1 pin (ou trou mecanique de percage)

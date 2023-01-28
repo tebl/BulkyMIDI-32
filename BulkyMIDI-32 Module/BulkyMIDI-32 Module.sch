@@ -620,72 +620,16 @@ Wire Wire Line
 	11475 10825 11475 10750
 Connection ~ 5275 2425
 $Comp
-L Connector:DIN-5_180degree J2
+L BulkyMIDI:DIN-5_MIDI J2
 U 1 1 5FBFBE67
 P 7875 4450
 F 0 "J2" H 7875 4083 50  0000 C CNN
 F 1 "MIDI OUT" H 7875 4174 50  0000 C CNN
-F 2 "BulkyMIDI-32:DIN5_MIDI" H 7875 4450 50  0001 C CNN
+F 2 "BulkyMIDI-32:DIN5_MIDI_OUT" H 7875 4450 50  0001 C CNN
 F 3 "" H 7875 4450 50  0001 C CNN
 	1    7875 4450
 	-1   0    0    1   
 $EndComp
-$Comp
-L Connector:DIN-5_180degree J5
-U 1 1 5FBFCA41
-P 10150 3000
-F 0 "J5" H 10150 2633 50  0000 C CNN
-F 1 "MIDI THRU" H 10150 2724 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal" H 10150 3000 50  0001 C CNN
-F 3 "" H 10150 3000 50  0001 C CNN
-	1    10150 3000
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R6
-U 1 1 5FC194A6
-P 9550 3100
-F 0 "R6" V 9343 3100 50  0000 C CNN
-F 1 "220" V 9434 3100 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9480 3100 50  0001 C CNN
-F 3 "~" H 9550 3100 50  0001 C CNN
-	1    9550 3100
-	0    -1   -1   0   
-$EndComp
-$Comp
-L power:+5V #PWR019
-U 1 1 5FC2F26A
-P 10875 2650
-F 0 "#PWR019" H 10875 2500 50  0001 C CNN
-F 1 "+5V" H 10875 2790 50  0000 C CNN
-F 2 "" H 10875 2650 50  0000 C CNN
-F 3 "" H 10875 2650 50  0000 C CNN
-	1    10875 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R5
-U 1 1 5FC30A93
-P 10875 2875
-F 0 "R5" H 10800 2925 50  0000 R CNN
-F 1 "220" H 10825 2850 50  0000 R CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10805 2875 50  0001 C CNN
-F 3 "~" H 10875 2875 50  0001 C CNN
-	1    10875 2875
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR021
-U 1 1 5FC5484B
-P 10150 3300
-F 0 "#PWR021" H 10150 3050 50  0001 C CNN
-F 1 "GND" H 10155 3127 50  0000 C CNN
-F 2 "" H 10150 3300 50  0001 C CNN
-F 3 "" H 10150 3300 50  0001 C CNN
-	1    10150 3300
-	1    0    0    -1  
-$EndComp
-NoConn ~ 10450 3000
 $Comp
 L power:+5V #PWR0119
 U 1 1 5FD00C6D
@@ -744,8 +688,7 @@ NoConn ~ 8175 4450
 NoConn ~ 6650 100 
 NoConn ~ 7575 4450
 Wire Wire Line
-	7875 4750 7875 4925
-NoConn ~ 9850 3000
+	7875 4750 7875 4825
 Wire Wire Line
 	6775 1925 6775 2325
 Wire Wire Line
@@ -958,10 +901,6 @@ Wire Wire Line
 	8175 4550 8525 4550
 Wire Wire Line
 	8525 4550 8525 4475
-Wire Wire Line
-	10875 3025 10875 3100
-Wire Wire Line
-	10875 2650 10875 2725
 Text GLabel 8425 6900 2    50   Output ~ 0
 SW_ROM
 Text GLabel 8425 7300 2    50   Output ~ 0
@@ -1079,12 +1018,12 @@ SW_DOWN
 Text GLabel 14225 8125 0    50   Input ~ 0
 SW_ENC
 $Comp
-L Connector:DIN-5_180degree J3
+L BulkyMIDI:DIN-5_MIDI J3
 U 1 1 5F99CA21
 P 8175 1825
 F 0 "J3" H 8175 1458 50  0000 C CNN
 F 1 "MIDI IN" H 8175 1549 50  0000 C CNN
-F 2 "BulkyMIDI-32:DIN5_MIDI" H 8175 1825 50  0001 C CNN
+F 2 "BulkyMIDI-32:DIN5_MIDI_IN" H 8175 1825 50  0001 C CNN
 F 3 "" H 8175 1825 50  0001 C CNN
 	1    8175 1825
 	-1   0    0    1   
@@ -1195,8 +1134,8 @@ Power section
 Text Notes 9675 5450 0    50   ~ 0
 OLED display and faceplate connector
 Text Notes 9675 5725 0    50   ~ 0
-OLED displays have unfortunately been produced with varying pinouts, we therefore need to add solder\nbridges to specify what the pins are used for. Faceplate connector includes signals for both screen\nand control scheme pins, just in case a specific faceplate reimplements them in some way.
-Text Notes 7175 5800 0    50   ~ 0
+OLED displays have unfortunately been produced with varying pinouts, we therefore need to add solder bridges to specify what the pins should\nbe connected to. Faceplate connector includes signals for both screen, control scheme pins as well as providing a power LED. When a modern\nLED of high efficiency is used, you should increase the value of R7 to something more suitable.
+Text Notes 7200 5800 0    50   ~ 0
 Volume UP/DOWN is not needed when rotary encoder is\nused, some versions of faceplates may include SYNTH and\nVOL_UP and the duplicated switch should not be installed.\nJP3 is used to have the ROM switch replace VOL_UP.
 $Comp
 L Jumper:SolderJumper_3_Open JP3
@@ -1354,15 +1293,7 @@ Wire Wire Line
 Text GLabel 9400 2150 2    50   Output ~ 0
 MIDI_THRUn
 Wire Wire Line
-	10450 3100 10875 3100
-Wire Wire Line
 	9250 1400 9250 1475
-Wire Wire Line
-	9850 3100 9700 3100
-Wire Wire Line
-	9400 3100 9250 3100
-Wire Wire Line
-	9250 3100 9250 2825
 Wire Wire Line
 	5275 1400 9250 1400
 Text GLabel 7350 10825 2    50   Output ~ 0
@@ -1616,8 +1547,8 @@ $Comp
 L Device:R R7
 U 1 1 62CE4C7E
 P 11800 6700
-F 0 "R7" V 11593 6700 50  0000 C CNN
-F 1 "330" V 11684 6700 50  0000 C CNN
+F 0 "R7" H 11700 6675 50  0000 C CNN
+F 1 "330*" H 11650 6750 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 11730 6700 50  0001 C CNN
 F 3 "~" H 11800 6700 50  0001 C CNN
 	1    11800 6700
@@ -1640,4 +1571,83 @@ F 3 "" H 11800 6175 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	11800 6175 11800 6550
+NoConn ~ 8275 2100
+Wire Wire Line
+	7875 4825 7975 4825
+Wire Wire Line
+	7975 4825 7975 4725
+Connection ~ 7875 4825
+Wire Wire Line
+	7875 4825 7875 4925
+Wire Wire Line
+	9400 3100 9250 3100
+Wire Wire Line
+	9250 3100 9250 2825
+Wire Wire Line
+	9850 3100 9700 3100
+Wire Wire Line
+	10450 3100 10875 3100
+Wire Wire Line
+	10875 2650 10875 2725
+Wire Wire Line
+	10875 3025 10875 3100
+NoConn ~ 9850 3000
+NoConn ~ 10450 3000
+$Comp
+L Device:R R5
+U 1 1 5FC30A93
+P 10875 2875
+F 0 "R5" H 10800 2925 50  0000 R CNN
+F 1 "220" H 10825 2850 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10805 2875 50  0001 C CNN
+F 3 "~" H 10875 2875 50  0001 C CNN
+	1    10875 2875
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR019
+U 1 1 5FC2F26A
+P 10875 2650
+F 0 "#PWR019" H 10875 2500 50  0001 C CNN
+F 1 "+5V" H 10875 2790 50  0000 C CNN
+F 2 "" H 10875 2650 50  0000 C CNN
+F 3 "" H 10875 2650 50  0000 C CNN
+	1    10875 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 5FC194A6
+P 9550 3100
+F 0 "R6" V 9343 3100 50  0000 C CNN
+F 1 "220" V 9434 3100 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9480 3100 50  0001 C CNN
+F 3 "~" H 9550 3100 50  0001 C CNN
+	1    9550 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR021
+U 1 1 5FC5484B
+P 10150 3300
+F 0 "#PWR021" H 10150 3050 50  0001 C CNN
+F 1 "GND" H 10155 3127 50  0000 C CNN
+F 2 "" H 10150 3300 50  0001 C CNN
+F 3 "" H 10150 3300 50  0001 C CNN
+	1    10150 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:DIN-5_180degree J5
+U 1 1 5FBFCA41
+P 10150 3000
+F 0 "J5" H 10150 2633 50  0000 C CNN
+F 1 "MIDI THRU" H 10150 2724 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Horizontal" H 10150 3000 50  0001 C CNN
+F 3 "" H 10150 3000 50  0001 C CNN
+	1    10150 3000
+	-1   0    0    1   
+$EndComp
+Text Notes 11750 7200 0    50   ~ 0
+* Power LED resistor,\nsee description above.
 $EndSCHEMATC

@@ -200,8 +200,6 @@ As detailed elsewhere in the [build](#1-building-the-device) portion of this doc
 | U2 **                   | MAX232A (DIP-16)                                                  |    (1)|
 | U3 *                    | 6N138 opto-coupler (DIP-8)                                        |    (1)|
 | U4                      | NE555P (DIP-8)                                                    |     1 |
-| Mounting ***            | 20mm M2 screws                                                    |    (2)|
-| Mounting ***            | 20mm M2 nuts                                                      |    (6)|
 | Mounting ****           | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
 | Mounting ****           | Nylon M3x6mm nylon nuts                                           |     6 |
 
