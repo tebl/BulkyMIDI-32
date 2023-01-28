@@ -4,13 +4,13 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "Module (FP1)"
+Title "Module (FP2)"
 Date ""
 Rev "A"
 Comp ""
 Comment1 ""
 Comment2 ""
-Comment3 ""
+Comment3 "Use with 1.3\" display without the extras-board."
 Comment4 "Module front panel, mounts on the panel itself."
 $EndDescr
 $Comp

@@ -10,7 +10,7 @@ Rev "A"
 Comp ""
 Comment1 ""
 Comment2 ""
-Comment3 ""
+Comment3 "Use with 1.3\" display including extras-board."
 Comment4 "Module front panel, mounts on the panel itself."
 $EndDescr
 $Comp
