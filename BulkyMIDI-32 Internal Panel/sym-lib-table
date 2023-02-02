@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name mounting)(type Legacy)(uri $KIPRJMOD/../common/library/mounting.lib)(options "")(descr ""))
+  (lib (name RetroPanel)(type Legacy)(uri $KIPRJMOD/../common/library/RetroPanel.lib)(options "")(descr ""))
+  (lib (name BulkyMIDI)(type Legacy)(uri $KIPRJMOD/../common/library/BulkyMIDI.lib)(options "")(descr ""))
+  (lib (name I2C_OLED)(type Legacy)(uri "D:/ownCloud/Documents/Projects/BulkyMIDI-32/BulkyMIDI-32 Internal Panel/../common/library/I2C_OLED.lib")(options "")(descr ""))
+)

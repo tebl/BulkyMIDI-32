@@ -1,0 +1,1 @@
+https://polprog.net/blog/audigy2zs/

@@ -1,0 +1,12 @@
+(sym_lib_table
+  (lib (name mounting)(type Legacy)(uri $KIPRJMOD/../common/library/mounting.lib)(options "")(descr ""))
+  (lib (name RetroPanel)(type Legacy)(uri $KIPRJMOD/../common/library/RetroPanel.lib)(options "")(descr ""))
+  (lib (name solder_select)(type Legacy)(uri $KIPRJMOD/../common/library/solder_select.lib)(options "")(descr ""))
+  (lib (name floppy)(type Legacy)(uri $KIPRJMOD/../common/library/floppy.lib)(options "")(descr ""))
+  (lib (name I2C_OLED)(type Legacy)(uri $KIPRJMOD/../common/library/I2C_OLED.lib)(options "")(descr ""))
+  (lib (name barrel_jack)(type Legacy)(uri $KIPRJMOD/../common/library/barrel_jack.lib)(options "")(descr ""))
+  (lib (name raspberry_pi)(type Legacy)(uri $KIPRJMOD/../common/library/raspberry_pi.lib)(options "")(descr ""))
+  (lib (name gy-pcm5102)(type Legacy)(uri $KIPRJMOD/../common/library/gy-pcm5102.lib)(options "")(descr ""))
+  (lib (name BulkyMIDI)(type Legacy)(uri $KIPRJMOD/../common/library/BulkyMIDI.lib)(options "")(descr ""))
+  (lib (name audio_jack)(type Legacy)(uri $KIPRJMOD/../common/library/audio_jack.lib)(options "")(descr ""))
+)

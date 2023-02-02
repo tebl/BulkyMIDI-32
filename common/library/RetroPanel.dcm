@@ -1,0 +1,32 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP +5VSB
+D +5V Standby
+K power-flag
+$ENDCMP
+#
+$CMP 3641AH
+D 0.36" 4 digit 7 segment Red LED, common cathode
+K display LED
+F http://www.kingbright.com/attachments/file/psearch/000/00/00/CA56-12CGKWA(Ver.9A).pdf
+$ENDCMP
+#
+$CMP Conn_01x02_Splayed
+D Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP Front_Panel
+D Generic connector, single row, 01x21, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP SD35VC0_Front_Panel
+D Generic connector, single row, 01x21, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+#End Doc Library

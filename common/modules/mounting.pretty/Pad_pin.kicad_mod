@@ -1,0 +1,12 @@
+(module Pad_pin (layer F.Cu) (tedit 6359AF0E)
+  (descr "module 1 pin (ou trou mecanique de percage)")
+  (tags DEV)
+  (fp_text reference REF** (at 0 -4.445) (layer F.Fab) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value 1pin (at 0 -3.175) (layer F.Fab) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (pad 1 smd rect (at 0 0) (size 3 4.4) (layers F.Cu F.Paste F.Mask))
+  (pad 1 smd rect (at 0 0) (size 3 4.4) (layers B.Cu B.Paste B.Mask))
+)

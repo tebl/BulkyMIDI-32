@@ -1,4 +1,25 @@
-19081848146385813
+19088491008385369
+6pin_switch
+6pin tactile switch
+
+
+0
+6
+6
+6pin_switch
+dpdt_switch
+
+
+0
+6
+6
+6pin_switch
+dpdt_switch_black
+
+
+0
+6
+6
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -300,119 +321,126 @@ battery CR-3032 coin cell vertical
 0
 2
 2
-BulkyMIDI
+BulkyMIDI-32
 BARREL_JACK
 DC Barrel Jack
 Power Jack
 0
 3
 3
-BulkyMIDI
+BulkyMIDI-32
 Channel_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 21
 21
-BulkyMIDI
+BulkyMIDI-32
 Conn_Power
 Through hole straight pin header, 1x02, 2.54mm pitch, single row
 Through hole pin header THT 1x02 2.54mm single row
 0
 2
 2
-BulkyMIDI
+BulkyMIDI-32
 DIN5_MIDI
 
 
 0
 5
 5
-BulkyMIDI
+BulkyMIDI-32
 DIN5_MIDI_IN
 
 
 0
 9
 6
-BulkyMIDI
+BulkyMIDI-32
 DIN5_MIDI_OUT
 
 
 0
 9
 6
-BulkyMIDI
+BulkyMIDI-32
 GY-PCM5102
 
 
 0
 15
 15
-BulkyMIDI
+BulkyMIDI-32
 Input_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 15
 15
-BulkyMIDI
+BulkyMIDI-32
 Internal_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 30
 30
-BulkyMIDI
+BulkyMIDI-32
+Internal_Panel_Angle
+Through hole angled pin header, 1x30, 2.54mm pitch, 6mm pin length, single row
+Through hole angled pin header THT 1x30 2.54mm single row
+0
+30
+30
+BulkyMIDI-32
 Module_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 12
 12
-BulkyMIDI
+BulkyMIDI-32
 PWR_Specification
 Barrel connector polarity indicator
 barrel polarity
 0
 0
 0
-BulkyMIDI
+BulkyMIDI-32
 Play_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 21
 21
-BulkyMIDI
+BulkyMIDI-32
 SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
 tactile switch SPST right angle, PTS645VL39-2 LFS
 tactile switch SPST angled PTS645VL39-2 LFS C&K Button
 0
 4
 2
-BulkyMIDI
+BulkyMIDI-32
 Switch_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 21
 21
-BulkyMIDI
+BulkyMIDI-32
 VU_SIDI_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 25
 25
-BulkyMIDI
+BulkyMIDI-32
 Vertical_Rotary_Encoder
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
 4
 4
-BulkyMIDI
+BulkyMIDI-32
 Vertical_Rotary_Placeholder
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
@@ -83145,62 +83173,48 @@ varistor SIOV
 0
 2
 2
-artwork
-Audio Switch
+audio_jack
+2.5mm_audio
 
 
 0
-0
-0
-artwork
-BulkyMIDI-32
+3
+3
+audio_jack
+PJ-307
 
 
 0
-0
-0
-artwork
-BulkyMIDI-32_8bit
+5
+5
+audio_jack
+PJ-317
 
 
 0
-0
-0
-artwork
-BulkyMIDI-32_small
+5
+5
+audio_jack
+PJ-317_IN
 
 
 0
-0
-0
-artwork
-Channel
+5
+5
+audio_jack
+PJ-317_OUT
 
 
 0
-0
-0
-artwork
-Input Switch
+5
+5
+audio_jack
+Tayda_3.5mm_stereo_TRS_jack_A-853
 
 
 0
-0
-0
-artwork
-Play
-
-
-0
-0
-0
-artwork
-VU SIDi
-
-
-0
-0
-0
+5
+5
 i2c_oled
 0.91_I2C_OLED
 
@@ -83237,6 +83251,13 @@ Through hole pin header THT 1x04 2.54mm single row
 4
 4
 mounting
+B.Pad_pin
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
+mounting
 M2
 module 1 pin (ou trou mecanique de percage)
 DEV
@@ -83256,6 +83277,13 @@ module 1 pin (ou trou mecanique de percage)
 DEV
 0
 1
+1
+mounting
+Pad_pin
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+2
 1
 switch_cutout
 SW_PUSH_6mm
