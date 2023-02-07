@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name mounting)(type Legacy)(uri $KIPRJMOD/../../common/library/mounting.lib)(options "")(descr ""))
+  (lib (name RetroPanel)(type Legacy)(uri $KIPRJMOD/../../common/library/RetroPanel.lib)(options "")(descr ""))
+)
