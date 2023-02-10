@@ -3,7 +3,7 @@ A faceplate designed to be installed onto [BulkyMIDI-32 Module Panel](https://gi
 
 Faceplate (FP2) in particular was designed for use with a 1.3" oled display. Note that it has been designed for use without the [extras](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Extras)-board - if you later intend to build or require the functionality of this board, consider [Faceplate (FP1)](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20Module%20FP1). You will need to add a set of 12mm hex standoffs to the bottom of the main-module, mainly because of the size of the OLED-display used.
 
-![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/BulkyMIDI-32%20Module%20FP2.png)
+![](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/BulkyMIDI-32%20Module%20FP1.jpg)
 
 - [1> Schematic](#1-schematic)
 - [2> BOM](#2-bom)

@@ -163,22 +163,25 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | C6                    | 470uF electrolytic capacitor (8mm x 3.5mm)                        |     1 |
 | D1                    | 1N4148N small signal diode (DO-35)                                |     1 |
 | ENC1                  | 5-pin right angle pin header                                      |    (1)|
-| IC1                   | 1.3 inch I2C OLED display (can use 0.96 inch display as well)     |     1 |
+| IC1 *2                | 1.3 inch I2C OLED display (can use 0.96 inch display as well)     |     1 |
 | J1                    | 2.1mm x 5.5mm barrel plug                                         |     1 |
 | J2, J3                | Female S-terminal 5pin DIN PCB                                    |     2 |
-| J4                    | 10-pin female header                                              |    (1)|
 | J5                    | 5-pin right angle pin header                                      |    (1)|
 | J6                    | 4-pin right angle pin header                                      |    (1)|
 | J7                    | 2x10 pin header (mounted on underside for extras board)           |    (1)|
 | R1,R2,R4,R5,R6        | 220 ohm resistor                                                  |     5 |
 | R3                    | 1k ohm resistor                                                   |     1 |
-| R7                    | 330 ohm resistor                                                   |   (1)|
-| SW1-SW4               | 6x6x5mm right-angle momentary button                              |     4 |
+| R7 *1                 | 330 ohm resistor                                                   |   (1)|
+| SW1-SW4 *2            | 6x6x5mm right-angle momentary button                              |     4 |
 | U1                    | 74HCT14 (DIP-14)                                                  |     1 |
 | U2                    | H11L1M opto-coupler (DIP-6)                                       |     1 |
-| Mounting ****         | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
-| Mounting ****         | Nylon M3 hex standoffs 8mm (M-F)                                  |     2 |
-| Mounting ****         | Nylon M3x6mm nylon screws                                         |     4 |
-| Mounting ****         | Nylon M3x6mm nylon nuts                                           |     8 |
+| Mounting *3           | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
+| Mounting *4           | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
+| Mounting *3           | Nylon M3 hex standoffs 8mm (M-F)                                  |     6 |
+| Mounting *3           | Nylon M3x6mm nylon screws                                         |     8 |
+| Mounting *3           | Nylon M3x6mm nylon nuts                                           |     6 |
 
-****) These are used in various places of the project, these are available in the form of kits usually advertised *M3 nylon standoff kit* which should contain most of what you'd need.
+1) This is the resistor for the power LED mounted on front-facing panel, the value need to be sized according to the type of LED used. This value is suitable for a red LED of the older type, for any kind of modern component you'll need a value significantly higher (I tend to use 2k2 or 3k3 here depending on the colour).
+2) These components are only used when no other PCBs will be used, ie. no front panel.
+3) These are used in various places of the project, these are available in the form of kits usually advertised *M3 nylon standoff kit* which should contain most of what you'd need.
+4) These are used with a faceplate and are installed on the bottom of the unit. When used with the extras-unit, these will be replaced by another set (4x) of 20mm (M-F) standoffs and another set of nuts to go on the bottom.
