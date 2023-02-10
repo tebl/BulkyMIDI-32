@@ -14,11 +14,11 @@ This documentation deals with how to get started with a specific system or progr
 # 2> Commodore Amiga
 I really can't speak for all manner of Commodore Amiga hardware, so I'll try to keep things brief when it comes to the hardware that I actually own. If you feel like a grave injustice have been commited by leaving out some important piece of hardware, then feel free to send me one and I promise to love it - then somewhere down the road, add a description relevant to it. 
 
-Onto more serious things; A frequent point of ridicule from most owners of the *Atari ST*-line of computers, is that almost all of the Amiga computers didn't include builtin MIDI-ports. If you were one of the few that had a *Commodore CDTV* then you were lucky enough to see the culmination of that ridicule: a beast of an Amiga 500 with a single speed CD-ROM, and among other features - those very MIDI-ports that you've always coveted!
+Onto more serious things; A frequent point of ridicule from most original owners of the *Atari ST*-line of computers, is that the Amiga computers didn't include builtin MIDI-ports. Almost all of them, but if you were one of the few that actually had a *Commodore CDTV* then you were lucky enough to also have seen the culmination of that ridicule: a beast of an Amiga 500, with a single speed CD-ROM that have mostly been seen as its only saving grace - however, it did also have the MIDI-ports that they had made you covet! Well, that - and the cool case design.
 
 ![Commodore Amiga CDTV](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/amiga_cdtv.jpg)
 
-On a more realistic note, you probably didn't own one of those and if you do now - then it's more than likely that it's not your preferred system. For other systems you'll need something extra, and if your machine is an Amiga 500, 600, 1200, 2000, 3000 or 4000 then you can use a very simple RS-232 to MIDI adapter such as the adapters included as part of this project ([BulkyMIDI-32 Amiga](https://github.com/tebl/BulkyMIDI-32/tree/main/adapters/BulkyMIDI-32%20Amiga) or [BulkyMIDI-32 Amiga IDC](https://github.com/tebl/BulkyMIDI-32/tree/main/adapters/BulkyMIDI-32%20Amiga%20IDC)). If you own an Amiga 1000 or CD32, then I have no idea.
+On a more realistic note, you probably didn't own one of those and if you do now - it's doubtful that it is your preferred Amiga-system. For all of the other options you'll need something extra, and if your machine is an Amiga 500, 600, 1200, 2000, 3000 or 4000 then you can use a very simple *RS-232 to MIDI*-adapter such as the adapters included as part of this project ([BulkyMIDI-32 Amiga](https://github.com/tebl/BulkyMIDI-32/tree/main/adapters/BulkyMIDI-32%20Amiga) or [BulkyMIDI-32 Amiga IDC](https://github.com/tebl/BulkyMIDI-32/tree/main/adapters/BulkyMIDI-32%20Amiga%20IDC)). If you own an Amiga 1000 or CD32, then I have no idea.
 
 ![Amiga RS-232 to MIDI](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_amiga_idc_009.jpg)
 
@@ -74,7 +74,7 @@ The easy way, as already mentioned is for the games where the ability to play mu
 Once in Workbench, either swap to or insert your Space Quest IV startup disk into a connected disk drive. Starting up the install utility, you can select the *mt32.drv* then hit update to have the configuration saved onto the disk. You might be tempted to just start the game from the disk, but you need to start from the disk before it'll actually load.
 
 ### 2.2.1> The less easy way
-The less easy way, also known as the way you need to do it on the older games that don't come with one of these handy little utilities - is to edit the configuration yourself. I'm not aware of any way of doing it on an a non-HDD installed copy of *DOPUS*, but people with a better memory or things than me may think of an easy solution. The way I'm showing from this point, is *DOPUS* as it came along with my installation of [Classic Workbench](https://classicwb.abime.net/) withing *WinUAE*.
+The less easy way, also known as the way you need to do it on the older games that don't come with one of these handy little utilities - is to edit the configuration yourself. I'm not aware of any way of doing it on an a non-HDD installed copy of *DOPUS*, but people with a better memory or things than me may think of an easy solution. The way I'm showing from this point, is *DOPUS* as it came along with my installation of [Classic Workbench](https://classicwb.abime.net/) within *WinUAE*.
 
 ![Space Quest IV](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/amiga_sq4_011.png)
 
