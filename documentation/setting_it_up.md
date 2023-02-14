@@ -51,26 +51,30 @@ output_device = i2s
 ```
 
 ### 1.3.3> Control scheme
-The control scheme depends on the hardware available, for the BulkyMIDI-32 I've opted for the *simple_buttons* scheme (four buttons: synth, ROM, volume up and volume down). There is a header provided for using a rotary encoder, *simple_encoder*, but you will rarely need to use it.
+The control scheme depends on the hardware available, for the *BulkyMIDI-32* I've catered for both options in some form. The *simple_buttons* scheme (four buttons: synth, ROM, volume up and volume down) is available from the main PCB, the assumption being that in this case you are building a simpler version of the device. 
 ```
 [control]
 scheme = simple_buttons
 ```
 
-If you are using it together with the [panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module%20Panel) designed for the newer versions of it, then you may want to control the device using a rotary encoder instead. At the moment this is only used as a replacement for the volume up and down buttons, but other features may be added by the mt32-pi project at a later point in time. To use the encoder, we will instead using the *simple_encoder* control scheme instead.
+If you are using it together with the [panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module%20Panel), then you'll want to control the device using a rotary encoder instead. At the time of writing this, it is only used as a volume adjustment knob, but there are other features that probably will be added to the [mt32-pi](https://github.com/dwhinham/mt32-pi) project at a later point in time. To use the encoder, you instead need to specify the *simple_encoder* control scheme:
 ```
 [control]
 scheme = simple_encoder
 ```
 
 ### 1.3.4> Display type
-The BulkyMIDI-32 can be built with a selection of screens, but in the design I've focused on common 128x64 OLED over I2C. The one I prefer for this is the larger 1.3" inch screen from *diymore*, but note that while they probably sold it to you as having a ssd1306 controller things they are not completely compatible and you'd need to specify this as type *sh1106_i2c* instead. One thing to note is that the displays I bought had indication on the back that it would have I2C address *7a*, but you need to keep it at the default *3c* instead as it is the only seemed to work for me.
+The BulkyMIDI-32 can be built with a selection of screens, but in the design I've mainly focused on common 128x64 OLED over I2C. There is an exception for every rule, for this project it is the *BulkyMIDI-32 Internal*.
+
+**1.3" OLED:**
+The one I prefer for this is the larger 1.3" inch screen from *diymore*, but note that while they probably sold it to you as having a ssd1306 controller things they are not completely compatible and you'd need to specify this as type *sh1106_i2c* instead. One thing to note is that the displays I bought had indication on the back that it would have I2C address *7a*, but you need to keep it at the default *3c* instead as it is the only seemed to work for me.
 ```
 [lcd]
 type = sh1106_i2c
 height = 64
 ```
 
+**0.96" OLED:**
 If you built your BulkyMIDI-32 with a regular 0.96" inch screen, then specify the LCD type as *ssd1306_i2c* instead. The other options are simply repeated for clarity, but they are the same as with the 1.3" inch screen.
 ```
 [lcd]
@@ -78,9 +82,18 @@ type = ssd1306_i2c
 height = 64
 ```
 
-When used without the front panel the OLED-screen will be mounted upside-down, for that reason the simpler hardware builds will need this additional line added to the *lcd*-section:
+**No front panel:**
+When built without the front panel, your OLED-screen will be mounted upside-down - for that reason the simpler hardware builds will need this additional line added to the *lcd*-section in order to rotate it:
 ```
 rotation = inverted
+```
+
+**BulkyMIDI-32 Internal:**
+All of this implies that you're building the standard version of the *BulkyMIDI-32*. The internal version for installing inside a PC-case doesn't have enough room for any of these screen options - instead you'll be specifying the usage of a narrow 128x32 OLED display:
+```
+[lcd]
+type = ssd1306_i2c
+height = 32
 ```
 
 ## 1.4> Plugging it in
@@ -100,4 +113,4 @@ If all you get is a blank, as in **black screen** - then that's actually a **goo
 
 One of the more common faults is simply that the display has not been [configured]((#134-display-type)) correctly, but you should also ensure that you remembered to solder in the solder bridges near the display itself (either on the module panel, or directly on the module if you've built a cheaper version of the device). Note that while the 1.3" displays are usually marketed as the more common 0.96" *ssd1306*-displays - they have a different chip and must be configured differently to account for this.
 
-Once everything appear to be functioning, the next exciting step is [getting started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md) on using it to play some music. The easiest method by far is using a *USB to MIDI*-interface with [ScummVM](https://www.scummvm.org/), if only to verify that it all works by itself before attempting to hook it up to vintage equipment.
+Once everything appear to be functioning, the next exciting step is [getting started](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md) on using it to play some music - by its very nature, something that'll vary greatly from system to system. The easiest method by far when it comes to initial tests on the device, is using a *USB to MIDI*-interface with the [ScummVM](https://www.scummvm.org/) software. This is worth doing, even if only doing it to verify that nothing blows up by its own before attempting to hook it up to actual vintage equipment.
