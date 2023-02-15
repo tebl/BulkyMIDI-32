@@ -1,0 +1,110 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Connector_DIN-5_180degree
+#
+DEF Connector_DIN-5_180degree J 0 40 Y Y 1 F N
+F0 "J" 125 225 50 H V C CNN
+F1 "Connector_DIN-5_180degree" 0 -250 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ DIN*
+$ENDFPLIST
+DRAW
+A -1 -1 201 -811 3 0 1 10 N 30 -200 200 0
+A 0 0 200 1 1799 0 1 10 N 200 0 -200 0
+A 1 -1 201 1797 -989 0 1 10 N -200 0 -30 -200
+C -120 0 20 0 1 0 N
+C -90 90 20 0 1 0 N
+C 0 130 20 0 1 0 N
+C 90 90 20 0 1 0 N
+C 120 0 20 0 1 0 N
+P 2 0 1 0 -200 0 -140 0 N
+P 2 0 1 0 0 200 0 150 N
+P 2 0 1 0 200 0 140 0 N
+P 3 0 1 0 -200 100 -170 100 -110 90 N
+P 3 0 1 0 200 100 170 100 110 90 N
+P 4 0 1 10 -30 -195 -30 -165 30 -165 30 -195 N
+X ~ 1 -300 0 100 R 50 50 1 1 P
+X ~ 2 0 300 100 D 50 50 1 1 P
+X ~ 3 300 0 100 L 50 50 1 1 P
+X ~ 4 -300 100 100 R 50 50 1 1 P
+X ~ 5 300 100 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# audio_jack_TRS_3.5mm
+#
+DEF audio_jack_TRS_3.5mm J 0 40 Y Y 1 F N
+F0 "J" 0 290 50 H V C CNN
+F1 "audio_jack_TRS_3.5mm" -150 -200 50 H V L CNN
+F2 "" 250 100 50 H I C CNN
+F3 "" 250 100 50 H I C CNN
+DRAW
+T 0 -25 50 30 0 0 0 1 Normal 0 C C
+T 0 -100 50 30 0 0 0 2 Normal 0 C C
+S -180 240 100 -140 0 0 10 f
+S -175 0 -205 100 0 1 0 F
+P 2 0 0 0 -200 -100 -200 0 N
+P 2 0 0 0 -50 110 -40 130 N
+P 2 0 0 0 40 -30 30 -10 N
+P 4 0 0 0 100 -100 30 -100 30 -10 20 -30 N
+P 4 0 0 0 100 200 -50 200 -50 110 -60 130 N
+P 4 0 1 10 -50 0 -25 25 0 0 100 0 N
+P 4 0 1 10 100 100 -75 100 -100 75 -125 100 N
+X ~ 1 -200 -200 100 U 50 50 1 1 P
+X ~ 2 200 100 100 L 50 50 1 1 P
+X ~ 3 200 200 100 L 50 50 1 1 P
+X ~ 4 200 -100 100 L 50 50 1 1 P
+X ~ 5 200 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# mounting_Mounting
+#
+DEF mounting_Mounting M 0 40 Y N 1 F N
+F0 "M" 0 100 50 H I C CNN
+F1 "mounting_Mounting" 0 -75 50 H I C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_??x*mm*
+ Connector*:*1x??x*mm*
+ Pin?Header?Straight?1X*
+ Pin?Header?Angled?1X*
+ Socket?Strip?Straight?1X*
+ Socket?Strip?Angled?1X*
+$ENDFPLIST
+DRAW
+C 0 0 25 0 1 0 N
+C 0 0 50 0 1 0 N
+ENDDRAW
+ENDDEF
+#
+# solder_select_Jumper_4_Swappable
+#
+DEF solder_select_Jumper_4_Swappable J 0 40 Y N 1 F N
+F0 "J" 50 100 50 H V C CNN
+F1 "solder_select_Jumper_4_Swappable" 50 -200 50 H V C CNN
+F2 "" -10 0 50 H I C CNN
+F3 "" -10 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+A 50 -140 60 416 1384 0 1 0 N 95 -100 5 -100
+A 50 -40 60 416 1384 1 1 0 N 95 0 5 0
+S -50 50 150 -150 1 1 10 f
+P 2 0 1 0 -10 -100 -60 -100 N
+P 2 0 1 0 110 -100 150 -100 N
+P 2 1 1 0 -10 0 -60 0 N
+P 2 1 1 0 110 0 150 0 N
+X Pin_1a 1a -200 0 150 R 50 50 1 1 P
+X Pin_1b 1b 300 0 150 L 50 50 1 1 P
+X Pin_2a 2a -200 -100 150 R 50 50 1 1 P
+X Pin_2b 2b 300 -100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library
