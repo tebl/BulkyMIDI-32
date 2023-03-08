@@ -23,8 +23,16 @@ With requirements for basic equipment sorted, we need to talk a bit about what y
 
 Now that you know what you want to build, we can get started on the most expensive step in any build process - shopping! So, head on over to the [BOM](#3-bom)-section for some information on what kind of components that you'll need. While I would have liked to give you specific part numbers for "reputable" electronic part suppliers, I can't afford to shop there so I usually make due with what I can find on sites such as ebay, AliExpress and any similar sites that sell cheap chinese components. The downside to this is that I can't link to a part directly and expect it to stay listed, so you'll need to consider the description listed as suggested search terms.
 
+While you wait for the parts to arrive, feel free to have a look at the introduction video - going into what the Roland MT-32 is and why you would want one. Also covers MIDI and where the MT32-PI software comes into all of this. 
+
+[![YouTube image](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/youtube_clip_introduction.jpg)](https://youtu.be/-z2EQR_IaVU)
+
 ## 1.1> Soldering it together
-The construction of this unit should be fairly straight-forward, just take your time in order to make sure everything goes into place - more or less straight. I usually recommend starting by having a good look at the PCBs, try to figure out where all of the listed components go and in which orientation they go in (all of this should be clearly marked on the silkscreen). 
+The construction of this unit should be fairly straight-forward, just take your time in order to make sure everything goes into place - more or less straight. To aid you in the process I've put together a video showing most of these parts in detail, but feel free to skip forward to the various chapters if you feel unsure about things.
+
+[![YouTube image](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/youtube_clip_assembling.jpg)](https://youtu.be/nyAeKCTkv0M)
+
+I usually recommend starting by having a good look at the PCBs, try to figure out where all of the listed components go and in which orientation they go in (all of this should be clearly marked on the silkscreen). 
 
 ![Build 001](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_001.jpg)
 
@@ -178,6 +186,7 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | Mounting *3           | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
 | Mounting *4           | Nylon M3 hex standoffs 20mm (M-F)                                 |     4 |
 | Mounting *3           | Nylon M3 hex standoffs 8mm (M-F)                                  |     6 |
+| Mounting *3           | Nylon M3 hex standoffs 12mm (M-F)                                 |     4 |
 | Mounting *3           | Nylon M3x6mm nylon screws                                         |     8 |
 | Mounting *3           | Nylon M3x6mm nylon nuts                                           |     6 |
 
