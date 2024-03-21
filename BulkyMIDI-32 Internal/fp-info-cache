@@ -1,25 +1,4 @@
-19096903168485731
-6pin_switch
-6pin tactile switch
-
-
-0
-6
-6
-6pin_switch
-dpdt_switch
-
-
-0
-6
-6
-6pin_switch
-dpdt_switch_black
-
-
-0
-6
-6
+19123601195286621
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -74556,6 +74535,20 @@ WiFi IEEE802.11 b/g/n
 0
 44
 44
+RPI
+Raspberry_Pi_3A_Socketed_THT_FaceDown_MountingHoles
+Raspberry Pi 3B+ using through hole straight pin socket, 2x20, 2.54mm pitch, https://www.raspberrypi.org/documentation/hardware/raspberrypi/mechanical/rpi_MECH_3bplus.pdf
+raspberry pi 3b+ through hole
+0
+40
+40
+RPI
+Raspberry_Pi_3B_Socketed_THT_FaceDown_MountingHoles
+Raspberry Pi 3B+ using through hole straight pin socket, 2x20, 2.54mm pitch, https://www.raspberrypi.org/documentation/hardware/raspberrypi/mechanical/rpi_MECH_3bplus.pdf
+raspberry pi 3b+ through hole
+0
+40
+40
 Relay_SMD
 Relay_DPDT_AXICOM_IMSeries_JLeg
 http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Specification+Or+Standard%7F108-98001%7FW5%7Fpdf%7FEnglish%7FENG_SS_108-98001_W5.pdf
@@ -83194,6 +83187,76 @@ varistor SIOV
 0
 2
 2
+artwork
+Audio Switch
+
+
+0
+0
+0
+artwork
+BulkyMIDI-32
+
+
+0
+0
+0
+artwork
+BulkyMIDI-32_8bit
+
+
+0
+0
+0
+artwork
+BulkyMIDI-32_small
+
+
+0
+0
+0
+artwork
+Channel
+
+
+0
+0
+0
+artwork
+Dexed
+
+
+0
+0
+0
+artwork
+Input Switch
+
+
+0
+0
+0
+artwork
+Play
+
+
+0
+0
+0
+artwork
+RetroPanel
+
+
+0
+0
+0
+artwork
+VU SIDi
+
+
+0
+0
+0
 audio_jack
 2.5mm_audio
 
@@ -83250,41 +83313,6 @@ Tayda_3.5mm_stereo_TRS_jack_A-853
 0
 5
 5
-i2c_oled
-0.91_I2C_OLED
-
-
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED2
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED_NEW
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-1.3_I2C_OLED_No_mounting
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
 mounting
 B.Pad_pin
 module 1 pin (ou trou mecanique de percage)
@@ -83320,10 +83348,94 @@ DEV
 0
 2
 1
-switch_cutout
-SW_PUSH_6mm
-https://www.omron.com/ecb/products/pdf/en-b3f.pdf
-tact sw push 6mm
+pwr_drv
+PWR_DRV
+simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
+terminal block bornier4
 0
 4
+4
+pwr_drv
+PWR_EXT
+simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
+terminal block bornier4
+0
+3
+3
+pwr_drv
+PWR_IN
+simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
+terminal block bornier4
+0
+4
+4
+resistor
+R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
 2
+2
+resistor
+R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+solder_bridge
+bridge
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+bridge2
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+bridge_open
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+bridge_r
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+select
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+3
+3
+solder_bridge
+select2
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+3
+3
+solder_bridge
+select_swappable
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+4
+4
+solder_bridge
+select_swappable_THT
+Through hole straight pin header, 2x02, 2.54mm pitch, double rows
+Through hole pin header THT 2x02 2.54mm double row
+0
+4
+4
