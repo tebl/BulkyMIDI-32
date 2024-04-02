@@ -1,4 +1,6 @@
 # Vertical Rotary Encoder
+**NB!** This board was only used with the first versions of the BulkyMIDI-32, if you have one where the display is in the middle then this is not needed. This is because the functionality was replaced when I found the room to add a front-facing panel to it.
+
 While designing the BulkyMIDI-32 I looked hard and long at locating a suitable part for a rotary encoder meant to mount at an angle, but while there were references to them existing at some point in time they do not seem to be available - at least not at a price I was prepared to pay for it. Originally I had wanted to use one of the common rotary encoder modules such as the well known *KY-040* that's being sold by the same vendors dealing in Arduino-modules in general.
 
 ![Completed module](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_encoder_004.jpg)
