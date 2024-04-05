@@ -90,6 +90,12 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP Power_Panel
+D Generic connector, single row, 01x21, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 $CMP Serial_Adapter
 D Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)
 K connector

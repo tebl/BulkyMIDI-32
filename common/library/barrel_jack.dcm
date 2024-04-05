@@ -6,6 +6,12 @@ K DC power barrel jack connector
 F ~
 $ENDCMP
 #
+$CMP Jack-DC_copy
+D DC Barrel Jack
+K DC power barrel jack connector
+F ~
+$ENDCMP
+#
 $CMP VIN
 D Power symbol creates a global label with name "LINE"
 K power-flag
@@ -17,6 +23,12 @@ K power-flag
 $ENDCMP
 #
 $CMP barrel_9v
+D DC Barrel Jack
+K DC power barrel jack connector
+F ~
+$ENDCMP
+#
+$CMP barrel_ext
 D DC Barrel Jack
 K DC power barrel jack connector
 F ~
