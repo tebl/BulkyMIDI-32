@@ -6,4 +6,10 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP Wavetable_Header
+D Generic connector, double row, 02x13, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 #End Doc Library
