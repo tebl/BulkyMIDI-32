@@ -1,4 +1,4 @@
-19105747829993085
+19109172638912846
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -357,6 +357,13 @@ rotary encoder
 14
 14
 BulkyMIDI-32
+ExPower
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+6
+4
+BulkyMIDI-32
 GY-PCM5102
 
 
@@ -384,6 +391,13 @@ Through hole angled pin header THT 1x30 2.54mm single row
 0
 18
 18
+BulkyMIDI-32
+L_Axial_L7.0mm_D3.3mm_P10.16mm_Horizontal_Fastron_MICC
+Inductor, Axial series, Axial, Horizontal, pin pitch=10.16mm, , length*diameter=7*3.3mm^2, Fastron, MICC, http://www.fastrongroup.com/image-show/70/MICC.pdf?type=Complete-DataSheet&productType=series
+Inductor Axial series Axial Horizontal pin pitch 10.16mm  length 7mm diameter 3.3mm Fastron MICC
+0
+2
+2
 BulkyMIDI-32
 Module_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html

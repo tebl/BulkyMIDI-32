@@ -1,0 +1,287 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title "Reset"
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "6502-style reset circuit, for absolutely no reason."
+$EndDescr
+$Comp
+L Timer:LM555xN U4
+U 1 1 66902F62
+P 5775 4500
+F 0 "U4" H 5375 4850 50  0000 L CNN
+F 1 "NE555" H 5425 4150 50  0000 L CNN
+F 2 "Package_DIP:DIP-8_W7.62mm_Socket_LongPads" H 5775 4500 50  0001 C CNN
+F 3 "" H 5775 4500 50  0001 C CNN
+	1    5775 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C5
+U 1 1 66902F6E
+P 4775 3925
+F 0 "C5" H 4900 3950 50  0000 L CNN
+F 1 "100nF" H 4900 3875 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 4813 3775 50  0001 C CNN
+F 3 "" H 4775 3925 50  0001 C CNN
+	1    4775 3925
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:CP C8
+U 1 1 66902F7A
+P 6700 4725
+F 0 "C8" H 6825 4775 50  0000 L CNN
+F 1 "10uF" H 6825 4700 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 6738 4575 50  0001 C CNN
+F 3 "" H 6700 4725 50  0001 C CNN
+	1    6700 4725
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5275 4500
+Wire Wire Line
+	6275 4500 6475 4500
+Wire Wire Line
+	6475 4700 6275 4700
+$Comp
+L power:GND #PWR0117
+U 1 1 66902FCB
+P 6700 4875
+F 0 "#PWR0117" H 6700 4625 50  0001 C CNN
+F 1 "GND" H 6705 4702 50  0000 C CNN
+F 2 "" H 6700 4875 50  0001 C CNN
+F 3 "" H 6700 4875 50  0001 C CNN
+	1    6700 4875
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74HC14 U?
+U 2 1 6690FC23
+P 7275 3675
+AR Path="/6690FC23" Ref="U?"  Part="2" 
+AR Path="/668EADC6/6690FC23" Ref="U1"  Part="2" 
+F 0 "U1" H 7275 3500 50  0000 C CNN
+F 1 "74HCT14" H 7275 3425 50  0000 C CNN
+F 2 "Package_DIP:DIP-14_W7.62mm_Socket_LongPads" H 7275 3675 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74HC14" H 7275 3675 50  0001 C CNN
+	2    7275 3675
+	1    0    0    1   
+$EndComp
+Text HLabel 7950 3675 2    50   Output ~ 0
+RESET
+Wire Wire Line
+	3950 3675 4775 3675
+Text HLabel 3950 3675 0    50   Input ~ 0
+SWITCH
+$Comp
+L power:+5V #PWR0116
+U 1 1 6695EF41
+P 4775 3275
+F 0 "#PWR0116" H 4775 3125 50  0001 C CNN
+F 1 "+5V" H 4790 3448 50  0000 C CNN
+F 2 "" H 4775 3275 50  0001 C CNN
+F 3 "" H 4775 3275 50  0001 C CNN
+	1    4775 3275
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6697620F
+P 6700 4275
+AR Path="/6697620F" Ref="R?"  Part="1" 
+AR Path="/666B7C2B/6697620F" Ref="R?"  Part="1" 
+AR Path="/668EADC6/6697620F" Ref="R7"  Part="1" 
+F 0 "R7" V 6493 4275 50  0000 C CNN
+F 1 "47k" V 6584 4275 50  0000 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6630 4275 50  0001 C CNN
+F 3 "~" H 6700 4275 50  0001 C CNN
+	1    6700 4275
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6700 4500 6475 4500
+Connection ~ 6475 4500
+Wire Wire Line
+	6475 4500 6475 4700
+$Comp
+L power:GND #PWR0119
+U 1 1 6697CC8E
+P 4775 4075
+F 0 "#PWR0119" H 4775 3825 50  0001 C CNN
+F 1 "GND" H 4780 3902 50  0000 C CNN
+F 2 "" H 4775 4075 50  0001 C CNN
+F 3 "" H 4775 4075 50  0001 C CNN
+	1    4775 4075
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0125
+U 1 1 6697F0BD
+P 5775 4975
+F 0 "#PWR0125" H 5775 4725 50  0001 C CNN
+F 1 "GND" H 5780 4802 50  0000 C CNN
+F 2 "" H 5775 4975 50  0001 C CNN
+F 3 "" H 5775 4975 50  0001 C CNN
+	1    5775 4975
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5775 4975 5775 4900
+$Comp
+L Device:R R?
+U 1 1 66985987
+P 7725 3450
+AR Path="/66985987" Ref="R?"  Part="1" 
+AR Path="/666B7C2B/66985987" Ref="R?"  Part="1" 
+AR Path="/668EADC6/66985987" Ref="R8"  Part="1" 
+F 0 "R8" V 7518 3450 50  0000 C CNN
+F 1 "1k" V 7609 3450 50  0000 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7655 3450 50  0001 C CNN
+F 3 "~" H 7725 3450 50  0001 C CNN
+	1    7725 3450
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7725 3600 7725 3675
+$Comp
+L power:+5V #PWR0126
+U 1 1 66986D3A
+P 7725 3275
+F 0 "#PWR0126" H 7725 3125 50  0001 C CNN
+F 1 "+5V" H 7740 3448 50  0000 C CNN
+F 2 "" H 7725 3275 50  0001 C CNN
+F 3 "" H 7725 3275 50  0001 C CNN
+	1    7725 3275
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR0127
+U 1 1 669889F5
+P 6700 4125
+F 0 "#PWR0127" H 6700 3975 50  0001 C CNN
+F 1 "+5V" H 6715 4298 50  0000 C CNN
+F 2 "" H 6700 4125 50  0001 C CNN
+F 3 "" H 6700 4125 50  0001 C CNN
+	1    6700 4125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 4575 6700 4500
+Wire Wire Line
+	6700 4425 6700 4500
+Connection ~ 6700 4500
+$Comp
+L power:+5V #PWR0129
+U 1 1 66996FB2
+P 5100 4625
+F 0 "#PWR0129" H 5100 4475 50  0001 C CNN
+F 1 "+5V" H 5115 4798 50  0000 C CNN
+F 2 "" H 5100 4625 50  0001 C CNN
+F 3 "" H 5100 4625 50  0001 C CNN
+	1    5100 4625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 4625 5100 4700
+Wire Wire Line
+	5100 4700 5275 4700
+Wire Wire Line
+	6975 3675 6525 3675
+Wire Wire Line
+	4775 3575 4775 3675
+Connection ~ 4775 3675
+Wire Wire Line
+	7725 3275 7725 3300
+Wire Wire Line
+	5150 4300 5275 4300
+Wire Wire Line
+	5150 3675 5150 4300
+Wire Wire Line
+	4775 3675 5150 3675
+Wire Wire Line
+	4775 3675 4775 3775
+$Comp
+L Device:R R?
+U 1 1 669BD56B
+P 4775 3425
+AR Path="/669BD56B" Ref="R?"  Part="1" 
+AR Path="/666B7C2B/669BD56B" Ref="R?"  Part="1" 
+AR Path="/668EADC6/669BD56B" Ref="R3"  Part="1" 
+F 0 "R3" V 4568 3425 50  0000 C CNN
+F 1 "1M" V 4659 3425 50  0000 C CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4705 3425 50  0001 C CNN
+F 3 "~" H 4775 3425 50  0001 C CNN
+	1    4775 3425
+	-1   0    0    1   
+$EndComp
+Connection ~ 7725 3675
+Wire Wire Line
+	7725 3675 7950 3675
+Wire Wire Line
+	7575 3675 7725 3675
+$Comp
+L power:+5V #PWR?
+U 1 1 66AA001B
+P 5775 3950
+AR Path="/66AA001B" Ref="#PWR?"  Part="1" 
+AR Path="/666B7C2B/66AA001B" Ref="#PWR?"  Part="1" 
+AR Path="/668EADC6/66AA001B" Ref="#PWR0128"  Part="1" 
+F 0 "#PWR0128" H 5775 3800 50  0001 C CNN
+F 1 "+5V" H 5775 4090 50  0000 C CNN
+F 2 "" H 5775 3950 50  0000 C CNN
+F 3 "" H 5775 3950 50  0000 C CNN
+	1    5775 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C?
+U 1 1 66AA0021
+P 6075 4025
+AR Path="/66AA0021" Ref="C?"  Part="1" 
+AR Path="/666B7C2B/66AA0021" Ref="C?"  Part="1" 
+AR Path="/668EADC6/66AA0021" Ref="C9"  Part="1" 
+F 0 "C9" V 6250 3975 50  0000 L CNN
+F 1 "100nF" V 6175 3900 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D4.7mm_W2.5mm_P5.00mm" H 6075 4025 50  0001 C CNN
+F 3 "" H 6075 4025 50  0001 C CNN
+	1    6075 4025
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5775 4025 5775 4100
+Wire Wire Line
+	5775 3950 5775 4025
+Connection ~ 5775 4025
+$Comp
+L power:GND #PWR?
+U 1 1 66AA002A
+P 6350 4075
+AR Path="/66AA002A" Ref="#PWR?"  Part="1" 
+AR Path="/666B7C2B/66AA002A" Ref="#PWR?"  Part="1" 
+AR Path="/668EADC6/66AA002A" Ref="#PWR0130"  Part="1" 
+F 0 "#PWR0130" H 6350 3825 50  0001 C CNN
+F 1 "GND" H 6355 3902 50  0000 C CNN
+F 2 "" H 6350 4075 50  0001 C CNN
+F 3 "" H 6350 4075 50  0001 C CNN
+	1    6350 4075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4075 6350 4025
+Wire Wire Line
+	5775 4025 5975 4025
+Wire Wire Line
+	6175 4025 6350 4025
+Wire Wire Line
+	6525 4300 6525 3675
+Wire Wire Line
+	6275 4300 6525 4300
+$EndSCHEMATC
