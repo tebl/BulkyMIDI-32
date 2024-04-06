@@ -1,0 +1,252 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "ExModule (Panel)"
+Date ""
+Rev "A"
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 "Front panel for the ExModule."
+$EndDescr
+$Comp
+L BulkyMIDI:ExModule_Panel J1
+U 1 1 62825997
+P 4275 3400
+F 0 "J1" H 4400 4600 50  0000 C CNN
+F 1 "ExModule" H 4400 4525 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x21_P2.54mm_Horizontal" H 4275 3400 50  0001 C CNN
+F 3 "~" H 4275 3400 50  0001 C CNN
+	1    4275 3400
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4575 2500 4575 4300
+$Comp
+L power:GND #PWR0101
+U 1 1 6282785A
+P 4575 4575
+F 0 "#PWR0101" H 4575 4325 50  0001 C CNN
+F 1 "GND" H 4580 4402 50  0000 C CNN
+F 2 "" H 4575 4575 50  0001 C CNN
+F 3 "" H 4575 4575 50  0001 C CNN
+	1    4575 4575
+	-1   0    0    -1  
+$EndComp
+Connection ~ 4575 4300
+Wire Wire Line
+	4650 2400 4550 2400
+Wire Wire Line
+	4650 2400 4650 2325
+$Comp
+L power:VCC #PWR0102
+U 1 1 62828DC5
+P 4650 2325
+F 0 "#PWR0102" H 4650 2175 50  0001 C CNN
+F 1 "VCC" H 4665 2498 50  0000 C CNN
+F 2 "" H 4650 2325 50  0001 C CNN
+F 3 "" H 4650 2325 50  0001 C CNN
+	1    4650 2325
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 628346CB
+P 4550 2400
+F 0 "#FLG0101" H 4550 2475 50  0001 C CNN
+F 1 "PWR_FLAG" H 4550 2573 50  0001 C CNN
+F 2 "" H 4550 2400 50  0001 C CNN
+F 3 "~" H 4550 2400 50  0001 C CNN
+	1    4550 2400
+	-1   0    0    -1  
+$EndComp
+Connection ~ 4550 2400
+Wire Wire Line
+	4550 2400 4475 2400
+Wire Wire Line
+	4575 2500 4475 2500
+Wire Wire Line
+	4575 4300 4475 4300
+$Comp
+L Device:LED D1
+U 1 1 6283F232
+P 5800 2500
+F 0 "D1" H 6200 2400 50  0000 R CNN
+F 1 "POWER" H 6050 2400 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 5800 2500 50  0001 C CNN
+F 3 "~" H 5800 2500 50  0001 C CNN
+	1    5800 2500
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 628CF525
+P 4575 4500
+F 0 "#FLG0102" H 4575 4575 50  0001 C CNN
+F 1 "PWR_FLAG" V 4575 4627 50  0001 L CNN
+F 2 "" H 4575 4500 50  0001 C CNN
+F 3 "~" H 4575 4500 50  0001 C CNN
+	1    4575 4500
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	4575 4300 4575 4500
+$Comp
+L mounting:Mounting_Pin M1
+U 1 1 6282631C
+P 10600 575
+F 0 "M1" H 10600 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10600 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10600 575 50  0001 C CNN
+F 3 "~" H 10600 575 50  0001 C CNN
+	1    10600 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pin M2
+U 1 1 62826824
+P 10725 575
+F 0 "M2" H 10725 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10725 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10725 575 50  0001 C CNN
+F 3 "~" H 10725 575 50  0001 C CNN
+	1    10725 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pin M3
+U 1 1 62826D8F
+P 10850 575
+F 0 "M3" H 10850 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10850 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10850 575 50  0001 C CNN
+F 3 "~" H 10850 575 50  0001 C CNN
+	1    10850 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pin M4
+U 1 1 62827110
+P 10975 575
+F 0 "M4" H 10975 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10975 500 50  0001 C CNN
+F 2 "mounting:M3_pin" H 10975 575 50  0001 C CNN
+F 3 "~" H 10975 575 50  0001 C CNN
+	1    10975 575 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0111
+U 1 1 6282AADA
+P 10975 875
+F 0 "#PWR0111" H 10975 625 50  0001 C CNN
+F 1 "GND" H 10980 702 50  0000 C CNN
+F 2 "" H 10975 875 50  0001 C CNN
+F 3 "" H 10975 875 50  0001 C CNN
+	1    10975 875 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10600 725  10600 800 
+Wire Wire Line
+	10600 800  10725 800 
+Wire Wire Line
+	10975 800  10975 725 
+Wire Wire Line
+	10725 725  10725 800 
+Connection ~ 10725 800 
+Wire Wire Line
+	10725 800  10850 800 
+Wire Wire Line
+	10850 725  10850 800 
+Connection ~ 10850 800 
+Wire Wire Line
+	10850 800  10975 800 
+Wire Wire Line
+	10975 800  10975 875 
+Wire Wire Line
+	4575 4500 4575 4575
+Connection ~ 4575 4500
+Wire Wire Line
+	5950 2800 6125 2800
+Connection ~ 10975 800 
+$Comp
+L power:GND #PWR0103
+U 1 1 6613FB78
+P 6125 2875
+F 0 "#PWR0103" H 6125 2625 50  0001 C CNN
+F 1 "GND" H 6130 2702 50  0000 C CNN
+F 2 "" H 6125 2875 50  0001 C CNN
+F 3 "" H 6125 2875 50  0001 C CNN
+	1    6125 2875
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6125 2875 6125 2800
+Connection ~ 6125 2800
+$Comp
+L Switch:SW_Push SW1
+U 1 1 661447CD
+P 5800 4200
+F 0 "SW1" H 5800 4485 50  0000 C CNN
+F 1 "RESET" H 5800 4394 50  0000 C CNN
+F 2 "switch_cutout:SW_PUSH_6mm" H 5800 4400 50  0001 C CNN
+F 3 "~" H 5800 4400 50  0001 C CNN
+	1    5800 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4475 4200 5600 4200
+Wire Wire Line
+	6000 4200 6125 4200
+$Comp
+L power:GND #PWR0104
+U 1 1 6615BDEA
+P 6125 4275
+F 0 "#PWR0104" H 6125 4025 50  0001 C CNN
+F 1 "GND" H 6130 4102 50  0000 C CNN
+F 2 "" H 6125 4275 50  0001 C CNN
+F 3 "" H 6125 4275 50  0001 C CNN
+	1    6125 4275
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6125 4275 6125 4200
+Wire Wire Line
+	4475 2700 5350 2700
+Text Label 4600 2600 0    50   ~ 0
+PWR
+Text Label 4600 2700 0    50   ~ 0
+ACT
+Text Label 4600 4200 0    50   ~ 0
+RESET
+Wire Wire Line
+	4475 2600 5350 2600
+Wire Wire Line
+	5950 2500 6125 2500
+Wire Wire Line
+	6125 2500 6125 2800
+$Comp
+L Device:LED D2
+U 1 1 62901D33
+P 5800 2800
+F 0 "D2" H 6200 2700 50  0000 R CNN
+F 1 "ACTIVITY" H 6050 2700 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 5800 2800 50  0001 C CNN
+F 3 "~" H 5800 2800 50  0001 C CNN
+	1    5800 2800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5350 2600 5350 2500
+Wire Wire Line
+	5350 2700 5350 2800
+Wire Wire Line
+	5350 2800 5650 2800
+Wire Wire Line
+	5350 2500 5650 2500
+$EndSCHEMATC
