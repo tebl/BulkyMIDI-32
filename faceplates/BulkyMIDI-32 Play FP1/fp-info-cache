@@ -1,4 +1,4 @@
-19081848146385813
+19034181463699225
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -300,125 +300,6 @@ battery CR-3032 coin cell vertical
 0
 2
 2
-BulkyMIDI
-BARREL_JACK
-DC Barrel Jack
-Power Jack
-0
-3
-3
-BulkyMIDI
-Channel_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-21
-21
-BulkyMIDI
-Conn_Power
-Through hole straight pin header, 1x02, 2.54mm pitch, single row
-Through hole pin header THT 1x02 2.54mm single row
-0
-2
-2
-BulkyMIDI
-DIN5_MIDI
-
-
-0
-5
-5
-BulkyMIDI
-DIN5_MIDI_IN
-
-
-0
-9
-6
-BulkyMIDI
-DIN5_MIDI_OUT
-
-
-0
-9
-6
-BulkyMIDI
-GY-PCM5102
-
-
-0
-15
-15
-BulkyMIDI
-Input_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-15
-15
-BulkyMIDI
-Internal_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-30
-30
-BulkyMIDI
-Module_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-12
-12
-BulkyMIDI
-PWR_Specification
-Barrel connector polarity indicator
-barrel polarity
-0
-0
-0
-BulkyMIDI
-Play_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-21
-21
-BulkyMIDI
-SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
-tactile switch SPST right angle, PTS645VL39-2 LFS
-tactile switch SPST angled PTS645VL39-2 LFS C&K Button
-0
-4
-2
-BulkyMIDI
-Switch_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-21
-21
-BulkyMIDI
-VU_SIDI_Panel
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-25
-25
-BulkyMIDI
-Vertical_Rotary_Encoder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-4
-4
-BulkyMIDI
-Vertical_Rotary_Placeholder
-Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
-rotary encoder
-0
-0
-0
 Button_Switch_Keyboard
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf
@@ -50833,6 +50714,41 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+Edge-Connect
+edge_pins_1x01
+Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+1
+1
+Edge-Connect
+edge_pins_1x02
+Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+2
+2
+Edge-Connect
+edge_pins_1x03
+Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+3
+3
+Edge-Connect
+edge_pins_1x04
+Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+4
+4
+Edge-Connect
+edge_wide_1x02
+Straight DE-9 connector, the blue kind with metal shield removed (solder to pads).
+9-pin D-Sub connector straight vertical THT male pitch 2.77x2.84mm mounting holes distance 25mm
+0
+2
+2
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -83144,123 +83060,4 @@ Varistor, diameter 21.5mm, width 11.4mm, pitch 10mm
 varistor SIOV
 0
 2
-2
-artwork
-Audio Switch
-
-
-0
-0
-0
-artwork
-BulkyMIDI-32
-
-
-0
-0
-0
-artwork
-BulkyMIDI-32_8bit
-
-
-0
-0
-0
-artwork
-BulkyMIDI-32_small
-
-
-0
-0
-0
-artwork
-Channel
-
-
-0
-0
-0
-artwork
-Input Switch
-
-
-0
-0
-0
-artwork
-Play
-
-
-0
-0
-0
-artwork
-VU SIDi
-
-
-0
-0
-0
-i2c_oled
-0.91_I2C_OLED
-
-
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED2
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-0.96_I2C_OLED_NEW
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-i2c_oled
-1.3_I2C_OLED_No_mounting
-Through hole straight pin header, 1x04, 2.54mm pitch, single row
-Through hole pin header THT 1x04 2.54mm single row
-0
-4
-4
-mounting
-M2
-module 1 pin (ou trou mecanique de percage)
-DEV
-0
-1
-1
-mounting
-M3
-module 1 pin (ou trou mecanique de percage)
-DEV
-0
-0
-0
-mounting
-M3_pin
-module 1 pin (ou trou mecanique de percage)
-DEV
-0
-1
-1
-switch_cutout
-SW_PUSH_6mm
-https://www.omron.com/ecb/products/pdf/en-b3f.pdf
-tact sw push 6mm
-0
-4
 2
