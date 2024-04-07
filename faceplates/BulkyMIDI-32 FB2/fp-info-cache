@@ -1,22 +1,176 @@
-4784113787881
-mounting
-M2
-module 1 pin (ou trou mecanique de percage)
-DEV
+41711507157431
+BulkyMIDI-32
+BARREL_JACK
+DC Barrel Jack
+Power Jack
 0
-1
-1
-mounting
-M3
-module 1 pin (ou trou mecanique de percage)
-DEV
+3
+3
+BulkyMIDI-32
+Channel_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+21
+21
+BulkyMIDI-32
+Conn_Power
+Through hole straight pin header, 1x02, 2.54mm pitch, single row
+Through hole pin header THT 1x02 2.54mm single row
+0
+2
+2
+BulkyMIDI-32
+DIN5_MIDI
+
+
+0
+5
+5
+BulkyMIDI-32
+DIN5_MIDI_ANY
+
+
+0
+9
+6
+BulkyMIDI-32
+DIN5_MIDI_IN
+
+
+0
+9
+6
+BulkyMIDI-32
+DIN5_MIDI_OUT
+
+
+0
+9
+6
+BulkyMIDI-32
+Dexed_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+14
+14
+BulkyMIDI-32
+ExModule_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+21
+21
+BulkyMIDI-32
+ExPower
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+6
+4
+BulkyMIDI-32
+GY-PCM5102
+
+
+0
+15
+15
+BulkyMIDI-32
+Input_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+15
+15
+BulkyMIDI-32
+Internal_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+18
+18
+BulkyMIDI-32
+Internal_Panel_Angle
+Through hole angled pin header, 1x30, 2.54mm pitch, 6mm pin length, single row
+Through hole angled pin header THT 1x30 2.54mm single row
+0
+18
+18
+BulkyMIDI-32
+L_Axial_L7.0mm_D3.3mm_P10.16mm_Horizontal_Fastron_MICC
+Inductor, Axial series, Axial, Horizontal, pin pitch=10.16mm, , length*diameter=7*3.3mm^2, Fastron, MICC, http://www.fastrongroup.com/image-show/70/MICC.pdf?type=Complete-DataSheet&productType=series
+Inductor Axial series Axial Horizontal pin pitch 10.16mm  length 7mm diameter 3.3mm Fastron MICC
+0
+2
+2
+BulkyMIDI-32
+Module_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+12
+12
+BulkyMIDI-32
+PWR_Specification
+Barrel connector polarity indicator
+barrel polarity
 0
 0
 0
-mounting
-M3_pin
-module 1 pin (ou trou mecanique de percage)
-DEV
+BulkyMIDI-32
+Play_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
 0
-1
-1
+21
+21
+BulkyMIDI-32
+SW_Tactile_SPST_Angled_PTS645Vx39-2LFS_Underside
+tactile switch SPST right angle, PTS645VL39-2 LFS
+tactile switch SPST angled PTS645VL39-2 LFS C&K Button
+0
+4
+2
+BulkyMIDI-32
+Switch_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+21
+21
+BulkyMIDI-32
+VU_SIDI_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+25
+25
+BulkyMIDI-32
+Vertical_Rotary_Encoder
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+4
+4
+BulkyMIDI-32
+Vertical_Rotary_Placeholder
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+0
+0
+BulkyMIDI-32
+Wavetable
+Through hole straight socket strip, 2x13, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x13 2.54mm double row
+0
+26
+26
+BulkyMIDI-32
+Wavetable_Header
+Through hole straight socket strip, 2x13, 2.54mm pitch, double cols (from Kicad 4.0.7), script generated
+Through hole socket strip THT 2x13 2.54mm double row
+0
+26
+26
