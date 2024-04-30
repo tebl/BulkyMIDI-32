@@ -13,7 +13,7 @@
 #define LED_MAX 255
 #define DEFAULT_DEBOUNCE 50
 #define DEFAULT_LONGPRESS 250
-#define DEFAULT_DELAY 800
+#define DEFAULT_DELAY 1000
 
 /* Pin definitions */
 #define CH1_SW 2
