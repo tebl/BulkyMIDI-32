@@ -101,7 +101,6 @@ F 3 "~" H 3400 6650 50  0001 C CNN
 	1    3400 6650
 	1    0    0    -1  
 $EndComp
-NoConn ~ 6600 150 
 $Comp
 L BulkyMIDI:DC_5V SYM1
 U 1 1 623726BF
