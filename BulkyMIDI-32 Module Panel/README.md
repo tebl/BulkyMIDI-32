@@ -54,6 +54,7 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | ENC1                  | EC11 rotary encoder, 20mm. Preferably plum handle                 |     1 |
 | IC1                   | 1.3 inch I2C OLED display (can use 0.96 inch display as well)     |     1 |
 | J1                    | Breakable right-angle pin header                                  |     1 |
+| SW1,SW2               | 6x6x12mm momentary button                                         |     2 |
 | Mounting ****         | Nylon M3 hex standoffs 8mm (M-F)                                  |     4 |
 | Mounting ****         | Nylon M3x6mm nylon screws                                         |     4 |
 | Mounting ****         | Nylon M3x6mm nylon nuts                                           |     4 |

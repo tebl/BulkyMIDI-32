@@ -52,8 +52,8 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 | --------------------- | ----------------------------------------------------------------- | ----- | ------ |
 | Panel PCB             | Fabricate using Gerber files                                      |     1 | PCBWay
 | D1-D6                 | 5mm LEDs, preferably frosted (not the bright clear ones)          |     6 |
-| J1                    | Breakable right-angle pin header                                  |     1 |
-| SW1-SW6               | 6x6x11mm momentary button                                         |     6 |
+| J1                    | Standard right-angle pin header (2.54mm spacing)                  |     1 |
+| SW1-SW6               | 6x6x12mm momentary button                                         |     6 |
 | Mounting ****         | Nylon M3 hex standoffs 8mm (M-F)                                  |     4 |
 | Mounting ****         | Nylon M3x6mm nylon screws                                         |     4 |
 | Mounting ****         | Nylon M3x6mm nylon nuts                                           |     4 |
