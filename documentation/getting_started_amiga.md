@@ -29,14 +29,14 @@ I'm not really familiar with this specific piece of software regarding it's popu
 
 ![Music-X](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/amiga_musicx_011.png)
 
-Back to Music-X. The program was released back in 1988 by David Joiner, the task of explaining the history behind the software is probably better left to the man itself - which you actually can, all of that is on his own [homepage](https://dreamertalin.medium.com/music-x-b4abc68d6f78). So go do that now.
+Back to Music-X. The program was released back in 1988 by David Joiner, the task of explaining the history behind the software is probably better left to the man himself - which you actually can, everything that you'd want to know can be found on his [homepage](https://dreamertalin.medium.com/music-x-b4abc68d6f78). So go do that now.
 
 ### 2.1.1> Amiga Format issue 58, coverdisk A
- Back to less interesting people - me! Where I stumbled upon this piece of software, remembering that I had no idea about this stuff originally, was as a coverdisk for Amiga Format issue number 58. Unfortunately for me the disk in my posession, had deteriorated enough that I couldn't read it properly. Luckily the disk had been already been preserved for the forseeable future on [archive.org](https://archive.org/details/amigaformat058disks_1994-04/af058a.jpg), so all I needed to do was to download coverdisk A from there. 
+ Back to less interesting people - me! As to where I stumbled upon this piece of software? Keeping in mind that I had no idea about this stuff originally, so this was something that I stumbled across on a coverdisk for Amiga Format (issue #58). Unfortunately for me the disk that came with it had deteriorated enough that I couldn't even attempt to it properly - no doubt they bought the best disks available on the market. Luckily the disk had been already been preserved on [archive.org](https://archive.org/details/amigaformat058disks_1994-04/af058a.jpg), so all that I needed to do was to download coverdisk A from there. 
  
 ![Music-X](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/amiga_musicx_001.png)
 
-To keep things as simple as possible, I'm using WinUAE until everything's ready to plug into real hardware. As with most coverdisks of that era, the software isn't actually ready to run from the disks - they're compressed. This single disk extracts onto three separate empty disks, just click each one in turn to extract it - you'll be prompted when it's time to insert a blank disk (thankfully, WinUAE has an easy way of creating these disks).
+To keep things as simple as possible, I'm using WinUAE until everything's ready to plug into real hardware. As with most coverdisks of that era, the software isn't actually ready to run from the disks - it's in a compressed format. This single disk actually extracts onto three whole disks which is kind of amazing by itself, it's done by clicking on each one in order to perform the extraction - you'll be prompted when it's time to insert a blank disk (thankfully, WinUAE has an easy way of creating these for you).
  
 ![Music-X](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/amiga_musicx_002.png)
 ![Music-X](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/amiga_musicx_003.png)
