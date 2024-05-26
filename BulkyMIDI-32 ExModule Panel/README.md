@@ -47,7 +47,7 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference             | Item                                                              | Count | Order  |
 | --------------------- | ----------------------------------------------------------------- | ----- | ------ |
-| Panel PCB             | Fabricate using Gerber files                                      |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_Module_Panel_17b7fa7c.html)
+| Panel PCB             | Fabricate using Gerber files                                      |     1 | PCBWay
 | D1,D2                 | 5mm LEDs, preferably diffused and not the bright clear ones)      |     2 |
 | J1                    | Standard right-angle pin header (2.54mm spacing)                  |     1 |
 | SW1                   | 6x6x12mm momentary button                                         |     1 |
