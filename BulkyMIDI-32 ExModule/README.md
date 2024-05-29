@@ -129,10 +129,10 @@ Most parts should be easy to get a hold of from your favourite local electronic 
 
 | Reference             | Item                                                              | Count | Order  |
 | --------------------- | ----------------------------------------------------------------- | ----- | ------ |
-| PCB                   | Fabricate using Gerber files                                      |     1 | PCBWay
-| [Front Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20ExModule%20Panel) | Fabricate using Gerber files                                      |    (1)|PCBWay
-| [Front Faceplate](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20ExModule%20FP1) | Fabricate using Gerber files                                      |    (1)|PCBWay
-| [Top Faceplate](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | Fabricate using Gerber files                                      |    (1)|PCBWay
+| PCB                   | Fabricate using Gerber files                                      |     1 | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_ExModule_6564c365.html)
+| [Front Panel](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20ExModule%20Panel) | Fabricate using Gerber files                                      |    (1) | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_ExModule_Panel_8050038f.html)
+| [Front Faceplate](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20ExModule%20FP1) | Fabricate using Gerber files                                      |    (1) | [PCBWay](https://www.pcbway.com/project/shareproject/BulkyMIDI_32_ExModule_Faceplate_FP1_640ef0bc.html)
+| [Top Faceplate](https://github.com/tebl/BulkyMIDI-32/tree/main/faceplates/BulkyMIDI-32%20FB2) | Fabricate using Gerber files                                      |    (1) | PCBWay
 | C1,C4,C5,C7,C9        | 100nF (104) ceramic capacitor (5mm)                               |     5 |
 | C2                    | 3.3uF electrolytic capacitor (5mm x 2mm)                          |     1 |
 | C3                    | 10nF (103) ceramic capacitor (5mm)                                |     1 |
