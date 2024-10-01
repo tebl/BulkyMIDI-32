@@ -38,8 +38,8 @@
         "other_text_upright": false,
         "pads": {
           "drill": 3.048,
-          "height": 4.0,
-          "width": 4.0
+          "height": 3.5,
+          "width": 3.5
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -51,16 +51,8 @@
           "min_clearance": 0.508
         }
       },
-      "diff_pair_dimensions": [
-        {
-          "gap": 0.0,
-          "via_gap": 0.0,
-          "width": 0.0
-        }
-      ],
-      "drc_exclusions": [
-        "lib_footprint_issues|83190617|110502710|00000000-0000-0000-0000-000061ef7a9d|00000000-0000-0000-0000-000000000000"
-      ],
+      "diff_pair_dimensions": [],
+      "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -99,9 +91,9 @@
         "padstack": "warning",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_edge_clearance": "ignore",
+        "silk_edge_clearance": "warning",
         "silk_over_copper": "warning",
-        "silk_overlap": "ignore",
+        "silk_overlap": "warning",
         "skew_out_of_range": "error",
         "solder_mask_bridge": "error",
         "starved_thermal": "error",
@@ -184,9 +176,7 @@
       ],
       "track_widths": [
         0.0,
-        0.381,
-        0.89,
-        1.78
+        0.381
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -240,223 +230,12 @@
   "cvpcb": {
     "equivalence_files": []
   },
-  "erc": {
-    "erc_exclusions": [],
-    "meta": {
-      "version": 0
-    },
-    "pin_map": [
-      [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        2
-      ],
-      [
-        0,
-        2,
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        2,
-        2,
-        2,
-        2
-      ],
-      [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        1,
-        0,
-        1,
-        2
-      ],
-      [
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        1,
-        1,
-        2,
-        1,
-        1,
-        2
-      ],
-      [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        2
-      ],
-      [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        2
-      ],
-      [
-        1,
-        1,
-        1,
-        1,
-        1,
-        0,
-        1,
-        1,
-        1,
-        1,
-        1,
-        2
-      ],
-      [
-        0,
-        0,
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        0,
-        0,
-        0,
-        2
-      ],
-      [
-        0,
-        2,
-        1,
-        2,
-        0,
-        0,
-        1,
-        0,
-        2,
-        2,
-        2,
-        2
-      ],
-      [
-        0,
-        2,
-        0,
-        1,
-        0,
-        0,
-        1,
-        0,
-        2,
-        0,
-        0,
-        2
-      ],
-      [
-        0,
-        2,
-        1,
-        1,
-        0,
-        0,
-        1,
-        0,
-        2,
-        0,
-        0,
-        2
-      ],
-      [
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2
-      ]
-    ],
-    "rule_severities": {
-      "bus_definition_conflict": "error",
-      "bus_entry_needed": "error",
-      "bus_to_bus_conflict": "error",
-      "bus_to_net_conflict": "error",
-      "conflicting_netclasses": "error",
-      "different_unit_footprint": "error",
-      "different_unit_net": "error",
-      "duplicate_reference": "error",
-      "duplicate_sheet_names": "error",
-      "endpoint_off_grid": "ignore",
-      "extra_units": "error",
-      "global_label_dangling": "warning",
-      "hier_label_mismatch": "error",
-      "label_dangling": "error",
-      "lib_symbol_issues": "warning",
-      "missing_bidi_pin": "warning",
-      "missing_input_pin": "warning",
-      "missing_power_pin": "error",
-      "missing_unit": "warning",
-      "multiple_net_names": "warning",
-      "net_not_bus_member": "warning",
-      "no_connect_connected": "warning",
-      "no_connect_dangling": "warning",
-      "pin_not_connected": "error",
-      "pin_not_driven": "error",
-      "pin_to_pin": "warning",
-      "power_pin_not_driven": "error",
-      "similar_labels": "warning",
-      "simulation_model_issue": "ignore",
-      "unannotated": "error",
-      "unit_value_mismatch": "error",
-      "unresolved_variable": "error",
-      "wire_dangling": "error"
-    }
-  },
   "libraries": {
     "pinned_footprint_libs": [],
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "BulkyMIDI-32 Power Switch.kicad_pro",
+    "filename": "BulkyMIDI-32 Amiga IDC.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -494,23 +273,6 @@
         "via_diameter": 1.0,
         "via_drill": 0.4,
         "wire_width": 6
-      },
-      {
-        "bus_width": 12,
-        "clearance": 0.2,
-        "diff_pair_gap": 0.25,
-        "diff_pair_via_gap": 0.25,
-        "diff_pair_width": 0.2,
-        "line_style": 0,
-        "microvia_diameter": 0.3,
-        "microvia_drill": 0.1,
-        "name": "Power2",
-        "pcb_color": "rgba(0, 0, 0, 0.000)",
-        "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.581,
-        "via_diameter": 1.0,
-        "via_drill": 0.4,
-        "wire_width": 6
       }
     ],
     "meta": {
@@ -521,167 +283,91 @@
     "netclass_patterns": [
       {
         "netclass": "Default",
+        "pattern": "MIDI_IN"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "MIDI_OUT"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(C6-Pad2)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(C7-Pad1)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(D1-Pad1)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(D1-Pad2)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(J2-Pad4)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(J2-Pad5)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(J3-Pad4)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(R1-Pad2)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(R3-Pad2)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(U3-Pad10)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "Net-(U3-Pad3)"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "RX"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "TX"
+      },
+      {
+        "netclass": "Power",
         "pattern": "+5V"
       },
       {
-        "netclass": "Default",
-        "pattern": "/CH1"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/CH2"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/CH3"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/CH4"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/CH5"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/LED1"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/LED2"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/LED3"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/LED4"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/LED5"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/SW1"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/SW2"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/SW3"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/SW4"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/SW5"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "/SW6"
-      },
-      {
-        "netclass": "Default",
+        "netclass": "Power",
         "pattern": "GND"
       },
       {
-        "netclass": "Default",
-        "pattern": "Net-(A1-Pad1)"
+        "netclass": "Power",
+        "pattern": "Net-(C2-Pad1)"
       },
       {
-        "netclass": "Default",
-        "pattern": "Net-(A1-Pad11)"
+        "netclass": "Power",
+        "pattern": "Net-(C8-Pad1)"
       },
       {
-        "netclass": "Default",
-        "pattern": "Net-(A1-Pad12)"
+        "netclass": "Power",
+        "pattern": "Net-(C8-Pad2)"
       },
       {
-        "netclass": "Default",
-        "pattern": "Net-(A1-Pad13)"
+        "netclass": "Power",
+        "pattern": "Net-(C9-Pad1)"
       },
       {
-        "netclass": "Default",
-        "pattern": "Net-(A1-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(D10-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(D11-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(D12-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(D16-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(D17-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(J2-Pad1)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(J3-Pad1)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(J4-Pad1)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(J5-Pad1)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(J7-Pad1)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(Q1-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(Q2-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(Q3-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(Q4-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "Net-(Q5-Pad2)"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "PWR"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "SYS"
-      },
-      {
-        "netclass": "Default",
-        "pattern": "VIN"
+        "netclass": "Power",
+        "pattern": "Net-(C9-Pad2)"
       }
     ]
   },
@@ -689,8 +375,8 @@
     "last_paths": {
       "gencad": "",
       "idf": "",
-      "netlist": "BulkyMIDI-32 Power Switch.net",
-      "plot": "export/",
+      "netlist": "BulkyMIDI-32 Amiga IDC.net",
+      "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
@@ -700,114 +386,21 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 0,
-    "bom_export_filename": "",
-    "bom_fmt_presets": [],
-    "bom_fmt_settings": {
-      "field_delimiter": ",",
-      "keep_line_breaks": false,
-      "keep_tabs": false,
-      "name": "CSV",
-      "ref_delimiter": ",",
-      "ref_range_delimiter": "",
-      "string_delimiter": "\""
-    },
-    "bom_presets": [],
-    "bom_settings": {
-      "exclude_dnp": false,
-      "fields_ordered": [
-        {
-          "group_by": false,
-          "label": "Reference",
-          "name": "Reference",
-          "show": true
-        },
-        {
-          "group_by": true,
-          "label": "Value",
-          "name": "Value",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Datasheet",
-          "name": "Datasheet",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Footprint",
-          "name": "Footprint",
-          "show": true
-        },
-        {
-          "group_by": false,
-          "label": "Qty",
-          "name": "${QUANTITY}",
-          "show": true
-        },
-        {
-          "group_by": true,
-          "label": "DNP",
-          "name": "${DNP}",
-          "show": true
-        }
-      ],
-      "filter_string": "",
-      "group_symbols": true,
-      "name": "Grouped By Value",
-      "sort_asc": true,
-      "sort_field": "Reference"
-    },
-    "connection_grid_size": 50.0,
     "drawing": {
-      "dashed_lines_dash_length_ratio": 12.0,
-      "dashed_lines_gap_length_ratio": 3.0,
-      "default_line_thickness": 6.0,
-      "default_text_size": 50.0,
-      "field_names": [],
-      "intersheets_ref_own_page": false,
-      "intersheets_ref_prefix": "",
-      "intersheets_ref_short": false,
-      "intersheets_ref_show": false,
-      "intersheets_ref_suffix": "",
-      "junction_size_choice": 3,
+      "default_text_size": 50,
       "label_size_ratio": 0.25,
-      "operating_point_overlay_i_precision": 3,
-      "operating_point_overlay_i_range": "~A",
-      "operating_point_overlay_v_precision": 3,
-      "operating_point_overlay_v_range": "~V",
-      "overbar_offset_ratio": 1.23,
-      "pin_symbol_size": 0.0,
+      "pin_symbol_size": 0,
       "text_offset_ratio": 0.08
     },
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
-    "meta": {
-      "version": 1
-    },
     "net_format_name": "Pcbnew",
     "page_layout_descr_file": "",
-    "plot_directory": "../documentation/schematic/",
+    "plot_directory": "../../documentation/schematic/adapters/",
     "spice_adjust_passive_values": false,
-    "spice_current_sheet_as_root": false,
-    "spice_external_command": "spice \"%I\"",
-    "spice_model_current_sheet_as_root": true,
-    "spice_save_all_currents": false,
-    "spice_save_all_dissipations": false,
-    "spice_save_all_voltages": false,
     "subpart_first_id": 65,
     "subpart_id_separator": 0
   },
-  "sheets": [
-    [
-      "3d3ff40d-9b94-4523-998a-f9823d5f587b",
-      "Root"
-    ],
-    [
-      "00000000-0000-0000-0000-0000635d4eba",
-      "Channel Control"
-    ]
-  ],
+  "sheets": [],
   "text_variables": {}
 }

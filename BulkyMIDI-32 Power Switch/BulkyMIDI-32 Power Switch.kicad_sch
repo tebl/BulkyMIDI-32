@@ -979,6 +979,139 @@
 				)
 			)
 		)
+		(symbol "Device:Fuse"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:LED"
 			(pin_numbers hide)
 			(pin_names
@@ -2578,9 +2711,10 @@
 				)
 			)
 		)
-		(symbol "mounting:Mounting"
+		(symbol "mounting:Mounting_Pin"
+			(pin_numbers hide)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2593,7 +2727,7 @@
 					(hide yes)
 				)
 			)
-			(property "Value" "Mounting"
+			(property "Value" "Mounting_Pin"
 				(at 0 -1.905 0)
 				(effects
 					(font
@@ -2647,7 +2781,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Mounting_0_1"
+			(symbol "Mounting_Pin_0_1"
 				(circle
 					(center 0 0)
 					(radius 0.635)
@@ -2668,6 +2802,26 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+			)
+			(symbol "Mounting_Pin_1_1"
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 			)
@@ -2908,7 +3062,13 @@
 		(uuid "22e027a8-8d47-4895-9949-5aa44a355158")
 	)
 	(junction
-		(at 86.36 163.83)
+		(at 276.86 22.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "25dcc40e-eb3b-454d-bd8e-33d9bb200a54")
+	)
+	(junction
+		(at 97.79 163.83)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "32c82ccf-ca4a-452a-b958-2048b754b9fc")
@@ -2930,6 +3090,18 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5931906b-70ca-4c32-809d-25f29d580491")
+	)
+	(junction
+		(at 283.21 22.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "6b8de631-3604-4337-9c08-fa70938e559d")
+	)
+	(junction
+		(at 279.4 22.86)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "7d51b6f4-6441-4f0f-8224-6a73a8ede511")
 	)
 	(junction
 		(at 134.62 78.74)
@@ -3291,6 +3463,16 @@
 	)
 	(wire
 		(pts
+			(xy 283.21 22.86) (xy 283.21 19.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ae480c9-78dc-45c5-86b8-d077f1f5b60e")
+	)
+	(wire
+		(pts
 			(xy 262.89 49.53) (xy 267.97 49.53)
 		)
 		(stroke
@@ -3381,6 +3563,16 @@
 	)
 	(wire
 		(pts
+			(xy 276.86 22.86) (xy 279.4 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22a91d54-8675-4204-9a96-bcc8595e0a50")
+	)
+	(wire
+		(pts
 			(xy 101.6 81.28) (xy 101.6 83.82)
 		)
 		(stroke
@@ -3398,6 +3590,26 @@
 			(type default)
 		)
 		(uuid "2330e94b-2bba-4759-98aa-656ef6b81383")
+	)
+	(wire
+		(pts
+			(xy 279.4 19.05) (xy 279.4 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28eba49c-6f2c-4412-86b7-e3819f94a29c")
+	)
+	(wire
+		(pts
+			(xy 273.05 19.05) (xy 273.05 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2cc9fcf6-14c6-461d-a391-032c2d20b984")
 	)
 	(wire
 		(pts
@@ -3619,6 +3831,16 @@
 		)
 		(uuid "541dbb18-76e1-4802-ac65-5dc5c2b299e3")
 	)
+	(wire
+		(pts
+			(xy 283.21 22.86) (xy 283.21 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "56dfdf6c-78b9-4da0-bc63-6ded504b9560")
+	)
 	(bus
 		(pts
 			(xy 248.92 62.23) (xy 248.92 64.77)
@@ -3711,7 +3933,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 163.83) (xy 86.36 163.83)
+			(xy 93.98 163.83) (xy 97.79 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3721,7 +3943,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 170.18) (xy 86.36 172.72)
+			(xy 97.79 170.18) (xy 97.79 172.72)
 		)
 		(stroke
 			(width 0)
@@ -3731,7 +3953,17 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 161.29) (xy 86.36 163.83)
+			(xy 279.4 22.86) (xy 283.21 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68f31fdd-1bf9-436d-8578-ade002216d99")
+	)
+	(wire
+		(pts
+			(xy 97.79 161.29) (xy 97.79 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3851,7 +4083,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 165.1) (xy 86.36 163.83)
+			(xy 97.79 165.1) (xy 97.79 163.83)
 		)
 		(stroke
 			(width 0)
@@ -3931,6 +4163,16 @@
 	)
 	(wire
 		(pts
+			(xy 82.55 163.83) (xy 86.36 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa58a6ba-af07-4642-b2cb-8d784c16b661")
+	)
+	(wire
+		(pts
 			(xy 158.75 81.28) (xy 146.05 81.28)
 		)
 		(stroke
@@ -3968,6 +4210,16 @@
 			(type default)
 		)
 		(uuid "ad580c7a-5b00-43c6-8aad-9b76c46dd94f")
+	)
+	(wire
+		(pts
+			(xy 273.05 22.86) (xy 276.86 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad64a8ca-6ddc-41c4-aeb0-25f2d41c52fd")
 	)
 	(wire
 		(pts
@@ -4108,6 +4360,16 @@
 			(type default)
 		)
 		(uuid "be871a5e-89d3-4055-9cae-1c358b0cb17e")
+	)
+	(wire
+		(pts
+			(xy 276.86 19.05) (xy 276.86 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0abc66c-d382-4a42-a944-70a324949b8c")
 	)
 	(polyline
 		(pts
@@ -4895,8 +5157,8 @@
 		)
 	)
 	(symbol
-		(lib_id "mounting:Mounting")
-		(at 273.05 14.605 0)
+		(lib_id "mounting:Mounting_Pin")
+		(at 273.05 15.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4904,7 +5166,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005e3b603d")
 		(property "Reference" "M1"
-			(at 273.05 12.065 0)
+			(at 273.05 12.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4913,7 +5175,7 @@
 			)
 		)
 		(property "Value" "Mounting"
-			(at 273.05 16.51 0)
+			(at 273.05 17.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4921,8 +5183,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "mounting:M3"
-			(at 273.05 14.605 0)
+		(property "Footprint" "mounting:M3_pin"
+			(at 273.05 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4930,8 +5192,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 273.05 14.605 0)
+		(property "Datasheet" "~"
+			(at 273.05 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4939,14 +5201,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 273.05 14.605 0)
+		(property "Description" "Generic connector, single row, 01x01"
+			(at 273.05 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "e6842bd3-b347-4fd0-bce3-b4443cdb4915")
 		)
 		(instances
 			(project "BulkyMIDI-32 Power Switch"
@@ -4958,8 +5223,8 @@
 		)
 	)
 	(symbol
-		(lib_id "mounting:Mounting")
-		(at 279.4 14.605 0)
+		(lib_id "mounting:Mounting_Pin")
+		(at 279.4 15.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4967,7 +5232,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005e3b605a")
 		(property "Reference" "M3"
-			(at 279.4 12.065 0)
+			(at 279.4 12.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4976,7 +5241,7 @@
 			)
 		)
 		(property "Value" "Mounting"
-			(at 279.4 16.51 0)
+			(at 279.4 17.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4984,8 +5249,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "mounting:M3"
-			(at 279.4 14.605 0)
+		(property "Footprint" "mounting:M3_pin"
+			(at 279.4 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4993,8 +5258,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 279.4 14.605 0)
+		(property "Datasheet" "~"
+			(at 279.4 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5002,14 +5267,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 279.4 14.605 0)
+		(property "Description" "Generic connector, single row, 01x01"
+			(at 279.4 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "e8b79556-b91c-4a43-829f-1e1bcbe9204d")
 		)
 		(instances
 			(project "BulkyMIDI-32 Power Switch"
@@ -5021,8 +5289,8 @@
 		)
 	)
 	(symbol
-		(lib_id "mounting:Mounting")
-		(at 282.575 14.605 0)
+		(lib_id "mounting:Mounting_Pin")
+		(at 283.21 15.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5030,7 +5298,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005e3b6065")
 		(property "Reference" "M4"
-			(at 282.575 12.065 0)
+			(at 283.21 12.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5039,7 +5307,7 @@
 			)
 		)
 		(property "Value" "Mounting"
-			(at 282.575 16.51 0)
+			(at 283.21 17.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5047,8 +5315,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "mounting:M3"
-			(at 282.575 14.605 0)
+		(property "Footprint" "mounting:M3_pin"
+			(at 283.21 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5056,8 +5324,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 282.575 14.605 0)
+		(property "Datasheet" "~"
+			(at 283.21 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5065,14 +5333,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 282.575 14.605 0)
+		(property "Description" "Generic connector, single row, 01x01"
+			(at 283.21 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "a75065a9-5c58-42f1-ba88-1fe741c800fa")
 		)
 		(instances
 			(project "BulkyMIDI-32 Power Switch"
@@ -5155,7 +5426,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 86.36 172.72 0)
+		(at 97.79 172.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5163,7 +5434,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005e61de6e")
 		(property "Reference" "#PWR0101"
-			(at 86.36 179.07 0)
+			(at 97.79 179.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5172,7 +5443,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 86.487 177.1142 0)
+			(at 97.917 177.1142 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5180,7 +5451,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 172.72 0)
+			(at 97.79 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5189,7 +5460,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 172.72 0)
+			(at 97.79 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5198,7 +5469,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 86.36 172.72 0)
+			(at 97.79 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5220,7 +5491,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 86.36 161.29 0)
+		(at 97.79 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5228,7 +5499,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005e6b750d")
 		(property "Reference" "#PWR0106"
-			(at 86.36 165.1 0)
+			(at 97.79 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5237,7 +5508,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 86.36 157.48 0)
+			(at 97.79 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5245,7 +5516,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 161.29 0)
+			(at 97.79 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5254,7 +5525,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 86.36 161.29 0)
+			(at 97.79 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5263,7 +5534,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 86.36 161.29 0)
+			(at 97.79 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5285,7 +5556,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Polarized_Small")
-		(at 86.36 167.64 0)
+		(at 97.79 167.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5293,7 +5564,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-00005f9f946b")
 		(property "Reference" "C6"
-			(at 89.281 166.4716 0)
+			(at 100.711 166.4716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5302,7 +5573,7 @@
 			)
 		)
 		(property "Value" "470uF"
-			(at 89.281 168.783 0)
+			(at 100.711 168.783 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5311,7 +5582,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm"
-			(at 86.36 167.64 0)
+			(at 97.79 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5320,7 +5591,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 86.36 167.64 0)
+			(at 97.79 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5329,7 +5600,7 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small symbol"
-			(at 86.36 167.64 0)
+			(at 97.79 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5415,8 +5686,8 @@
 		)
 	)
 	(symbol
-		(lib_id "mounting:Mounting")
-		(at 276.225 14.605 0)
+		(lib_id "mounting:Mounting_Pin")
+		(at 276.86 15.24 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5424,7 +5695,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000062d2ac13")
 		(property "Reference" "M2"
-			(at 276.225 12.065 0)
+			(at 276.86 12.7 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5433,7 +5704,7 @@
 			)
 		)
 		(property "Value" "Mounting"
-			(at 276.225 16.51 0)
+			(at 276.86 17.145 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5441,8 +5712,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "mounting:M3"
-			(at 276.225 14.605 0)
+		(property "Footprint" "mounting:M3_pin"
+			(at 276.86 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5450,8 +5721,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 276.225 14.605 0)
+		(property "Datasheet" "~"
+			(at 276.86 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5459,14 +5730,17 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
-			(at 276.225 14.605 0)
+		(property "Description" "Generic connector, single row, 01x01"
+			(at 276.86 15.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
 			)
+		)
+		(pin "1"
+			(uuid "2b64adc6-2429-4727-9e6f-3290d4be1169")
 		)
 		(instances
 			(project "BulkyMIDI-32 Power Switch"
@@ -6140,7 +6414,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N5819")
-		(at 78.74 163.83 180)
+		(at 90.17 163.83 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6148,7 +6422,7 @@
 		(dnp no)
 		(uuid "00000000-0000-0000-0000-000066131c9c")
 		(property "Reference" "D1"
-			(at 78.74 158.3182 0)
+			(at 90.17 158.3182 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6156,7 +6430,7 @@
 			)
 		)
 		(property "Value" "1N5819"
-			(at 78.74 160.6296 0)
+			(at 90.17 160.6296 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6164,7 +6438,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal"
-			(at 78.74 159.385 0)
+			(at 90.17 159.385 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6173,7 +6447,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.vishay.com/docs/88525/1n5817.pdf"
-			(at 78.74 163.83 0)
+			(at 90.17 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6182,7 +6456,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 78.74 163.83 0)
+			(at 90.17 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7071,6 +7345,140 @@
 			(project "BulkyMIDI-32 Power Switch"
 				(path "/3d3ff40d-9b94-4523-998a-f9823d5f587b"
 					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 78.74 163.83 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "120d7379-f5b3-4138-9d31-f4df2c727f7b")
+		(property "Reference" "F1"
+			(at 78.74 157.48 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 78.74 160.02 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "BulkyMIDI-32:Fuseholder5x20_horiz_SemiClosed_Casing10x25mm"
+			(at 78.74 165.608 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 78.74 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Fuse"
+			(at 78.74 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9934d96a-5730-4c14-b60d-90568891a88a")
+		)
+		(pin "1"
+			(uuid "6022c491-a035-43b6-b1a1-5ae94661dd52")
+		)
+		(instances
+			(project ""
+				(path "/3d3ff40d-9b94-4523-998a-f9823d5f587b"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 283.21 26.67 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "18e16543-e393-44cc-b02f-5519e1b782c3")
+		(property "Reference" "#PWR05"
+			(at 283.21 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 283.083 31.0642 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 283.21 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 283.21 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 283.21 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c7ee1171-51cc-4911-8c3e-82dcda9d0fee")
+		)
+		(instances
+			(project "BulkyMIDI-32 Power Switch"
+				(path "/3d3ff40d-9b94-4523-998a-f9823d5f587b"
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
