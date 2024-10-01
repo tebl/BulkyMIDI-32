@@ -215,6 +215,7 @@ That's probably not as specific as you initially may have wanted this section to
   - [Video: Introduction to MT32-PI](https://youtu.be/-z2EQR_IaVU)
   - [Video: How to build a BulkyMIDI-32](https://youtu.be/nyAeKCTkv0M)
 - [How to set up a BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md)
+  - [Video: Setting up a BulkyMIDI-32](https://youtu.be/7vWQ5zV8XT0)
 - [How to get started using a BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md)
 - [Schematics](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation/schematic)
 
