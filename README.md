@@ -23,7 +23,8 @@ I had a lot of fun building the original *BulkyMIDI-32*, my process can best be 
   - [1.10> BulkyMIDI-32 Power Switch](#110-bulkymidi-32-power-switch)
   - [1.11> BulkyMIDI-32 VU SIDi](#111-bulkymidi-32-vu-sidi)
 - [2> Adapters](#2-adapters)
-- [3> Acknowledgements](#3-acknowledgements)
+- [3> Documentation](#3-documentation)
+- [4> Acknowledgements](#4-acknowledgements)
 
 
 # 1> Modules
@@ -52,7 +53,7 @@ As previously mentioned several modules has been designed as part of the same pr
 ![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2022-08-03%2017.17.09.jpg)
 **Status:** Completed
 
-This is the main module of the project, if you came here looking to build an mt32-pi device then this is it. You have the option of going the cheaper route of just building the basic module, consisting only of the main module and nothing else. Alternatively, you can just build the whole thing as shown above. Given the cost of PCB fabrication, I recommend just building a complete unit. Note that the list below will include alternate versions of boards, so you need to decide which of them you'll need based on their description.
+This is the main attraction of this entire repository. If you came here looking to build an awesome looking mt32-pi, then this is at least one of them. You're given the option of picking the cheaper route by only building up a basic module, that's the main PCB and nothing else. Alternatively, and this is the part that makes it awesome, you can build the whole thing as shown above. Given the really low cost of PCB fabrication on this side of the widely advertised oncoming apocalypse, I recommend that you build a complete unit. The list below will include alternate versions of some boards, so you need to decide which of them you want or need based on their description.
 
 | Module                 | Required    | Description                        | Documentation                      | Order      |
 | ---------------------- | ----------- | ---------------------------------- | ---------------------------------- | ---------- |
@@ -68,7 +69,9 @@ This is the main module of the project, if you came here looking to build an mt3
 ![BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/build_audio_switch_041.jpg)
 **Status:** Completed
 
-One of the drawbacks to using a vintage boombox as my stereo speaker system, is that it doesn't have any more than one audio input meaning that I would normally have to switch around the cables all the time. Well I can't really complain as not everyone is lucky enough to even have an input, at all! However, since I have one I wanted something that would let me switch between at the touch of a button. So, I built a simple audio switch and now you can build one as well! 
+One of the drawbacks to using a vintage boombox as my main stereo speaker system in my workshop, is that only has a single audio input - meaning that I would normally have to switch around cables all the time. Ordinarily I shouldn't complain as much about that, as not everyone is lucky enough to have an input - at all! This doesn't solve the problem of not having any, but you do get the option of turning a single input into as many as you'd like with this Audio Switch. If you need more than six, build more than one!
+
+To select the one you want, just push a button and almost instantly you'll hear an exciting click from the corresponding relay. Did I need a relay for this? Probably not. I just like using relays from time to time.
 
 | Module                 | Required    | Description                        | Documentation                      | Order      |
 | ---------------------- | ----------- | ---------------------------------- | ---------------------------------- | ---------- |
@@ -152,7 +155,7 @@ This module was created in order to easily switch between different MIDI inputs,
 ![BulkyMIDI-32 Internal](https://github.com/tebl/BulkyMIDI-32/raw/main/gallery/2024-03-22%2002.00.42.jpg)
 **Status:** Working prototype
 
-In many ways this is the module that this entire repository has building towards, a 3.5" drive bay expansion for vintage computers. Is this a sane thing to attempt to build without any kind of 3d-printer involved in the process? No it is not. Did I build it anyway? Yes, you're looking at it. Is it finished? No.
+In many ways this is the module that this whole thing has been building towards, a 3.5" drive bay expansion for vintage PCs. Might fit into more equipment than this, but mainly just the blocky beige thing that you remember from your childhood (usually next to a CRT). Is this a sane thing to build without any kind of working 3d-printer available? No, it probably isn't. Did I build it anyway? Yes, and you're looking at the only finished version of it. Is it actually finished? No. Probably needs a bit of tweaking and the documentation to go with it.
 
 
 ## 1.9> BulkyMIDI-32 Play
@@ -172,7 +175,11 @@ Given that the designs have provisions for more than the expected number of MIDI
 
 
 ## 1.10> BulkyMIDI-32 Power Switch
-**Status:** Untested
+**Status:** Working, but last revision has not been tested.
+
+Looking at this repository and the various devices contained within it, you'll soon get the impression that no man could possibly own that many 5v power supplies with that exact barrel plug already on it (2.1mm x 5.5mm barrel connector). I don't. I own exactly two, so that's one for the main BulkyMIDI-32 and one for everything else. So I got the idea that I would make something like the Audio Switch or Input Switch, except with power! And because I wanted a push to turn on, but really wanted a hold to turn off - I added an Arduino to the board. And some more relays. Because relays are cool, and a lot easier to understand for someone like me. You feed it power, then the other power connectors are hooked up to your other devices. In order to do so, you use a cable with a male plug on both ends (AliExpress has them listed as *DC male to male CCTV adapter connector cords*).
+
+The design has provisions for using the first channel as a source for power, possibly with a different polarity. This is done by opting not to install the corresponding relay for the first channel, and changing out some of the wire links. Only reason I'm mentioning it in the first place is that music equipment traditionally use the same type of plug, but at a completely different voltage and polarity from what all of my *BulkyMIDI-32*-modules work with. If you mess up your cabling at some point, then there should be expectations of of smoke and tears, but it's nice to know that it's there as an option. If you know what you're doing.
 
 
 ## 1.11> BulkyMIDI-32 VU SIDi
@@ -182,6 +189,7 @@ Given that the designs have provisions for more than the expected number of MIDI
 This is a module that I'll probably have to rethink properly, mostly because of attempting to integrate a little too much in one go without a proper understanding of either of them. The first part of it is a VU-meter based on the LM3915 chip which isn't a solution I particularly enjoyed using, at least in part due to one of the two modes supported by the chip doesn't really work properly when powered from 5v. The other mode is too flickery for my comfort.
 
 The *SIDi*-part of it was based directly on github-project [SIDI](https://github.com/doctea/SIDI) by user *doctea*, and I can't figure out how to get it to work. This probably isn't a problem with the code, but more my lack of understanding how to work with a music chip directly. I'm not a musician or even know how to play any sort of instrument, so it is a case of biting off more than I can chew - at least for the forseeable future.
+
 
 # 2> Adapters
 Separate from the main modules are several adapters, designed for use with the *BulkyMIDI-32* in particular though most of them simply speak standard MIDI - so they should work with original equipment such as the original *Roland MT-32*. Follow the included in the table below for details such as build instructions, BOM and anything else you'd need for that specific module. The repository also includes a folder for [schematics](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation/schematic/adapters) in PDF-format, these will be needed in order to track down any faults you encounter when building up and testing the adapters.
@@ -199,7 +207,19 @@ Separate from the main modules are several adapters, designed for use with the *
 **NB!** The repository may contain pieces of modules and adapters designed for use with these, if they're not listed in one of these tables then they're a work in progress. They might be functional, they might blow up or I simply haven't remembered to update the documentation for them yet. PCBWay order links will always point you towards the last know good revision that I've tested, meaning they worked at least once with the equipment I have available to me.
 
 
-# 3> Acknowledgements
-Everything comes from something, in particular when it comes to most of my electronics projects. I mainly build things I would like to own, often doing a respin to fit my own particular style and preferences with most of the hardest parts of the designs already provided by people more knowledgable than I.
+# 3> Documentation
+I had a lot of fun building what most would consider *THE* *BulkyMIDI-32*, or the "original" *BulkyMIDI-32* as I've probably also referred to it as. Frequently during the process of building it, I kept tumbling further and further down a rabbit hole of all manner of things that in some way communicate over MIDI. This has resulted in a multitude of devices, adapters and straight up abominations of technology that simply can't be described in a single coherent set of documents - therefore you'll need to consult the documentation that comes as part of each [module](#1-modules) or [adapter](#2-adapters) separately. Follow the links from there.
 
-The software running on the Raspberry Pi is provided by the [mt32-pi](https://github.com/dwhinham/mt32-pi) while the hardware itself can be considered to be based on the information provided by the associated wiki. As already mentioned I started out with the design files for [clymsyMIDI](https://github.com/gmcn42/clumsyMIDI) as a starting point for the design.
+That's probably not as specific as you initially may have wanted this section to be, so here are some of the things you were *probably* looking for instead:
+- [How to build a BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module)
+  - [Video: Introduction to MT32-PI](https://youtu.be/-z2EQR_IaVU)
+  - [Video: How to build a BulkyMIDI-32](https://youtu.be/nyAeKCTkv0M)
+- [How to set up a BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/setting_it_up.md)
+- [How to get started using a BulkyMIDI-32](https://github.com/tebl/BulkyMIDI-32/blob/main/documentation/getting_started.md)
+- [Schematics](https://github.com/tebl/BulkyMIDI-32/tree/main/documentation/schematic)
+
+
+# 4> Acknowledgements
+Everything comes from something, in particular when it comes to most of my electronics projects. I mainly build things I would like to own, often doing a respin to fit my own particular style and preferences with most of the hardest parts of the designs already provided by people more knowledgeable than I could ever hope to be.
+
+The software running on the Raspberry Pi was provided by [mt32-pi](https://github.com/dwhinham/mt32-pi) while the original hardware itself can be considered to be based on the information provided by the associated wiki. Excited to get a running start on actually using it, I started out with the design files for [clymsyMIDI](https://github.com/gmcn42/clumsyMIDI) then kept beavering away until it started working and looking the way I wanted it to. It is my sincerest hope that I added something of substance in the process of all this, but in the end it was just so that I could have one for myself. The design files are here in case anyone wants one too.
