@@ -35,6 +35,7 @@ void CustomLED::boost(int period) {
 
 void CustomLED::enable() {
     analogWrite(_pin, value);
+    timer = 0;
 }
 
 void CustomLED::clear() {

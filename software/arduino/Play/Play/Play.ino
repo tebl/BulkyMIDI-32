@@ -10,6 +10,7 @@
 #include "constants.h"
 #include "settings.h"
 #include "player_state.h"
+#include "menu_option.h"
 #include "custom_led.h"
 #include "custom_font.h"
 #include "logo.h"
@@ -24,15 +25,24 @@ SDFAT SD;
 MD_MIDIFile SMF;
 
 PlayerState state = PlayerState::INACTIVE;
+bool autoplay_enabled = false;
+bool wraparound_enabled = false;
+bool metronome_enabled = false;
+
+uint8_t menu = MenuOption::MENU_PLAY;
 bool update_oled = true;
 unsigned long button_count = 0;
 unsigned long button_timer = 0;
 int encoder_pos = 0;
 
+uint8_t tempo_offset = 10;
+
 SDDIR dir;
 SDFILE file;
 int file_id = -1;
+int last_id = -1;
 char filename[FILENAME_MAX_LENGTH];
+
 
 /* Show a warning message on the screen. This will block the execution of
  * everything for a set amount of time before returning.
@@ -170,7 +180,9 @@ void setup() {
   find_file_id(0);
 }
 
-/* Flash an LED to the beat.
+/* Flash an LED to the beat. Hopefully. I've tried it and while I can't keep a
+ * rhythm to save my life, it doesn't quite seem right to me. Or it's working
+ * perfectly. One of those two. Possibly.
  */
 void tick_metronome(void) {
   static uint32_t lastBeatTime = 0;
@@ -181,7 +193,7 @@ void tick_metronome(void) {
   if (!inBeat) {
     if ((millis() - lastBeatTime) >= beatTime) {
       lastBeatTime = millis();
-      activity_led.boost(100);
+      activity_led.enable();
       inBeat = true;
     }
   } else {
@@ -204,6 +216,11 @@ void set_state(PlayerState new_state) {
 
     case PlayerState::ERROR:
       system_led.enable();
+      break;
+
+    case PlayerState::MENU:
+      menu = MenuOption::MENU_PLAY;
+      system_led.boost(LED_DELAY);
       break;
     
     default:
@@ -259,6 +276,16 @@ void do_play() {
   do_play_file(false);
 }
 
+void do_play_single() {
+  autoplay_enabled = false;
+  do_play();
+}
+
+void do_play_auto() {
+  autoplay_enabled = true;
+  do_play();
+}
+
 void do_play_loop() {
   do_play_file(true);
 }
@@ -290,18 +317,84 @@ void do_stop() {
 }
 
 void do_increase_tempo() {
-  SMF.setTempoAdjust(SMF.getTempoAdjust() + 10);
-  update_oled = true;
+  if (tempo_offset < 20) {
+    tempo_offset++;
+
+    SMF.setTempoAdjust(SMF.getTempoAdjust() + 10);
+    update_oled = true;
+  }
 }
 
+/* BUG: I have no idea how tempo works, but I've tried to add a limit to how
+ *      many steps we can move from the center. The issue is that when you
+ *      go to slow it goes nuts and plays the whole file as fast as it can
+ *      possibly go. I think this is something to do with the math not quite
+ *      mathing in the library when it approaches the limit of values.
+ */
 void do_decrease_tempo() {
-  SMF.setTempoAdjust(SMF.getTempoAdjust() - 10);
-  update_oled = true;
+  if (tempo_offset > 0) {
+    tempo_offset--;
+    
+    SMF.setTempoAdjust(SMF.getTempoAdjust() - 10);
+    update_oled = true;
+  }
 }
 
 void do_reset_tempo() {
+  tempo_offset = 10;
   SMF.setTempoAdjust(0);
   update_oled = true;
+}
+
+void do_menu() {
+  set_state(PlayerState::MENU);
+}
+
+void do_menu_next() {
+  if (menu < MenuOption::MENU_INFO) {
+    menu++;
+  }
+}
+
+void do_menu_previous() {
+  if (menu > MenuOption::MENU_PLAY) {
+    menu--;
+  }
+}
+
+void do_menu_exit() {
+  set_state(PlayerState::INACTIVE);
+}
+
+void do_menu_select() {
+  switch (menu) {
+    case MenuOption::MENU_PLAY:
+      do_play_single();
+      break;
+
+    case MenuOption::MENU_LOOP:
+      do_play_loop();
+      break;
+
+    case MenuOption::MENU_AUTO_PLAY:
+      do_play_auto();
+      break;
+
+    case MenuOption::MENU_METRONOME:
+      metronome_enabled = !metronome_enabled;
+      if (metronome_enabled) {
+        activity_led.boost(LED_DELAY);
+      }
+      do_menu_exit();
+      break;
+
+    case MenuOption::MENU_INFO:
+      set_state(PlayerState::INFO);
+      break;
+
+    default:
+      break;
+  }
 }
 
 /* Long press while a track is being played, we'll reset the tempo in case
@@ -368,6 +461,11 @@ bool check_button(void (*short_press)(), void (*long_press)()) {
   return false;
 }
 
+/* State is shown via various tiny symbols on the screen. The ATMega328P does
+ * not have the power to do graphics while actually doing something, so all of
+ * the graphics are altered characters in a custom font. That also explains why
+ * they're tiny. As well as why the code prints seemingly random characters. 
+ */
 void show_state() {
   switch (state) {
     case PlayerState::PLAYING:
@@ -379,6 +477,34 @@ void show_state() {
       else oled.print(F(" "));
 
       if (SMF.isLooping()) oled.print(F("$"));
+      else if (autoplay_enabled) oled.print(F("^"));
+      oled.println();
+      break;
+
+    case PlayerState::MENU:
+      oled.print(F("      :     "));
+      oled.print(F(" "));
+    
+      switch (menu) {
+        case MenuOption::MENU_PLAY:
+          oled.print(F("{"));
+          break;
+        case MenuOption::MENU_LOOP:
+          oled.print(F("$"));
+          break;
+        case MenuOption::MENU_AUTO_PLAY:
+          oled.print(F("^"));
+          break;
+        case MenuOption::MENU_METRONOME:
+          oled.print(F("*"));
+          break;
+        case MenuOption::MENU_INFO:
+          oled.print(F("i"));
+          break;
+        default:
+          oled.print(F("?"));
+          break;
+      }
       oled.println();
       break;
 
@@ -390,8 +516,26 @@ void show_state() {
       oled.println(F("      @"));
       break;
 
+    case PlayerState::INFO:
+      oled.println(F("      i"));
+      break;
+
     default:
       oled.println(F("      }"));
+      break;
+  }
+}
+
+void show_data() {
+  switch (state) {
+    case PlayerState::INFO:
+      oled.println();
+      oled.println(F("PLAY 0.2"));
+      break;
+    
+    default:
+      oled.println();
+      oled.println(filename);
       break;
   }
 }
@@ -402,9 +546,7 @@ void handle_screen() {
     oled.setFont(custom_font);
     oled.println();
     show_state();
-
-    oled.println();
-    oled.println(filename);
+    show_data();
     update_oled = false;
   }
 }
@@ -413,7 +555,12 @@ void handle_state() {
   switch (state) {
     case PlayerState::INACTIVE:
       check_encoder(do_find_next, do_find_previous);
-      check_button(do_play, do_play_loop);
+      check_button(do_play_single, do_menu);
+      break;
+
+    case PlayerState::MENU:
+      check_encoder(do_menu_next, do_menu_previous);
+      check_button(do_menu_select, do_menu_exit);
       break;
 
     case PlayerState::PLAYING:
@@ -421,19 +568,41 @@ void handle_state() {
       if ( !check_button(do_pause, do_playing_longpress) ) {
         if (!SMF.isEOF()) {
           if (SMF.getNextEvent()) {
-            #ifdef ENABLE_METRONOME
+            if (metronome_enabled) {
               tick_metronome();
-            #endif
+            }
           }
         } else {
           // We'll never reach this point when looping is enabled.
           do_stop();
+          if (autoplay_enabled) {
+            last_id = file_id;
+            do_find_next();
+
+            // Check if next file is the same as the previous one
+            if (file_id == last_id) {
+              if (wraparound_enabled) {
+                // start playing from the start again
+                find_file_id(0);
+                do_play();
+              } else {
+                // We don't have a next file
+              }
+            } else {
+              // Start playing next track
+              do_play();
+            }
+          }
         }
       }
       break;
 
     case PlayerState::PAUSED:
       check_button(do_unpause, do_stop);
+      break;
+
+    case PlayerState::INFO:
+      check_button(do_menu_exit, do_menu_exit);
       break;
 
     default:
