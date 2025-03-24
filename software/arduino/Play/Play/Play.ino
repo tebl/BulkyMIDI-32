@@ -28,6 +28,7 @@ PlayerState state = PlayerState::INACTIVE;
 bool autoplay_enabled = false;
 bool wraparound_enabled = false;
 bool metronome_enabled = false;
+unsigned long track_start;
 
 uint8_t menu = MenuOption::MENU_PLAY;
 bool update_oled = true;
@@ -213,6 +214,9 @@ void set_state(PlayerState new_state) {
     case PlayerState::INACTIVE:
       system_led.boost(LED_DELAY);
       break;
+    case PlayerState::INTERMISSION:
+      track_start = millis() + TRACK_PAUSE;
+      break;
 
     case PlayerState::ERROR:
       system_led.enable();
@@ -316,6 +320,10 @@ void do_stop() {
   set_state(PlayerState::INACTIVE);
 }
 
+void do_continue() {
+  track_start = millis();
+}
+
 void do_increase_tempo() {
   if (tempo_offset < 20) {
     tempo_offset++;
@@ -327,9 +335,9 @@ void do_increase_tempo() {
 
 /* BUG: I have no idea how tempo works, but I've tried to add a limit to how
  *      many steps we can move from the center. The issue is that when you
- *      go to slow it goes nuts and plays the whole file as fast as it can
+ *      go too slow it goes nuts and plays the whole file as fast as it can
  *      possibly go. I think this is something to do with the math not quite
- *      mathing in the library when it approaches the limit of values.
+ *      mathing in the library when it approaches the limit of certain values.
  */
 void do_decrease_tempo() {
   if (tempo_offset > 0) {
@@ -480,6 +488,13 @@ void show_state() {
       else if (autoplay_enabled) oled.print(F("^"));
       oled.println();
       break;
+    
+    case PlayerState::INTERMISSION:
+      oled.print(F("      ^     "));
+      oled.print(F(" "));
+      oled.print(F(">"));
+      oled.println();
+      break;
 
     case PlayerState::MENU:
       oled.print(F("      :     "));
@@ -567,33 +582,46 @@ void handle_state() {
       check_encoder(do_increase_tempo, do_decrease_tempo);
       if ( !check_button(do_pause, do_playing_longpress) ) {
         if (!SMF.isEOF()) {
+          // We're currently in the process of playing a track.
           if (SMF.getNextEvent()) {
             if (metronome_enabled) {
               tick_metronome();
             }
           }
         } else {
-          // We'll never reach this point when looping is enabled.
+          // We've reached the end of the track, never happens on looping
           do_stop();
+
+          // If we're in autoplay-mode, then try to play the next track found
           if (autoplay_enabled) {
             last_id = file_id;
             do_find_next();
 
-            // Check if next file is the same as the previous one
+            // Check if next track found is the same as the previous one,
+            // meaning that the track we just played was the last one.
             if (file_id == last_id) {
               if (wraparound_enabled) {
-                // start playing from the start again
+                // Find first file, then pause slightly before playing
                 find_file_id(0);
-                do_play();
+                set_state(PlayerState::INTERMISSION);
               } else {
                 // We don't have a next file
               }
             } else {
-              // Start playing next track
-              do_play();
+              // Pause slightly before playing
+              set_state(PlayerState::INTERMISSION);
             }
           }
         }
+      }
+      break;
+
+    case PlayerState::INTERMISSION:
+      if (millis() > track_start) {
+        track_start = 0;
+        do_play();
+      } else {
+        check_button(do_continue, do_continue);
       }
       break;
 

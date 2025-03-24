@@ -3,6 +3,12 @@
 
 #define BOOT_SCREEN 3000
 
+/* Defines how long the gap should be before playing the next track when
+ * currently playing all of them. Mainly so that the end of one song doesn't
+ * go straight into the next one.
+ */
+#define TRACK_PAUSE 2000
+
 /* Defines how long the LEDs will stay on before turning off without any
  * additional activity.
  */
