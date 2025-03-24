@@ -82,6 +82,12 @@ void midi_callback(midi_event *pev) {
     Serial1.write(pev->data[0] | pev->channel);
     Serial1.write(&pev->data[1], pev->size-1);
   } else Serial1.write(pev->data, pev->size);\
+
+  #ifdef MIDI_LED
+    if (!metronome_enabled) {
+      activity_led.boost(MIDI_LED);
+    }
+  #endif
 }
 
 /* Called by the MIDIFile library when a system Exclusive (sysex) file event
@@ -91,12 +97,16 @@ void midi_callback(midi_event *pev) {
  * This callback is set up in the setup() function.
  */
 void sysex_callback(sysex_event *pev) {
+  #ifdef MIDI_LED
+    system_led.boost(MIDI_LED);
+  #endif
 }
+
 
 /* Turn everything off on every channel. Some midi files are badly behaved and
  * leave notes hanging, so between songs turn off all the notes and sound.
  */
-void midi_silence(void) {
+void midi_silence() {
   midi_event ev;
 
   // All sound off
@@ -110,6 +120,7 @@ void midi_silence(void) {
   for (ev.channel = 0; ev.channel < 16; ev.channel++)
     midi_callback(&ev);
 }
+
 
 void find_file_id(int wanted_id) {
   if (!dir.open("/", O_RDONLY)) {
@@ -479,9 +490,11 @@ bool check_button(void (*short_press)(), void (*long_press)()) {
  * they're tiny. As well as why the code prints seemingly random characters. 
  */
 void show_state() {
+  oled.print(F("      "));
+
   switch (state) {
     case PlayerState::PLAYING:
-      oled.print(F("      {     "));
+      oled.print(F("{     "));
 
       // Tempo indication
       if (SMF.getTempoAdjust() > 0) oled.print(F(">"));
@@ -494,14 +507,14 @@ void show_state() {
       break;
     
     case PlayerState::INTERMISSION:
-      oled.print(F("      ^     "));
+      oled.print(F("^     "));
       oled.print(F(" "));
       oled.print(F(">"));
       oled.println();
       break;
 
     case PlayerState::MENU:
-      oled.print(F("      :     "));
+      oled.print(F(":     "));
       oled.print(F(" "));
     
       switch (menu) {
@@ -528,19 +541,19 @@ void show_state() {
       break;
 
     case PlayerState::PAUSED:
-      oled.println(F("      |"));
+      oled.println(F("|"));
       break;
 
     case PlayerState::ERROR:
-      oled.println(F("      @"));
+      oled.println(F("@"));
       break;
 
     case PlayerState::INFO:
-      oled.println(F("      i"));
+      oled.println(F("i"));
       break;
 
     default:
-      oled.println(F("      }"));
+      oled.println(F("}"));
       break;
   }
 }
@@ -549,7 +562,7 @@ void show_data() {
   switch (state) {
     case PlayerState::INFO:
       oled.println();
-      oled.println(F("PLAY 0.2"));
+      oled.println(F("PLAY 0.3"));
       break;
     
     default:
@@ -648,7 +661,7 @@ void loop() {
   system_led.tick();
   encoder.tick();
 
-  /* Handle player states */
+  /* Handle player state changes */
   handle_state();
 
   /* Update the screen */

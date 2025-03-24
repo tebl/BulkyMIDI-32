@@ -20,6 +20,12 @@
 #define LED_DELAY 250
 #define LED_DECAY 5
 
+/* MIDI Message activity shown on LEDs, except for when the metronome is
+ * being used. Note that it is an indicator of data, ie. instructions instead
+ * of music. Uncomment to remove, or increase value to 250 to keep LEDs solid.
+ */
+#define MIDI_LED 250
+
 /* Button debounce delay, meaning that a switch needs to be stable for at
  * least this many milliseconds before we recognize it as a valid press. 
  */
