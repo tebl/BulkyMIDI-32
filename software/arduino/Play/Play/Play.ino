@@ -178,6 +178,10 @@ void setup() {
   SMF.setMidiHandler(midi_callback);
   SMF.setSysexHandler(sysex_callback);
 
+  #ifdef ENDLESS
+  wraparound_enabled = true;
+  #endif
+
   find_file_id(0);
 }
 

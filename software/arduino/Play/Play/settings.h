@@ -9,6 +9,11 @@
  */
 #define TRACK_PAUSE 2000
 
+/* Allows the list of tracks to wrap around on autoplay, meaning that we'll
+ * loop endlessly as long as no errors are encountered.
+ */
+#define ENDLESS
+
 /* Defines how long the LEDs will stay on before turning off without any
  * additional activity.
  */
